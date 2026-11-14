@@ -7,26 +7,25 @@ import { KpiCard } from "@/components/dashboard/KpiCard";
 export default function StakeholdersPage() {
   const stakeholders = getAllStakeholders();
 
-  const champions = stakeholders.filter((s) => s.classification === "Champion");
   const buyers = stakeholders.filter((s) => s.classification === "Economic Buyer" || s.classification === "Finance");
   const blockers = stakeholders.filter((s) => s.canBlock);
   const departing = stakeholders.filter((s) => s.isLeaving);
 
   return (
-    <div className="space-y-8 animate-in fade-in duration-200">
+    <div className="space-y-6 section-matte-enter">
       {/* Header */}
-      <div className="flex flex-wrap items-center justify-between gap-4 p-6 rounded-xl bg-gradient-to-r from-[#111419] to-[#15181D] border border-[#272C34]">
+      <div className="flex flex-wrap items-center justify-between gap-4 p-5 rounded-xl matte-card">
         <div>
           <div className="flex items-center gap-2">
-            <Users2 className="w-4 h-4 text-[#FF762E]" />
-            <span className="text-xs font-mono uppercase tracking-wider text-[#FF762E]">
+            <Users2 className="w-4 h-4 text-[#FF5500]" />
+            <span className="text-xs font-mono uppercase tracking-wider text-[#FF5500] font-semibold">
               Stakeholder Relationship Intelligence
             </span>
           </div>
           <h1 className="text-2xl font-bold tracking-tight text-[#F4F4F5] mt-1">
             Stakeholder Power Matrix & Key Person Risks
           </h1>
-          <p className="text-xs text-[#9298A2] mt-0.5">
+          <p className="text-xs text-[#8E929E] mt-0.5">
             Who holds the decision-making authority, who controls the budget, and which relationships are at risk.
           </p>
         </div>
@@ -71,7 +70,7 @@ export default function StakeholdersPage() {
       {/* Main Stakeholder Grid */}
       <div className="space-y-4">
         <div className="flex items-center justify-between">
-          <h2 className="text-sm font-bold text-[#F4F4F5] uppercase tracking-wider">
+          <h2 className="text-xs font-bold text-[#F4F4F5] uppercase tracking-wider">
             Enterprise Stakeholder Directory & Authority Mapping
           </h2>
         </div>

@@ -6,12 +6,8 @@ import { EvidenceBadge } from "../evidence/EvidenceBadge";
 import {
   AlertOctagon,
   AlertTriangle,
-  Info,
   Clock,
-  ShieldCheck,
-  CheckCircle2,
   Calendar,
-  Layers,
 } from "lucide-react";
 
 interface RiskGridProps {
@@ -33,25 +29,25 @@ export const RiskGrid: React.FC<RiskGridProps> = ({ risks, showAccountFilter = t
     switch (sev) {
       case "Critical":
         return (
-          <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-red-500/20 text-red-400 border border-red-500/40 flex items-center gap-1">
-            <AlertOctagon className="w-3 h-3" /> CRITICAL
+          <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-[#260C04] text-[#FF5500] border border-[#8C2A00] flex items-center gap-1">
+            <AlertOctagon className="w-3 h-3 text-[#FF5500]" /> CRITICAL
           </span>
         );
       case "High":
         return (
-          <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-amber-500/20 text-amber-400 border border-amber-500/40 flex items-center gap-1">
-            <AlertTriangle className="w-3 h-3" /> HIGH
+          <span className="px-2 py-0.5 rounded text-[10px] font-mono font-semibold bg-[#1F1208] text-[#FFA066] border border-[#5E2B0C] flex items-center gap-1">
+            <AlertTriangle className="w-3 h-3 text-[#FF8540]" /> HIGH
           </span>
         );
       case "Medium":
         return (
-          <span className="px-2 py-0.5 rounded text-[10px] font-mono font-medium bg-yellow-500/15 text-yellow-300 border border-yellow-500/30">
+          <span className="px-2 py-0.5 rounded text-[10px] font-mono font-medium bg-[#14161C] text-[#D4D4D8] border border-[#252832]">
             MEDIUM
           </span>
         );
       default:
         return (
-          <span className="px-2 py-0.5 rounded text-[10px] font-mono font-medium bg-blue-500/15 text-blue-300 border border-blue-500/30">
+          <span className="px-2 py-0.5 rounded text-[10px] font-mono font-medium bg-[#0D0E12] text-[#808590] border border-[#1C1F26]">
             LOW
           </span>
         );
@@ -61,13 +57,13 @@ export const RiskGrid: React.FC<RiskGridProps> = ({ risks, showAccountFilter = t
   return (
     <div className="space-y-4">
       {/* Filters */}
-      <div className="flex flex-wrap items-center justify-between gap-3 p-3 rounded-lg bg-[#15181D] border border-[#272C34]">
+      <div className="flex flex-wrap items-center justify-between gap-3 p-3 rounded-xl bg-[#08080A] border border-[#1C1F26]">
         <div className="flex items-center gap-2">
           {showAccountFilter && (
             <select
               value={accountFilter}
               onChange={(e) => setAccountFilter(e.target.value)}
-              className="bg-[#101216] border border-[#272C34] rounded px-2.5 py-1 text-xs text-[#F4F4F5] focus:outline-none focus:border-[#FF762E]"
+              className="bg-[#000000] border border-[#1C1F26] rounded-lg px-2.5 py-1 text-xs text-[#F4F4F5] focus:outline-none focus:border-[#FF5500]"
             >
               <option value="All">All Accounts</option>
               <option value="A">Eastern Counties (A)</option>
@@ -78,7 +74,7 @@ export const RiskGrid: React.FC<RiskGridProps> = ({ risks, showAccountFilter = t
           <select
             value={severityFilter}
             onChange={(e) => setSeverityFilter(e.target.value)}
-            className="bg-[#101216] border border-[#272C34] rounded px-2.5 py-1 text-xs text-[#F4F4F5] focus:outline-none focus:border-[#FF762E]"
+            className="bg-[#000000] border border-[#1C1F26] rounded-lg px-2.5 py-1 text-xs text-[#F4F4F5] focus:outline-none focus:border-[#FF5500]"
           >
             <option value="All">All Severities</option>
             <option value="Critical">Critical Only</option>
@@ -88,7 +84,7 @@ export const RiskGrid: React.FC<RiskGridProps> = ({ risks, showAccountFilter = t
           </select>
         </div>
 
-        <span className="text-xs text-[#9298A2] font-mono">
+        <span className="text-xs text-[#71717A] font-mono">
           {filtered.length} Risk Vector{filtered.length === 1 ? "" : "s"} Tracked
         </span>
       </div>
@@ -98,12 +94,12 @@ export const RiskGrid: React.FC<RiskGridProps> = ({ risks, showAccountFilter = t
         {filtered.map((r) => (
           <div
             key={r.id}
-            className={`p-4 rounded-lg bg-[#15181D] border transition-all flex flex-col justify-between space-y-4 ${
+            className={`p-4 rounded-xl matte-card flex flex-col justify-between space-y-4 ${
               r.severity === "Critical"
-                ? "border-red-500/50 bg-red-950/10"
+                ? "border-[#FF5500]/50 bg-[#160B04]/30"
                 : r.severity === "High"
-                ? "border-amber-500/40 bg-amber-950/10"
-                : "border-[#272C34] hover:border-[#383E49]"
+                ? "border-[#662808]/50 bg-[#140D07]/20"
+                : ""
             }`}
           >
             {/* Header */}
@@ -112,42 +108,42 @@ export const RiskGrid: React.FC<RiskGridProps> = ({ risks, showAccountFilter = t
                 <span className="text-xs font-semibold text-[#F4F4F5] leading-snug">{r.title}</span>
                 {getSeverityBadge(r.severity)}
               </div>
-              <div className="flex flex-wrap items-center gap-2 text-[11px] text-[#9298A2]">
+              <div className="flex flex-wrap items-center gap-2 text-[11px] text-[#8E929E]">
                 <span>{r.accountName}</span>
                 {r.relatedDeal && (
                   <>
                     <span>•</span>
-                    <span className="text-[#FF762E] font-medium">{r.relatedDeal}</span>
+                    <span className="text-[#FF5500] font-medium">{r.relatedDeal}</span>
                   </>
                 )}
               </div>
             </div>
 
             {/* Why It Matters */}
-            <div className="p-3 rounded bg-[#101216] border border-[#272C34]/60 text-xs text-[#F4F4F5] leading-relaxed">
-              <span className="text-[#666D78] font-mono text-[10px] uppercase block mb-1">
+            <div className="p-3 rounded-lg bg-[#000000] border border-[#1C1F26] text-xs text-[#F4F4F5] leading-relaxed">
+              <span className="text-[#585E6A] font-mono text-[10px] uppercase block mb-1">
                 Risk Impact Analysis
               </span>
               {r.whyItMatters}
             </div>
 
             {/* Recommended Mitigation */}
-            <div className="text-xs text-emerald-300/90 leading-relaxed bg-emerald-950/10 p-2.5 rounded border border-emerald-500/20">
-              <span className="text-emerald-400 font-semibold block mb-0.5">
+            <div className="text-xs text-[#E4E4E7] leading-relaxed bg-[#121419] p-3 rounded-lg border border-[#1C1F26]">
+              <span className="text-[#FF5500] font-semibold block mb-0.5">
                 Recommended Mitigation:
               </span>
               {r.recommendedMitigation}
             </div>
 
             {/* Timelines and Evidence Traceability */}
-            <div className="pt-3 border-t border-[#272C34]/60 flex flex-wrap items-center justify-between gap-2 text-xs">
-              <div className="flex flex-wrap items-center gap-3 text-[#9298A2]">
+            <div className="pt-3 border-t border-[#1C1F26] flex flex-wrap items-center justify-between gap-2 text-xs">
+              <div className="flex flex-wrap items-center gap-3 text-[#8E929E]">
                 <div className="flex items-center gap-1">
-                  <Calendar className="w-3.5 h-3.5 text-[#666D78]" />
+                  <Calendar className="w-3.5 h-3.5 text-[#585E6A]" />
                   <span>Detected: <strong className="text-[#F4F4F5] font-mono">{r.firstDetected}</strong></span>
                 </div>
                 {r.deadline && (
-                  <div className="flex items-center gap-1 text-amber-400 font-mono">
+                  <div className="flex items-center gap-1 text-[#FFA066] font-mono">
                     <Clock className="w-3.5 h-3.5" />
                     <span>Impact: {r.deadline}</span>
                   </div>

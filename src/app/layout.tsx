@@ -24,25 +24,25 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className={`${inter.variable} font-sans bg-[#08090B] text-[#F4F4F5] min-h-screen antialiased`}>
-        {/* Floating Capsule Sidebar (Dynamic Island Style) */}
+      <body className={`${inter.variable} font-sans bg-[#000000] text-[#F4F4F5] min-h-screen antialiased selection:bg-[#FF5500]/30 selection:text-white`}>
+        {/* Floating Slim Capsule Sidebar */}
         <Sidebar />
 
         {/* Main Content Area */}
-        <div className="lg:pl-72 pt-16 lg:pt-4 min-h-screen flex flex-col">
-          <main className="flex-1 p-4 sm:p-6 lg:p-8 max-w-7xl w-full mx-auto space-y-8">
+        <div className="lg:pl-56 pt-14 lg:pt-3 min-h-screen flex flex-col">
+          <main className="flex-1 p-3.5 sm:p-5 lg:p-7 max-w-7xl w-full mx-auto space-y-6">
             {children}
           </main>
-          <footer className="py-6 px-8 border-t border-[#272C34] text-xs text-[#666D78] flex flex-wrap items-center justify-between gap-4">
+          <footer className="py-5 px-6 border-t border-[#1C1F26] text-xs text-[#606570] flex flex-wrap items-center justify-between gap-4 bg-[#000000]">
             <div>
-              FlytBase Live CRM • Built for the Questathon Challenge • Real MCP JSON-RPC Server Integration
+              FlytBase Live CRM • Questathon Challenge • Direct MCP JSON-RPC Server Architecture
             </div>
             <div className="flex items-center gap-4 font-mono text-[11px]">
-              <span className="flex items-center gap-1.5 text-emerald-400">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              <span className="flex items-center gap-1.5 text-[#FF5500]">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#FF5500] animate-pulse" />
                 Rate Limiter: 1 Call / 60s
               </span>
-              <span>Server-Side Token Protected</span>
+              <span className="text-[#808590]">Server-Side Token Protected</span>
             </div>
           </footer>
         </div>

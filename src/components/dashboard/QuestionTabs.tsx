@@ -19,8 +19,6 @@ import {
   CheckSquare,
   AlertTriangle,
   HelpCircle,
-  FileText,
-  ShieldCheck,
 } from "lucide-react";
 
 interface QuestionTabsProps {
@@ -50,8 +48,8 @@ export const QuestionTabs: React.FC<QuestionTabsProps> = ({
 
   return (
     <div className="space-y-6">
-      {/* Five Questions Navigation Bar */}
-      <div className="flex items-center gap-1.5 p-1.5 rounded-lg bg-[#15181D] border border-[#272C34] overflow-x-auto no-scrollbar">
+      {/* Five Questions Matte Navigation Bar */}
+      <div className="flex items-center gap-1.5 p-1.5 rounded-xl bg-[#08080A] border border-[#1C1F26] overflow-x-auto no-scrollbar shadow-inner">
         {tabs.map((tab) => {
           const Icon = tab.icon;
           const isActive = activeTab === tab.id;
@@ -59,15 +57,15 @@ export const QuestionTabs: React.FC<QuestionTabsProps> = ({
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`flex items-center gap-2 px-4 py-2.5 rounded-md text-xs font-semibold whitespace-nowrap transition-all cursor-pointer ${
+              className={`flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-semibold whitespace-nowrap transition-all duration-200 cursor-pointer ${
                 isActive
-                  ? "bg-[#1B1F25] text-[#FF762E] shadow-sm border border-[#FF762E]/30"
-                  : "text-[#9298A2] hover:text-[#F4F4F5] hover:bg-[#1B1F25]/40"
+                  ? "bg-[#14161C] text-[#FF5500] shadow-sm border border-[#FF5500]/30"
+                  : "text-[#8E929E] hover:text-[#F4F4F5] hover:bg-[#0E1014]"
               }`}
             >
-              <Icon className={`w-4 h-4 ${isActive ? "text-[#FF762E]" : "text-[#666D78]"}`} />
+              <Icon className={`w-3.5 h-3.5 transition-colors ${isActive ? "text-[#FF5500]" : "text-[#585E6A]"}`} />
               <span>{tab.name}</span>
-              <span className={`text-[10px] font-mono px-1.5 py-0.2 rounded ${isActive ? "bg-[#FF762E]/15 text-[#FF762E]" : "bg-[#101216] text-[#666D78]"}`}>
+              <span className={`text-[10px] font-mono px-1.5 py-0.2 rounded transition-colors ${isActive ? "bg-[#FF5500]/15 text-[#FF5500]" : "bg-[#000000] text-[#71717A]"}`}>
                 {tab.count}
               </span>
             </button>
@@ -77,26 +75,26 @@ export const QuestionTabs: React.FC<QuestionTabsProps> = ({
 
       {/* Tab 1: Valuation */}
       {activeTab === 1 && (
-        <div className="space-y-6 animate-in fade-in duration-150">
+        <div className="space-y-6 section-matte-enter">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
             <KpiCard
               title="Confirmed Framework"
               value={`${valuation.currency}${valuation.confirmedValue.toLocaleString()}`}
-              subtitle="Agreed specification in preparation"
+              subtitle="Agreed specification in prep"
               badge="Confirmed"
               badgeColor="green"
             />
             <KpiCard
               title="Active Pipeline"
               value={`${valuation.currency}${valuation.potentialValue.toLocaleString()}`}
-              subtitle="Qualified fleet expansion & open offers"
+              subtitle="Qualified expansion & open offers"
               badge="Active"
               badgeColor="orange"
             />
             <KpiCard
               title="At-Risk Deal Value"
               value={`${valuation.currency}${valuation.atRiskValue.toLocaleString()}`}
-              subtitle="Blocked on DPIA or flight evidence"
+              subtitle="Blocked on DPIA or flight records"
               badge="At Risk"
               badgeColor="red"
             />
@@ -117,10 +115,10 @@ export const QuestionTabs: React.FC<QuestionTabsProps> = ({
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            <div className="lg:col-span-1 p-5 rounded-lg bg-[#15181D] border border-[#272C34] space-y-4">
+            <div className="lg:col-span-1 p-5 rounded-xl matte-card space-y-4">
               <div>
                 <h3 className="text-sm font-semibold text-[#F4F4F5]">Pipeline Distribution</h3>
-                <p className="text-xs text-[#9298A2]">Contractual reality vs unverified claims</p>
+                <p className="text-xs text-[#8E929E]">Contractual reality vs unverified claims</p>
               </div>
               <ValuationChart
                 confirmed={valuation.confirmedValue}
@@ -136,7 +134,7 @@ export const QuestionTabs: React.FC<QuestionTabsProps> = ({
               <div className="flex items-center justify-between">
                 <div>
                   <h3 className="text-sm font-semibold text-[#F4F4F5]">Deal-by-Deal Evidence Breakdown</h3>
-                  <p className="text-xs text-[#9298A2]">Every financial figure is traceable to its source record</p>
+                  <p className="text-xs text-[#8E929E]">Every financial figure is traceable to its source record</p>
                 </div>
               </div>
               <DealsTable deals={valuation.deals} showAccountFilter={false} />
@@ -147,11 +145,11 @@ export const QuestionTabs: React.FC<QuestionTabsProps> = ({
 
       {/* Tab 2: Stakeholders */}
       {activeTab === 2 && (
-        <div className="space-y-4 animate-in fade-in duration-150">
+        <div className="space-y-4 section-matte-enter">
           <div className="flex items-center justify-between">
             <div>
               <h3 className="text-sm font-semibold text-[#F4F4F5]">Power & Influence Matrix</h3>
-              <p className="text-xs text-[#9298A2]">
+              <p className="text-xs text-[#8E929E]">
                 Decision authority, budget control, and departure warnings
               </p>
             </div>
@@ -162,11 +160,11 @@ export const QuestionTabs: React.FC<QuestionTabsProps> = ({
 
       {/* Tab 3: Actions */}
       {activeTab === 3 && (
-        <div className="space-y-4 animate-in fade-in duration-150">
+        <div className="space-y-4 section-matte-enter">
           <div className="flex items-center justify-between">
             <div>
               <h3 className="text-sm font-semibold text-[#F4F4F5]">Ranked Action Plan</h3>
-              <p className="text-xs text-[#9298A2]">Top actions prioritized by business impact and urgency</p>
+              <p className="text-xs text-[#8E929E]">Top actions prioritized by business impact and urgency</p>
             </div>
           </div>
           <ActionList actions={actions} showAccountFilter={false} />
@@ -175,11 +173,11 @@ export const QuestionTabs: React.FC<QuestionTabsProps> = ({
 
       {/* Tab 4: Risks */}
       {activeTab === 4 && (
-        <div className="space-y-4 animate-in fade-in duration-150">
+        <div className="space-y-4 section-matte-enter">
           <div className="flex items-center justify-between">
             <div>
               <h3 className="text-sm font-semibold text-[#F4F4F5]">Risk Intelligence Matrix</h3>
-              <p className="text-xs text-[#9298A2]">Approaching deadlines, unanswered tickets, and adoption hazards</p>
+              <p className="text-xs text-[#8E929E]">Approaching deadlines, unanswered tickets, and adoption hazards</p>
             </div>
           </div>
           <RiskGrid risks={risks} showAccountFilter={false} />
@@ -188,11 +186,11 @@ export const QuestionTabs: React.FC<QuestionTabsProps> = ({
 
       {/* Tab 5: Unknowns */}
       {activeTab === 5 && (
-        <div className="space-y-4 animate-in fade-in duration-150">
+        <div className="space-y-4 section-matte-enter">
           <div className="flex items-center justify-between">
             <div>
               <h3 className="text-sm font-semibold text-[#F4F4F5]">Critical Knowledge Gaps</h3>
-              <p className="text-xs text-[#9298A2]">Unconfirmed authorities, missing files, and prescribed discovery questions</p>
+              <p className="text-xs text-[#8E929E]">Unconfirmed authorities, missing files, and prescribed discovery questions</p>
             </div>
           </div>
           <UnknownList unknowns={unknowns} showAccountFilter={false} />

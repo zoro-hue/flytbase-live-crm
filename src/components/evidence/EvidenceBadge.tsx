@@ -21,7 +21,6 @@ export const EvidenceBadge: React.FC<EvidenceBadgeProps> = ({
     if (onClick) {
       onClick(sourceId);
     } else {
-      // Dispatch custom event for global evidence drawer
       window.dispatchEvent(new CustomEvent("open-evidence-drawer", { detail: { sourceId } }));
     }
   };
@@ -33,9 +32,9 @@ export const EvidenceBadge: React.FC<EvidenceBadgeProps> = ({
       type="button"
       onClick={handleClick}
       title={`View verified source: ${displayName}`}
-      className={`inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-xs font-mono font-medium text-crm-orange bg-crm-orange-subtle border border-crm-orange/20 hover:border-crm-orange/50 transition-colors cursor-pointer ${className}`}
+      className={`inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md text-[11px] font-mono font-medium text-[#FF6B1A] bg-[#FF5500]/10 border border-[#FF5500]/25 hover:border-[#FF5500]/60 transition-all duration-150 cursor-pointer ${className}`}
     >
-      <FileText className="w-3 h-3 flex-shrink-0" />
+      <FileText className="w-3 h-3 flex-shrink-0 text-[#FF5500]" />
       <span className="truncate max-w-[160px]">{displayName}</span>
       <ExternalLink className="w-2.5 h-2.5 opacity-60 flex-shrink-0" />
     </button>

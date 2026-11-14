@@ -1,8 +1,7 @@
 import React from "react";
 import { getAllEvidence } from "@/lib/data/provenance";
-import { EvidenceBadge } from "@/components/evidence/EvidenceBadge";
 import { KpiCard } from "@/components/dashboard/KpiCard";
-import { FileSearch, FileText, CheckCircle2, ShieldCheck, Database, Search } from "lucide-react";
+import { FileSearch, FileText, CheckCircle2, ShieldCheck, Database } from "lucide-react";
 import EvidenceClientPage from "./EvidenceClientPage";
 
 export default function EvidencePage() {
@@ -14,20 +13,20 @@ export default function EvidencePage() {
   const callCount = allEvidence.filter((e) => e.sourceType === "call_note").length;
 
   return (
-    <div className="space-y-8 animate-in fade-in duration-200">
+    <div className="space-y-6 section-matte-enter">
       {/* Header */}
-      <div className="flex flex-wrap items-center justify-between gap-4 p-6 rounded-xl bg-gradient-to-r from-[#111419] to-[#15181D] border border-[#272C34]">
+      <div className="flex flex-wrap items-center justify-between gap-4 p-5 rounded-xl matte-card">
         <div>
           <div className="flex items-center gap-2">
-            <FileSearch className="w-4 h-4 text-[#FF762E]" />
-            <span className="text-xs font-mono uppercase tracking-wider text-[#FF762E]">
+            <FileSearch className="w-4 h-4 text-[#FF5500]" />
+            <span className="text-xs font-mono uppercase tracking-wider text-[#FF5500] font-semibold">
               Evidence & Source Traceability System
             </span>
           </div>
           <h1 className="text-2xl font-bold tracking-tight text-[#F4F4F5] mt-1">
             Primary Source Records Repository
           </h1>
-          <p className="text-xs text-[#9298A2] mt-0.5">
+          <p className="text-xs text-[#8E929E] mt-0.5">
             Every displayed claim, financial calculation, and stakeholder note in FlytBase CRM links directly to a verifiable MCP source ID.
           </p>
         </div>

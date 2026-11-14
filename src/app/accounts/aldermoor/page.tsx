@@ -11,10 +11,9 @@ import { getAccountSignals } from "@/lib/analysis/signals";
 import { QuestionTabs } from "@/components/dashboard/QuestionTabs";
 import { SignalFeed } from "@/components/signals/SignalFeed";
 import {
-  Building2,
-  Radio,
   ArrowLeft,
   PlusCircle,
+  Radio,
 } from "lucide-react";
 
 export default function AldermoorPage() {
@@ -26,28 +25,28 @@ export default function AldermoorPage() {
   const signals = getAccountSignals("B");
 
   return (
-    <div className="space-y-8 animate-in fade-in duration-200">
+    <div className="space-y-6 section-matte-enter">
       {/* Top Header & Breadcrumb */}
       <div>
-        <div className="flex items-center gap-2 text-xs text-[#9298A2] mb-2">
-          <Link href="/" className="hover:text-[#F4F4F5] flex items-center gap-1">
+        <div className="flex items-center gap-2 text-xs text-[#8E929E] mb-2">
+          <Link href="/" className="hover:text-[#F4F4F5] flex items-center gap-1 transition-colors">
             <ArrowLeft className="w-3.5 h-3.5" />
             <span>Overview</span>
           </Link>
           <span>/</span>
-          <span className="text-[#FF762E] font-medium">Aldermoor Industrial Group (Account B)</span>
+          <span className="text-[#FF5500] font-medium">Aldermoor Industrial Group (Account B)</span>
         </div>
 
-        <div className="flex flex-wrap items-start justify-between gap-4 p-6 rounded-xl bg-gradient-to-r from-[#111419] to-[#15181D] border border-[#272C34]">
+        <div className="flex flex-wrap items-start justify-between gap-4 p-5 rounded-xl matte-card">
           <div className="space-y-2 max-w-3xl">
             <div className="flex flex-wrap items-center gap-2">
-              <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-[#FF762E]/15 text-[#FF762E] border border-[#FF762E]/30">
+              <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-[#FF5500]/12 text-[#FF6519] border border-[#FF5500]/30">
                 ACCOUNT B • INDUSTRIAL AUTOMATION & SECURITY
               </span>
-              <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-amber-500/15 text-amber-400 border border-amber-500/30">
+              <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-[#1A1009] text-[#FFA066] border border-[#5E2B0C]">
                 14 Docks Installed • 4 Plants Regular
               </span>
-              <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-red-500/15 text-red-400 border border-red-500/30">
+              <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-[#240C04] text-[#FF5500] border border-[#8C2A00] font-semibold">
                 Event A Inactivity & Deputy Departure
               </span>
             </div>
@@ -55,8 +54,8 @@ export default function AldermoorPage() {
             <h1 className="text-2xl font-bold tracking-tight text-[#F4F4F5]">
               Aldermoor Industrial Group
             </h1>
-            <p className="text-xs text-[#9298A2] leading-relaxed">
-              Industrial manufacturing enterprise across 15 European plant facilities. 14 automated drone docks installed under 1-year contract (€140,000/yr). Factual operational audit proves <strong className="text-[#F4F4F5]">only 4 plants</strong> (Plants 3, 5, 7, 9) fly regular nightly patrols; 9 plants only log occasional test flights; Plant 15 has no dock. Group Head of Security Stefan Roy claims €1.2M annual savings, but source <code className="text-[#FF762E]">roi_spreadsheet.csv</code> confirms this is his own theoretical spreadsheet with ZERO guard contracts reduced and ZERO savings booked by finance.
+            <p className="text-xs text-[#8E929E] leading-relaxed">
+              Industrial manufacturing enterprise across 15 European plant facilities. 14 automated drone docks installed under 1-year contract (€140,000/yr). Factual operational audit proves <strong className="text-[#F4F4F5]">only 4 plants</strong> (Plants 3, 5, 7, 9) fly regular nightly patrols; 9 plants only log occasional test flights; Plant 15 has no dock. Group Head of Security Stefan Roy claims €1.2M annual savings, but source <code className="text-[#FF5500]">roi_spreadsheet.csv</code> confirms this is his own theoretical spreadsheet with ZERO guard contracts reduced and ZERO savings booked by finance.
             </p>
           </div>
 
@@ -65,11 +64,11 @@ export default function AldermoorPage() {
               onClick={() =>
                 window.dispatchEvent(
                   new CustomEvent("open-note-modal", {
-                    detail: { account: "B", kind: "deal", title: "Note for Aldermoor" },
+                    detail: { account: "B", kind: "note", title: "Note for Aldermoor" },
                   })
                 )
               }
-              className="flex items-center gap-1.5 px-3.5 py-2 rounded-md bg-[#FF762E] hover:bg-[#E6631F] text-white text-xs font-semibold shadow-sm transition-colors cursor-pointer"
+              className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-[#FF5500] hover:bg-[#E04B00] text-white text-xs font-semibold shadow-md shadow-[#FF5500]/20 transition-all duration-200 cursor-pointer active:scale-95"
             >
               <PlusCircle className="w-3.5 h-3.5" />
               <span>Write MCP Note</span>
@@ -82,9 +81,9 @@ export default function AldermoorPage() {
       {signals.length > 0 && (
         <div className="space-y-3">
           <div className="flex items-center gap-2">
-            <Radio className="w-4 h-4 text-red-400 animate-pulse" />
+            <Radio className="w-4 h-4 text-[#FF5500] animate-pulse" />
             <h2 className="text-xs font-bold uppercase tracking-wider text-[#F4F4F5]">
-              Live Account Signals (Event A Verified)
+              Live Account Signals (Event A Grounding Verified)
             </h2>
           </div>
           <SignalFeed signals={signals} showAccountFilter={false} />
