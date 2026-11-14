@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Sidebar } from "@/components/layout/Sidebar";
+import { SectionTransition } from "@/components/layout/SectionTransition";
 import { EvidenceDrawer } from "@/components/evidence/EvidenceDrawer";
 import { NoteModal } from "@/components/notes/NoteModal";
 
@@ -25,13 +26,15 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className={`${inter.variable} font-sans bg-[#000000] text-[#F4F4F5] min-h-screen antialiased selection:bg-[#FF5500]/30 selection:text-white`}>
-        {/* Floating Slim Capsule Sidebar */}
+        {/* Floating Slim Capsule Sidebar (Stable across all section navigations) */}
         <Sidebar />
 
         {/* Main Content Area */}
         <div className="lg:pl-56 pt-14 lg:pt-3 min-h-screen flex flex-col">
           <main className="flex-1 p-3.5 sm:p-5 lg:p-7 max-w-7xl w-full mx-auto space-y-6">
-            {children}
+            <SectionTransition>
+              {children}
+            </SectionTransition>
           </main>
           <footer className="py-5 px-6 border-t border-[#1C1F26] text-xs text-[#606570] flex flex-wrap items-center justify-between gap-4 bg-[#000000]">
             <div>
@@ -47,10 +50,10 @@ export default function RootLayout({
           </footer>
         </div>
 
-        {/* Global Evidence Traceability Drawer */}
+        {/* Global Evidence Traceability Drawer (Stable across all sections) */}
         <EvidenceDrawer />
 
-        {/* Global Note Write-Back Modal */}
+        {/* Global Note Write-Back Modal (Stable across all sections) */}
         <NoteModal />
       </body>
     </html>

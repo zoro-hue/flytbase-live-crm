@@ -25,7 +25,7 @@ export default function EasternCountiesPage() {
   const signals = getAccountSignals("A");
 
   return (
-    <div className="space-y-6 section-matte-enter">
+    <div className="space-y-6">
       {/* Top Header & Breadcrumb */}
       <div>
         <div className="flex items-center gap-2 text-xs text-[#8E929E] mb-2">
