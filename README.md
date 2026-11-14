@@ -13,6 +13,17 @@ Connected directly to the official **Questathon MCP Server** via JSON-RPC 2.0 ov
 
 ---
 
+## 🎯 Official Questathon Hand-In Links
+
+| Deliverable | Requirement | Link |
+|---|---|---|
+| **1. Live CRM Link** | Hosted public URL, private window ready | *Vercel Deployment URL* |
+| **2. Public Repository** | Complete source code, no tokens | [github.com/zoro-hue/flytbase-live-crm](https://github.com/zoro-hue/flytbase-live-crm) |
+| **3. Thinking Doc** | Formal 1-page Google Doc detailing system rules, decisions & AI usage | [Google Doc: FlytBase CRM Thinking Doc](https://docs.google.com/document/d/1JEAihqqvkNrrvOwYiRsZEXzxeQQ-Qjjc/edit?usp=sharing&ouid=110257910777160518766&rtpof=true&sd=true) |
+| **4. Walkthrough Video** | 3-minute executive video demonstrating 5 answers, KPI trace & live signals | [Google Drive: 3-Min Walkthrough Video](https://drive.google.com/file/d/18WOJhFPiy7Ow_fV2sc4QW_CDdgilqoEW/view?usp=sharing) |
+
+---
+
 ## 🌟 Key Features
 
 - **Public Landing Page & 3D Interactive Showcase**:

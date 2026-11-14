@@ -959,12 +959,20 @@ export default function LandingPage() {
               </button>
             </div>
 
-            {/* Video Player Preview Slate */}
-            <div className="relative aspect-video rounded-2xl bg-[#151719] border border-[#2D3139] flex flex-col items-center justify-center text-center p-6 text-white overflow-hidden shadow-inner group">
-              <div className="w-14 h-14 rounded-full bg-[#536F00] group-hover:scale-110 transition-transform flex items-center justify-center shadow-lg cursor-pointer mb-3">
+            {/* Video Player Preview Slate (Links to Google Drive Video) */}
+            <a
+              href="https://drive.google.com/file/d/18WOJhFPiy7Ow_fV2sc4QW_CDdgilqoEW/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative aspect-video rounded-2xl bg-[#151719] border border-[#2D3139] flex flex-col items-center justify-center text-center p-6 text-white overflow-hidden shadow-inner group cursor-pointer block"
+              title="Watch on Google Drive"
+            >
+              <div className="w-14 h-14 rounded-full bg-[#536F00] group-hover:scale-110 group-hover:bg-[#688a00] transition-all flex items-center justify-center shadow-lg mb-3">
                 <Play className="w-6 h-6 fill-white ml-1 text-white" />
               </div>
-              <h4 className="text-sm font-bold">Questathon Walkthrough Video</h4>
+              <h4 className="text-sm font-bold group-hover:text-[#A3E635] transition-colors">
+                Play Questathon 3-Minute Walkthrough Video ↗
+              </h4>
               <p className="text-xs text-[#A0A4AE] max-w-md mt-1">
                 Demonstrates the 5 answers for Eastern Counties, tracing the £800k At-Risk KPI to source, and ingesting live challenge signals.
               </p>
@@ -973,32 +981,54 @@ export default function LandingPage() {
                 <span>•</span>
                 <span>3:00 Duration</span>
                 <span>•</span>
-                <span>Full Audio Narration</span>
+                <span>Hosted on Google Drive</span>
               </div>
-            </div>
+            </a>
 
-            <div className="p-4 rounded-xl bg-[#F4F5F0] border border-[#E2E5DE] space-y-1.5 text-xs text-[#747A80]">
-              <span className="font-bold text-[#151515] block">Ready to explore the live application?</span>
+            <div className="p-4 rounded-xl bg-[#F4F5F0] border border-[#E2E5DE] space-y-2 text-xs text-[#747A80]">
+              <div className="flex items-center justify-between">
+                <span className="font-bold text-[#151515]">Submission Deliverables</span>
+                <a
+                  href="https://docs.google.com/document/d/1JEAihqqvkNrrvOwYiRsZEXzxeQQ-Qjjc/edit?usp=sharing&ouid=110257910777160518766&rtpof=true&sd=true"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#536F00] hover:underline font-semibold flex items-center gap-1"
+                >
+                  <span>Open Thinking Doc ↗</span>
+                </a>
+              </div>
               <p>
-                All data is loaded into memory with 100% citation links. You can test the AI Copilot, inspect the Evidence Drawer, and filter live signals immediately.
+                All data is loaded with 100% citation links. You can test the AI Copilot, inspect the Evidence Drawer, and filter live signals immediately.
               </p>
             </div>
 
-            <div className="flex justify-end gap-2.5 pt-2">
-              <button
-                onClick={() => setShowVideoModal(false)}
-                className="px-4 py-2 rounded-xl border border-[#E2E5DE] hover:bg-[#F4F5F0] text-xs font-medium text-[#151515] cursor-pointer"
+            <div className="flex justify-between items-center gap-2.5 pt-2">
+              <a
+                href="https://drive.google.com/file/d/18WOJhFPiy7Ow_fV2sc4QW_CDdgilqoEW/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 rounded-xl bg-[#171717] hover:bg-[#2A2A2A] text-white text-xs font-medium flex items-center gap-1.5 cursor-pointer shadow-xs"
               >
-                Close
-              </button>
-              <Link
-                href="/dashboard"
-                onClick={() => setShowVideoModal(false)}
-                className="px-5 py-2 rounded-xl bg-[#536F00] hover:bg-[#435900] text-white text-xs font-semibold shadow-xs flex items-center gap-1.5 cursor-pointer"
-              >
-                <span>Enter CRM</span>
-                <ArrowRight className="w-3.5 h-3.5 text-[#DCFCE7]" />
-              </Link>
+                <Play className="w-3 h-3 fill-white" />
+                <span>Watch Video (Drive)</span>
+              </a>
+
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={() => setShowVideoModal(false)}
+                  className="px-4 py-2 rounded-xl border border-[#E2E5DE] hover:bg-[#F4F5F0] text-xs font-medium text-[#151515] cursor-pointer"
+                >
+                  Close
+                </button>
+                <Link
+                  href="/dashboard"
+                  onClick={() => setShowVideoModal(false)}
+                  className="px-5 py-2 rounded-xl bg-[#536F00] hover:bg-[#435900] text-white text-xs font-semibold shadow-xs flex items-center gap-1.5 cursor-pointer"
+                >
+                  <span>Enter CRM</span>
+                  <ArrowRight className="w-3.5 h-3.5 text-[#DCFCE7]" />
+                </Link>
+              </div>
             </div>
           </div>
         </div>
