@@ -75,7 +75,7 @@ body {
 }
 
 /* ========================================================================= */
-/* CENTER-VERTICAL HINGE TRANSITION — REFINED OPTICAL DISSOLVE               */
+/* CENTER-VERTICAL HINGE TRANSITION — INTENSE OPTICAL MOTION BLUR            */
 /* ========================================================================= */
 
 .optic-perspective-container {
@@ -93,26 +93,46 @@ body {
   will-change: transform, filter, opacity;
 }
 
-/* Progressive Horizontal Blur Mask approaching the vertical center hinge */
+/* Layered Optical Center-Hinge Motion Blur Corridor */
+.optic-hinge-blur-gradient {
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  mask-image: radial-gradient(
+    ellipse 70% 100% at 50% 50%,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.85) 30%,
+    rgba(0, 0, 0, 0.45) 60%,
+    transparent 100%
+  );
+  -webkit-mask-image: radial-gradient(
+    ellipse 70% 100% at 50% 50%,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.85) 30%,
+    rgba(0, 0, 0, 0.45) 60%,
+    transparent 100%
+  );
+}
+
+/* Progressive Horizontal Mask approaching the vertical center line */
 .optic-mask-active {
   mask-image: linear-gradient(
     90deg,
     rgba(0, 0, 0, 1) 0%,
-    rgba(0, 0, 0, 0.88) 25%,
-    rgba(0, 0, 0, 0.6) 48%,
-    rgba(0, 0, 0, 0.48) 50%,
-    rgba(0, 0, 0, 0.6) 52%,
-    rgba(0, 0, 0, 0.88) 75%,
+    rgba(0, 0, 0, 0.9) 20%,
+    rgba(0, 0, 0, 0.65) 45%,
+    rgba(0, 0, 0, 0.5) 50%,
+    rgba(0, 0, 0, 0.65) 55%,
+    rgba(0, 0, 0, 0.9) 80%,
     rgba(0, 0, 0, 1) 100%
   );
   -webkit-mask-image: linear-gradient(
     90deg,
     rgba(0, 0, 0, 1) 0%,
-    rgba(0, 0, 0, 0.88) 25%,
-    rgba(0, 0, 0, 0.6) 48%,
-    rgba(0, 0, 0, 0.48) 50%,
-    rgba(0, 0, 0, 0.6) 52%,
-    rgba(0, 0, 0, 0.88) 75%,
+    rgba(0, 0, 0, 0.9) 20%,
+    rgba(0, 0, 0, 0.65) 45%,
+    rgba(0, 0, 0, 0.5) 50%,
+    rgba(0, 0, 0, 0.65) 55%,
+    rgba(0, 0, 0, 0.9) 80%,
     rgba(0, 0, 0, 1) 100%
   );
 }
@@ -127,5 +147,8 @@ body {
     filter: none !important;
     mask-image: none !important;
     -webkit-mask-image: none !important;
+  }
+  .optic-hinge-blur-gradient {
+    display: none !important;
   }
 }
