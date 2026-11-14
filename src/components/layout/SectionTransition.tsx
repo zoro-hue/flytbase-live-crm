@@ -2,26 +2,65 @@
 
 import React, { useEffect, useState, useRef } from "react";
 import { usePathname } from "next/navigation";
+import { motion, AnimatePresence, useReducedMotion, type Variants } from "framer-motion";
 
 interface SectionTransitionProps {
   children: React.ReactNode;
 }
 
-const FOLD_OUT_DURATION = 240; // ms for outgoing section fold
-const FOLD_IN_DURATION = 280;  // ms for incoming section unfold
+// Cinematic timing: 460ms fold + 490ms unfold = 950ms total (within 850–1100ms range)
+const FOLD_OUT_DURATION_MS = 460;
+const FOLD_IN_DURATION_MS = 490;
+
+const variants: Variants = {
+  idle: {
+    scaleX: 1,
+    scaleY: 1,
+    rotateY: 0,
+    filter: "blur(0px)",
+    opacity: 1,
+    transition: { duration: 0.1 },
+  },
+  folding: {
+    scaleX: 0.932,
+    scaleY: 0.985,
+    rotateY: -5.5,
+    filter: "blur(8px)",
+    opacity: 0.05,
+    transition: {
+      duration: FOLD_OUT_DURATION_MS / 1000,
+      ease: [0.35, 0, 0.65, 0.1], // Slow, elegant inward acceleration
+    },
+  },
+  unfolding: {
+    scaleX: [0.935, 1],
+    scaleY: [0.985, 1],
+    rotateY: [5.5, 0],
+    filter: ["blur(8px)", "blur(0px)"],
+    opacity: [0.08, 1],
+    transition: {
+      duration: FOLD_IN_DURATION_MS / 1000,
+      ease: [0.16, 1, 0.3, 1], // Cinematic, velvety deceleration
+    },
+  },
+};
 
 export const SectionTransition: React.FC<SectionTransitionProps> = ({ children }) => {
   const pathname = usePathname();
+  const shouldReduceMotion = useReducedMotion();
+
   const [displayChildren, setDisplayChildren] = useState<React.ReactNode>(children);
   const [currentPath, setCurrentPath] = useState<string>(pathname);
   const [phase, setPhase] = useState<"idle" | "folding" | "unfolding">("idle");
-  
+  const [showHinge, setShowHinge] = useState<boolean>(false);
+
   const isFirstMount = useRef<boolean>(true);
   const pendingChildrenRef = useRef<React.ReactNode>(children);
-  const foldTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-  const unfoldTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const foldTimerRef = useRef<NodeJS.Timeout | null>(null);
+  const unfoldTimerRef = useRef<NodeJS.Timeout | null>(null);
+  const hingeFadeTimerRef = useRef<NodeJS.Timeout | null>(null);
 
-  // Keep pendingChildren up to date whenever Next.js gives us new children
+  // Keep latest children synced
   pendingChildrenRef.current = children;
 
   useEffect(() => {
@@ -31,72 +70,96 @@ export const SectionTransition: React.FC<SectionTransitionProps> = ({ children }
       return;
     }
 
-    // Only trigger transition if the route path has actually changed
+    // Do nothing if navigating to the exact same URL
     if (pathname === currentPath) {
       setDisplayChildren(children);
       return;
     }
 
-    // Clear any active transition timers to prevent overlapping animations during rapid navigation
-    if (foldTimeoutRef.current) clearTimeout(foldTimeoutRef.current);
-    if (unfoldTimeoutRef.current) clearTimeout(unfoldTimeoutRef.current);
+    // Clear any active timers to prevent overlapping animations during rapid navigation
+    if (foldTimerRef.current) clearTimeout(foldTimerRef.current);
+    if (unfoldTimerRef.current) clearTimeout(unfoldTimerRef.current);
+    if (hingeFadeTimerRef.current) clearTimeout(hingeFadeTimerRef.current);
 
     setCurrentPath(pathname);
+
+    // If user prefers reduced motion, do a clean, instant transition
+    if (shouldReduceMotion) {
+      setDisplayChildren(pendingChildrenRef.current);
+      setPhase("idle");
+      setShowHinge(false);
+      return;
+    }
+
+    // Sequence Step 1 & 2: Orange vertical hinge appears at exact center, fold begins
+    setShowHinge(true);
     setPhase("folding");
 
-    // Phase 1: Fold out outgoing section around center hinge with progressive blur
-    foldTimeoutRef.current = setTimeout(() => {
-      // Switch to the newly rendered section children
+    // Sequence Step 3 & 4: Outgoing page folds inward toward vertical center axis with progressive blur
+    foldTimerRef.current = setTimeout(() => {
+      // Sequence Step 5: Switch content cleanly at the vertical fold peak
       setDisplayChildren(pendingChildrenRef.current);
-      
-      // Reset scroll position to top of new section smoothly
+
       if (typeof window !== "undefined") {
         window.scrollTo({ top: 0, left: 0, behavior: "instant" });
       }
 
-      // Phase 2: Unfold incoming section outward from center hinge, restoring sharpness
+      // Sequence Step 5 & 6: Incoming section emerges from center hinge and expands outward
       setPhase("unfolding");
 
-      unfoldTimeoutRef.current = setTimeout(() => {
+      // Sequence Step 7: Orange vertical hinge line fades away as page becomes sharp
+      hingeFadeTimerRef.current = setTimeout(() => {
+        setShowHinge(false);
+      }, FOLD_IN_DURATION_MS - 150);
+
+      unfoldTimerRef.current = setTimeout(() => {
         setPhase("idle");
-      }, FOLD_IN_DURATION);
-    }, FOLD_OUT_DURATION);
+      }, FOLD_IN_DURATION_MS);
+    }, FOLD_OUT_DURATION_MS);
 
     return () => {
-      if (foldTimeoutRef.current) clearTimeout(foldTimeoutRef.current);
-      if (unfoldTimeoutRef.current) clearTimeout(unfoldTimeoutRef.current);
+      if (foldTimerRef.current) clearTimeout(foldTimerRef.current);
+      if (unfoldTimerRef.current) clearTimeout(unfoldTimerRef.current);
+      if (hingeFadeTimerRef.current) clearTimeout(hingeFadeTimerRef.current);
     };
-  }, [pathname]);
+  }, [pathname, shouldReduceMotion]);
 
   return (
-    <div className="optic-perspective-container w-full min-h-full relative">
-      {/* Central Optical Hinge Guideline & Spine Crease */}
-      <div
-        aria-hidden="true"
-        className={`pointer-events-none absolute inset-y-0 left-1/2 -translate-x-1/2 w-48 z-20 transition-opacity duration-200 ${
-          phase !== "idle" ? "opacity-100" : "opacity-0"
+    <div className="optic-perspective-container w-full min-h-full relative overflow-hidden">
+      {/* Exact Center Vertical Hinge Line — 1px, #FF5A00, subtle opacity, no glow, no bloom */}
+      <AnimatePresence>
+        {showHinge && !shouldReduceMotion && (
+          <motion.div
+            key="center-vertical-hinge-line"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 0.65 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.22, ease: "easeInOut" }}
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-y-0 left-1/2 -translate-x-1/2 w-[1px] z-30"
+            style={{
+              backgroundColor: "#FF5A00",
+            }}
+          />
+        )}
+      </AnimatePresence>
+
+      {/* 3D Hinge Transform Canvas with Framer Motion & CSS 3D */}
+      <motion.div
+        className={`optic-hinge-leaf w-full ${
+          phase === "folding" || phase === "unfolding" ? "optic-mask-active" : ""
         }`}
         style={{
-          background:
-            "linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.5) 44%, rgba(255,85,0,0.18) 50%, rgba(0,0,0,0.5) 56%, transparent 100%)",
+          transformStyle: "preserve-3d",
+          transformOrigin: "50% 50%", // Exact vertical center hinge
+          backfaceVisibility: "hidden",
+          WebkitBackfaceVisibility: "hidden",
         }}
-      >
-        {/* Subtle optical spine hairline with FlytBase deep orange accent */}
-        <div className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-[1px] bg-gradient-to-b from-transparent via-[#FF5500]/30 to-transparent" />
-      </div>
-
-      {/* 3D Hinge Transform Leaf containing Section Content */}
-      <div
-        className={`optic-hinge-leaf w-full ${
-          phase === "folding"
-            ? "optic-phase-folding"
-            : phase === "unfolding"
-            ? "optic-phase-unfolding"
-            : "optic-phase-idle"
-        }`}
+        variants={variants}
+        animate={shouldReduceMotion ? "idle" : phase}
       >
         {displayChildren}
-      </div>
+      </motion.div>
     </div>
   );
 };
