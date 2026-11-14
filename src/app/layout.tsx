@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Sidebar } from "@/components/layout/Sidebar";
-import { DynamicIslandNavbar } from "@/components/layout/DynamicIslandNavbar";
 import { EvidenceDrawer } from "@/components/evidence/EvidenceDrawer";
 import { NoteModal } from "@/components/notes/NoteModal";
 
@@ -26,14 +25,11 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className={`${inter.variable} font-sans bg-[#08090B] text-[#F4F4F5] min-h-screen antialiased`}>
-        {/* Apple Dynamic Island Inspired Floating Top Navbar */}
-        <DynamicIslandNavbar />
-
-        {/* Minimal Pitch-Dark Sidebar */}
+        {/* Floating Capsule Sidebar (Dynamic Island Style) */}
         <Sidebar />
 
         {/* Main Content Area */}
-        <div className="lg:pl-64 pt-16 min-h-screen flex flex-col">
+        <div className="lg:pl-72 pt-16 lg:pt-4 min-h-screen flex flex-col">
           <main className="flex-1 p-4 sm:p-6 lg:p-8 max-w-7xl w-full mx-auto space-y-8">
             {children}
           </main>
