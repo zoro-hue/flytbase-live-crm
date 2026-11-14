@@ -195,7 +195,7 @@ export const StakeholderNetwork: React.FC = () => {
                       strokeWidth={isSelected ? "1.5" : "1"}
                       strokeDasharray={isSelected ? undefined : "2 2"}
                       opacity={isSelected ? 0.9 : 0.6}
-                      className="transition-all duration-300"
+                      className="transition-all duration-380 ease-[cubic-bezier(0.22,1,0.36,1)]"
                     />
                     {isSelected && (
                       <circle
@@ -247,7 +247,7 @@ export const StakeholderNetwork: React.FC = () => {
                     transform: "translate(-50%, -50%)",
                   }}
                   onClick={() => setSelectedNode(node)}
-                  className={`absolute z-20 cursor-pointer p-2 rounded-xl transition-all duration-200 group flex items-center gap-2 ${
+                  className={`absolute z-20 cursor-pointer p-2 rounded-xl transition-all duration-380 ease-[cubic-bezier(0.22,1,0.36,1)] group flex items-center gap-2 ${
                     isSelected
                       ? "bg-[#141619] border border-[#FF5A00] shadow-lg scale-105"
                       : "bg-[#0D0F12]/90 hover:bg-[#141619] border border-[#25282D] hover:border-[#606570]"

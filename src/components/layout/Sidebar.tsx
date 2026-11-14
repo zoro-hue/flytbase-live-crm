@@ -48,11 +48,11 @@ export const Sidebar: React.FC = () => {
 
   return (
     <>
-      {/* Floating Expandable Sidebar for Desktop (Icon-First + Expandable Mode) */}
+      {/* Floating Expandable Sidebar for Desktop (Icon-First + Expandable Mode, 450–550ms smooth transition) */}
       <aside
         onMouseEnter={() => setIsExpanded(true)}
         onMouseLeave={() => setIsExpanded(false)}
-        className={`hidden lg:flex fixed left-3 top-3 bottom-3 z-40 select-none flex-col justify-between p-2.5 rounded-2xl glass-panel transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+        className={`hidden lg:flex fixed left-3 top-3 bottom-3 z-40 select-none flex-col justify-between p-2.5 rounded-2xl glass-panel transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
           isExpanded ? "w-56" : "w-16"
         }`}
       >
@@ -94,20 +94,20 @@ export const Sidebar: React.FC = () => {
               >
                 <Link
                   href={item.href}
-                  className={`relative flex items-center gap-3 px-2.5 py-2 rounded-xl text-xs font-medium transition-all duration-150 ${
+                  className={`relative flex items-center gap-3 px-2.5 py-2 rounded-xl text-xs font-medium transition-all duration-350 ease-[cubic-bezier(0.22,1,0.36,1)] ${
                     isActive
                       ? "bg-[#141619] text-[#F4F4F5] border border-[#25282D] shadow-sm"
-                      : "text-[#9A9FA8] hover:text-[#F4F4F5] hover:bg-[#141619]/60"
+                      : "text-[#9A9FA8] hover:text-[#F4F4F5] hover:bg-[#141619]/60 border border-transparent"
                   }`}
                 >
                   {/* Restrained active indicator */}
                   {isActive && (
-                    <span className="w-1 h-3.5 rounded-full bg-[#FF5A00] absolute left-1" />
+                    <span className="w-1 h-3.5 rounded-full bg-[#FF5A00] absolute left-1 transition-all duration-350" />
                   )}
 
                   <div className="relative flex-shrink-0">
                     <Icon
-                      className={`w-4 h-4 transition-colors ${
+                      className={`w-4 h-4 transition-colors duration-300 ${
                         isActive ? "text-[#FF5A00]" : "text-[#71717A]"
                       }`}
                     />
@@ -118,15 +118,15 @@ export const Sidebar: React.FC = () => {
 
                   {/* Label (Visible when expanded) */}
                   {isExpanded && (
-                    <span className="truncate whitespace-nowrap transition-opacity duration-200">
+                    <span className="truncate whitespace-nowrap transition-opacity duration-350 ease-[cubic-bezier(0.22,1,0.36,1)]">
                       {item.name}
                     </span>
                   )}
                 </Link>
 
-                {/* Elegant Tooltip when collapsed */}
+                {/* Elegant Tooltip when collapsed (250–350ms smooth appearance) */}
                 {!isExpanded && isHovered && (
-                  <div className="absolute left-full ml-3 top-1/2 -translate-y-1/2 px-2.5 py-1 rounded-lg bg-[#0D0F12] border border-[#25282D] shadow-2xl text-[11px] font-medium text-white whitespace-nowrap z-50 animate-in fade-in slide-in-from-left-1 duration-150 pointer-events-none">
+                  <div className="absolute left-full ml-3 top-1/2 -translate-y-1/2 px-2.5 py-1 rounded-lg bg-[#0D0F12] border border-[#25282D] shadow-2xl text-[11px] font-medium text-white whitespace-nowrap z-50 transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] pointer-events-none">
                     {item.name}
                     {item.badge && (
                       <span className="ml-1.5 text-[9px] font-mono text-[#FF5A00]">

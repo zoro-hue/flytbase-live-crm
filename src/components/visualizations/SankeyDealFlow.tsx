@@ -155,7 +155,7 @@ export const SankeyDealFlow: React.FC = () => {
                 fill={`url(#grad-${flow.id})`}
                 stroke={isHovered ? "#FFFFFF" : flow.color}
                 strokeWidth={isHovered ? 1.5 : 0.5}
-                className="transition-all duration-200 cursor-pointer"
+                className="transition-all duration-380 ease-[cubic-bezier(0.22,1,0.36,1)] cursor-pointer"
                 onMouseEnter={() => setHoveredFlow(flow)}
                 onMouseLeave={() => setHoveredFlow(null)}
               />

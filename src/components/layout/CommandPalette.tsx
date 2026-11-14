@@ -190,9 +190,9 @@ export const CommandPalette: React.FC = () => {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-start justify-center pt-20 px-4 bg-black/80 backdrop-blur-md transition-all">
+    <div className="fixed inset-0 z-50 flex items-start justify-center pt-20 px-4 bg-black/80 backdrop-blur-md transition-opacity duration-400 ease-[cubic-bezier(0.22,1,0.36,1)]">
       <div
-        className="w-full max-w-xl rounded-2xl bg-[#0D0F12] border border-[#25282D] shadow-2xl overflow-hidden flex flex-col max-h-[75vh]"
+        className="w-full max-w-xl rounded-2xl bg-[#0D0F12] border border-[#25282D] shadow-2xl overflow-hidden flex flex-col max-h-[75vh] transition-all duration-400 ease-[cubic-bezier(0.22,1,0.36,1)]"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Search Input Bar */}

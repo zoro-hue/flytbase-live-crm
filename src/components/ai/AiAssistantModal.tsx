@@ -145,10 +145,10 @@ export const AiAssistantModal: React.FC = () => {
         </button>
       </div>
 
-      {/* AI Assistant Modal Panel */}
+      {/* AI Assistant Modal Panel (450–550ms smooth expansion) */}
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-in fade-in duration-200">
-          <div className="relative w-full max-w-xl h-[560px] rounded-2xl bg-[#0D0F12] border border-[#25282D] shadow-2xl flex flex-col overflow-hidden">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md transition-opacity duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]">
+          <div className="relative w-full max-w-xl h-[560px] rounded-2xl bg-[#0D0F12] border border-[#25282D] shadow-2xl flex flex-col overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]">
             {/* Panel Header */}
             <div className="px-5 py-4 border-b border-[#25282D] bg-[#050505] flex items-center justify-between">
               <div className="flex items-center gap-2.5">

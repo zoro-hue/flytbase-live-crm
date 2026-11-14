@@ -275,7 +275,7 @@ export const DeliveryRunway: React.FC = () => {
             {TRACKS.map((track) => (
               <div
                 key={track.id}
-                className="relative flex items-center h-16 rounded-xl bg-[#0D0F12]/60 border border-[#25282D] hover:border-[#606570] transition-colors px-3 group"
+                className="relative flex items-center h-16 rounded-xl bg-[#0D0F12]/60 border border-[#25282D] hover:border-[#606570] transition-colors duration-350 ease-[cubic-bezier(0.22,1,0.36,1)] px-3 group"
               >
                 {/* Account / Track badge (left column) */}
                 <div className="w-48 flex-shrink-0 pr-3 z-20">
@@ -330,14 +330,14 @@ export const DeliveryRunway: React.FC = () => {
                         key={m.id}
                         style={{ left: `${m.columnPercent}%` }}
                         onClick={() => setSelectedMilestone(m)}
-                        className={`absolute -top-2.5 -translate-x-1/2 z-20 cursor-pointer transition-transform hover:scale-125 ${
+                        className={`absolute -top-2.5 -translate-x-1/2 z-20 cursor-pointer transition-transform duration-350 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-125 ${
                           isSelected ? "scale-125" : ""
                         }`}
                         title={`${m.name} (${m.dateStr})`}
                       >
                         {/* 45 degree rotated square = diamond */}
                         <div
-                          className={`w-4 h-4 rotate-45 border transition-all ${diamondBg} ${
+                          className={`w-4 h-4 rotate-45 border transition-all duration-350 ease-[cubic-bezier(0.22,1,0.36,1)] ${diamondBg} ${
                             isSelected ? "ring-2 ring-white shadow-lg" : ""
                           }`}
                         />

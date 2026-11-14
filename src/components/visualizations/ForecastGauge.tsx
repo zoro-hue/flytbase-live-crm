@@ -18,13 +18,22 @@ export const ForecastGauge: React.FC<ForecastGaugeProps> = ({
   targetAmount = "£2.1M",
   percentage = 73,
 }) => {
+  const [currentPct, setCurrentPct] = React.useState(0);
+
+  React.useEffect(() => {
+    const timer = setTimeout(() => {
+      setCurrentPct(percentage);
+    }, 150);
+    return () => clearTimeout(timer);
+  }, [percentage]);
+
   // SVG Arc calculation for semi-circle
   // Radius = 85, Center = (110, 105)
   // Arc from 180 deg to 0 deg
   const radius = 80;
   const strokeWidth = 16;
   const circumference = Math.PI * radius; // Half-circle circumference
-  const strokeDashoffset = circumference - (percentage / 100) * circumference;
+  const strokeDashoffset = circumference - (currentPct / 100) * circumference;
 
   return (
     <div className="matte-card p-5 rounded-2xl relative overflow-hidden flex flex-col justify-between">
@@ -90,7 +99,7 @@ export const ForecastGauge: React.FC<ForecastGaugeProps> = ({
               strokeDasharray={circumference}
               strokeDashoffset={strokeDashoffset}
               strokeLinecap="round"
-              className="transition-all duration-1000 ease-out"
+              className="transition-all duration-1400 ease-[cubic-bezier(0.22,1,0.36,1)]"
             />
 
             {/* Inner Accent Ring */}

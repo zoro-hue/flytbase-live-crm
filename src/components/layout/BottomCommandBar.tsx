@@ -26,7 +26,7 @@ export const BottomCommandBar: React.FC<BottomCommandBarProps> = ({
         {/* Search / Jump Input Pill */}
         <button
           onClick={onOpenSearch || (() => window.dispatchEvent(new CustomEvent("open-global-search")))}
-          className="flex-1 flex items-center gap-2 text-left text-xs text-[#9A9FA8] hover:text-[#F4F4F5] transition-colors cursor-pointer min-w-0"
+          className="flex-1 flex items-center gap-2 text-left text-xs text-[#9A9FA8] hover:text-[#F4F4F5] transition-colors duration-350 ease-[cubic-bezier(0.22,1,0.36,1)] cursor-pointer min-w-0"
         >
           <Search className="w-3.5 h-3.5 text-[#606570] flex-shrink-0" />
           <span className="truncate">Jump to account, deal, contact, evidence...</span>
@@ -40,7 +40,7 @@ export const BottomCommandBar: React.FC<BottomCommandBarProps> = ({
           {/* Ask AI Action */}
           <button
             onClick={onOpenAi || (() => window.dispatchEvent(new CustomEvent("open-ai-assistant")))}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#141619] hover:bg-[#1D2024] border border-[#25282D] hover:border-[#FF5A00]/40 text-xs font-semibold text-[#F4F4F5] transition-all cursor-pointer active:scale-95"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#141619] hover:bg-[#1D2024] border border-[#25282D] hover:border-[#FF5A00]/40 text-xs font-semibold text-[#F4F4F5] transition-all duration-380 ease-[cubic-bezier(0.22,1,0.36,1)] cursor-pointer active:scale-95"
           >
             <Sparkles className="w-3.5 h-3.5 text-[#FF5A00]" />
             <span className="hidden sm:inline">Ask AI</span>
@@ -49,7 +49,7 @@ export const BottomCommandBar: React.FC<BottomCommandBarProps> = ({
           {/* Review Pending Actions Pill (As seen in reference screenshot: Review 6 ->) */}
           <Link
             href="/actions"
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#050505] hover:bg-[#141619] border border-[#25282D] hover:border-[#FF5A00]/40 text-xs font-semibold text-white transition-all shadow-sm active:scale-95"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#050505] hover:bg-[#141619] border border-[#25282D] hover:border-[#FF5A00]/40 text-xs font-semibold text-white transition-all duration-380 ease-[cubic-bezier(0.22,1,0.36,1)] shadow-sm active:scale-95"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-[#FF5A00] animate-pulse" />
             <span>Review Actions</span>

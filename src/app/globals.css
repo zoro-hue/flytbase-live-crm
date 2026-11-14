@@ -5,22 +5,23 @@
 :root {
   --background: #050505;
   --foreground: #F4F4F5;
+  --card-bg: #0D0F12;
+  --panel-bg: #141619;
+  --border-color: #25282D;
+  --primary-orange: #FF5A00;
 }
 
 body {
-  color: #F4F4F5;
-  background-color: #050505;
-  font-family: var(--font-inter), "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  min-height: 100vh;
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   overflow-x: hidden;
-  background-image: radial-gradient(circle at 50% 0%, rgba(255, 90, 0, 0.025) 0%, transparent 45%);
-  background-attachment: fixed;
 }
 
-/* Custom Matte Scrollbar */
+/* Custom scrollbar for dark enterprise feel */
 ::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
+  width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -29,19 +30,15 @@ body {
 
 ::-webkit-scrollbar-thumb {
   background: #25282D;
-  border-radius: 3px;
+  border-radius: 9999px;
+  transition: background 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #363A42;
+  background: #3A3F48;
 }
 
-/* Tabular numerals for financial and metric data */
-.tabular-nums {
-  font-variant-numeric: tabular-nums;
-}
-
-/* Dark Glassmorphism & Panel Surfaces */
+/* Glassmorphism panels for modern floating feel */
 .glass-panel {
   background: rgba(13, 15, 18, 0.88);
   backdrop-filter: blur(16px);
@@ -58,29 +55,71 @@ body {
   box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.85);
 }
 
-/* Card hover lift & subtle border illumination */
+/* ========================================================================= */
+/* HOVER ANIMATIONS — SMOOTH, DELIBERATE, HIGH MOTION QUALITY (350–450ms)    */
+/* ========================================================================= */
+
+/* Card hover lift & subtle border illumination (350–450ms) */
 .matte-card {
   background: #0D0F12;
   border: 1px solid #25282D;
   box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.7);
-  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.22s ease, box-shadow 0.22s ease;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 0.35s ease,
+              background-color 0.35s ease,
+              box-shadow 0.4s ease;
 }
 
 .matte-card:hover {
-  transform: translateY(-2px);
-  border-color: #363A42;
-  box-shadow: 0 10px 30px -4px rgba(0, 0, 0, 0.85);
+  transform: translateY(-2.5px);
+  border-color: #383D45;
+  box-shadow: 0 12px 32px -4px rgba(0, 0, 0, 0.88);
+}
+
+/* Button & interactive controls feedback (180–250ms press, 300–400ms hover) */
+.interactive-btn {
+  transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1),
+              background-color 0.35s ease,
+              border-color 0.35s ease,
+              color 0.35s ease,
+              box-shadow 0.35s ease;
+}
+
+.interactive-btn:active {
+  transform: scale(0.96);
+}
+
+/* Tooltip appearance (250–350ms) */
+.smooth-tooltip {
+  transition: opacity 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Dropdown entrance animation (350–450ms) */
+.dropdown-enter {
+  animation: dropdownFadeIn 0.38s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes dropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 /* Internal question tabs transition */
 .section-matte-enter {
-  animation: sectionFade 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: sectionFade 0.38s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 @keyframes sectionFade {
   from {
     opacity: 0;
-    transform: translateY(4px);
+    transform: translateY(6px);
   }
   to {
     opacity: 1;
@@ -89,14 +128,16 @@ body {
 }
 
 /* ========================================================================= */
-/* CENTER-VERTICAL HINGE TRANSITION — INTENSE OPTICAL MOTION BLUR            */
+/* CENTER-VERTICAL HINGE TRANSITION — 1400–1700ms CINEMATIC SEQUENCE        */
 /* ========================================================================= */
 
 .optic-perspective-container {
-  perspective: 1400px;
-  perspective-origin: 50% 32%;
+  perspective: 1200px; /* Pronounced 3D depth */
+  perspective-origin: 50% 35%;
   transform-style: preserve-3d;
   width: 100%;
+  position: relative;
+  overflow: hidden;
 }
 
 .optic-hinge-leaf {
@@ -107,22 +148,22 @@ body {
   will-change: transform, filter, opacity;
 }
 
-/* Layered Optical Center-Hinge Motion Blur Corridor */
+/* Layered Optical Center-Hinge Directional Motion Blur Corridor */
 .optic-hinge-blur-gradient {
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   mask-image: radial-gradient(
-    ellipse 70% 100% at 50% 50%,
+    ellipse 65% 100% at 50% 50%,
     rgba(0, 0, 0, 1) 0%,
-    rgba(0, 0, 0, 0.85) 30%,
-    rgba(0, 0, 0, 0.45) 60%,
+    rgba(0, 0, 0, 0.85) 35%,
+    rgba(0, 0, 0, 0.45) 65%,
     transparent 100%
   );
   -webkit-mask-image: radial-gradient(
-    ellipse 70% 100% at 50% 50%,
+    ellipse 65% 100% at 50% 50%,
     rgba(0, 0, 0, 1) 0%,
-    rgba(0, 0, 0, 0.85) 30%,
-    rgba(0, 0, 0, 0.45) 60%,
+    rgba(0, 0, 0, 0.85) 35%,
+    rgba(0, 0, 0, 0.45) 65%,
     transparent 100%
   );
 }
@@ -132,21 +173,21 @@ body {
   mask-image: linear-gradient(
     90deg,
     rgba(0, 0, 0, 1) 0%,
-    rgba(0, 0, 0, 0.9) 20%,
+    rgba(0, 0, 0, 0.92) 20%,
     rgba(0, 0, 0, 0.65) 45%,
-    rgba(0, 0, 0, 0.5) 50%,
+    rgba(0, 0, 0, 0.45) 50%,
     rgba(0, 0, 0, 0.65) 55%,
-    rgba(0, 0, 0, 0.9) 80%,
+    rgba(0, 0, 0, 0.92) 80%,
     rgba(0, 0, 0, 1) 100%
   );
   -webkit-mask-image: linear-gradient(
     90deg,
     rgba(0, 0, 0, 1) 0%,
-    rgba(0, 0, 0, 0.9) 20%,
+    rgba(0, 0, 0, 0.92) 20%,
     rgba(0, 0, 0, 0.65) 45%,
-    rgba(0, 0, 0, 0.5) 50%,
+    rgba(0, 0, 0, 0.45) 50%,
     rgba(0, 0, 0, 0.65) 55%,
-    rgba(0, 0, 0, 0.9) 80%,
+    rgba(0, 0, 0, 0.92) 80%,
     rgba(0, 0, 0, 1) 100%
   );
 }

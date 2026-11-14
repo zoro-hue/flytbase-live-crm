@@ -179,7 +179,7 @@ export const RadarHealthMap: React.FC = () => {
             return (
               <g
                 key={node.id}
-                className="cursor-pointer transition-transform duration-200"
+                className="cursor-pointer transition-all duration-350 ease-[cubic-bezier(0.22,1,0.36,1)]"
                 onMouseEnter={() => setHovered(node)}
                 onMouseLeave={() => setHovered(null)}
               >

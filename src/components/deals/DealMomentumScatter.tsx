@@ -255,7 +255,7 @@ export const DealMomentumScatter: React.FC = () => {
                           key={deal.id}
                           style={{ left: `${xPercent}%` }}
                           onClick={() => setSelectedDeal(deal)}
-                          className={`absolute -translate-x-1/2 w-8 h-8 rounded-full border flex items-center justify-center font-bold text-xs transition-all duration-200 cursor-pointer ${bubbleColor} ${
+                          className={`absolute -translate-x-1/2 w-8 h-8 rounded-full border flex items-center justify-center font-bold text-xs transition-all duration-350 ease-[cubic-bezier(0.22,1,0.36,1)] cursor-pointer ${bubbleColor} ${
                             isSelected
                               ? "ring-2 ring-white scale-125 z-30"
                               : "hover:scale-110 z-20"

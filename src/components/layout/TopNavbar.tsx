@@ -113,7 +113,7 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({ onOpenAi, onOpenSearch }) 
             </button>
 
             {accountDropdownOpen && (
-              <div className="absolute left-0 mt-1.5 w-56 rounded-xl bg-[#0D0F12] border border-[#25282D] p-1.5 shadow-2xl z-50 animate-in fade-in zoom-in-95 duration-150">
+              <div className="absolute left-0 mt-1.5 w-56 rounded-xl bg-[#0D0F12] border border-[#25282D] p-1.5 shadow-2xl z-50 dropdown-enter">
                 <div className="text-[10px] font-mono uppercase tracking-wider text-[#606570] px-2.5 py-1">
                   Target Enterprise Accounts
                 </div>
@@ -221,7 +221,7 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({ onOpenAi, onOpenSearch }) 
             </button>
 
             {notificationsOpen && (
-              <div className="absolute right-0 mt-2 w-72 rounded-2xl bg-[#0D0F12] border border-[#25282D] p-3 shadow-2xl z-50 space-y-2 animate-in fade-in zoom-in-95 duration-150">
+              <div className="absolute right-0 mt-2 w-72 rounded-2xl bg-[#0D0F12] border border-[#25282D] p-3 shadow-2xl z-50 space-y-2 dropdown-enter">
                 <div className="flex items-center justify-between border-b border-[#25282D] pb-2">
                   <span className="text-xs font-bold text-white">Live Field Signals</span>
                   <span className="text-[10px] font-mono text-[#FF5A00]">3 Active Events</span>

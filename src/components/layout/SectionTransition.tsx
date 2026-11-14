@@ -8,9 +8,22 @@ interface SectionTransitionProps {
   children: React.ReactNode;
 }
 
-// Cinematic timing: 470ms fold + 490ms unfold = 960ms total (within 850–1100ms range)
-const FOLD_OUT_DURATION_MS = 470;
-const FOLD_IN_DURATION_MS = 490;
+/**
+ * EXACT SEQUENCE SPECIFICATION (Total: 1650ms):
+ * Phase 1 — Preparation (0–200ms): Content visible, depth begins, center orange hinge appears.
+ * Phase 2 — Folding (200–650ms, 450ms): Visibly folds toward center, rotateY: -14deg, scaleX: 0.74, blur(16px), cubic-bezier(0.76, 0, 0.24, 1).
+ * Phase 3 — Hinge Transition (650–800ms, 150ms): Outgoing hidden behind hinge, content swaps to new route, incoming positioned at central axis.
+ * Phase 4 — Unfolding (800–1450ms, 650ms): Expands outward from center, blur dissolves (16px -> 0px), rotateY (14deg -> 0deg), cubic-bezier(0.22, 1, 0.36, 1).
+ * Phase 5 — Completion (1450–1650ms, 200ms): Orange hinge fades out smoothly, section settles into final stationary position.
+ */
+
+const PREP_MS = 200;
+const FOLD_END_MS = 650;
+const SWAP_END_MS = 800;
+const UNFOLD_END_MS = 1450;
+const TOTAL_DURATION_MS = 1650;
+
+type TransitionPhase = "idle" | "prep" | "folding" | "hingeSwap" | "unfolding" | "settling";
 
 const variants: Variants = {
   idle: {
@@ -19,31 +32,61 @@ const variants: Variants = {
     rotateY: 0,
     filter: "blur(0px)",
     opacity: 1,
-    transition: { duration: 0.1 },
+    transition: { duration: 0.15 },
+  },
+  prep: {
+    scaleX: 0.995,
+    scaleY: 0.998,
+    rotateY: -1,
+    filter: "blur(0.5px)",
+    opacity: 0.98,
+    transition: {
+      duration: PREP_MS / 1000,
+      ease: [0.22, 1, 0.36, 1],
+    },
   },
   folding: {
-    scaleX: 0.925,
-    scaleY: 0.985,
-    rotateY: -6,
-    // Clearly visible intense motion blur that accelerates toward the center hinge
-    filter: "blur(12px)",
-    // Substantial opacity so the blurred content is vividly visible as it folds
-    opacity: 0.45,
+    scaleX: 0.74, // Noticeable horizontal compression toward the center
+    scaleY: 0.97,
+    rotateY: -14, // Clearly visible 3D perspective fold
+    filter: "blur(16px)", // Directional heavy blur (12-18px specified)
+    opacity: 0.12, // Content dissolves as it reaches the center hinge
     transition: {
-      duration: FOLD_OUT_DURATION_MS / 1000,
-      ease: [0.32, 0, 0.67, 0.1], // Slow, continuous inward movement
+      duration: (FOLD_END_MS - PREP_MS) / 1000, // 450ms
+      ease: [0.76, 0, 0.24, 1], // Exact user requested folding curve
+    },
+  },
+  hingeSwap: {
+    scaleX: 0.74,
+    scaleY: 0.97,
+    rotateY: 14, // Symmetrical counter-angle for incoming unfold
+    filter: "blur(16px)",
+    opacity: 0.12,
+    transition: {
+      duration: (SWAP_END_MS - FOLD_END_MS) / 1000, // 150ms
+      ease: "linear",
     },
   },
   unfolding: {
-    // Unfolds from peak blur and 3D angle back to crisp sharpness
-    scaleX: [0.928, 1],
-    scaleY: [0.986, 1],
-    rotateY: [6, 0],
-    filter: ["blur(12px)", "blur(0px)"],
-    opacity: [0.45, 1],
+    scaleX: 1,
+    scaleY: 1,
+    rotateY: 0,
+    filter: "blur(0px)", // Blur dissolves progressively from 16px to 0px
+    opacity: 1,
     transition: {
-      duration: FOLD_IN_DURATION_MS / 1000,
-      ease: [0.16, 1, 0.3, 1], // Velvety, smooth deceleration into full sharpness
+      duration: (UNFOLD_END_MS - SWAP_END_MS) / 1000, // 650ms
+      ease: [0.22, 1, 0.36, 1], // Exact user requested unfolding curve
+    },
+  },
+  settling: {
+    scaleX: 1,
+    scaleY: 1,
+    rotateY: 0,
+    filter: "blur(0px)",
+    opacity: 1,
+    transition: {
+      duration: (TOTAL_DURATION_MS - UNFOLD_END_MS) / 1000, // 200ms
+      ease: "easeOut",
     },
   },
 };
@@ -54,16 +97,28 @@ export const SectionTransition: React.FC<SectionTransitionProps> = ({ children }
 
   const [displayChildren, setDisplayChildren] = useState<React.ReactNode>(children);
   const [currentPath, setCurrentPath] = useState<string>(pathname);
-  const [phase, setPhase] = useState<"idle" | "folding" | "unfolding">("idle");
+  const [phase, setPhase] = useState<TransitionPhase>("idle");
   const [showHinge, setShowHinge] = useState<boolean>(false);
 
   const isFirstMount = useRef<boolean>(true);
   const pendingChildrenRef = useRef<React.ReactNode>(children);
-  const foldTimerRef = useRef<NodeJS.Timeout | null>(null);
-  const unfoldTimerRef = useRef<NodeJS.Timeout | null>(null);
-  const hingeFadeTimerRef = useRef<NodeJS.Timeout | null>(null);
+  
+  // Timer handles for clean cancellation on rapid navigation
+  const timer1Ref = useRef<NodeJS.Timeout | null>(null);
+  const timer2Ref = useRef<NodeJS.Timeout | null>(null);
+  const timer3Ref = useRef<NodeJS.Timeout | null>(null);
+  const timer4Ref = useRef<NodeJS.Timeout | null>(null);
+  const timer5Ref = useRef<NodeJS.Timeout | null>(null);
 
-  // Keep latest children synced
+  const clearAllTimers = () => {
+    if (timer1Ref.current) clearTimeout(timer1Ref.current);
+    if (timer2Ref.current) clearTimeout(timer2Ref.current);
+    if (timer3Ref.current) clearTimeout(timer3Ref.current);
+    if (timer4Ref.current) clearTimeout(timer4Ref.current);
+    if (timer5Ref.current) clearTimeout(timer5Ref.current);
+  };
+
+  // Always keep pending children updated
   pendingChildrenRef.current = children;
 
   useEffect(() => {
@@ -79,14 +134,10 @@ export const SectionTransition: React.FC<SectionTransitionProps> = ({ children }
       return;
     }
 
-    // Clear any active timers to prevent overlapping animations during rapid navigation
-    if (foldTimerRef.current) clearTimeout(foldTimerRef.current);
-    if (unfoldTimerRef.current) clearTimeout(unfoldTimerRef.current);
-    if (hingeFadeTimerRef.current) clearTimeout(hingeFadeTimerRef.current);
-
+    clearAllTimers();
     setCurrentPath(pathname);
 
-    // If user prefers reduced motion, do a clean instant swap
+    // Respect prefers-reduced-motion
     if (shouldReduceMotion) {
       setDisplayChildren(pendingChildrenRef.current);
       setPhase("idle");
@@ -94,44 +145,54 @@ export const SectionTransition: React.FC<SectionTransitionProps> = ({ children }
       return;
     }
 
-    // Sequence Step 1 & 2: Center orange hinge appears, page begins inward fold
+    // =========================================================================
+    // 5-PHASE CINEMATIC SEQUENCE EXECUTION (1400–1700ms)
+    // =========================================================================
+
+    // Phase 1 — Preparation (0–200ms): Orange vertical hinge appears at exact center
     setShowHinge(true);
-    setPhase("folding");
+    setPhase("prep");
 
-    // Sequence Step 3 & 4: Outgoing page folds toward center axis with clearly visible horizontal blur
-    foldTimerRef.current = setTimeout(() => {
-      // Sequence Step 5: Switch content cleanly at the vertical fold peak
+    // Phase 2 — Folding (200–650ms): Outgoing content visibly folds toward center
+    timer1Ref.current = setTimeout(() => {
+      setPhase("folding");
+    }, PREP_MS);
+
+    // Phase 3 — Hinge Transition (650–800ms): Outgoing disappears behind hinge, switch content
+    timer2Ref.current = setTimeout(() => {
       setDisplayChildren(pendingChildrenRef.current);
-
       if (typeof window !== "undefined") {
         window.scrollTo({ top: 0, left: 0, behavior: "instant" });
       }
+      setPhase("hingeSwap");
+    }, FOLD_END_MS);
 
-      // Sequence Step 5 & 6: Incoming section emerges from center hinge and expands outward
+    // Phase 4 — Unfolding (800–1450ms): Incoming content unfolds from vertical center
+    timer3Ref.current = setTimeout(() => {
       setPhase("unfolding");
+    }, SWAP_END_MS);
 
-      // Sequence Step 7: Orange vertical hinge line fades away as page becomes completely sharp
-      hingeFadeTimerRef.current = setTimeout(() => {
-        setShowHinge(false);
-      }, FOLD_IN_DURATION_MS - 120);
+    // Phase 5 — Completion (1450–1650ms): Orange hinge fades out smoothly
+    timer4Ref.current = setTimeout(() => {
+      setShowHinge(false);
+      setPhase("settling");
+    }, UNFOLD_END_MS);
 
-      unfoldTimerRef.current = setTimeout(() => {
-        setPhase("idle");
-      }, FOLD_IN_DURATION_MS);
-    }, FOLD_OUT_DURATION_MS);
+    // End of Sequence: Reset to stationary idle state
+    timer5Ref.current = setTimeout(() => {
+      setPhase("idle");
+    }, TOTAL_DURATION_MS);
 
     return () => {
-      if (foldTimerRef.current) clearTimeout(foldTimerRef.current);
-      if (unfoldTimerRef.current) clearTimeout(unfoldTimerRef.current);
-      if (hingeFadeTimerRef.current) clearTimeout(hingeFadeTimerRef.current);
+      clearAllTimers();
     };
   }, [pathname, shouldReduceMotion]);
 
-  const isTransitioning = phase === "folding" || phase === "unfolding";
+  const isTransitioning = phase !== "idle";
 
   return (
     <div className="optic-perspective-container w-full min-h-full relative overflow-hidden">
-      {/* Layered Optical Motion-Blur Corridor over the center hinge */}
+      {/* Layered Optical Motion-Blur Corridor over the center vertical hinge */}
       <AnimatePresence>
         {isTransitioning && !shouldReduceMotion && (
           <motion.div
@@ -139,24 +200,24 @@ export const SectionTransition: React.FC<SectionTransitionProps> = ({ children }
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.2, ease: "easeInOut" }}
+            transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
             aria-hidden="true"
-            className="pointer-events-none absolute inset-y-0 left-1/2 -translate-x-1/2 w-[540px] z-20 optic-hinge-blur-gradient"
+            className="pointer-events-none absolute inset-y-0 left-1/2 -translate-x-1/2 w-[580px] z-20 optic-hinge-blur-gradient"
           />
         )}
       </AnimatePresence>
 
-      {/* Exact Center Vertical Hinge Line — 1px, #FF5A00, prominent during fold, no glow, no bloom */}
+      {/* Exact Center Vertical Hinge Line — 1.5px, #FF5A00, prominent during fold and unfold */}
       <AnimatePresence>
         {showHinge && !shouldReduceMotion && (
           <motion.div
             key="center-vertical-hinge-line"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 0.85 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.25, ease: "easeInOut" }}
+            initial={{ opacity: 0, scaleY: 0.95 }}
+            animate={{ opacity: 0.95, scaleY: 1 }}
+            exit={{ opacity: 0, scaleY: 0.98 }}
+            transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
             aria-hidden="true"
-            className="pointer-events-none absolute inset-y-0 left-1/2 -translate-x-1/2 w-[1px] z-30"
+            className="pointer-events-none absolute inset-y-0 left-1/2 -translate-x-1/2 w-[1.5px] z-30 shadow-[0_0_8px_rgba(255,90,0,0.35)]"
             style={{
               backgroundColor: "#FF5A00",
             }}
