@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
 import {
@@ -28,6 +28,23 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({ onOpenAi, onOpenSearch }) 
 
   const [accountDropdownOpen, setAccountDropdownOpen] = useState(false);
   const [notificationsOpen, setNotificationsOpen] = useState(false);
+  const accountRef = useRef<HTMLDivElement>(null);
+  const notifRef = useRef<HTMLDivElement>(null);
+
+  // Click outside to close dropdowns
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (accountRef.current && !accountRef.current.contains(e.target as Node)) {
+        setAccountDropdownOpen(false);
+      }
+      if (notifRef.current && !notifRef.current.contains(e.target as Node)) {
+        setNotificationsOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
   const [syncStatus, setSyncStatus] = useState({
     canCallNow: true,
     timeUntilNextMs: 0,
@@ -86,7 +103,7 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({ onOpenAi, onOpenSearch }) 
   };
 
   return (
-    <header className="sticky top-3 z-40 w-full px-3 sm:px-4 mb-4 select-none">
+    <header className="sticky top-3 z-30 w-full px-3 sm:px-4 mb-4 select-none">
       <div className="max-w-7xl mx-auto h-13 px-3 sm:px-4 rounded-2xl glass-panel flex items-center justify-between gap-3 shadow-2xl">
         {/* Left: Brand & Context Account Dropdown */}
         <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
@@ -102,7 +119,7 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({ onOpenAi, onOpenSearch }) 
           <span className="text-[#25282D]">/</span>
 
           {/* Account Context Dropdown Selector (Inspired by Northwind Studio selector) */}
-          <div className="relative">
+          <div ref={accountRef} className="relative">
             <button
               onClick={() => setAccountDropdownOpen(!accountDropdownOpen)}
               className="flex items-center gap-1.5 px-2.5 py-1 rounded-xl bg-[#141619] border border-[#25282D] hover:border-[#363A42] text-xs font-medium text-[#F4F4F5] transition-all cursor-pointer"
@@ -210,7 +227,7 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({ onOpenAi, onOpenSearch }) 
           </div>
 
           {/* Notifications Bell with Live Signals Indicator */}
-          <div className="relative">
+          <div ref={notifRef} className="relative">
             <button
               onClick={() => setNotificationsOpen(!notificationsOpen)}
               className="p-2 rounded-xl bg-[#141619] border border-[#25282D] hover:border-[#363A42] text-[#9A9FA8] hover:text-[#F4F4F5] transition-colors relative cursor-pointer"
