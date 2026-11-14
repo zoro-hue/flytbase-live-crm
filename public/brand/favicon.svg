@@ -1,0 +1,29 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="sparkle-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Speech Bubble Body -->
+  <path
+    d="M130 52 C72 52 40 84 40 142 V310 C40 368 72 400 130 400 H160 L132 466 C129 473 135 480 143 477 L248 400 H382 C440 400 472 368 472 310 V142 C472 84 440 52 382 52 Z"
+    fill="#151719"
+  />
+
+  <!-- Bold White 'F' -->
+  <path
+    d="M168 140 H316 C326 140 334 148 334 158 V180 C334 190 326 198 316 198 H222 V242 H296 C306 242 314 250 314 260 V282 C314 292 306 300 296 300 H222 V348 C222 358 214 366 204 366 H186 C176 366 168 358 168 348 Z"
+    fill="#FFFFFF"
+  />
+
+  <!-- Olive-Green 4-point Sparkle ✦ in bottom right -->
+  <g filter="url(#sparkle-glow)">
+    <path
+      d="M344 268 C344 290 358 304 380 304 C358 304 344 318 344 340 C344 318 330 304 308 304 C330 304 344 290 344 268 Z"
+      fill="#789600"
+    />
+    <circle cx="344" cy="304" r="3" fill="#D9F99D" />
+  </g>
+</svg>

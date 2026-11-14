@@ -17,6 +17,7 @@ import {
   Bot,
   Layers,
 } from "lucide-react";
+import { FlytBaseLogo } from "@/components/brand/FlytBaseLogo";
 
 interface NavItem {
   name: string;
@@ -86,24 +87,17 @@ export const Sidebar: React.FC = () => {
           isExpanded ? "w-60" : "w-16"
         }`}
       >
-        {/* Top: Brand Header (F+ FlytBase.) */}
+        {/* Top: Brand Header (FlytBase Brand Asset) */}
         <div className="space-y-2 pb-2.5 border-b border-[#E2E5DE]">
           <Link
             href="/dashboard"
             className="flex items-center gap-2.5 px-1 py-1 rounded-xl hover:bg-black/5 transition-colors overflow-hidden group cursor-pointer"
+            title="FlytBase CRM"
           >
-            <div className="w-8 h-8 rounded-xl bg-[#171717] flex items-center justify-center font-bold text-white text-xs shadow-sm flex-shrink-0 group-hover:scale-105 transition-transform duration-200">
-              <span className="font-extrabold text-[13px]">F+</span>
-            </div>
-            {isExpanded && (
-              <div className="flex flex-col min-w-0 transition-opacity duration-300">
-                <span className="text-[15px] font-bold tracking-tight text-[#151515] truncate">
-                  FlytBase<span className="text-[#536F00]">.</span>
-                </span>
-                <span className="text-[10px] text-[#747A80] font-mono tracking-wider uppercase truncate">
-                  Live CRM
-                </span>
-              </div>
+            {isExpanded ? (
+              <FlytBaseLogo variant="horizontal" size={28} priority />
+            ) : (
+              <FlytBaseLogo variant="icon" size={32} priority />
             )}
           </Link>
         </div>
@@ -210,10 +204,7 @@ export const Sidebar: React.FC = () => {
       <header className="lg:hidden sticky top-2 left-2 right-2 z-40 px-2 mb-3">
         <div className="h-11 px-3.5 rounded-2xl bg-white/95 backdrop-blur-md border border-[#E2E5DE] flex items-center justify-between shadow-sm">
           <Link href="/dashboard" className="flex items-center gap-2">
-            <div className="w-5 h-5 rounded-md bg-[#171717] flex items-center justify-center font-bold text-white text-[9px]">
-              F+
-            </div>
-            <span className="text-xs font-bold text-[#151515]">FlytBase.</span>
+            <FlytBaseLogo variant="horizontal" size={24} priority />
           </Link>
 
           <div className="flex items-center gap-2">

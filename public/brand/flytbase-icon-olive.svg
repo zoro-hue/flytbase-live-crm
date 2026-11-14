@@ -1,0 +1,23 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Rich Olive Green Squircle Card -->
+  <rect x="16" y="16" width="480" height="480" rx="120" fill="#536F00" stroke="#435900" stroke-width="4" />
+
+  <!-- Speech Bubble Body -->
+  <path
+    d="M142 82 C94 82 66 110 66 158 V302 C66 350 94 378 142 378 H168 L144 434 C141 440 147 446 153 443 L244 378 H370 C418 378 446 350 446 302 V158 C446 110 418 82 370 82 Z"
+    fill="#151719"
+  />
+
+  <!-- Bold White 'F' -->
+  <path
+    d="M174 156 H304 C312 156 318 162 318 170 V188 C318 196 312 202 304 202 H222 V240 H286 C294 240 300 246 300 254 V272 C300 280 294 286 286 286 H222 V328 C222 336 216 342 208 342 H190 C182 342 174 336 174 328 Z"
+    fill="#FFFFFF"
+  />
+
+  <!-- Olive Sparkle -->
+  <path
+    d="M336 256 C336 276 348 288 368 288 C348 288 336 300 336 320 C336 300 324 288 304 288 C324 288 336 276 336 256 Z"
+    fill="#9EC800"
+  />
+  <circle cx="336" cy="288" r="2.5" fill="#F7FEE7" />
+</svg>

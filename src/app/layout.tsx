@@ -13,6 +13,20 @@ export const metadata: Metadata = {
   title: "FlytBase CRM — Mission-Critical CRM for Enterprise Operations",
   description:
     "A Questathon-powered, MCP-native CRM that unifies account intelligence, deals, stakeholders, live field signals, and evidence in real time.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/brand/favicon.svg", type: "image/svg+xml" },
+      { url: "/brand/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/brand/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+    ],
+    apple: [
+      { url: "/brand/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+    other: [
+      { rel: "icon", url: "/brand/icon-512x512.png", sizes: "512x512", type: "image/png" },
+    ],
+  },
 };
 
 export default function RootLayout({

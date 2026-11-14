@@ -18,6 +18,7 @@ import {
   Moon,
   ChevronsUpDown,
 } from "lucide-react";
+import { FlytBaseLogo } from "@/components/brand/FlytBaseLogo";
 
 interface TopNavbarProps {
   onOpenAi?: () => void;
@@ -114,9 +115,7 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({ onOpenAi, onOpenSearch }) 
               onClick={() => setAccountDropdownOpen(!accountDropdownOpen)}
               className="flex items-center gap-2 px-2.5 py-1.5 rounded-xl bg-[#F4F5F0] hover:bg-[#ECEFE5] border border-[#E2E5DE] text-xs font-semibold text-[#151515] transition-all cursor-pointer"
             >
-              <div className="w-5 h-5 rounded-md bg-[#171717] flex items-center justify-center font-bold text-white text-[9px]">
-                FB
-              </div>
+              <FlytBaseLogo variant="icon" size={20} priority />
               <span className="max-w-[130px] sm:max-w-[180px] truncate">{currentAccountLabel}</span>
               <ChevronsUpDown className="w-3.5 h-3.5 text-[#747A80]" />
             </button>

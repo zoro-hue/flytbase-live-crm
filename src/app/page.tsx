@@ -23,6 +23,7 @@ import {
   Activity,
   ChevronRight,
 } from "lucide-react";
+import { FlytBaseLogo } from "@/components/brand/FlytBaseLogo";
 
 export default function LandingPage() {
   const [showVideoModal, setShowVideoModal] = useState(false);
@@ -57,9 +58,7 @@ export default function LandingPage() {
         <div className="flex items-center justify-between">
           {/* Brand Logo */}
           <Link href="/" className="flex items-center gap-2.5 group">
-            <div className="w-8 h-8 rounded-xl bg-[#FF5A00] flex items-center justify-center font-bold text-white text-xs shadow-lg shadow-[#FF5A00]/25 transition-transform group-hover:scale-105">
-              FB
-            </div>
+            <FlytBaseLogo variant="icon" size={32} priority />
             <span className="text-base font-bold tracking-tight text-[#F4F4F5]">
               FlytBase <span className="text-[#FF5A00]">CRM</span>
             </span>
