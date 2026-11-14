@@ -15,7 +15,6 @@ import {
   Clock,
   ShieldCheck,
   Command,
-  Moon,
   ChevronsUpDown,
 } from "lucide-react";
 import { FlytBaseLogo } from "@/components/brand/FlytBaseLogo";
@@ -205,15 +204,6 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({ onOpenAi, onOpenSearch }) 
             <span className="hidden sm:inline">Create</span>
           </button>
 
-          {/* Theme Control Button (Moon icon from reference) */}
-          <button
-            type="button"
-            className="p-2 rounded-xl bg-[#F4F5F0] hover:bg-[#ECEFE5] border border-[#E2E5DE] text-[#747A80] hover:text-[#151515] transition-colors cursor-pointer"
-            title="Theme Control"
-          >
-            <Moon className="w-3.5 h-3.5" />
-          </button>
-
           {/* Notifications Bell with Indicator */}
           <div ref={notifRef} className="relative">
             <button
@@ -262,14 +252,6 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({ onOpenAi, onOpenSearch }) 
                 </div>
               </div>
             )}
-          </div>
-
-          {/* User Profile Avatar */}
-          <div
-            className="w-7 h-7 rounded-full bg-[#ECEFE5] border border-[#E2E5DE] flex items-center justify-center font-mono text-xs font-bold text-[#151515]"
-            title="Authenticated CSM Lead"
-          >
-            FB
           </div>
         </div>
       </div>
