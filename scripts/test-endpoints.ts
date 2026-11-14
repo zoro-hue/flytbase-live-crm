@@ -26,7 +26,8 @@ async function main() {
   await testEndpoint(`${base}/api/evidence?id=draft_tender_spec`, "API Single Evidence");
   await testEndpoint(`${base}/api/evidence?q=tender`, "API Evidence Search");
 
-  await testEndpoint(`${base}/`, "Overview Page");
+  await testEndpoint(`${base}/`, "Public Landing Page");
+  await testEndpoint(`${base}/dashboard`, "CRM Dashboard Command Center");
   await testEndpoint(`${base}/accounts/eastern-counties`, "Eastern Counties Page");
   await testEndpoint(`${base}/accounts/aldermoor`, "Aldermoor Page");
   await testEndpoint(`${base}/deals`, "Deals Page");

@@ -93,7 +93,7 @@ export const Sidebar: React.FC = () => {
   };
 
   const navigation = [
-    { name: "Overview", href: "/", icon: LayoutDashboard },
+    { name: "Overview", href: "/dashboard", icon: LayoutDashboard },
     {
       name: "Counties (A)",
       href: "/accounts/eastern-counties",
@@ -118,7 +118,7 @@ export const Sidebar: React.FC = () => {
       <aside className="hidden lg:flex fixed left-3 top-3 bottom-3 w-52 z-40 select-none flex-col justify-between p-3 rounded-2xl bg-[#08080A]/95 backdrop-blur-xl border border-[#1C1F26] shadow-2xl shadow-black/90 transition-all duration-300">
         {/* Brand & Connection Capsule Header */}
         <div className="space-y-2.5 pb-2.5 border-b border-[#1C1F26]">
-          <Link href="/" className="flex items-center justify-between px-1.5 py-0.5 hover:opacity-90 transition-opacity">
+          <Link href="/dashboard" className="flex items-center justify-between px-1.5 py-0.5 hover:opacity-90 transition-opacity">
             <div className="flex items-center gap-2">
               <div className="w-7 h-7 rounded-lg bg-[#FF5500] flex items-center justify-center font-bold text-white text-[11px] shadow-lg shadow-[#FF5500]/20">
                 FB
@@ -241,7 +241,7 @@ export const Sidebar: React.FC = () => {
       {/* Mobile Top Capsule Header */}
       <header className="lg:hidden fixed top-2.5 left-2.5 right-2.5 z-40">
         <div className="h-11 px-3.5 rounded-full bg-[#08080A]/95 backdrop-blur-xl border border-[#1C1F26] shadow-xl flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2">
+          <Link href="/dashboard" className="flex items-center gap-2">
             <div className="w-5 h-5 rounded-md bg-[#FF5500] flex items-center justify-center font-bold text-white text-[9px]">
               FB
             </div>
