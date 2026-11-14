@@ -1,0 +1,5 @@
+{
+  "id": "support_ticket_history",
+  "name": "support_ticket_history.csv",
+  "text": "ticket_id,opened,account,requester,subject,status,assignee,last_update\nFB-10412,2026-06-29,ECPA - Tarn Valley,\"DPO, Tarn Valley\",\"Request: data-flow documents for DPIA (flows, retention, storage location, access)\",Open,,2026-06-29\nFB-10412,29/06/2026,ECPA - Tarn Valley,\"DPO, Tarn Valley\",RE: Request: data-flow documents for DPIA,Open,(unassigned),14/08/2026\nFB-10577,2026-07-15,ECPA - Westmere,Westmere drone unit,Dock 7 lid sensor fault,Closed,Field team,2026-07-19\nFB-10650,Jul 28 2026,ECPA Westmere,Westmere drone unit,Training request: new operators,Closed,CS,Aug 02 2026\nFB-10781,2026-08-21,Metro Central,Metro Central ops,Flight report export format,Closed,Support,2026-08-25\nFB-10903,2026-09-10,Aldermoor - Plant 11,Plant 11 site,Dock offline (link drops),Pending customer,Support,2026-09-30\nFB-10944,18/09/2026,Aldermoor P07,Plant 7 manager,Alert routing question,Closed,Support,20/09/2026\n"
+}

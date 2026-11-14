@@ -1,0 +1,1479 @@
+{
+  "account": "B",
+  "records": [
+    {
+      "path": "calls/2025-08-19_enquiry_call.txt",
+      "kind": "call",
+      "text": "ENQUIRY CALL: NOTES\nDate: 19 August 2025\nWritten up by: the FlytBase deal team\nPresent for the customer: Stefan Roy (group head of security)\nPresent for FlytBase: Achal Negi\n\nBackground\n- Aldermoor has 15 plants. Group security, under Stefan Roy, looks after site security for all of\n  them.\n- Night guarding is done by contractors at each plant.\n\nWhat the customer asked for\n- Automated night patrols of the fence line, starting with a trial at two plants.\n- Footage he can show the board.\n\nNot discussed\n- Who at a plant acts on what a patrol finds.\n- How the cost would be shared inside the group.\n\nActions\n- FlytBase: trial proposal. Done September 2025.\n"
+    },
+    {
+      "path": "calls/2025-10-07_trial_kickoff.txt",
+      "kind": "call",
+      "text": "TRIAL KICK-OFF: NOTES\nDate: 7 October 2025\nWritten up by: a FlytBase solutions engineer\nPresent for the customer: Stefan Roy (group head of security); his deputy (name not recorded)\nPresent for FlytBase: a solutions engineer\n\nTrial\n- 2 docks at two plants, October to December 2025: one to start with, the second a few weeks later.\n- Scheduled night patrols of the fence line.\n- Trial fee 12,000, credited against a first-year order if one follows.\n\nWho does what\n- Stefan Roy's deputy runs the trial day to day: site access, the operator at each plant, the\n  patrol times.\n- Stefan Roy wants a monthly note he can take to the board.\n\nActions\n- FlytBase: install 2 docks. Done.\n- The deputy: a trained operator at each trial plant. Done.\n"
+    },
+    {
+      "path": "calls/2025-12-11_trial_review.txt",
+      "kind": "call",
+      "text": "TRIAL REVIEW CALL: NOTES\nDate: 11 December 2025\nWritten up by: the FlytBase deal team\nPresent for the customer: Stefan Roy (group head of security); his deputy (name not recorded)\nPresent for FlytBase: Achal Negi; a solutions engineer\n\nTrial\n- 2 docks at two plants, October to December.\n- Both docks flew scheduled night patrols of the fence line. Few faults.\n- Stefan Roy: the board liked the footage. He wants every plant covered.\n\nWhat the customer wants next\n- 14 docks. The fifteenth plant is left out of this order. Stefan Roy: it can follow later.\n- Stefan Roy's deputy will lead the rollout on their side and train each plant.\n- Stefan Roy asked whether FlytBase would put a savings figure in the order form. Answer: no; savings\n  depend on how each plant uses the dock.\n\nOpen points at the end of the call\n- Who at each plant acts on what a patrol finds. Stefan Roy: \"the plants will sort that out.\"\n- Each plant's network. The deputy will deal with each plant's own arrangements.\n\nActions\n- FlytBase: order form for 14 docks. Done 15 January 2026.\n- Customer: list of plants and install dates. Done.\n"
+    },
+    {
+      "path": "calls/2026-01-08_order_call.txt",
+      "kind": "call",
+      "text": "ORDER CALL: NOTES\nDate: 8 January 2026\nWritten up by: the FlytBase deal team\nPresent for the customer: Stefan Roy (group head of security)\nPresent for FlytBase: Achal Negi\n\nOrder\n- 14 docks, 140,000 a year, one year from 1 February 2026. No automatic renewal.\n- Stefan Roy signs. He said it comes from the group security budget.\n- One invoice a year, to group security.\n\nAsked and answered\n- Stefan Roy asked again whether the order form could state a savings figure. Answer: no. The\n  order form quotes none.\n- Achal Negi asked whether anyone else at the group needs to see the order. Stefan Roy: no.\n\nActions\n- FlytBase: order form. Done 15 January 2026.\n- Stefan Roy: plants and install dates. Done.\n"
+    },
+    {
+      "path": "calls/2026-02-10_rollout_kickoff.txt",
+      "kind": "call",
+      "text": "ROLLOUT KICK-OFF: NOTES\nDate: 10 February 2026\nWritten up by: the FlytBase rollout lead\nPresent for the customer: Stefan Roy's deputy (name not recorded)\nPresent for FlytBase: the rollout lead\n\nPlan\n- 14 docks, February to April.\n- The deputy visits each plant ahead of the install, agrees the dock position with the plant\n  manager and trains one operator.\n- Each plant connects the dock to its own network. The deputy arranges this plant by plant.\n\nAsked and answered\n- The rollout lead asked for a contact at each plant. The deputy: go through him; he will be on\n  site for every install.\n\nActions\n- FlytBase: install schedule. Done.\n- The deputy: plant visits and one operator per plant. Done.\n"
+    },
+    {
+      "path": "calls/2026-03-17_rollout_check_in.txt",
+      "kind": "call",
+      "text": "ROLLOUT CHECK-IN: NOTES\nDate: 17 March 2026\nWritten up by: the FlytBase rollout lead\nPresent for the customer: Stefan Roy's deputy (name not recorded)\nPresent for FlytBase: the rollout lead\n\nProgress\n- 8 of 14 docks installed and commissioned.\n- At two plants the signal at the agreed dock position was weak on install day. Both docks passed\n  commissioning. The deputy will take the network up with each plant.\n\nActions\n- FlytBase: remaining 6 docks. Done April 2026.\n- The deputy: network at the two plants with weak signal. (No outcome on file.)\n"
+    },
+    {
+      "path": "calls/2026-04-23_rollout_close.txt",
+      "kind": "call",
+      "text": "ROLLOUT CLOSE CALL: NOTES\nDate: 23 April 2026\nWritten up by: the FlytBase rollout lead, for the handover to customer success\nPresent for the customer: Stefan Roy's deputy (led the rollout on their side)\nPresent for FlytBase: the rollout lead\n\nStatus\n- 14 docks installed and commissioned between February and April.\n- Each dock flew a commissioning flight on its install day.\n- Scheduled night patrols were set up at the plants that asked for them. The others were left with the\n  dock online and one trained operator each.\n\nHow it was done\n- The deputy went to each plant, agreed the dock position with the plant manager and trained one\n  operator.\n- The deputy kept the install list (which dock is at which plant, and who was trained).\n  We asked for a copy. Not received.\n\nLeft open\n- No patrol schedule at most plants. The deputy: \"they will ask when they are ready.\"\n- No list of who receives alerts at each plant.\n- Stefan Roy was not on the call.\n\nHandover note to customer success\n- The customer-side knowledge of this rollout sits with one person. Get the install list.\n  (No further note.)\n"
+    },
+    {
+      "path": "calls/2026-05-21_intro_call.txt",
+      "kind": "call",
+      "text": "CALL TRANSCRIPT (auto-recorded, tidied)\nDate: 21 May 2026\nOn the call: Sam (FlytBase, CSM); Stefan Roy (group head of security)\n\nSam: I have just picked up the account. How does the rollout look from where you sit?\nStefan: A success. Fourteen docks in three months. The board has seen the footage.\nSam: Good. Our rollout lead never received the install list: which dock is at which plant, who was\ntrained. Could I have a copy?\nStefan: My deputy has it. He did the rollout plant by plant.\nSam: May I write to him?\nStefan: Send it to my office and it will reach him.\nSam: I will. Which plants are flying patrols every night?\nStefan: The plants set their own pace. They are all covered.\n\nFollow-ups noted by Sam\n- Ask the deputy for the install list. (Asked through Stefan Roy's office on 22 May. Not received.)\n"
+    },
+    {
+      "path": "calls/2026-06-11_check_in.txt",
+      "kind": "call",
+      "text": "CALL TRANSCRIPT (auto-recorded, tidied)\nDate: 11 June 2026\nOn the call: Sam (FlytBase, CSM); Stefan Roy (group head of security)\n\nStefan: I present to the board next week. I want three or four clips, night patrols, something that\nlooks good.\nSam: I can pull those. On the numbers: most of the flying comes from a handful of docks.\nStefan: Thirteen of fifteen plants are flying.\nSam: Is there a plan to move the others to nightly patrols?\nStefan: They will ask when they are ready.\nSam: I still do not have the install list.\nStefan: I will remind my deputy.\n\nFollow-ups noted by Sam\n- Footage clips for the board. Sent 15 June.\n- Install list: still not received.\n"
+    },
+    {
+      "path": "calls/2026-07-14_check_in.txt",
+      "kind": "call",
+      "text": "CALL TRANSCRIPT (auto-recorded, tidied)\nDate: 14 July 2026\nOn the call: Sam (FlytBase, CSM); Stefan Roy (group head of security)\n\nStefan: I will give you the headline. ROI is proven. About 1.2 million euros a year saved.\nSam: That is a strong number. How is it made up?\nStefan: Guarding hours, incidents avoided, that kind of thing. It is all in there.\nSam: Could I see the breakdown? If we ever quote it, someone will ask.\nStefan: I will send something over. The board has seen the headline and they are happy.\nSam: On usage: I see a handful of docks flying every night and the rest flying a few times a month.\nStefan: Thirteen of fifteen plants are flying. That is the figure I report.\nSam: Flying at all, yes. I meant how often. Is the plan for the others to move to nightly patrols?\nStefan: They will. The plants set their own pace.\nSam: Is your deputy still the right person for me to speak to about each plant?\nStefan: Go through me for now.\n\nFollow-ups noted by Sam\n- Breakdown of the savings figure: promised by Stefan. (Not received before the handover.)\n- Install list: still not received.\n"
+    },
+    {
+      "path": "calls/2026-08-25_check_in.txt",
+      "kind": "call",
+      "text": "CALL TRANSCRIPT (auto-recorded, tidied)\nDate: 25 August 2026\nOn the call: Sam (FlytBase, CSM); Stefan Roy (group head of security)\n\nSam: One thing I am still missing: the list of who receives the alerts at each plant. When a\npatrol flags something at night, who gets it?\nStefan: The plants handle that.\nSam: Each in their own way?\nStefan: It is their site. Group security sets the standard, the plant runs the night.\nSam: Would your deputy know the detail?\nStefan: Go through me.\n\nFollow-ups noted by Sam\n- List of alert recipients by plant. (Not received.)\n"
+    },
+    {
+      "path": "calls/2026-10-13_check_in.txt",
+      "kind": "call",
+      "text": "CALL TRANSCRIPT (auto-recorded, tidied)\nDate: 13 October 2026\nOn the call: Sam (FlytBase, CSM); Stefan Roy (group head of security)\n\nStefan: Where are we with the case study? Our sister company has forty plants. I want to put it in\nfront of them this quarter.\nSam: I have not started it. A case study needs figures we can stand behind and someone at a plant\nwilling to be quoted. I still do not have the breakdown of the savings.\nStefan: Use the headline. ROI is proven.\nSam: Our marketing team will not publish a number without the working. Could finance confirm it?\nStefan: You do not need finance. This is a security programme.\nSam: I did get an email from your finance mailbox asking for the renewal quote to show the cost for\neach plant. Do you know what is behind that?\nStefan: Ignore it. The renewal is a formality.\nSam: And the dock at Plant 11 that keeps dropping offline?\nStefan: That is an IT matter on our side. It will be sorted.\n\nFollow-ups noted by Sam\n- Case study: blocked on the savings breakdown and a plant willing to be quoted.\n- Finance mailbox email: not answered.\n"
+    },
+    {
+      "path": "calls_index.json",
+      "kind": "calls_index",
+      "data": {
+        "note": "Every call on file, oldest first, with its summary and actions. `path` is the notes or transcript where one was kept; a call with no path was summarised only.",
+        "calls": [
+          {
+            "date": "2025-08-19",
+            "title": "Enquiry call",
+            "record": "notes",
+            "customer": [
+              "Stefan Roy"
+            ],
+            "flytbase": [
+              "Achal Negi"
+            ],
+            "summary": "First call. Group security wants automated night patrols of the fence line at the group's plants. A trial at two plants was agreed in outline.",
+            "actions": [
+              "FlytBase: trial proposal. Done September 2025."
+            ],
+            "path": "calls/2025-08-19_enquiry_call.txt"
+          },
+          {
+            "date": "2025-10-07",
+            "title": "Trial kick-off",
+            "record": "notes",
+            "customer": [
+              "Stefan Roy",
+              "Stefan Roy's deputy"
+            ],
+            "flytbase": [
+              "a solutions engineer"
+            ],
+            "summary": "Trial started: 2 docks at two plants, October to December 2025. Stefan Roy's deputy runs it day to day on the customer's side.",
+            "actions": [
+              "FlytBase: install 2 docks. Done.",
+              "The deputy: a trained operator at each trial plant. Done."
+            ],
+            "path": "calls/2025-10-07_trial_kickoff.txt"
+          },
+          {
+            "date": "2025-12-11",
+            "title": "Trial review call",
+            "record": "notes",
+            "customer": [
+              "Stefan Roy",
+              "Stefan Roy's deputy"
+            ],
+            "flytbase": [
+              "Achal Negi",
+              "a solutions engineer"
+            ],
+            "summary": "Trial reviewed. 14 docks wanted. The deputy will lead the rollout. Open at the end: who at each plant acts on what a patrol finds, and each plant's network.",
+            "actions": [
+              "Order form for 14 docks. Done 15 January 2026."
+            ],
+            "path": "calls/2025-12-11_trial_review.txt"
+          },
+          {
+            "date": "2026-01-08",
+            "title": "Order call",
+            "record": "notes",
+            "customer": [
+              "Stefan Roy"
+            ],
+            "flytbase": [
+              "Achal Negi"
+            ],
+            "summary": "Order agreed in outline: 14 docks, 140,000 a year, signed by Stefan Roy from the group security budget. Stefan Roy asked again for a savings figure in the order form; declined.",
+            "actions": [
+              "FlytBase: order form. Done 15 January 2026.",
+              "Stefan Roy: plants and install dates. Done."
+            ],
+            "path": "calls/2026-01-08_order_call.txt"
+          },
+          {
+            "date": "2026-02-10",
+            "title": "Rollout kick-off",
+            "record": "notes",
+            "customer": [
+              "Stefan Roy's deputy"
+            ],
+            "flytbase": [
+              "the rollout lead"
+            ],
+            "summary": "Rollout planned for February to April 2026. The deputy goes to each plant, agrees the dock position with the plant manager and trains one operator. Each plant's network is the customer's to arrange.",
+            "actions": [
+              "FlytBase: install schedule. Done.",
+              "The deputy: plant visits and one operator per plant. Done."
+            ],
+            "path": "calls/2026-02-10_rollout_kickoff.txt"
+          },
+          {
+            "date": "2026-03-17",
+            "title": "Rollout check-in",
+            "record": "notes",
+            "customer": [
+              "Stefan Roy's deputy"
+            ],
+            "flytbase": [
+              "the rollout lead"
+            ],
+            "summary": "8 of 14 docks installed. At two plants the signal at the agreed dock position was weak on install day; the deputy said he would take it up with each plant.",
+            "actions": [
+              "FlytBase: remaining 6 docks. Done April 2026.",
+              "The deputy: network at the two plants with weak signal. (No outcome on file.)"
+            ],
+            "path": "calls/2026-03-17_rollout_check_in.txt"
+          },
+          {
+            "date": "2026-04-23",
+            "title": "Rollout close call",
+            "record": "notes",
+            "customer": [
+              "Stefan Roy's deputy"
+            ],
+            "flytbase": [
+              "the rollout lead"
+            ],
+            "summary": "14 docks installed. Patrol schedules only at the plants that asked. The install list stayed with the deputy; a copy was asked for and not received.",
+            "actions": [
+              "Get the install list. (No further note.)"
+            ],
+            "path": "calls/2026-04-23_rollout_close.txt"
+          },
+          {
+            "date": "2026-05-21",
+            "title": "Intro call",
+            "record": "transcript",
+            "customer": [
+              "Stefan Roy"
+            ],
+            "flytbase": [
+              "Sam"
+            ],
+            "summary": "Sam's first call as CSM. Stefan Roy described the rollout as a success. Sam asked for the install list; Stefan Roy said his deputy has it. Sam to write to the deputy.",
+            "actions": [
+              "Ask the deputy for the install list. (Asked through Stefan Roy's office on 22 May. Not received.)"
+            ],
+            "path": "calls/2026-05-21_intro_call.txt"
+          },
+          {
+            "date": "2026-06-11",
+            "title": "Check-in",
+            "record": "transcript",
+            "customer": [
+              "Stefan Roy"
+            ],
+            "flytbase": [
+              "Sam"
+            ],
+            "summary": "Stefan Roy asked for footage clips for a board presentation. Sam raised that most of the flying comes from a handful of docks. Stefan Roy: thirteen of fifteen plants are flying.",
+            "actions": [
+              "Footage clips for the board. Sent 15 June.",
+              "Install list: still not received."
+            ],
+            "path": "calls/2026-06-11_check_in.txt"
+          },
+          {
+            "date": "2026-07-14",
+            "title": "Check-in",
+            "record": "transcript",
+            "customer": [
+              "Stefan Roy"
+            ],
+            "flytbase": [
+              "Sam"
+            ],
+            "summary": "Stefan Roy quoted a savings figure of about 1.2 million euros a year and said thirteen of fifteen plants are flying. Sam asked for the breakdown.",
+            "actions": [
+              "Breakdown of the savings figure. (Not received before the handover.)",
+              "Install list: still not received."
+            ],
+            "path": "calls/2026-07-14_check_in.txt"
+          },
+          {
+            "date": "2026-08-25",
+            "title": "Check-in",
+            "record": "transcript",
+            "customer": [
+              "Stefan Roy"
+            ],
+            "flytbase": [
+              "Sam"
+            ],
+            "summary": "Sam asked for the list of who receives alerts at each plant. Not received. Stefan Roy: the plants handle alerts.",
+            "actions": [
+              "List of alert recipients by plant. (Not received.)"
+            ],
+            "path": "calls/2026-08-25_check_in.txt"
+          },
+          {
+            "date": "2026-09-15",
+            "title": "Check-in",
+            "record": "summary only",
+            "customer": [
+              "Stefan Roy"
+            ],
+            "flytbase": [
+              "Sam"
+            ],
+            "summary": "Short call. Sam raised ticket FB-10903: the dock at Plant 11 goes offline for days at a time and the support desk is waiting for the customer's side to look at the plant's network link. Stefan Roy said to leave it with him. He said he would write about a case study.",
+            "actions": [
+              "Stefan Roy: have the Plant 11 link looked at. (Ticket still pending the customer at the handover.)"
+            ],
+            "path": null
+          },
+          {
+            "date": "2026-10-13",
+            "title": "Check-in",
+            "record": "transcript",
+            "customer": [
+              "Stefan Roy"
+            ],
+            "flytbase": [
+              "Sam"
+            ],
+            "summary": "Stefan Roy chased the case study for the sister company. Sam: blocked on the savings breakdown and a plant willing to be quoted. The finance mailbox email and the Plant 11 dock were raised.",
+            "actions": [
+              "Case study: blocked.",
+              "Finance mailbox email: not answered."
+            ],
+            "path": "calls/2026-10-13_check_in.txt"
+          }
+        ]
+      }
+    },
+    {
+      "path": "contract.txt",
+      "kind": "contract",
+      "text": "ORDER FORM SUMMARY (customer success copy)\nCustomer: Aldermoor Industrial Group, group security\nSigned: 15 January 2026, by Stefan Roy, group head of security\nCurrency: euros\n\nWhat was ordered\n- 14 docks with aircraft, and the FlytBase platform for all of them.\n- Installation and commissioning at plants named by the customer.\n- Operator training for a rollout lead named by the customer, who trains each plant.\n\nPrice and term\n- 140,000 a year.\n- Term: 1 February 2026 to 31 January 2027.\n- No automatic renewal. A renewal needs a new order before the term ends.\n\nInvoicing\n- One invoice a year, to group security.\n- The order form does not say how the customer shares the cost inside the group.\n\nSupport\n- Standard support: support desk in business hours, tickets answered in order of arrival.\n- The customer keeps each dock connected to its own plant network.\n\nNot covered by this order\n- A dock for the fifteenth plant.\n- Any commitment about the sister company.\n- Any statement by FlytBase about savings. The order form quotes no savings figure.\n"
+    },
+    {
+      "path": "deal_history.json",
+      "kind": "deal_history",
+      "data": {
+        "account": "B",
+        "currency": "EUR",
+        "history": [
+          {
+            "date": "2025-08",
+            "what": "Enquiry",
+            "detail": "Stefan Roy, group head of security, asked about automated night patrols for the group's plants."
+          },
+          {
+            "date": "2025-10 to 2025-12",
+            "what": "Trial",
+            "detail": "2 docks at two plants. Trial fee 12,000, credited against the first year."
+          },
+          {
+            "date": "2025-12-11",
+            "what": "Trial review call",
+            "detail": "See calls/2025-12-11_trial_review.txt."
+          },
+          {
+            "date": "2026-01-15",
+            "what": "Order form signed",
+            "detail": "14 docks and the platform, 140,000 a year, signed by Stefan Roy.",
+            "value": 140000
+          },
+          {
+            "date": "2026-02-01",
+            "what": "Term starts",
+            "detail": "One invoice to group security. Paid."
+          },
+          {
+            "date": "2026-02 to 2026-04",
+            "what": "Rollout",
+            "detail": "14 docks installed. Led on the customer's side by Stefan Roy's deputy."
+          },
+          {
+            "date": "2026-04-23",
+            "what": "Rollout close call",
+            "detail": "See calls/2026-04-23_rollout_close.txt."
+          },
+          {
+            "date": "2026-05",
+            "what": "Handover to customer success",
+            "detail": "Sam becomes CSM."
+          },
+          {
+            "date": "2026-07",
+            "what": "Savings figure first quoted",
+            "detail": "Stefan Roy says the docks save about 1.2 million euros a year. No working supplied."
+          },
+          {
+            "date": "2026-09",
+            "what": "Case study requested",
+            "detail": "Stefan Roy asks for a case study he can show the group's sister company, which has 40 plants. Not started."
+          },
+          {
+            "date": "2026-11",
+            "what": "CSM change",
+            "detail": "Sam moves teams. The account passes to you."
+          }
+        ],
+        "on_file_as_open_at_handover": [
+          {
+            "what": "Renewal of the 14 docks",
+            "value": 140000,
+            "due": "2027-01-31",
+            "basis": "Contract. Stefan Roy says it is a formality."
+          },
+          {
+            "what": "Sister company, 40 plants",
+            "value": null,
+            "basis": "Stefan Roy's account only. No contact at the sister company on file. Depends on a case study that has not been started."
+          }
+        ],
+        "note": "Stages and values from this morning are in your own export, not here."
+      }
+    },
+    {
+      "path": "device_events.csv",
+      "kind": "device_events",
+      "text": "date,time,dock_id,event,detail\n2026-05-01,06:41,AD-12,connection_lost,\n2026-05-01,06:57,AD-12,connection_restored,\n2026-05-02,02:57,AD-14,connection_lost,\n2026-05-02,03:14,AD-14,connection_restored,\n2026-05-03,01:05,AD-12,connection_lost,\n2026-05-03,01:42,AD-12,connection_restored,\n2026-05-03,10:53,AD-14,connection_lost,\n2026-05-03,10:58,AD-14,connection_restored,\n2026-05-03,13:50,AD-12,connection_lost,\n2026-05-03,14:22,AD-12,connection_restored,\n2026-05-03,16:05,AD-12,connection_lost,\n2026-05-03,16:15,AD-12,connection_restored,\n2026-05-03,17:09,AD-12,connection_lost,\n2026-05-03,17:45,AD-12,connection_restored,\n2026-05-04,20:25,AD-14,connection_lost,\n2026-05-04,20:35,AD-14,connection_restored,\n2026-05-05,22:47,AD-12,connection_lost,\n2026-05-05,23:01,AD-12,connection_restored,\n2026-05-06,22:29,AD-14,connection_lost,\n2026-05-06,23:03,AD-14,connection_restored,\n2026-05-07,13:56,AD-12,connection_lost,\n2026-05-07,14:29,AD-12,connection_restored,\n2026-05-07,16:49,AD-07,connection_lost,\n2026-05-07,17:05,AD-07,connection_restored,\n2026-05-08,22:02,AD-07,connection_lost,\n2026-05-08,22:21,AD-07,connection_restored,\n2026-05-09,00:35,AD-07,connection_lost,\n2026-05-09,01:00,AD-07,connection_restored,\n2026-05-09,13:39,AD-14,connection_lost,\n2026-05-09,13:47,AD-14,connection_restored,\n2026-05-09,14:02,AD-14,connection_lost,\n2026-05-09,14:31,AD-14,connection_restored,\n2026-05-10,14:03,AD-12,connection_lost,\n2026-05-10,14:10,AD-12,connection_restored,\n2026-05-12,11:10,AD-01,connection_lost,\n2026-05-12,11:47,AD-01,connection_restored,\n2026-05-13,20:07,AD-07,connection_lost,\n2026-05-13,20:12,AD-07,connection_restored,\n2026-05-14,13:40,AD-01,connection_lost,\n2026-05-14,14:20,AD-01,connection_restored,\n2026-05-15,15:07,AD-01,connection_lost,\n2026-05-15,15:41,AD-01,connection_restored,\n2026-05-16,13:23,AD-12,connection_lost,\n2026-05-16,13:29,AD-12,connection_restored,\n2026-05-18,11:15,AD-07,connection_lost,\n2026-05-18,11:28,AD-07,connection_restored,\n2026-05-18,13:32,AD-14,connection_lost,\n2026-05-18,13:51,AD-14,connection_restored,\n2026-05-18,18:12,AD-14,connection_lost,\n2026-05-18,18:25,AD-14,connection_restored,\n2026-05-19,13:38,AD-12,connection_lost,\n2026-05-19,14:17,AD-12,connection_restored,\n2026-05-20,03:02,AD-08,software_update,\n2026-05-20,03:04,AD-04,software_update,\n2026-05-20,03:05,AD-07,software_update,\n2026-05-20,03:06,AD-11,software_update,\n2026-05-20,03:11,AD-10,software_update,\n2026-05-20,03:12,AD-14,software_update,\n2026-05-20,03:13,AD-01,software_update,\n2026-05-20,03:17,AD-02,software_update,\n2026-05-20,03:17,AD-09,software_update,\n2026-05-20,03:22,AD-03,software_update,\n2026-05-20,03:23,AD-13,software_update,\n2026-05-20,03:24,AD-05,software_update,\n2026-05-20,03:28,AD-06,software_update,\n2026-05-20,03:38,AD-12,software_update,\n2026-05-20,18:27,AD-12,connection_lost,\n2026-05-20,18:49,AD-12,connection_restored,\n2026-05-22,04:45,AD-12,connection_lost,\n2026-05-22,05:13,AD-12,connection_restored,\n2026-05-22,09:21,AD-12,connection_lost,\n2026-05-22,10:01,AD-12,connection_restored,\n2026-05-23,08:57,AD-05,connection_lost,\n2026-05-23,09:09,AD-05,connection_restored,\n2026-05-23,19:47,AD-01,connection_lost,\n2026-05-23,20:08,AD-01,connection_restored,\n2026-05-24,05:54,AD-01,connection_lost,\n2026-05-24,06:14,AD-12,connection_lost,\n2026-05-24,06:17,AD-01,connection_restored,\n2026-05-24,06:38,AD-12,connection_restored,\n2026-05-24,12:51,AD-14,connection_lost,\n2026-05-24,13:06,AD-14,connection_restored,\n2026-05-25,01:03,AD-12,connection_lost,\n2026-05-25,01:39,AD-12,connection_restored,\n2026-05-25,02:46,AD-07,connection_lost,\n2026-05-25,02:55,AD-07,connection_restored,\n2026-05-25,08:41,AD-14,connection_lost,\n2026-05-25,09:00,AD-14,connection_restored,\n2026-05-25,12:38,AD-01,connection_lost,\n2026-05-25,13:11,AD-01,connection_restored,\n2026-05-25,19:28,AD-12,connection_lost,\n2026-05-25,19:47,AD-12,connection_restored,\n2026-05-27,11:07,AD-09,connection_lost,\n2026-05-27,11:14,AD-09,connection_restored,\n2026-06-01,12:35,AD-01,connection_lost,\n2026-06-01,13:09,AD-01,connection_restored,\n2026-06-01,16:27,AD-12,connection_lost,\n2026-06-01,16:34,AD-12,connection_restored,\n2026-06-02,18:41,AD-03,connection_lost,\n2026-06-02,18:51,AD-03,connection_restored,\n2026-06-03,04:22,AD-07,connection_lost,\n2026-06-03,04:50,AD-07,connection_restored,\n2026-06-03,19:16,AD-12,connection_lost,\n2026-06-03,19:34,AD-12,connection_restored,\n2026-06-05,18:56,AD-14,connection_lost,\n2026-06-05,19:27,AD-14,connection_restored,\n2026-06-05,20:43,AD-07,connection_lost,\n2026-06-05,21:01,AD-07,connection_restored,\n2026-06-07,15:39,AD-07,connection_lost,\n2026-06-07,16:03,AD-07,connection_restored,\n2026-06-09,03:03,AD-14,connection_lost,\n2026-06-09,03:12,AD-14,connection_restored,\n2026-06-09,21:41,AD-01,connection_lost,\n2026-06-09,22:03,AD-01,connection_restored,\n2026-06-10,07:25,AD-12,connection_lost,\n2026-06-10,07:56,AD-12,connection_restored,\n2026-06-10,18:35,AD-12,connection_lost,\n2026-06-10,18:42,AD-12,connection_restored,\n2026-06-10,21:21,AD-07,connection_lost,\n2026-06-10,21:33,AD-07,connection_restored,\n2026-06-11,06:25,AD-12,connection_lost,\n2026-06-11,06:37,AD-12,connection_restored,\n2026-06-11,07:25,AD-11,connection_lost,\n2026-06-11,07:42,AD-11,connection_restored,\n2026-06-11,13:01,AD-12,connection_lost,\n2026-06-11,13:26,AD-12,connection_restored,\n2026-06-12,08:31,AD-13,connection_lost,\n2026-06-12,08:54,AD-13,connection_restored,\n2026-06-12,18:16,AD-12,connection_lost,\n2026-06-12,18:25,AD-12,connection_restored,\n2026-06-13,12:11,AD-14,connection_lost,\n2026-06-13,12:46,AD-14,connection_restored,\n2026-06-13,19:26,AD-01,connection_lost,\n2026-06-13,19:52,AD-01,connection_restored,\n2026-06-14,04:06,AD-12,connection_lost,\n2026-06-14,04:23,AD-12,connection_restored,\n2026-06-14,18:27,AD-14,connection_lost,\n2026-06-14,18:58,AD-14,connection_restored,\n2026-06-14,22:43,AD-01,connection_lost,\n2026-06-14,22:56,AD-01,connection_restored,\n2026-06-16,06:58,AD-13,connection_lost,\n2026-06-16,07:02,AD-13,connection_restored,\n2026-06-16,13:48,AD-14,connection_lost,\n2026-06-16,14:25,AD-14,connection_restored,\n2026-06-19,01:28,AD-12,connection_lost,\n2026-06-19,01:55,AD-12,connection_restored,\n2026-06-19,06:11,AD-12,connection_lost,\n2026-06-19,06:25,AD-12,connection_restored,\n2026-06-19,16:57,AD-07,connection_lost,\n2026-06-19,17:32,AD-07,connection_restored,\n2026-06-20,00:44,AD-07,connection_lost,\n2026-06-20,01:18,AD-07,connection_restored,\n2026-06-21,07:14,AD-12,connection_lost,\n2026-06-21,07:26,AD-12,connection_restored,\n2026-06-22,03:37,AD-01,connection_lost,\n2026-06-22,03:56,AD-01,connection_restored,\n2026-06-23,18:17,AD-01,connection_lost,\n2026-06-23,18:49,AD-01,connection_restored,\n2026-06-24,04:03,AD-07,connection_lost,\n2026-06-24,04:07,AD-07,connection_restored,\n2026-06-25,16:01,AD-14,connection_lost,\n2026-06-25,16:26,AD-14,connection_restored,\n2026-06-27,06:37,AD-07,connection_lost,\n2026-06-27,07:11,AD-07,connection_restored,\n2026-06-27,11:16,AD-01,connection_lost,\n2026-06-27,11:47,AD-01,connection_restored,\n2026-06-27,13:27,AD-12,connection_lost,\n2026-06-27,13:45,AD-12,connection_restored,\n2026-06-28,18:19,AD-12,connection_lost,\n2026-06-28,18:46,AD-12,connection_restored,\n2026-06-28,22:00,AD-13,connection_lost,\n2026-06-28,22:10,AD-13,connection_restored,\n2026-07-01,21:48,AD-12,connection_lost,\n2026-07-01,22:01,AD-12,connection_restored,\n2026-07-03,14:01,AD-03,connection_lost,\n2026-07-03,14:20,AD-03,connection_restored,\n2026-07-04,00:22,AD-14,connection_lost,\n2026-07-04,00:44,AD-14,connection_restored,\n2026-07-04,22:08,AD-14,connection_lost,\n2026-07-04,22:39,AD-14,connection_restored,\n2026-07-05,00:37,AD-14,connection_lost,\n2026-07-05,01:05,AD-14,connection_restored,\n2026-07-06,00:14,AD-12,connection_lost,\n2026-07-06,00:49,AD-12,connection_restored,\n2026-07-06,06:57,AD-12,connection_lost,\n2026-07-06,07:07,AD-12,connection_restored,\n2026-07-07,19:35,AD-07,connection_lost,\n2026-07-07,19:55,AD-07,connection_restored,\n2026-07-08,03:01,AD-03,software_update,\n2026-07-08,03:07,AD-04,software_update,\n2026-07-08,03:15,AD-13,software_update,\n2026-07-08,03:17,AD-07,software_update,\n2026-07-08,03:17,AD-10,software_update,\n2026-07-08,03:21,AD-14,software_update,\n2026-07-08,03:26,AD-08,software_update,\n2026-07-08,03:28,AD-01,software_update,\n2026-07-08,03:30,AD-11,software_update,\n2026-07-08,03:36,AD-06,software_update,\n2026-07-08,03:37,AD-09,software_update,\n2026-07-08,03:39,AD-05,software_update,\n2026-07-08,03:39,AD-12,software_update,\n2026-07-08,03:40,AD-02,software_update,\n2026-07-09,14:52,AD-12,connection_lost,\n2026-07-09,15:22,AD-12,connection_restored,\n2026-07-10,04:41,AD-12,connection_lost,\n2026-07-10,05:13,AD-12,connection_restored,\n2026-07-10,16:01,AD-01,connection_lost,\n2026-07-10,16:37,AD-01,connection_restored,\n2026-07-11,15:44,AD-12,connection_lost,\n2026-07-11,15:52,AD-12,connection_restored,\n2026-07-12,02:37,AD-14,connection_lost,\n2026-07-12,03:03,AD-14,connection_restored,\n2026-07-13,06:11,AD-11,connection_lost,\n2026-07-13,06:27,AD-11,connection_restored,\n2026-07-13,17:36,AD-07,connection_lost,\n2026-07-13,17:53,AD-07,connection_restored,\n2026-07-16,22:46,AD-14,connection_lost,\n2026-07-16,23:25,AD-14,connection_restored,\n2026-07-17,03:57,AD-14,connection_lost,\n2026-07-17,04:07,AD-14,connection_restored,\n2026-07-18,10:07,AD-14,connection_lost,\n2026-07-18,10:37,AD-14,connection_restored,\n2026-07-18,12:51,AD-02,connection_lost,\n2026-07-18,13:30,AD-02,connection_restored,\n2026-07-18,16:01,AD-10,connection_lost,\n2026-07-18,16:26,AD-10,connection_restored,\n2026-07-20,08:29,AD-01,connection_lost,\n2026-07-20,08:59,AD-01,connection_restored,\n2026-07-20,14:40,AD-04,connection_lost,\n2026-07-20,15:04,AD-12,connection_lost,\n2026-07-20,15:07,AD-04,connection_restored,\n2026-07-20,15:14,AD-12,connection_restored,\n2026-07-21,13:45,AD-02,connection_lost,\n2026-07-21,14:19,AD-02,connection_restored,\n2026-07-21,22:48,AD-07,connection_lost,\n2026-07-21,23:20,AD-07,connection_restored,\n2026-07-22,00:05,AD-14,connection_lost,\n2026-07-22,00:21,AD-14,connection_restored,\n2026-07-22,03:16,AD-12,connection_lost,\n2026-07-22,03:23,AD-04,connection_lost,\n2026-07-22,03:33,AD-12,connection_restored,\n2026-07-22,03:57,AD-04,connection_restored,\n2026-07-22,06:56,AD-12,connection_lost,\n2026-07-22,07:00,AD-12,connection_restored,\n2026-07-22,15:21,AD-07,connection_lost,\n2026-07-22,15:26,AD-07,connection_restored,\n2026-07-22,16:18,AD-07,connection_lost,\n2026-07-22,16:53,AD-07,connection_restored,\n2026-07-25,00:14,AD-07,connection_lost,\n2026-07-25,00:52,AD-07,connection_restored,\n2026-07-25,02:42,AD-14,connection_lost,\n2026-07-25,03:13,AD-04,connection_lost,\n2026-07-25,03:13,AD-14,connection_restored,\n2026-07-25,03:48,AD-04,connection_restored,\n2026-07-25,04:21,AD-14,connection_lost,\n2026-07-25,04:25,AD-14,connection_restored,\n2026-07-25,18:54,AD-01,connection_lost,\n2026-07-25,18:58,AD-01,connection_restored,\n2026-07-26,02:31,AD-14,connection_lost,\n2026-07-26,03:06,AD-14,connection_restored,\n2026-07-26,09:15,AD-12,connection_lost,\n2026-07-26,09:24,AD-12,connection_restored,\n2026-07-27,01:24,AD-07,connection_lost,\n2026-07-27,02:04,AD-07,connection_restored,\n2026-07-28,16:13,AD-14,connection_lost,\n2026-07-28,16:19,AD-14,connection_restored,\n2026-08-01,04:47,AD-14,connection_lost,\n2026-08-01,05:14,AD-14,connection_restored,\n2026-08-01,05:32,AD-14,connection_lost,\n2026-08-01,05:35,AD-14,connection_restored,\n2026-08-04,01:09,AD-12,connection_lost,\n2026-08-04,01:43,AD-12,connection_restored,\n2026-08-04,03:22,AD-06,connection_lost,\n2026-08-04,03:37,AD-06,connection_restored,\n2026-08-05,06:28,AD-14,connection_lost,\n2026-08-05,07:01,AD-14,connection_restored,\n2026-08-05,09:08,AD-12,connection_lost,\n2026-08-05,09:44,AD-12,connection_restored,\n2026-08-05,15:09,AD-01,connection_lost,\n2026-08-05,15:27,AD-01,connection_restored,\n2026-08-06,13:35,AD-03,connection_lost,\n2026-08-06,13:52,AD-03,connection_restored,\n2026-08-07,06:11,AD-04,connection_lost,\n2026-08-07,06:35,AD-04,connection_restored,\n2026-08-08,20:42,AD-14,connection_lost,\n2026-08-08,21:11,AD-14,connection_restored,\n2026-08-10,18:37,AD-12,connection_lost,\n2026-08-10,18:53,AD-12,connection_restored,\n2026-08-11,10:55,AD-07,connection_lost,\n2026-08-11,11:05,AD-07,connection_restored,\n2026-08-12,00:42,AD-14,connection_lost,\n2026-08-12,01:10,AD-14,connection_restored,\n2026-08-12,07:15,AD-01,connection_lost,\n2026-08-12,07:32,AD-01,connection_restored,\n2026-08-13,03:34,AD-11,connection_lost,\n2026-08-13,04:02,AD-11,connection_restored,\n2026-08-13,09:30,AD-12,connection_lost,\n2026-08-13,09:57,AD-12,connection_restored,\n2026-08-13,12:57,AD-01,connection_lost,\n2026-08-13,13:12,AD-01,connection_restored,\n2026-08-14,01:01,AD-14,connection_lost,\n2026-08-14,01:25,AD-14,connection_restored,\n2026-08-14,21:56,AD-12,connection_lost,\n2026-08-14,22:23,AD-12,connection_restored,\n2026-08-15,12:58,AD-01,connection_lost,\n2026-08-15,13:19,AD-01,connection_restored,\n2026-08-15,17:10,AD-12,connection_lost,\n2026-08-15,17:50,AD-12,connection_restored,\n2026-08-15,19:59,AD-14,connection_lost,\n2026-08-15,20:15,AD-14,connection_restored,\n2026-08-16,08:43,AD-09,connection_lost,\n2026-08-16,09:00,AD-09,connection_restored,\n2026-08-17,11:55,AD-01,connection_lost,\n2026-08-17,12:25,AD-01,connection_restored,\n2026-08-18,04:18,AD-14,connection_lost,\n2026-08-18,04:41,AD-14,connection_restored,\n2026-08-19,15:48,AD-07,connection_lost,\n2026-08-19,16:28,AD-07,connection_restored,\n2026-08-19,19:12,AD-09,connection_lost,\n2026-08-19,19:41,AD-09,connection_restored,\n2026-08-20,21:10,AD-02,connection_lost,\n2026-08-20,21:28,AD-02,connection_restored,\n2026-08-22,02:20,AD-07,connection_lost,\n2026-08-22,02:57,AD-07,connection_restored,\n2026-08-22,05:59,AD-14,connection_lost,\n2026-08-22,06:26,AD-14,connection_restored,\n2026-08-23,07:25,AD-12,connection_lost,\n2026-08-23,07:48,AD-12,connection_restored,\n2026-08-25,13:58,AD-07,connection_lost,\n2026-08-25,14:34,AD-07,connection_restored,\n2026-08-25,18:48,AD-03,connection_lost,\n2026-08-25,19:18,AD-03,connection_restored,\n2026-08-26,12:55,AD-01,connection_lost,\n2026-08-26,13:09,AD-01,connection_restored,\n2026-08-27,03:19,AD-12,connection_lost,\n2026-08-27,03:24,AD-12,connection_lost,\n2026-08-27,03:43,AD-12,connection_restored,\n2026-08-27,04:03,AD-12,connection_restored,\n2026-08-28,03:23,AD-07,connection_lost,\n2026-08-28,04:00,AD-07,connection_restored,\n2026-08-28,06:02,AD-12,connection_lost,\n2026-08-28,06:07,AD-12,connection_restored,\n2026-08-28,16:05,AD-12,connection_lost,\n2026-08-28,16:08,AD-12,connection_restored,\n2026-09-01,00:40,AD-01,connection_lost,\n2026-09-01,01:19,AD-01,connection_restored,\n2026-09-01,21:13,AD-07,connection_lost,\n2026-09-01,21:20,AD-07,connection_restored,\n2026-09-03,10:42,AD-12,connection_lost,\n2026-09-03,11:00,AD-12,connection_restored,\n2026-09-05,07:15,AD-07,connection_lost,\n2026-09-05,07:19,AD-07,connection_restored,\n2026-09-06,15:55,AD-12,connection_lost,\n2026-09-06,16:14,AD-12,connection_restored,\n2026-09-06,18:26,AD-08,connection_lost,\n2026-09-06,19:03,AD-08,connection_restored,\n2026-09-07,05:50,AD-12,connection_lost,\n2026-09-07,06:12,AD-12,connection_restored,\n2026-09-08,02:57,AD-01,offline,No connection to the dock\n2026-09-09,18:14,AD-14,connection_lost,\n2026-09-09,18:21,AD-14,connection_restored,\n2026-09-09,20:11,AD-08,connection_lost,\n2026-09-09,20:30,AD-08,connection_restored,\n2026-09-11,11:38,AD-14,connection_lost,\n2026-09-11,12:13,AD-14,connection_restored,\n2026-09-12,06:51,AD-01,back_online,\n2026-09-12,08:43,AD-12,connection_lost,\n2026-09-12,09:10,AD-12,connection_restored,\n2026-09-13,02:02,AD-12,connection_lost,\n2026-09-13,02:21,AD-12,connection_restored,\n2026-09-13,13:12,AD-01,connection_lost,\n2026-09-13,13:46,AD-01,connection_restored,\n2026-09-14,04:14,AD-01,offline,No connection to the dock\n2026-09-14,18:29,AD-12,connection_lost,\n2026-09-14,18:44,AD-12,connection_restored,\n2026-09-15,19:14,AD-12,connection_lost,\n2026-09-15,19:34,AD-12,connection_restored,\n2026-09-16,01:41,AD-12,connection_lost,\n2026-09-16,02:14,AD-12,connection_restored,\n2026-09-16,03:00,AD-01,update_pending,Dock offline at update time\n2026-09-16,03:01,AD-09,software_update,\n2026-09-16,03:03,AD-10,software_update,\n2026-09-16,03:06,AD-07,software_update,\n2026-09-16,03:09,AD-05,software_update,\n2026-09-16,03:17,AD-02,software_update,\n2026-09-16,03:17,AD-04,software_update,\n2026-09-16,03:18,AD-13,software_update,\n2026-09-16,03:25,AD-08,software_update,\n2026-09-16,03:31,AD-11,software_update,\n2026-09-16,03:32,AD-06,software_update,\n2026-09-16,03:32,AD-14,software_update,\n2026-09-16,03:38,AD-12,software_update,\n2026-09-16,03:40,AD-03,software_update,\n2026-09-16,21:47,AD-12,connection_lost,\n2026-09-16,21:51,AD-12,connection_restored,\n2026-09-17,13:41,AD-07,connection_lost,\n2026-09-17,13:54,AD-07,connection_restored,\n2026-09-17,16:11,AD-12,connection_lost,\n2026-09-17,16:47,AD-12,connection_restored,\n2026-09-18,12:56,AD-07,connection_lost,\n2026-09-18,13:05,AD-07,connection_restored,\n2026-09-18,19:11,AD-12,connection_lost,\n2026-09-18,19:15,AD-12,connection_restored,\n2026-09-19,08:03,AD-01,back_online,\n2026-09-19,11:12,AD-01,software_update,Applied on reconnect\n2026-09-19,16:01,AD-12,connection_lost,\n2026-09-19,16:12,AD-12,connection_restored,\n2026-09-19,21:25,AD-12,connection_lost,\n2026-09-19,21:31,AD-12,connection_restored,\n2026-09-19,21:52,AD-12,connection_lost,\n2026-09-19,22:00,AD-12,connection_restored,\n2026-09-21,21:18,AD-11,connection_lost,\n2026-09-21,21:32,AD-11,connection_restored,\n2026-09-21,22:09,AD-01,connection_lost,\n2026-09-21,22:40,AD-01,connection_restored,\n2026-09-22,02:34,AD-01,offline,No connection to the dock\n2026-09-22,20:55,AD-14,connection_lost,\n2026-09-22,21:18,AD-14,connection_restored,\n2026-09-25,09:35,AD-01,back_online,\n2026-09-27,13:12,AD-01,connection_lost,\n2026-09-27,13:20,AD-01,connection_restored,\n2026-09-27,19:31,AD-12,connection_lost,\n2026-09-27,19:50,AD-12,connection_restored,\n2026-09-29,05:02,AD-01,offline,No connection to the dock\n2026-10-01,06:29,AD-01,back_online,\n2026-10-01,13:49,AD-03,connection_lost,\n2026-10-01,13:55,AD-03,connection_restored,\n2026-10-02,15:03,AD-12,connection_lost,\n2026-10-02,15:43,AD-12,connection_restored,\n2026-10-03,13:00,AD-12,connection_lost,\n2026-10-03,13:31,AD-12,connection_restored,\n2026-10-04,00:04,AD-14,connection_lost,\n2026-10-04,00:21,AD-14,connection_restored,\n2026-10-04,07:38,AD-12,connection_lost,\n2026-10-04,07:52,AD-12,connection_restored,\n2026-10-04,20:58,AD-12,connection_lost,\n2026-10-04,21:05,AD-12,connection_restored,\n2026-10-05,04:37,AD-12,connection_lost,\n2026-10-05,05:10,AD-12,connection_restored,\n2026-10-06,01:36,AD-01,offline,No connection to the dock\n2026-10-06,19:27,AD-07,connection_lost,\n2026-10-06,19:58,AD-07,connection_restored,\n2026-10-08,00:57,AD-01,connection_lost,\n2026-10-08,01:18,AD-01,connection_restored,\n2026-10-08,03:16,AD-03,connection_lost,\n2026-10-08,03:34,AD-03,connection_restored,\n2026-10-08,06:11,AD-01,back_online,\n2026-10-08,10:50,AD-14,connection_lost,\n2026-10-08,11:23,AD-14,connection_restored,\n2026-10-09,02:45,AD-07,connection_lost,\n2026-10-09,03:16,AD-07,connection_restored,\n2026-10-09,12:22,AD-01,connection_lost,\n2026-10-09,12:26,AD-01,connection_restored,\n2026-10-09,20:38,AD-12,connection_lost,\n2026-10-09,20:45,AD-12,connection_restored,\n2026-10-10,00:35,AD-12,connection_lost,\n2026-10-10,01:10,AD-12,connection_restored,\n2026-10-10,14:39,AD-01,connection_lost,\n2026-10-10,15:06,AD-01,connection_restored,\n2026-10-11,04:03,AD-07,connection_lost,\n2026-10-11,04:43,AD-07,connection_restored,\n2026-10-14,05:27,AD-12,connection_lost,\n2026-10-14,06:07,AD-12,connection_restored,\n2026-10-14,07:54,AD-12,connection_lost,\n2026-10-14,07:58,AD-12,connection_restored,\n2026-10-15,05:02,AD-01,connection_lost,\n2026-10-15,05:25,AD-01,connection_restored,\n2026-10-15,15:17,AD-01,connection_lost,\n2026-10-15,15:51,AD-01,connection_restored,\n2026-10-15,17:42,AD-12,connection_lost,\n2026-10-15,18:19,AD-12,connection_restored,\n2026-10-16,00:19,AD-12,connection_lost,\n2026-10-16,00:59,AD-12,connection_restored,\n2026-10-17,03:44,AD-12,connection_lost,\n2026-10-17,04:00,AD-12,connection_restored,\n2026-10-17,12:36,AD-12,connection_lost,\n2026-10-17,12:55,AD-12,connection_restored,\n2026-10-18,01:31,AD-01,connection_lost,\n2026-10-18,02:06,AD-01,connection_restored,\n2026-10-18,11:56,AD-05,connection_lost,\n2026-10-18,12:05,AD-05,connection_restored,\n2026-10-19,13:34,AD-09,connection_lost,\n2026-10-19,14:02,AD-09,connection_restored,\n2026-10-20,04:54,AD-01,connection_lost,\n2026-10-20,05:20,AD-01,connection_restored,\n2026-10-20,14:22,AD-12,connection_lost,\n2026-10-20,15:00,AD-12,connection_restored,\n2026-10-21,00:17,AD-13,connection_lost,\n2026-10-21,00:51,AD-13,connection_restored,\n2026-10-21,20:07,AD-01,connection_lost,\n2026-10-21,20:27,AD-01,connection_restored,\n2026-10-22,00:07,AD-14,connection_lost,\n2026-10-22,00:20,AD-14,connection_restored,\n2026-10-22,02:47,AD-12,connection_lost,\n2026-10-22,03:23,AD-12,connection_restored,\n2026-10-22,13:02,AD-01,connection_lost,\n2026-10-22,13:09,AD-01,connection_restored,\n2026-10-24,22:50,AD-07,connection_lost,\n2026-10-24,23:04,AD-07,connection_restored,\n2026-10-25,02:24,AD-01,connection_lost,\n2026-10-25,03:04,AD-01,connection_restored,\n2026-10-26,07:28,AD-07,connection_lost,\n2026-10-26,07:42,AD-07,connection_restored,\n2026-10-26,16:56,AD-07,connection_lost,\n2026-10-26,17:07,AD-07,connection_restored,\n2026-10-27,12:13,AD-04,connection_lost,\n2026-10-27,12:20,AD-04,connection_restored,\n2026-10-28,07:38,AD-10,connection_lost,\n2026-10-28,08:01,AD-10,connection_restored,\n2026-10-28,22:42,AD-02,connection_lost,\n2026-10-28,22:49,AD-02,connection_restored,\n"
+    },
+    {
+      "path": "devices.json",
+      "kind": "devices",
+      "data": {
+        "note": "Docks registered to this account, with the date each was commissioned under the current order (docks from a pilot or trial were commissioned again). Which site each dock sits at is not in this record.",
+        "docks": [
+          {
+            "dock_id": "AD-01",
+            "dock_serial": "FBD82L48074",
+            "aircraft_serial": "FBA12Z73665",
+            "model": "Standard dock, 2025 model",
+            "commissioned": "2026-03-30",
+            "software": "2026.09",
+            "last_seen_online": "2026-11-13"
+          },
+          {
+            "dock_id": "AD-02",
+            "dock_serial": "FBD67B46970",
+            "aircraft_serial": "FBA33R35988",
+            "model": "Standard dock, 2025 model",
+            "commissioned": "2026-04-14",
+            "software": "2026.09",
+            "last_seen_online": "2026-11-13"
+          },
+          {
+            "dock_id": "AD-03",
+            "dock_serial": "FBD29H42965",
+            "aircraft_serial": "FBA86E29928",
+            "model": "Standard dock, 2025 model",
+            "commissioned": "2026-02-23",
+            "software": "2026.09",
+            "last_seen_online": "2026-11-13"
+          },
+          {
+            "dock_id": "AD-04",
+            "dock_serial": "FBD88C78629",
+            "aircraft_serial": "FBA90A75891",
+            "model": "Standard dock, 2025 model",
+            "commissioned": "2026-02-24",
+            "software": "2026.09",
+            "last_seen_online": "2026-11-13"
+          },
+          {
+            "dock_id": "AD-05",
+            "dock_serial": "FBD92U51259",
+            "aircraft_serial": "FBA22Y12558",
+            "model": "Standard dock, 2025 model",
+            "commissioned": "2026-03-23",
+            "software": "2026.09",
+            "last_seen_online": "2026-11-13"
+          },
+          {
+            "dock_id": "AD-06",
+            "dock_serial": "FBD30R53827",
+            "aircraft_serial": "FBA20N73661",
+            "model": "Standard dock, 2025 model",
+            "commissioned": "2026-04-06",
+            "software": "2026.09",
+            "last_seen_online": "2026-11-13"
+          },
+          {
+            "dock_id": "AD-07",
+            "dock_serial": "FBD45W23682",
+            "aircraft_serial": "FBA18E51058",
+            "model": "Standard dock, 2025 model",
+            "commissioned": "2026-03-05",
+            "software": "2026.09",
+            "last_seen_online": "2026-11-13"
+          },
+          {
+            "dock_id": "AD-08",
+            "dock_serial": "FBD42P25200",
+            "aircraft_serial": "FBA97D42958",
+            "model": "Standard dock, 2025 model",
+            "commissioned": "2026-03-06",
+            "software": "2026.09",
+            "last_seen_online": "2026-11-13"
+          },
+          {
+            "dock_id": "AD-09",
+            "dock_serial": "FBD22S58722",
+            "aircraft_serial": "FBA97N86962",
+            "model": "Standard dock, 2025 model",
+            "commissioned": "2026-03-06",
+            "software": "2026.09",
+            "last_seen_online": "2026-11-13"
+          },
+          {
+            "dock_id": "AD-10",
+            "dock_serial": "FBD91K69035",
+            "aircraft_serial": "FBA42R90234",
+            "model": "Standard dock, 2025 model",
+            "commissioned": "2026-04-01",
+            "software": "2026.09",
+            "last_seen_online": "2026-11-13"
+          },
+          {
+            "dock_id": "AD-11",
+            "dock_serial": "FBD84L53748",
+            "aircraft_serial": "FBA43T49642",
+            "model": "Standard dock, 2025 model",
+            "commissioned": "2026-02-19",
+            "software": "2026.09",
+            "last_seen_online": "2026-11-13"
+          },
+          {
+            "dock_id": "AD-12",
+            "dock_serial": "FBD19K26276",
+            "aircraft_serial": "FBA73T09530",
+            "model": "Standard dock, 2025 model",
+            "commissioned": "2026-04-17",
+            "software": "2026.09",
+            "last_seen_online": "2026-11-13"
+          },
+          {
+            "dock_id": "AD-13",
+            "dock_serial": "FBD24S01141",
+            "aircraft_serial": "FBA91Y90008",
+            "model": "Standard dock, 2025 model",
+            "commissioned": "2026-03-02",
+            "software": "2026.09",
+            "last_seen_online": "2026-11-13"
+          },
+          {
+            "dock_id": "AD-14",
+            "dock_serial": "FBD57B22150",
+            "aircraft_serial": "FBA48U40640",
+            "model": "Standard dock, 2025 model",
+            "commissioned": "2026-03-11",
+            "software": "2026.09",
+            "last_seen_online": "2026-11-13"
+          }
+        ]
+      }
+    },
+    {
+      "path": "emails/2026-07-16_stefan_savings.txt",
+      "kind": "email",
+      "text": "From: Stefan Roy\nTo: Sam (FlytBase)\nDate: 16 July 2026\nSubject: The number\n\nSam,\n\nAs discussed: ROI is proven, about 1.2 million euros a year saved. Thirteen of fifteen plants are\nflying. Feel free to use that internally.\n\nI will send the detail when I have a moment.\n\nStefan\n\n[No detail received.]\n"
+    },
+    {
+      "path": "emails/2026-09-18_beatriz_alerts.txt",
+      "kind": "email",
+      "text": "From: Beatriz Alonso\nTo: Support desk\nDate: 18 September 2026\nSubject: Who gets the alerts at night (FB-10944)\n\nHello,\n\nI am the plant manager at Plant 7. Can the night alerts from our dock go to more than one person?\nPlease tell me how to change it.\n\nBeatriz Alonso\n\n---\nFrom: Support desk\nTo: Beatriz Alonso\nDate: 20 September 2026\nSubject: RE: Who gets the alerts at night (FB-10944)\n\nHello Beatriz, yes. The settings guide attached shows how to add recipients. Closing this ticket;\nreply if you need anything else.\n\n[No reply. Nobody asked why she wanted to change it.]\n"
+    },
+    {
+      "path": "emails/2026-09-22_stefan_case_study.txt",
+      "kind": "email",
+      "text": "From: Stefan Roy\nTo: Sam (FlytBase)\nDate: 22 September 2026\nSubject: Case study\n\nSam,\n\nI want a case study for our sister company. They have 40 plants and they are watching what we do\nhere. Two pages, the headline saving on the front. When can I see a draft?\n\nStefan\n"
+    },
+    {
+      "path": "emails/2026-10-08_finance_mailbox.txt",
+      "kind": "email",
+      "text": "From: Group Finance (shared mailbox), Aldermoor Industrial Group\nTo: Sam (FlytBase)\nDate: 8 October 2026\nSubject: Renewal quote, drone docks\n\nHello,\n\nWe understand the dock contract renews at the end of January. Before a renewal is raised, please\nsend the quote in a form that shows the cost for each plant.\n\nGroup Finance\n\n[Unsigned. No reply on file.]\n"
+    },
+    {
+      "path": "flights.csv",
+      "kind": "flights",
+      "text": "flight_id,date,start_time,dock_id,duration_min,mode,result,note\nAD-F00001,2026-05-01,02:18,AD-02,20,scheduled,completed,\nAD-F00002,2026-05-01,02:45,AD-10,23,scheduled,completed,\nAD-F00003,2026-05-01,23:47,AD-05,16,scheduled,completed,\nAD-F00004,2026-05-02,00:33,AD-05,22,scheduled,completed,\nAD-F00005,2026-05-02,03:55,AD-10,22,scheduled,completed,\nAD-F00006,2026-05-02,21:57,AD-08,23,scheduled,completed,\nAD-F00007,2026-05-03,01:13,AD-10,21,scheduled,completed,\nAD-F00008,2026-05-03,01:43,AD-08,19,scheduled,completed,\nAD-F00009,2026-05-03,21:45,AD-02,20,scheduled,completed,\nAD-F00010,2026-05-03,23:06,AD-05,16,scheduled,completed,\nAD-F00011,2026-05-04,00:59,AD-08,22,scheduled,completed,\nAD-F00012,2026-05-04,01:57,AD-10,16,scheduled,completed,\nAD-F00013,2026-05-04,03:11,AD-02,22,scheduled,completed,\nAD-F00014,2026-05-05,03:21,AD-10,19,scheduled,completed,\nAD-F00015,2026-05-05,10:43,AD-01,5,manual,completed,\nAD-F00016,2026-05-05,22:41,AD-08,16,scheduled,completed,\nAD-F00017,2026-05-06,04:08,AD-10,18,scheduled,completed,\nAD-F00018,2026-05-06,11:57,AD-09,4,manual,completed,\nAD-F00019,2026-05-06,13:08,AD-04,4,manual,completed,\nAD-F00020,2026-05-06,22:53,AD-08,21,scheduled,completed,\nAD-F00021,2026-05-06,22:56,AD-02,23,scheduled,completed,\nAD-F00022,2026-05-07,03:20,AD-05,17,scheduled,completed,\nAD-F00023,2026-05-07,22:29,AD-10,24,scheduled,completed,\nAD-F00024,2026-05-07,22:43,AD-08,23,scheduled,completed,\nAD-F00025,2026-05-07,23:55,AD-02,5,scheduled,returned_early,wind\nAD-F00026,2026-05-08,00:47,AD-02,21,scheduled,completed,\nAD-F00027,2026-05-08,03:15,AD-08,17,scheduled,completed,\nAD-F00028,2026-05-09,01:57,AD-02,23,scheduled,completed,\nAD-F00029,2026-05-09,23:08,AD-05,18,scheduled,completed,\nAD-F00030,2026-05-10,11:39,AD-07,9,manual,completed,\nAD-F00031,2026-05-11,00:01,AD-05,20,scheduled,completed,\nAD-F00032,2026-05-11,02:35,AD-08,24,scheduled,completed,\nAD-F00033,2026-05-11,03:39,AD-02,18,scheduled,completed,\nAD-F00034,2026-05-11,11:53,AD-12,4,manual,completed,\nAD-F00035,2026-05-12,01:38,AD-02,17,scheduled,completed,\nAD-F00036,2026-05-12,22:39,AD-08,19,scheduled,completed,\nAD-F00037,2026-05-13,00:59,AD-10,23,scheduled,completed,\nAD-F00038,2026-05-13,01:32,AD-02,23,scheduled,completed,\nAD-F00039,2026-05-13,02:39,AD-08,19,scheduled,completed,\nAD-F00040,2026-05-13,14:16,AD-03,9,manual,completed,\nAD-F00041,2026-05-14,01:05,AD-02,21,scheduled,completed,\nAD-F00042,2026-05-14,01:09,AD-08,18,scheduled,completed,\nAD-F00043,2026-05-14,01:35,AD-05,18,scheduled,completed,\nAD-F00044,2026-05-15,02:08,AD-08,24,scheduled,completed,\nAD-F00045,2026-05-15,11:07,AD-06,4,manual,completed,\nAD-F00046,2026-05-15,16:00,AD-09,5,manual,completed,\nAD-F00047,2026-05-16,00:20,AD-08,23,scheduled,completed,\nAD-F00048,2026-05-16,10:13,AD-03,6,manual,completed,\nAD-F00049,2026-05-17,00:04,AD-10,24,scheduled,completed,\nAD-F00050,2026-05-17,01:31,AD-08,22,scheduled,completed,\nAD-F00051,2026-05-17,04:27,AD-02,20,scheduled,completed,\nAD-F00052,2026-05-18,04:04,AD-02,22,scheduled,completed,\nAD-F00053,2026-05-18,21:59,AD-08,22,scheduled,completed,\nAD-F00054,2026-05-18,22:51,AD-10,21,scheduled,completed,\nAD-F00055,2026-05-19,21:34,AD-08,24,scheduled,completed,\nAD-F00056,2026-05-19,23:13,AD-05,23,scheduled,completed,\nAD-F00057,2026-05-20,02:07,AD-05,21,scheduled,completed,\nAD-F00058,2026-05-20,09:18,AD-13,4,manual,completed,\nAD-F00059,2026-05-20,21:58,AD-10,18,scheduled,completed,\nAD-F00060,2026-05-20,22:01,AD-08,16,scheduled,completed,\nAD-F00061,2026-05-21,11:46,AD-09,7,manual,completed,\nAD-F00062,2026-05-21,22:15,AD-05,18,scheduled,completed,\nAD-F00063,2026-05-21,22:28,AD-02,18,scheduled,completed,\nAD-F00064,2026-05-21,23:16,AD-10,22,scheduled,completed,\nAD-F00065,2026-05-21,23:33,AD-08,18,scheduled,completed,\nAD-F00066,2026-05-22,04:26,AD-02,23,scheduled,completed,\nAD-F00067,2026-05-22,11:49,AD-07,8,manual,completed,\nAD-F00068,2026-05-22,23:05,AD-08,24,scheduled,completed,\nAD-F00069,2026-05-23,00:10,AD-10,24,scheduled,completed,\nAD-F00070,2026-05-23,13:31,AD-07,5,manual,completed,\nAD-F00071,2026-05-24,02:11,AD-05,24,scheduled,completed,\nAD-F00072,2026-05-24,21:35,AD-02,17,scheduled,completed,\nAD-F00073,2026-05-25,00:00,AD-05,24,scheduled,completed,\nAD-F00074,2026-05-25,00:19,AD-10,24,scheduled,completed,\nAD-F00075,2026-05-25,00:38,AD-02,21,scheduled,completed,\nAD-F00076,2026-05-25,09:00,AD-12,4,manual,completed,\nAD-F00077,2026-05-25,23:21,AD-08,9,scheduled,returned_early,wind\nAD-F00078,2026-05-26,00:51,AD-05,16,scheduled,completed,\nAD-F00079,2026-05-26,01:19,AD-02,21,scheduled,completed,\nAD-F00080,2026-05-26,02:09,AD-10,20,scheduled,completed,\nAD-F00081,2026-05-26,12:41,AD-06,7,manual,completed,\nAD-F00082,2026-05-26,22:41,AD-08,24,scheduled,completed,\nAD-F00083,2026-05-27,02:06,AD-08,21,scheduled,completed,\nAD-F00084,2026-05-27,09:18,AD-12,6,manual,completed,\nAD-F00085,2026-05-28,00:58,AD-02,18,scheduled,completed,\nAD-F00086,2026-05-28,01:42,AD-08,23,scheduled,completed,\nAD-F00087,2026-05-28,03:46,AD-10,21,scheduled,completed,\nAD-F00088,2026-05-29,01:15,AD-05,20,scheduled,completed,\nAD-F00089,2026-05-29,01:22,AD-08,10,scheduled,returned_early,wind\nAD-F00090,2026-05-29,03:35,AD-02,18,scheduled,completed,\nAD-F00091,2026-05-29,13:57,AD-01,6,manual,completed,\nAD-F00092,2026-05-30,15:51,AD-13,5,manual,completed,\nAD-F00093,2026-05-30,22:10,AD-02,22,scheduled,completed,\nAD-F00094,2026-05-30,22:40,AD-08,24,scheduled,completed,\nAD-F00095,2026-05-30,23:08,AD-10,19,scheduled,completed,\nAD-F00096,2026-05-31,00:48,AD-08,18,scheduled,completed,\nAD-F00097,2026-05-31,01:59,AD-05,23,scheduled,completed,\nAD-F00098,2026-05-31,03:17,AD-10,20,scheduled,completed,\nAD-F00099,2026-05-31,04:25,AD-02,19,scheduled,completed,\nAD-F00100,2026-05-31,10:21,AD-11,9,manual,completed,\nAD-F00101,2026-06-01,02:06,AD-10,19,scheduled,completed,\nAD-F00102,2026-06-01,22:59,AD-02,19,scheduled,completed,\nAD-F00103,2026-06-01,23:26,AD-08,18,scheduled,completed,\nAD-F00104,2026-06-02,23:06,AD-10,21,scheduled,completed,\nAD-F00105,2026-06-02,23:19,AD-08,23,scheduled,completed,\nAD-F00106,2026-06-03,02:35,AD-10,22,scheduled,completed,\nAD-F00107,2026-06-03,04:18,AD-05,19,scheduled,completed,\nAD-F00108,2026-06-03,22:06,AD-08,18,scheduled,completed,\nAD-F00109,2026-06-03,22:17,AD-02,17,scheduled,completed,\nAD-F00110,2026-06-04,03:25,AD-08,19,scheduled,completed,\nAD-F00111,2026-06-04,03:56,AD-02,24,scheduled,completed,\nAD-F00112,2026-06-04,14:38,AD-01,8,manual,completed,\nAD-F00113,2026-06-04,23:24,AD-10,21,scheduled,completed,\nAD-F00114,2026-06-05,01:36,AD-05,17,scheduled,completed,\nAD-F00115,2026-06-05,01:59,AD-08,23,scheduled,completed,\nAD-F00116,2026-06-05,03:08,AD-10,23,scheduled,completed,\nAD-F00117,2026-06-05,13:03,AD-04,9,manual,completed,\nAD-F00118,2026-06-06,03:01,AD-10,22,scheduled,completed,\nAD-F00119,2026-06-06,10:49,AD-07,6,manual,completed,\nAD-F00120,2026-06-06,22:17,AD-08,17,scheduled,completed,\nAD-F00121,2026-06-07,00:29,AD-10,9,scheduled,returned_early,wind\nAD-F00122,2026-06-07,13:34,AD-13,7,manual,completed,\nAD-F00123,2026-06-07,14:58,AD-12,4,manual,completed,\nAD-F00124,2026-06-08,03:57,AD-08,17,scheduled,completed,\nAD-F00125,2026-06-08,22:08,AD-02,19,scheduled,completed,\nAD-F00126,2026-06-08,22:33,AD-05,24,scheduled,completed,\nAD-F00127,2026-06-08,23:43,AD-10,16,scheduled,completed,\nAD-F00128,2026-06-09,04:15,AD-05,17,scheduled,completed,\nAD-F00129,2026-06-09,04:15,AD-08,17,scheduled,completed,\nAD-F00130,2026-06-09,04:25,AD-02,23,scheduled,completed,\nAD-F00131,2026-06-09,09:13,AD-13,5,manual,completed,\nAD-F00132,2026-06-10,00:36,AD-08,22,scheduled,completed,\nAD-F00133,2026-06-10,14:14,AD-01,8,manual,completed,\nAD-F00134,2026-06-10,22:33,AD-10,20,scheduled,completed,\nAD-F00135,2026-06-11,00:26,AD-08,20,scheduled,completed,\nAD-F00136,2026-06-11,01:04,AD-10,20,scheduled,completed,\nAD-F00137,2026-06-11,02:32,AD-02,18,scheduled,completed,\nAD-F00138,2026-06-11,04:20,AD-05,17,scheduled,completed,\nAD-F00139,2026-06-12,21:37,AD-08,20,scheduled,completed,\nAD-F00140,2026-06-12,22:16,AD-02,17,scheduled,completed,\nAD-F00141,2026-06-12,23:38,AD-10,21,scheduled,completed,\nAD-F00142,2026-06-13,01:23,AD-10,18,scheduled,completed,\nAD-F00143,2026-06-13,03:12,AD-08,21,scheduled,completed,\nAD-F00144,2026-06-13,03:48,AD-02,20,scheduled,completed,\nAD-F00145,2026-06-13,21:48,AD-05,20,scheduled,completed,\nAD-F00146,2026-06-14,00:31,AD-10,18,scheduled,completed,\nAD-F00147,2026-06-14,02:43,AD-05,17,scheduled,completed,\nAD-F00148,2026-06-14,10:14,AD-09,5,manual,completed,\nAD-F00149,2026-06-14,23:18,AD-08,18,scheduled,completed,\nAD-F00150,2026-06-15,00:58,AD-10,16,scheduled,completed,\nAD-F00151,2026-06-15,21:50,AD-05,19,scheduled,completed,\nAD-F00152,2026-06-16,03:45,AD-05,23,scheduled,completed,\nAD-F00153,2026-06-16,22:00,AD-10,20,scheduled,completed,\nAD-F00154,2026-06-16,23:25,AD-08,22,scheduled,completed,\nAD-F00155,2026-06-17,03:10,AD-10,16,scheduled,completed,\nAD-F00156,2026-06-17,03:49,AD-08,22,scheduled,completed,\nAD-F00157,2026-06-17,23:27,AD-02,23,scheduled,completed,\nAD-F00158,2026-06-18,01:54,AD-10,21,scheduled,completed,\nAD-F00159,2026-06-18,01:59,AD-05,23,scheduled,completed,\nAD-F00160,2026-06-18,09:23,AD-03,5,manual,completed,\nAD-F00161,2026-06-18,23:16,AD-08,20,scheduled,completed,\nAD-F00162,2026-06-18,23:43,AD-02,20,scheduled,completed,\nAD-F00163,2026-06-19,00:12,AD-08,24,scheduled,completed,\nAD-F00164,2026-06-19,00:48,AD-05,23,scheduled,completed,\nAD-F00165,2026-06-19,00:57,AD-02,17,scheduled,completed,\nAD-F00166,2026-06-19,02:53,AD-10,23,scheduled,completed,\nAD-F00167,2026-06-20,00:48,AD-10,23,scheduled,completed,\nAD-F00168,2026-06-20,01:40,AD-08,20,scheduled,completed,\nAD-F00169,2026-06-20,02:02,AD-02,24,scheduled,completed,\nAD-F00170,2026-06-20,14:29,AD-03,4,manual,completed,\nAD-F00171,2026-06-21,01:32,AD-08,18,scheduled,completed,\nAD-F00172,2026-06-21,15:34,AD-12,5,manual,completed,\nAD-F00173,2026-06-21,22:17,AD-02,16,scheduled,completed,\nAD-F00174,2026-06-21,23:10,AD-05,19,scheduled,completed,\nAD-F00175,2026-06-21,23:48,AD-10,17,scheduled,completed,\nAD-F00176,2026-06-22,02:13,AD-10,23,scheduled,completed,\nAD-F00177,2026-06-22,22:30,AD-05,16,scheduled,completed,\nAD-F00178,2026-06-23,00:48,AD-08,18,scheduled,completed,\nAD-F00179,2026-06-23,04:24,AD-10,18,scheduled,completed,\nAD-F00180,2026-06-24,00:52,AD-05,23,scheduled,completed,\nAD-F00181,2026-06-24,00:56,AD-08,18,scheduled,completed,\nAD-F00182,2026-06-24,03:39,AD-10,16,scheduled,completed,\nAD-F00183,2026-06-24,04:25,AD-02,17,scheduled,completed,\nAD-F00184,2026-06-24,11:22,AD-09,7,manual,completed,\nAD-F00185,2026-06-24,12:43,AD-07,6,manual,completed,\nAD-F00186,2026-06-24,13:36,AD-13,9,manual,completed,\nAD-F00187,2026-06-25,01:28,AD-02,23,scheduled,completed,\nAD-F00188,2026-06-25,02:04,AD-10,23,scheduled,completed,\nAD-F00189,2026-06-25,02:10,AD-05,22,scheduled,completed,\nAD-F00190,2026-06-25,02:25,AD-08,22,scheduled,completed,\nAD-F00191,2026-06-26,00:10,AD-08,23,scheduled,completed,\nAD-F00192,2026-06-26,03:55,AD-02,17,scheduled,completed,\nAD-F00193,2026-06-26,15:41,AD-06,7,manual,completed,\nAD-F00194,2026-06-26,23:25,AD-10,18,scheduled,completed,\nAD-F00195,2026-06-27,00:39,AD-02,24,scheduled,completed,\nAD-F00196,2026-06-27,03:16,AD-10,16,scheduled,completed,\nAD-F00197,2026-06-27,04:08,AD-08,21,scheduled,completed,\nAD-F00198,2026-06-28,02:10,AD-10,16,scheduled,completed,\nAD-F00199,2026-06-28,02:27,AD-05,21,scheduled,completed,\nAD-F00200,2026-06-28,23:42,AD-08,18,scheduled,completed,\nAD-F00201,2026-06-29,03:15,AD-08,20,scheduled,completed,\nAD-F00202,2026-06-29,03:41,AD-10,21,scheduled,completed,\nAD-F00203,2026-06-29,11:27,AD-11,6,manual,completed,\nAD-F00204,2026-06-29,21:49,AD-05,22,scheduled,completed,\nAD-F00205,2026-06-30,00:31,AD-02,16,scheduled,completed,\nAD-F00206,2026-06-30,01:15,AD-05,18,scheduled,completed,\nAD-F00207,2026-06-30,22:02,AD-08,19,scheduled,completed,\nAD-F00208,2026-07-01,00:43,AD-08,18,scheduled,completed,\nAD-F00209,2026-07-01,01:40,AD-10,22,scheduled,completed,\nAD-F00210,2026-07-01,03:31,AD-05,22,scheduled,completed,\nAD-F00211,2026-07-01,10:08,AD-03,7,manual,completed,\nAD-F00212,2026-07-01,10:11,AD-11,8,manual,completed,\nAD-F00213,2026-07-01,10:58,AD-04,7,manual,completed,\nAD-F00214,2026-07-01,22:26,AD-02,23,scheduled,completed,\nAD-F00215,2026-07-02,00:33,AD-02,19,scheduled,completed,\nAD-F00216,2026-07-02,03:01,AD-05,21,scheduled,completed,\nAD-F00217,2026-07-02,09:46,AD-01,9,manual,completed,\nAD-F00218,2026-07-02,22:21,AD-08,19,scheduled,completed,\nAD-F00219,2026-07-03,00:34,AD-02,20,scheduled,completed,\nAD-F00220,2026-07-03,02:27,AD-10,19,scheduled,completed,\nAD-F00221,2026-07-03,04:27,AD-05,17,scheduled,completed,\nAD-F00222,2026-07-03,22:48,AD-08,19,scheduled,completed,\nAD-F00223,2026-07-04,01:36,AD-02,20,scheduled,completed,\nAD-F00224,2026-07-04,03:41,AD-05,23,scheduled,completed,\nAD-F00225,2026-07-04,22:13,AD-10,21,scheduled,completed,\nAD-F00226,2026-07-04,22:45,AD-08,20,scheduled,completed,\nAD-F00227,2026-07-05,00:38,AD-02,18,scheduled,completed,\nAD-F00228,2026-07-05,02:38,AD-05,18,scheduled,completed,\nAD-F00229,2026-07-06,02:43,AD-10,16,scheduled,completed,\nAD-F00230,2026-07-06,02:58,AD-05,19,scheduled,completed,\nAD-F00231,2026-07-06,21:34,AD-08,19,scheduled,completed,\nAD-F00232,2026-07-06,22:34,AD-02,21,scheduled,completed,\nAD-F00233,2026-07-07,01:40,AD-10,21,scheduled,completed,\nAD-F00234,2026-07-07,01:41,AD-02,9,scheduled,returned_early,wind\nAD-F00235,2026-07-07,13:57,AD-11,8,manual,completed,\nAD-F00236,2026-07-07,21:49,AD-08,21,scheduled,completed,\nAD-F00237,2026-07-07,21:51,AD-05,23,scheduled,completed,\nAD-F00238,2026-07-08,00:44,AD-05,24,scheduled,completed,\nAD-F00239,2026-07-08,03:22,AD-08,17,scheduled,completed,\nAD-F00240,2026-07-08,23:05,AD-02,22,scheduled,completed,\nAD-F00241,2026-07-09,01:16,AD-05,18,scheduled,completed,\nAD-F00242,2026-07-09,01:55,AD-08,22,scheduled,completed,\nAD-F00243,2026-07-09,09:56,AD-07,6,manual,completed,\nAD-F00244,2026-07-09,22:30,AD-02,22,scheduled,completed,\nAD-F00245,2026-07-10,01:33,AD-10,23,scheduled,completed,\nAD-F00246,2026-07-10,02:24,AD-05,16,scheduled,completed,\nAD-F00247,2026-07-10,12:36,AD-03,4,manual,completed,\nAD-F00248,2026-07-10,22:29,AD-08,24,scheduled,completed,\nAD-F00249,2026-07-11,01:34,AD-05,19,scheduled,completed,\nAD-F00250,2026-07-11,02:51,AD-08,20,scheduled,completed,\nAD-F00251,2026-07-11,22:40,AD-02,19,scheduled,completed,\nAD-F00252,2026-07-12,00:46,AD-05,21,scheduled,completed,\nAD-F00253,2026-07-12,01:39,AD-02,16,scheduled,completed,\nAD-F00254,2026-07-12,02:36,AD-08,20,scheduled,completed,\nAD-F00255,2026-07-12,09:06,AD-06,8,manual,completed,\nAD-F00256,2026-07-12,23:38,AD-10,21,scheduled,completed,\nAD-F00257,2026-07-13,03:00,AD-10,22,scheduled,completed,\nAD-F00258,2026-07-14,01:07,AD-05,23,scheduled,completed,\nAD-F00259,2026-07-14,01:42,AD-08,22,scheduled,completed,\nAD-F00260,2026-07-14,03:13,AD-02,24,scheduled,completed,\nAD-F00261,2026-07-14,11:13,AD-04,4,manual,completed,\nAD-F00262,2026-07-14,13:23,AD-12,6,manual,completed,\nAD-F00263,2026-07-14,14:58,AD-09,8,manual,completed,\nAD-F00264,2026-07-15,02:27,AD-08,23,scheduled,completed,\nAD-F00265,2026-07-15,21:36,AD-10,22,scheduled,completed,\nAD-F00266,2026-07-15,22:50,AD-05,23,scheduled,completed,\nAD-F00267,2026-07-15,23:52,AD-02,17,scheduled,completed,\nAD-F00268,2026-07-16,02:24,AD-08,18,scheduled,completed,\nAD-F00269,2026-07-16,04:15,AD-02,21,scheduled,completed,\nAD-F00270,2026-07-16,11:40,AD-09,9,manual,completed,\nAD-F00271,2026-07-16,23:52,AD-10,17,scheduled,completed,\nAD-F00272,2026-07-17,00:15,AD-10,24,scheduled,completed,\nAD-F00273,2026-07-17,03:10,AD-02,17,scheduled,completed,\nAD-F00274,2026-07-17,22:07,AD-08,21,scheduled,completed,\nAD-F00275,2026-07-18,03:54,AD-08,24,scheduled,completed,\nAD-F00276,2026-07-18,14:49,AD-07,5,manual,completed,\nAD-F00277,2026-07-19,01:11,AD-02,19,scheduled,completed,\nAD-F00278,2026-07-19,01:44,AD-05,20,scheduled,completed,\nAD-F00279,2026-07-19,23:49,AD-08,16,scheduled,completed,\nAD-F00280,2026-07-19,23:50,AD-10,20,scheduled,completed,\nAD-F00281,2026-07-20,00:32,AD-05,23,scheduled,completed,\nAD-F00282,2026-07-20,00:49,AD-08,23,scheduled,completed,\nAD-F00283,2026-07-20,01:00,AD-02,24,scheduled,completed,\nAD-F00284,2026-07-20,11:00,AD-09,5,manual,completed,\nAD-F00285,2026-07-21,00:52,AD-10,20,scheduled,completed,\nAD-F00286,2026-07-21,02:33,AD-05,18,scheduled,completed,\nAD-F00287,2026-07-21,21:45,AD-02,18,scheduled,completed,\nAD-F00288,2026-07-22,02:30,AD-02,18,scheduled,completed,\nAD-F00289,2026-07-22,03:28,AD-10,16,scheduled,completed,\nAD-F00290,2026-07-22,21:42,AD-05,6,scheduled,returned_early,wind\nAD-F00291,2026-07-22,22:33,AD-08,20,scheduled,completed,\nAD-F00292,2026-07-23,00:38,AD-10,23,scheduled,completed,\nAD-F00293,2026-07-23,02:54,AD-08,20,scheduled,completed,\nAD-F00294,2026-07-23,03:06,AD-02,18,scheduled,completed,\nAD-F00295,2026-07-24,01:27,AD-02,21,scheduled,completed,\nAD-F00296,2026-07-24,21:46,AD-05,20,scheduled,completed,\nAD-F00297,2026-07-24,21:59,AD-08,16,scheduled,completed,\nAD-F00298,2026-07-25,01:49,AD-02,24,scheduled,completed,\nAD-F00299,2026-07-25,03:21,AD-10,17,scheduled,completed,\nAD-F00300,2026-07-25,23:19,AD-08,21,scheduled,completed,\nAD-F00301,2026-07-26,01:27,AD-08,18,scheduled,completed,\nAD-F00302,2026-07-26,02:58,AD-05,16,scheduled,completed,\nAD-F00303,2026-07-26,12:48,AD-03,7,manual,completed,\nAD-F00304,2026-07-26,22:28,AD-02,24,scheduled,completed,\nAD-F00305,2026-07-26,23:17,AD-10,20,scheduled,completed,\nAD-F00306,2026-07-27,03:19,AD-08,20,scheduled,completed,\nAD-F00307,2026-07-27,03:35,AD-05,7,scheduled,returned_early,wind\nAD-F00308,2026-07-27,12:04,AD-13,7,manual,completed,\nAD-F00309,2026-07-27,15:18,AD-03,9,manual,completed,\nAD-F00310,2026-07-27,21:44,AD-10,16,scheduled,completed,\nAD-F00311,2026-07-28,00:01,AD-02,24,scheduled,completed,\nAD-F00312,2026-07-28,01:31,AD-05,21,scheduled,completed,\nAD-F00313,2026-07-29,00:07,AD-05,19,scheduled,completed,\nAD-F00314,2026-07-29,01:46,AD-02,21,scheduled,completed,\nAD-F00315,2026-07-29,21:37,AD-08,19,scheduled,completed,\nAD-F00316,2026-07-29,21:43,AD-10,17,scheduled,completed,\nAD-F00317,2026-07-30,21:40,AD-10,21,scheduled,completed,\nAD-F00318,2026-07-30,23:56,AD-08,19,scheduled,completed,\nAD-F00319,2026-07-31,03:50,AD-02,20,scheduled,completed,\nAD-F00320,2026-07-31,12:50,AD-09,4,manual,completed,\nAD-F00321,2026-07-31,14:59,AD-12,8,manual,completed,\nAD-F00322,2026-07-31,22:05,AD-08,22,scheduled,completed,\nAD-F00323,2026-07-31,23:24,AD-05,20,scheduled,completed,\nAD-F00324,2026-07-31,23:44,AD-10,16,scheduled,completed,\nAD-F00325,2026-08-01,00:03,AD-02,22,scheduled,completed,\nAD-F00326,2026-08-01,02:37,AD-05,19,scheduled,completed,\nAD-F00327,2026-08-01,23:21,AD-08,16,scheduled,completed,\nAD-F00328,2026-08-02,01:29,AD-08,19,scheduled,completed,\nAD-F00329,2026-08-02,02:55,AD-02,23,scheduled,completed,\nAD-F00330,2026-08-02,21:51,AD-05,23,scheduled,completed,\nAD-F00331,2026-08-03,00:07,AD-10,23,scheduled,completed,\nAD-F00332,2026-08-03,04:26,AD-05,16,scheduled,completed,\nAD-F00333,2026-08-03,10:52,AD-06,9,manual,completed,\nAD-F00334,2026-08-03,11:49,AD-01,4,manual,completed,\nAD-F00335,2026-08-03,22:22,AD-08,21,scheduled,completed,\nAD-F00336,2026-08-04,00:39,AD-05,21,scheduled,completed,\nAD-F00337,2026-08-04,01:43,AD-08,5,scheduled,returned_early,wind\nAD-F00338,2026-08-04,12:05,AD-06,6,manual,completed,\nAD-F00339,2026-08-04,12:20,AD-11,6,manual,completed,\nAD-F00340,2026-08-04,23:51,AD-10,24,scheduled,completed,\nAD-F00341,2026-08-05,00:26,AD-08,22,scheduled,completed,\nAD-F00342,2026-08-05,00:28,AD-05,17,scheduled,completed,\nAD-F00343,2026-08-05,02:21,AD-10,16,scheduled,completed,\nAD-F00344,2026-08-05,23:59,AD-02,22,scheduled,completed,\nAD-F00345,2026-08-06,00:34,AD-05,16,scheduled,completed,\nAD-F00346,2026-08-06,02:16,AD-10,20,scheduled,completed,\nAD-F00347,2026-08-06,22:56,AD-08,18,scheduled,completed,\nAD-F00348,2026-08-06,22:59,AD-02,23,scheduled,completed,\nAD-F00349,2026-08-07,01:13,AD-02,20,scheduled,completed,\nAD-F00350,2026-08-07,02:48,AD-08,16,scheduled,completed,\nAD-F00351,2026-08-07,04:20,AD-05,23,scheduled,completed,\nAD-F00352,2026-08-07,11:14,AD-01,7,manual,completed,\nAD-F00353,2026-08-08,01:40,AD-05,18,scheduled,completed,\nAD-F00354,2026-08-08,01:44,AD-08,20,scheduled,completed,\nAD-F00355,2026-08-08,12:34,AD-12,6,manual,completed,\nAD-F00356,2026-08-08,21:55,AD-10,20,scheduled,completed,\nAD-F00357,2026-08-09,00:14,AD-02,9,scheduled,returned_early,wind\nAD-F00358,2026-08-09,01:12,AD-05,24,scheduled,completed,\nAD-F00359,2026-08-09,02:14,AD-10,21,scheduled,completed,\nAD-F00360,2026-08-09,09:37,AD-11,6,manual,completed,\nAD-F00361,2026-08-10,01:50,AD-05,24,scheduled,completed,\nAD-F00362,2026-08-10,02:49,AD-08,24,scheduled,completed,\nAD-F00363,2026-08-10,22:22,AD-02,17,scheduled,completed,\nAD-F00364,2026-08-11,01:14,AD-02,20,scheduled,completed,\nAD-F00365,2026-08-11,13:55,AD-06,6,manual,completed,\nAD-F00366,2026-08-11,22:34,AD-05,19,scheduled,completed,\nAD-F00367,2026-08-11,23:17,AD-08,9,scheduled,returned_early,wind\nAD-F00368,2026-08-11,23:45,AD-10,23,scheduled,completed,\nAD-F00369,2026-08-12,00:14,AD-08,21,scheduled,completed,\nAD-F00370,2026-08-12,04:04,AD-10,20,scheduled,completed,\nAD-F00371,2026-08-12,04:05,AD-02,24,scheduled,completed,\nAD-F00372,2026-08-12,21:49,AD-05,22,scheduled,completed,\nAD-F00373,2026-08-13,01:02,AD-08,17,scheduled,completed,\nAD-F00374,2026-08-13,02:44,AD-05,16,scheduled,completed,\nAD-F00375,2026-08-13,03:56,AD-10,22,scheduled,completed,\nAD-F00376,2026-08-13,21:50,AD-02,17,scheduled,completed,\nAD-F00377,2026-08-14,02:38,AD-10,16,scheduled,completed,\nAD-F00378,2026-08-14,02:42,AD-05,24,scheduled,completed,\nAD-F00379,2026-08-14,04:02,AD-02,23,scheduled,completed,\nAD-F00380,2026-08-14,04:22,AD-08,18,scheduled,completed,\nAD-F00381,2026-08-14,09:29,AD-04,4,manual,completed,\nAD-F00382,2026-08-15,21:58,AD-05,17,scheduled,completed,\nAD-F00383,2026-08-15,22:33,AD-02,24,scheduled,completed,\nAD-F00384,2026-08-15,22:45,AD-08,22,scheduled,completed,\nAD-F00385,2026-08-16,02:56,AD-08,20,scheduled,completed,\nAD-F00386,2026-08-16,23:24,AD-05,19,scheduled,completed,\nAD-F00387,2026-08-16,23:27,AD-10,17,scheduled,completed,\nAD-F00388,2026-08-17,02:43,AD-02,23,scheduled,completed,\nAD-F00389,2026-08-17,10:00,AD-01,4,manual,completed,\nAD-F00390,2026-08-17,22:25,AD-05,18,scheduled,completed,\nAD-F00391,2026-08-17,22:57,AD-08,19,scheduled,completed,\nAD-F00392,2026-08-18,13:31,AD-13,8,manual,completed,\nAD-F00393,2026-08-18,21:31,AD-05,24,scheduled,completed,\nAD-F00394,2026-08-18,22:45,AD-08,21,scheduled,completed,\nAD-F00395,2026-08-19,00:49,AD-05,17,scheduled,completed,\nAD-F00396,2026-08-19,03:58,AD-08,21,scheduled,completed,\nAD-F00397,2026-08-19,15:49,AD-07,5,manual,completed,\nAD-F00398,2026-08-20,00:27,AD-10,17,scheduled,completed,\nAD-F00399,2026-08-20,03:39,AD-05,21,scheduled,completed,\nAD-F00400,2026-08-20,03:48,AD-02,18,scheduled,completed,\nAD-F00401,2026-08-20,23:22,AD-08,22,scheduled,completed,\nAD-F00402,2026-08-21,00:07,AD-02,17,scheduled,completed,\nAD-F00403,2026-08-21,01:31,AD-05,20,scheduled,completed,\nAD-F00404,2026-08-21,03:26,AD-08,17,scheduled,completed,\nAD-F00405,2026-08-21,14:59,AD-11,6,manual,completed,\nAD-F00406,2026-08-22,00:12,AD-02,20,scheduled,completed,\nAD-F00407,2026-08-22,22:47,AD-10,19,scheduled,completed,\nAD-F00408,2026-08-22,23:46,AD-08,24,scheduled,completed,\nAD-F00409,2026-08-23,01:35,AD-08,21,scheduled,completed,\nAD-F00410,2026-08-23,02:48,AD-02,16,scheduled,completed,\nAD-F00411,2026-08-23,22:14,AD-10,19,scheduled,completed,\nAD-F00412,2026-08-24,03:37,AD-05,9,scheduled,returned_early,wind\nAD-F00413,2026-08-24,12:42,AD-03,7,manual,completed,\nAD-F00414,2026-08-24,13:07,AD-07,8,manual,completed,\nAD-F00415,2026-08-24,15:08,AD-11,8,manual,completed,\nAD-F00416,2026-08-24,22:32,AD-02,20,scheduled,completed,\nAD-F00417,2026-08-25,01:06,AD-10,20,scheduled,completed,\nAD-F00418,2026-08-25,03:08,AD-05,17,scheduled,completed,\nAD-F00419,2026-08-25,04:24,AD-08,16,scheduled,completed,\nAD-F00420,2026-08-25,13:31,AD-13,9,manual,completed,\nAD-F00421,2026-08-26,01:00,AD-08,16,scheduled,completed,\nAD-F00422,2026-08-26,02:29,AD-02,19,scheduled,completed,\nAD-F00423,2026-08-26,03:53,AD-05,24,scheduled,completed,\nAD-F00424,2026-08-26,13:55,AD-13,8,manual,completed,\nAD-F00425,2026-08-27,00:08,AD-05,24,scheduled,completed,\nAD-F00426,2026-08-27,00:53,AD-08,19,scheduled,completed,\nAD-F00427,2026-08-27,22:12,AD-02,23,scheduled,completed,\nAD-F00428,2026-08-28,00:21,AD-10,8,scheduled,returned_early,wind\nAD-F00429,2026-08-28,02:13,AD-02,24,scheduled,completed,\nAD-F00430,2026-08-28,02:17,AD-08,21,scheduled,completed,\nAD-F00431,2026-08-28,09:56,AD-07,5,manual,completed,\nAD-F00432,2026-08-28,12:02,AD-06,8,manual,completed,\nAD-F00433,2026-08-28,22:18,AD-05,18,scheduled,completed,\nAD-F00434,2026-08-29,02:50,AD-05,21,scheduled,completed,\nAD-F00435,2026-08-29,03:21,AD-10,22,scheduled,completed,\nAD-F00436,2026-08-29,22:25,AD-08,18,scheduled,completed,\nAD-F00437,2026-08-30,14:44,AD-12,6,manual,completed,\nAD-F00438,2026-08-30,14:50,AD-03,8,manual,completed,\nAD-F00439,2026-08-30,21:35,AD-05,19,scheduled,completed,\nAD-F00440,2026-08-30,23:03,AD-08,24,scheduled,completed,\nAD-F00441,2026-08-31,00:08,AD-02,20,scheduled,completed,\nAD-F00442,2026-08-31,04:20,AD-08,18,scheduled,completed,\nAD-F00443,2026-08-31,09:14,AD-03,7,manual,completed,\nAD-F00444,2026-08-31,09:32,AD-09,9,manual,completed,\nAD-F00445,2026-08-31,23:10,AD-05,21,scheduled,completed,\nAD-F00446,2026-09-01,01:33,AD-10,22,scheduled,completed,\nAD-F00447,2026-09-01,01:34,AD-05,22,scheduled,completed,\nAD-F00448,2026-09-01,03:47,AD-08,21,scheduled,completed,\nAD-F00449,2026-09-01,14:28,AD-01,7,manual,completed,\nAD-F00450,2026-09-02,00:20,AD-10,20,scheduled,completed,\nAD-F00451,2026-09-02,03:20,AD-05,21,scheduled,completed,\nAD-F00452,2026-09-02,03:40,AD-08,9,scheduled,returned_early,wind\nAD-F00453,2026-09-02,21:44,AD-02,21,scheduled,completed,\nAD-F00454,2026-09-03,02:33,AD-08,21,scheduled,completed,\nAD-F00455,2026-09-03,03:55,AD-10,22,scheduled,completed,\nAD-F00456,2026-09-03,13:54,AD-01,7,manual,completed,\nAD-F00457,2026-09-04,02:25,AD-10,19,scheduled,completed,\nAD-F00458,2026-09-04,02:26,AD-05,22,scheduled,completed,\nAD-F00459,2026-09-04,03:48,AD-02,19,scheduled,completed,\nAD-F00460,2026-09-04,22:38,AD-08,22,scheduled,completed,\nAD-F00461,2026-09-05,01:10,AD-08,16,scheduled,completed,\nAD-F00462,2026-09-05,14:27,AD-04,8,manual,completed,\nAD-F00463,2026-09-06,00:28,AD-02,18,scheduled,completed,\nAD-F00464,2026-09-06,00:44,AD-10,17,scheduled,completed,\nAD-F00465,2026-09-06,12:18,AD-06,8,manual,completed,\nAD-F00466,2026-09-06,23:52,AD-08,18,scheduled,completed,\nAD-F00467,2026-09-07,22:06,AD-10,20,scheduled,completed,\nAD-F00468,2026-09-07,22:27,AD-08,20,scheduled,completed,\nAD-F00469,2026-09-08,03:24,AD-08,21,scheduled,completed,\nAD-F00470,2026-09-08,03:27,AD-10,19,scheduled,completed,\nAD-F00471,2026-09-08,09:24,AD-12,5,manual,completed,\nAD-F00472,2026-09-08,23:11,AD-02,23,scheduled,completed,\nAD-F00473,2026-09-09,21:48,AD-08,19,scheduled,completed,\nAD-F00474,2026-09-09,23:00,AD-10,19,scheduled,completed,\nAD-F00475,2026-09-09,23:42,AD-05,21,scheduled,completed,\nAD-F00476,2026-09-10,00:29,AD-08,24,scheduled,completed,\nAD-F00477,2026-09-10,02:42,AD-10,18,scheduled,completed,\nAD-F00478,2026-09-10,03:09,AD-02,19,scheduled,completed,\nAD-F00479,2026-09-10,15:10,AD-06,4,manual,completed,\nAD-F00480,2026-09-11,01:37,AD-10,22,scheduled,completed,\nAD-F00481,2026-09-11,03:06,AD-08,24,scheduled,completed,\nAD-F00482,2026-09-11,14:20,AD-06,5,manual,completed,\nAD-F00483,2026-09-11,21:49,AD-02,24,scheduled,completed,\nAD-F00484,2026-09-11,22:14,AD-05,21,scheduled,completed,\nAD-F00485,2026-09-12,03:43,AD-08,24,scheduled,completed,\nAD-F00486,2026-09-13,03:47,AD-08,24,scheduled,completed,\nAD-F00487,2026-09-13,04:22,AD-10,21,scheduled,completed,\nAD-F00488,2026-09-13,14:37,AD-09,5,manual,completed,\nAD-F00489,2026-09-14,22:10,AD-10,18,scheduled,completed,\nAD-F00490,2026-09-14,22:35,AD-08,18,scheduled,completed,\nAD-F00491,2026-09-15,00:49,AD-10,22,scheduled,completed,\nAD-F00492,2026-09-15,04:18,AD-05,20,scheduled,completed,\nAD-F00493,2026-09-15,10:03,AD-07,5,manual,completed,\nAD-F00494,2026-09-15,23:50,AD-08,20,scheduled,completed,\nAD-F00495,2026-09-16,00:34,AD-05,24,scheduled,completed,\nAD-F00496,2026-09-16,03:47,AD-10,24,scheduled,completed,\nAD-F00497,2026-09-16,21:53,AD-08,22,scheduled,completed,\nAD-F00498,2026-09-17,00:25,AD-08,22,scheduled,completed,\nAD-F00499,2026-09-17,02:15,AD-10,21,scheduled,completed,\nAD-F00500,2026-09-17,22:30,AD-02,24,scheduled,completed,\nAD-F00501,2026-09-18,00:05,AD-08,16,scheduled,completed,\nAD-F00502,2026-09-18,22:18,AD-05,16,scheduled,completed,\nAD-F00503,2026-09-18,23:01,AD-10,20,scheduled,completed,\nAD-F00504,2026-09-18,23:53,AD-02,16,scheduled,completed,\nAD-F00505,2026-09-19,00:30,AD-05,24,scheduled,completed,\nAD-F00506,2026-09-19,00:50,AD-10,9,scheduled,returned_early,wind\nAD-F00507,2026-09-19,03:28,AD-08,16,scheduled,completed,\nAD-F00508,2026-09-20,03:40,AD-10,17,scheduled,completed,\nAD-F00509,2026-09-20,23:17,AD-08,24,scheduled,completed,\nAD-F00510,2026-09-21,03:49,AD-02,16,scheduled,completed,\nAD-F00511,2026-09-21,22:23,AD-08,23,scheduled,completed,\nAD-F00512,2026-09-21,23:52,AD-10,17,scheduled,completed,\nAD-F00513,2026-09-22,22:03,AD-10,20,scheduled,completed,\nAD-F00514,2026-09-23,04:13,AD-10,19,scheduled,completed,\nAD-F00515,2026-09-23,10:47,AD-11,4,manual,completed,\nAD-F00516,2026-09-23,23:30,AD-05,20,scheduled,completed,\nAD-F00517,2026-09-23,23:34,AD-08,16,scheduled,completed,\nAD-F00518,2026-09-24,12:57,AD-04,9,manual,completed,\nAD-F00519,2026-09-24,22:34,AD-10,23,scheduled,completed,\nAD-F00520,2026-09-24,23:06,AD-08,18,scheduled,completed,\nAD-F00521,2026-09-24,23:09,AD-02,21,scheduled,completed,\nAD-F00522,2026-09-24,23:12,AD-05,17,scheduled,completed,\nAD-F00523,2026-09-25,00:31,AD-10,17,scheduled,completed,\nAD-F00524,2026-09-25,04:14,AD-08,21,scheduled,completed,\nAD-F00525,2026-09-25,10:28,AD-03,4,manual,completed,\nAD-F00526,2026-09-25,14:08,AD-09,7,manual,completed,\nAD-F00527,2026-09-25,21:53,AD-02,18,scheduled,completed,\nAD-F00528,2026-09-26,00:23,AD-10,21,scheduled,completed,\nAD-F00529,2026-09-26,04:26,AD-02,23,scheduled,completed,\nAD-F00530,2026-09-26,10:14,AD-07,4,manual,completed,\nAD-F00531,2026-09-26,22:14,AD-08,19,scheduled,completed,\nAD-F00532,2026-09-27,00:31,AD-10,24,scheduled,completed,\nAD-F00533,2026-09-27,01:15,AD-05,23,scheduled,completed,\nAD-F00534,2026-09-27,10:44,AD-13,6,manual,completed,\nAD-F00535,2026-09-28,03:35,AD-08,20,scheduled,completed,\nAD-F00536,2026-09-28,09:34,AD-11,9,manual,completed,\nAD-F00537,2026-09-28,13:01,AD-07,6,manual,completed,\nAD-F00538,2026-09-28,13:33,AD-12,6,manual,completed,\nAD-F00539,2026-09-28,23:00,AD-02,24,scheduled,completed,\nAD-F00540,2026-09-28,23:52,AD-10,16,scheduled,completed,\nAD-F00541,2026-09-29,01:32,AD-10,17,scheduled,completed,\nAD-F00542,2026-09-29,03:51,AD-08,17,scheduled,completed,\nAD-F00543,2026-09-29,23:14,AD-05,20,scheduled,completed,\nAD-F00544,2026-09-30,01:54,AD-10,24,scheduled,completed,\nAD-F00545,2026-09-30,03:15,AD-08,21,scheduled,completed,\nAD-F00546,2026-10-01,01:15,AD-08,23,scheduled,completed,\nAD-F00547,2026-10-01,02:32,AD-10,19,scheduled,completed,\nAD-F00548,2026-10-01,02:42,AD-02,24,scheduled,completed,\nAD-F00549,2026-10-01,09:34,AD-13,6,manual,completed,\nAD-F00550,2026-10-01,12:29,AD-04,5,manual,completed,\nAD-F00551,2026-10-02,01:28,AD-08,19,scheduled,completed,\nAD-F00552,2026-10-02,01:59,AD-10,19,scheduled,completed,\nAD-F00553,2026-10-02,14:21,AD-01,6,manual,completed,\nAD-F00554,2026-10-02,22:14,AD-05,17,scheduled,completed,\nAD-F00555,2026-10-03,03:28,AD-10,20,scheduled,completed,\nAD-F00556,2026-10-03,22:05,AD-08,21,scheduled,completed,\nAD-F00557,2026-10-04,04:05,AD-05,16,scheduled,completed,\nAD-F00558,2026-10-04,14:29,AD-11,5,manual,completed,\nAD-F00559,2026-10-04,22:46,AD-08,19,scheduled,completed,\nAD-F00560,2026-10-05,00:53,AD-05,23,scheduled,completed,\nAD-F00561,2026-10-05,14:34,AD-13,4,manual,completed,\nAD-F00562,2026-10-05,22:28,AD-02,20,scheduled,completed,\nAD-F00563,2026-10-05,22:28,AD-08,22,scheduled,completed,\nAD-F00564,2026-10-06,01:30,AD-08,18,scheduled,completed,\nAD-F00565,2026-10-07,00:50,AD-05,10,scheduled,returned_early,wind\nAD-F00566,2026-10-07,01:02,AD-08,23,scheduled,completed,\nAD-F00567,2026-10-07,01:16,AD-02,16,scheduled,completed,\nAD-F00568,2026-10-07,03:38,AD-10,17,scheduled,completed,\nAD-F00569,2026-10-07,14:41,AD-04,6,manual,completed,\nAD-F00570,2026-10-07,15:28,AD-06,4,manual,completed,\nAD-F00571,2026-10-08,03:37,AD-08,20,scheduled,completed,\nAD-F00572,2026-10-08,23:18,AD-10,16,scheduled,completed,\nAD-F00573,2026-10-08,23:38,AD-05,22,scheduled,completed,\nAD-F00574,2026-10-09,00:52,AD-10,18,scheduled,completed,\nAD-F00575,2026-10-09,01:15,AD-05,18,scheduled,completed,\nAD-F00576,2026-10-09,10:13,AD-01,6,manual,completed,\nAD-F00577,2026-10-09,15:47,AD-12,7,manual,completed,\nAD-F00578,2026-10-09,21:57,AD-08,18,scheduled,completed,\nAD-F00579,2026-10-10,01:09,AD-08,19,scheduled,completed,\nAD-F00580,2026-10-10,02:13,AD-05,19,scheduled,completed,\nAD-F00581,2026-10-10,04:29,AD-10,16,scheduled,completed,\nAD-F00582,2026-10-10,09:31,AD-09,5,manual,completed,\nAD-F00583,2026-10-10,14:12,AD-06,9,manual,completed,\nAD-F00584,2026-10-10,14:16,AD-12,8,manual,completed,\nAD-F00585,2026-10-11,01:26,AD-10,23,scheduled,completed,\nAD-F00586,2026-10-11,03:59,AD-08,17,scheduled,completed,\nAD-F00587,2026-10-11,11:01,AD-06,8,manual,completed,\nAD-F00588,2026-10-11,23:22,AD-02,16,scheduled,completed,\nAD-F00589,2026-10-12,00:28,AD-08,21,scheduled,completed,\nAD-F00590,2026-10-12,01:15,AD-05,21,scheduled,completed,\nAD-F00591,2026-10-12,02:32,AD-10,18,scheduled,completed,\nAD-F00592,2026-10-12,23:28,AD-02,17,scheduled,completed,\nAD-F00593,2026-10-13,02:28,AD-08,16,scheduled,completed,\nAD-F00594,2026-10-13,02:41,AD-05,21,scheduled,completed,\nAD-F00595,2026-10-13,21:47,AD-10,22,scheduled,completed,\nAD-F00596,2026-10-14,21:48,AD-10,22,scheduled,completed,\nAD-F00597,2026-10-14,22:33,AD-08,22,scheduled,completed,\nAD-F00598,2026-10-14,23:07,AD-02,21,scheduled,completed,\nAD-F00599,2026-10-15,04:18,AD-05,16,scheduled,completed,\nAD-F00600,2026-10-15,22:52,AD-02,19,scheduled,completed,\nAD-F00601,2026-10-15,23:49,AD-08,23,scheduled,completed,\nAD-F00602,2026-10-16,01:23,AD-08,19,scheduled,completed,\nAD-F00603,2026-10-16,01:42,AD-10,17,scheduled,completed,\nAD-F00604,2026-10-17,03:31,AD-08,21,scheduled,completed,\nAD-F00605,2026-10-17,23:13,AD-10,24,scheduled,completed,\nAD-F00606,2026-10-18,01:13,AD-02,22,scheduled,completed,\nAD-F00607,2026-10-18,03:33,AD-10,23,scheduled,completed,\nAD-F00608,2026-10-18,04:23,AD-08,16,scheduled,completed,\nAD-F00609,2026-10-19,00:45,AD-08,20,scheduled,completed,\nAD-F00610,2026-10-19,03:58,AD-05,17,scheduled,completed,\nAD-F00611,2026-10-19,13:37,AD-11,5,manual,completed,\nAD-F00612,2026-10-19,21:44,AD-02,18,scheduled,completed,\nAD-F00613,2026-10-19,23:03,AD-10,21,scheduled,completed,\nAD-F00614,2026-10-20,01:13,AD-08,19,scheduled,completed,\nAD-F00615,2026-10-20,22:16,AD-05,16,scheduled,completed,\nAD-F00616,2026-10-20,23:09,AD-02,23,scheduled,completed,\nAD-F00617,2026-10-21,03:41,AD-10,20,scheduled,completed,\nAD-F00618,2026-10-21,04:08,AD-08,23,scheduled,completed,\nAD-F00619,2026-10-21,21:55,AD-05,19,scheduled,completed,\nAD-F00620,2026-10-22,03:40,AD-02,22,scheduled,completed,\nAD-F00621,2026-10-22,21:49,AD-10,21,scheduled,completed,\nAD-F00622,2026-10-22,23:49,AD-08,20,scheduled,completed,\nAD-F00623,2026-10-23,00:44,AD-08,16,scheduled,completed,\nAD-F00624,2026-10-23,03:47,AD-05,17,scheduled,completed,\nAD-F00625,2026-10-23,22:23,AD-10,24,scheduled,completed,\nAD-F00626,2026-10-24,00:34,AD-10,19,scheduled,completed,\nAD-F00627,2026-10-24,01:04,AD-02,19,scheduled,completed,\nAD-F00628,2026-10-24,22:39,AD-08,7,scheduled,returned_early,wind\nAD-F00629,2026-10-25,01:45,AD-08,23,scheduled,completed,\nAD-F00630,2026-10-25,02:48,AD-02,24,scheduled,completed,\nAD-F00631,2026-10-26,00:09,AD-10,19,scheduled,completed,\nAD-F00632,2026-10-26,00:11,AD-08,17,scheduled,completed,\nAD-F00633,2026-10-26,00:48,AD-02,19,scheduled,completed,\nAD-F00634,2026-10-26,16:00,AD-09,6,manual,completed,\nAD-F00635,2026-10-26,23:49,AD-05,22,scheduled,completed,\nAD-F00636,2026-10-27,01:09,AD-08,18,scheduled,completed,\nAD-F00637,2026-10-27,03:30,AD-02,5,scheduled,returned_early,wind\nAD-F00638,2026-10-27,14:30,AD-03,7,manual,completed,\nAD-F00639,2026-10-27,15:04,AD-13,5,manual,completed,\nAD-F00640,2026-10-27,21:44,AD-10,21,scheduled,completed,\nAD-F00641,2026-10-27,21:59,AD-05,17,scheduled,completed,\nAD-F00642,2026-10-28,02:28,AD-05,22,scheduled,completed,\nAD-F00643,2026-10-28,02:56,AD-08,23,scheduled,completed,\nAD-F00644,2026-10-28,03:26,AD-10,17,scheduled,completed,\nAD-F00645,2026-10-28,21:47,AD-02,18,scheduled,completed,\nAD-F00646,2026-10-29,02:50,AD-08,19,scheduled,completed,\nAD-F00647,2026-10-29,11:16,AD-13,4,manual,completed,\nAD-F00648,2026-10-29,14:31,AD-04,9,manual,completed,\nAD-F00649,2026-10-29,14:59,AD-07,6,manual,completed,\nAD-F00650,2026-10-30,02:50,AD-05,19,scheduled,completed,\nAD-F00651,2026-10-30,14:04,AD-12,6,manual,completed,\nAD-F00652,2026-10-30,22:33,AD-02,24,scheduled,completed,\nAD-F00653,2026-10-30,22:55,AD-10,20,scheduled,completed,\nAD-F00654,2026-10-30,23:45,AD-08,20,scheduled,completed,\nAD-F00655,2026-10-31,02:28,AD-05,23,scheduled,completed,\n"
+    },
+    {
+      "path": "internal_notes.json",
+      "kind": "internal_notes",
+      "data": {
+        "note": "Notes about the account from FlytBase's internal channel, oldest first. Fictional personas; routine notes only.",
+        "notes": [
+          {
+            "date": "2026-01-16",
+            "from": "Deal team",
+            "text": "Aldermoor order signed by Stefan Roy. One invoice a year to group security."
+          },
+          {
+            "date": "2026-04-24",
+            "from": "Rollout lead",
+            "text": "Aldermoor rollout closed. Asked the customer's deputy for the install list. Not received. Passing to customer success."
+          },
+          {
+            "date": "2026-05-04",
+            "from": "Rollout lead",
+            "text": "Aldermoor passes to customer success. Sam is the CSM."
+          },
+          {
+            "date": "2026-07-15",
+            "from": "Sam",
+            "text": "Stefan Roy quoted a savings figure on yesterday's call. Asked for the breakdown."
+          },
+          {
+            "date": "2026-09-12",
+            "from": "Support desk",
+            "text": "FB-10903, Plant 11: asked the customer to have their IT team look at the link. No reply from the customer yet."
+          },
+          {
+            "date": "2026-09-23",
+            "from": "Sam",
+            "text": "Stefan Roy wants a case study for the sister company. Not started."
+          },
+          {
+            "date": "2026-09-30",
+            "from": "Support desk",
+            "text": "FB-10903 still waiting on the customer."
+          },
+          {
+            "date": "2026-10-09",
+            "from": "Sam",
+            "text": "An unsigned email from Aldermoor's finance mailbox asks for the renewal quote by plant. Holding until I have spoken to Stefan Roy."
+          },
+          {
+            "date": "2026-11-06",
+            "from": "Neel Sharma",
+            "text": "Sam is moving teams. The Aldermoor account passes to a new CSM next week."
+          }
+        ]
+      }
+    },
+    {
+      "path": "invoices.json",
+      "kind": "invoices",
+      "data": {
+        "currency": "EUR",
+        "note": "From FlytBase Accounts. One invoice a year, to group security.",
+        "invoices": [
+          {
+            "number": "INV-25-1012",
+            "issued": "2025-10-06",
+            "what": "Trial fee, 2 docks",
+            "amount": 12000,
+            "status": "Paid",
+            "paid": "2025-10-30",
+            "note": "Credited against the first year."
+          },
+          {
+            "number": "INV-26-0204",
+            "issued": "2026-02-01",
+            "what": "First year, 14 docks, less the trial fee credit",
+            "amount": 128000,
+            "status": "Paid",
+            "paid": "2026-02-26",
+            "note": "Billed to group security."
+          }
+        ],
+        "first_year_total": 140000
+      }
+    },
+    {
+      "path": "mail_log.json",
+      "kind": "mail_log",
+      "data": {
+        "note": "Every email on file for the account, oldest first: written by people, and sent automatically by the platform. The threads in emails/ are listed here by path.",
+        "mail": [
+          {
+            "thread": "T001",
+            "kind": "person",
+            "date": "2025-09-09",
+            "from": "Achal Negi (FlytBase)",
+            "to": "Stefan Roy",
+            "subject": "Trial proposal",
+            "body": "Stefan,\n\nThe trial proposal is attached: 2 docks at two plants, October to December.\n\nAchal"
+          },
+          {
+            "thread": "T001",
+            "kind": "person",
+            "date": "2025-09-12",
+            "from": "Stefan Roy",
+            "to": "Achal Negi (FlytBase)",
+            "subject": "RE: Trial proposal",
+            "body": "Agreed. My deputy will run it on our side.\n\nStefan"
+          },
+          {
+            "thread": "T002",
+            "kind": "person",
+            "date": "2026-01-16",
+            "from": "Achal Negi (FlytBase)",
+            "to": "Stefan Roy",
+            "subject": "Order form signed: next steps",
+            "body": "Stefan,\n\nThank you for the signed order form. Our rollout lead will write to your office about install dates.\n\nAchal"
+          },
+          {
+            "thread": "T032",
+            "kind": "automatic",
+            "date": "2026-02-01",
+            "from": "FlytBase notifications (automatic)",
+            "to": "Group security (billing contact)",
+            "subject": "Invoice INV-26-0204",
+            "body": "Your invoice for the first year is attached."
+          },
+          {
+            "thread": "T003",
+            "kind": "person",
+            "date": "2026-02-11",
+            "from": "The rollout lead (FlytBase)",
+            "to": "Group security office",
+            "subject": "Install schedule",
+            "body": "Hello,\n\nThe schedule for the 14 installs is attached.\n\nRollout lead"
+          },
+          {
+            "thread": "T003",
+            "kind": "person",
+            "date": "2026-02-13",
+            "from": "Group security office",
+            "to": "The rollout lead (FlytBase)",
+            "subject": "RE: Install schedule",
+            "body": "Dates agreed. The deputy head of security will be on site for each install.\n\nGroup security office"
+          },
+          {
+            "thread": "T014",
+            "kind": "automatic",
+            "date": "2026-02-26",
+            "from": "FlytBase notifications (automatic)",
+            "to": "Group security office",
+            "subject": "We have your request FB-10121",
+            "body": "Your request \"An operator login for each plant as it goes live\" has been logged as FB-10121. The support desk answers tickets in order of arrival, in business hours."
+          },
+          {
+            "thread": "T015",
+            "kind": "automatic",
+            "date": "2026-02-27",
+            "from": "FlytBase notifications (automatic)",
+            "to": "Group security office",
+            "subject": "FB-10121 is closed. How did we do?",
+            "body": "Your request FB-10121 has been closed. Two questions on how it went: a short survey is linked here."
+          },
+          {
+            "thread": "T016",
+            "kind": "automatic",
+            "date": "2026-03-26",
+            "from": "FlytBase notifications (automatic)",
+            "to": "A plant operator (plant not recorded)",
+            "subject": "We have your request FB-10185",
+            "body": "Your request \"How to change the patrol start time\" has been logged as FB-10185. The support desk answers tickets in order of arrival, in business hours."
+          },
+          {
+            "thread": "T017",
+            "kind": "automatic",
+            "date": "2026-03-27",
+            "from": "FlytBase notifications (automatic)",
+            "to": "A plant operator (plant not recorded)",
+            "subject": "FB-10185 is closed. How did we do?",
+            "body": "Your request FB-10185 has been closed. Two questions on how it went: a short survey is linked here."
+          },
+          {
+            "thread": "T018",
+            "kind": "automatic",
+            "date": "2026-04-08",
+            "from": "FlytBase notifications (automatic)",
+            "to": "A plant operator (plant not recorded)",
+            "subject": "We have your request FB-10217",
+            "body": "Your request \"Patrol did not start: aircraft battery below the launch level\" has been logged as FB-10217. The support desk answers tickets in order of arrival, in business hours."
+          },
+          {
+            "thread": "T019",
+            "kind": "automatic",
+            "date": "2026-04-09",
+            "from": "FlytBase notifications (automatic)",
+            "to": "A plant operator (plant not recorded)",
+            "subject": "FB-10217 is closed. How did we do?",
+            "body": "Your request FB-10217 has been closed. Two questions on how it went: a short survey is linked here."
+          },
+          {
+            "thread": "T004",
+            "kind": "person",
+            "date": "2026-04-24",
+            "from": "The rollout lead (FlytBase)",
+            "to": "Group security office",
+            "subject": "Install list",
+            "body": "Hello,\n\nCould we have a copy of the install list: which dock is at which plant, who was trained and what was set up?\n\nRollout lead",
+            "note": "No reply on file."
+          },
+          {
+            "thread": "T020",
+            "kind": "automatic",
+            "date": "2026-04-27",
+            "from": "FlytBase notifications (automatic)",
+            "to": "Group security office",
+            "subject": "We have your request FB-10261",
+            "body": "Your request \"Footage export for a board presentation\" has been logged as FB-10261. The support desk answers tickets in order of arrival, in business hours."
+          },
+          {
+            "thread": "T021",
+            "kind": "automatic",
+            "date": "2026-04-29",
+            "from": "FlytBase notifications (automatic)",
+            "to": "Group security office",
+            "subject": "FB-10261 is closed. How did we do?",
+            "body": "Your request FB-10261 has been closed. Two questions on how it went: a short survey is linked here."
+          },
+          {
+            "thread": "T022",
+            "kind": "automatic",
+            "date": "2026-05-13",
+            "from": "FlytBase notifications (automatic)",
+            "to": "A plant operator (plant not recorded)",
+            "subject": "We have your request FB-10301",
+            "body": "Your request \"Dock lid slow to open after heavy rain\" has been logged as FB-10301. The support desk answers tickets in order of arrival, in business hours."
+          },
+          {
+            "thread": "T029",
+            "kind": "automatic",
+            "date": "2026-05-13",
+            "from": "FlytBase notifications (automatic)",
+            "to": "Account administrators (group security)",
+            "subject": "Planned overnight software update",
+            "body": "Your docks will be updated overnight on 2026-05-20. A dock that is flying or offline is updated when it is next idle and online. Nothing is needed from you."
+          },
+          {
+            "thread": "T023",
+            "kind": "automatic",
+            "date": "2026-05-18",
+            "from": "FlytBase notifications (automatic)",
+            "to": "A plant operator (plant not recorded)",
+            "subject": "FB-10301 is closed. How did we do?",
+            "body": "Your request FB-10301 has been closed. Two questions on how it went: a short survey is linked here."
+          },
+          {
+            "thread": "T005",
+            "kind": "person",
+            "date": "2026-05-22",
+            "from": "Sam (FlytBase)",
+            "to": "Group security office",
+            "subject": "Install list, for the deputy head of security",
+            "body": "Hello,\n\nI have taken over the account from our rollout lead. Stefan suggested I ask through this office for a copy of the install list.\n\nSam",
+            "note": "No reply on file."
+          },
+          {
+            "thread": "T024",
+            "kind": "automatic",
+            "date": "2026-06-12",
+            "from": "FlytBase notifications (automatic)",
+            "to": "Group security office",
+            "subject": "We have your request FB-10372",
+            "body": "Your request \"Clips of night patrols for the board\" has been logged as FB-10372. The support desk answers tickets in order of arrival, in business hours."
+          },
+          {
+            "thread": "T006",
+            "kind": "person",
+            "date": "2026-06-15",
+            "from": "Sam (FlytBase)",
+            "to": "Stefan Roy",
+            "subject": "Clips for the board",
+            "body": "Stefan,\n\nFour clips from night patrols are attached.\n\nSam"
+          },
+          {
+            "thread": "T006",
+            "kind": "person",
+            "date": "2026-06-15",
+            "from": "Stefan Roy",
+            "to": "Sam (FlytBase)",
+            "subject": "RE: Clips for the board",
+            "body": "Good. These will do.\n\nStefan"
+          },
+          {
+            "thread": "T025",
+            "kind": "automatic",
+            "date": "2026-06-15",
+            "from": "FlytBase notifications (automatic)",
+            "to": "Group security office",
+            "subject": "FB-10372 is closed. How did we do?",
+            "body": "Your request FB-10372 has been closed. Two questions on how it went: a short survey is linked here."
+          },
+          {
+            "thread": "T030",
+            "kind": "automatic",
+            "date": "2026-07-01",
+            "from": "FlytBase notifications (automatic)",
+            "to": "Account administrators (group security)",
+            "subject": "Planned overnight software update",
+            "body": "Your docks will be updated overnight on 2026-07-08. A dock that is flying or offline is updated when it is next idle and online. Nothing is needed from you."
+          },
+          {
+            "thread": "T010",
+            "kind": "person",
+            "date": "2026-07-16",
+            "from": "Stefan Roy",
+            "to": "Sam (FlytBase)",
+            "subject": "The number",
+            "path": "emails/2026-07-16_stefan_savings.txt",
+            "note": "Full text in the file."
+          },
+          {
+            "thread": "T007",
+            "kind": "person",
+            "date": "2026-08-26",
+            "from": "Sam (FlytBase)",
+            "to": "Stefan Roy",
+            "subject": "Alert list",
+            "body": "Stefan,\n\nAfter yesterday: could you send the list of who receives the alerts at each plant?\n\nSam",
+            "note": "No reply on file."
+          },
+          {
+            "thread": "T033",
+            "kind": "automatic",
+            "date": "2026-09-08",
+            "from": "FlytBase notifications (automatic)",
+            "to": "Account administrators (group security)",
+            "subject": "A dock is offline",
+            "body": "A dock on your account has not connected for six hours. See the devices page."
+          },
+          {
+            "thread": "T031",
+            "kind": "automatic",
+            "date": "2026-09-09",
+            "from": "FlytBase notifications (automatic)",
+            "to": "Account administrators (group security)",
+            "subject": "Planned overnight software update",
+            "body": "Your docks will be updated overnight on 2026-09-16. A dock that is flying or offline is updated when it is next idle and online. Nothing is needed from you."
+          },
+          {
+            "thread": "T026",
+            "kind": "automatic",
+            "date": "2026-09-10",
+            "from": "FlytBase notifications (automatic)",
+            "to": "Aldermoor Plant 11",
+            "subject": "We have your request FB-10903",
+            "body": "Your request \"Dock goes offline for days at a time\" has been logged as FB-10903. The support desk answers tickets in order of arrival, in business hours."
+          },
+          {
+            "thread": "T008",
+            "kind": "person",
+            "date": "2026-09-11",
+            "from": "Support desk (FlytBase)",
+            "to": "Group security office",
+            "subject": "FB-10903: the network link at Plant 11",
+            "body": "Hello,\n\nThe dock at Plant 11 is healthy when connected. The plant's network link drops. Could your IT team look at the link?\n\nSupport desk",
+            "note": "No reply on file."
+          },
+          {
+            "thread": "T034",
+            "kind": "automatic",
+            "date": "2026-09-14",
+            "from": "FlytBase notifications (automatic)",
+            "to": "Account administrators (group security)",
+            "subject": "A dock is offline",
+            "body": "A dock on your account has not connected for six hours. See the devices page."
+          },
+          {
+            "thread": "T011",
+            "kind": "person",
+            "date": "2026-09-18",
+            "from": "Beatriz Alonso",
+            "to": "Support desk (FlytBase)",
+            "subject": "Who gets the alerts at night (FB-10944)",
+            "path": "emails/2026-09-18_beatriz_alerts.txt",
+            "note": "Full text in the file."
+          },
+          {
+            "thread": "T027",
+            "kind": "automatic",
+            "date": "2026-09-18",
+            "from": "FlytBase notifications (automatic)",
+            "to": "Beatriz Alonso, Plant 7",
+            "subject": "We have your request FB-10944",
+            "body": "Your request \"Who gets the alerts at night\" has been logged as FB-10944. The support desk answers tickets in order of arrival, in business hours."
+          },
+          {
+            "thread": "T028",
+            "kind": "automatic",
+            "date": "2026-09-20",
+            "from": "FlytBase notifications (automatic)",
+            "to": "Beatriz Alonso, Plant 7",
+            "subject": "FB-10944 is closed. How did we do?",
+            "body": "Your request FB-10944 has been closed. Two questions on how it went: a short survey is linked here."
+          },
+          {
+            "thread": "T012",
+            "kind": "person",
+            "date": "2026-09-22",
+            "from": "Stefan Roy",
+            "to": "Sam (FlytBase)",
+            "subject": "Case study",
+            "path": "emails/2026-09-22_stefan_case_study.txt",
+            "note": "Full text in the file."
+          },
+          {
+            "thread": "T035",
+            "kind": "automatic",
+            "date": "2026-09-22",
+            "from": "FlytBase notifications (automatic)",
+            "to": "Account administrators (group security)",
+            "subject": "A dock is offline",
+            "body": "A dock on your account has not connected for six hours. See the devices page."
+          },
+          {
+            "thread": "T036",
+            "kind": "automatic",
+            "date": "2026-09-29",
+            "from": "FlytBase notifications (automatic)",
+            "to": "Account administrators (group security)",
+            "subject": "A dock is offline",
+            "body": "A dock on your account has not connected for six hours. See the devices page."
+          },
+          {
+            "thread": "T038",
+            "kind": "automatic",
+            "date": "2026-10-03",
+            "from": "FlytBase notifications (automatic)",
+            "to": "Account administrators (group security)",
+            "subject": "Your term ends in 120 days",
+            "body": "Your current term ends on 2027-01-31. It does not renew automatically. Your customer success manager will be in touch."
+          },
+          {
+            "thread": "T037",
+            "kind": "automatic",
+            "date": "2026-10-06",
+            "from": "FlytBase notifications (automatic)",
+            "to": "Account administrators (group security)",
+            "subject": "A dock is offline",
+            "body": "A dock on your account has not connected for six hours. See the devices page."
+          },
+          {
+            "thread": "T013",
+            "kind": "person",
+            "date": "2026-10-08",
+            "from": "Group Finance (shared mailbox)",
+            "to": "Sam (FlytBase)",
+            "subject": "Renewal quote, drone docks",
+            "path": "emails/2026-10-08_finance_mailbox.txt",
+            "note": "Full text in the file."
+          },
+          {
+            "thread": "T009",
+            "kind": "person",
+            "date": "2026-10-14",
+            "from": "Sam (FlytBase)",
+            "to": "Stefan Roy",
+            "subject": "After yesterday's call",
+            "body": "Stefan,\n\nTo confirm where we are. A case study needs the working behind the savings figure and someone at a plant willing to be quoted. I have not replied to the email from your finance mailbox; tell me if you would rather I did.\n\nSam",
+            "note": "No reply on file."
+          },
+          {
+            "thread": "T039",
+            "kind": "automatic",
+            "date": "2026-11-02",
+            "from": "FlytBase notifications (automatic)",
+            "to": "Account administrators (group security)",
+            "subject": "Your term ends in 90 days",
+            "body": "Your current term ends on 2027-01-31. It does not renew automatically. Your customer success manager will be in touch."
+          }
+        ]
+      }
+    },
+    {
+      "path": "profile.json",
+      "kind": "profile",
+      "data": {
+        "account": "B",
+        "name": "Aldermoor Industrial Group",
+        "currency": "EUR",
+        "sector": "Industrial sites, perimeter security",
+        "what_they_bought": "14 docks and the FlytBase platform for night perimeter patrols at the group's plants. The group has 15 plants.",
+        "flytbase_side": {
+          "commercial_owner": "achal_negi",
+          "csm": [
+            {
+              "who": "sam",
+              "from": "2026-05",
+              "to": "2026-11"
+            },
+            {
+              "who": "you",
+              "from": "2026-11"
+            }
+          ]
+        },
+        "contacts_on_file": [
+          {
+            "id": "stefan_roy",
+            "name": "Stefan Roy",
+            "role": "Group head of security",
+            "on_file_since": "2025-08",
+            "last_contact_before_handover": "2026-10-13",
+            "note": "Signed the order. Every call since May 2026 has been with him alone."
+          },
+          {
+            "id": "beatriz_alonso",
+            "name": "Beatriz Alonso",
+            "role": "Plant manager, Plant 7",
+            "on_file_since": "2026-09",
+            "last_contact_before_handover": "2026-09-20",
+            "note": "On file only through one support ticket. Never on a call with us."
+          }
+        ],
+        "not_on_file": [
+          "Stefan Roy's deputy, who led the rollout on the customer's side. Referred to by role in every note; no name or contact details recorded.",
+          "Anyone in group finance. One unsigned email came from a shared finance mailbox in October 2026.",
+          "Anyone in group IT.",
+          "A named contact at any plant other than Plant 7.",
+          "Which dock sits at which plant. The install list stayed with the customer."
+        ],
+        "renewal": {
+          "term_ends": "2027-01-31",
+          "annual_value": 140000
+        }
+      }
+    },
+    {
+      "path": "requests.csv",
+      "kind": "requests",
+      "text": "request_id,opened,from,summary,status,owner,last_update,how_it_arrived\nFB-10903,2026-09-10,Aldermoor Plant 11,\"Dock goes offline for days at a time. The network link at the plant drops. Waiting for the customer's IT team to look at the link.\",Pending customer,Support desk,2026-09-30,Support ticket\nFB-10944,2026-09-18,\"Beatriz Alonso, Plant 7\",\"Asked whether night alerts can go to more than one person. Sent the settings guide.\",Closed,Support desk,2026-09-20,Support ticket\n(none),2026-10-08,Group finance (shared mailbox),\"Asked for the renewal quote to show the cost for each plant. Not followed up before the handover.\",Open,,2026-10-08,Email to the CSM\n(none),2026-09-22,Stefan Roy,\"Asked for a case study for the sister company. Not started.\",Open,,2026-10-13,Email and call\n"
+    },
+    {
+      "path": "tickets.json",
+      "kind": "tickets",
+      "data": {
+        "note": "Every support ticket on the account, oldest first. Ticket numbers run across all FlytBase customers. requests.csv is customer success's own list of what it was tracking at the handover, which also holds requests that never became tickets.",
+        "tickets": [
+          {
+            "id": "FB-10085",
+            "opened": "2026-02-12",
+            "requester": "FlytBase rollout lead",
+            "subject": "Survey sheet for dock positions, for the customer's plant visits",
+            "category": "request",
+            "status": "Closed",
+            "closed": "2026-02-13",
+            "assignee": "Support desk",
+            "first_response_hours": null,
+            "conversation": [
+              {
+                "date": "2026-02-12",
+                "from": "FlytBase rollout lead",
+                "text": "Survey sheet for dock positions, for the customer's plant visits."
+              },
+              {
+                "date": "2026-02-13",
+                "from": "Support desk",
+                "text": "Sheet sent to the customer's rollout lead."
+              }
+            ]
+          },
+          {
+            "id": "FB-10121",
+            "opened": "2026-02-26",
+            "requester": "Group security office",
+            "subject": "An operator login for each plant as it goes live",
+            "category": "accounts",
+            "status": "Closed",
+            "closed": "2026-02-27",
+            "assignee": "Support desk",
+            "first_response_hours": 15,
+            "conversation": [
+              {
+                "date": "2026-02-26",
+                "from": "Group security office",
+                "text": "An operator login for each plant as it goes live."
+              },
+              {
+                "date": "2026-02-27",
+                "from": "Support desk",
+                "text": "Agreed: one login per plant, created on each install day."
+              }
+            ]
+          },
+          {
+            "id": "FB-10151",
+            "opened": "2026-03-12",
+            "requester": "FlytBase rollout lead",
+            "subject": "Weak signal at the dock position on install day, two plants",
+            "category": "network",
+            "status": "Closed",
+            "closed": "2026-03-19",
+            "assignee": "Support desk",
+            "first_response_hours": null,
+            "conversation": [
+              {
+                "date": "2026-03-12",
+                "from": "FlytBase rollout lead",
+                "text": "Weak signal at the dock position on install day, two plants."
+              },
+              {
+                "date": "2026-03-12",
+                "from": "Support desk",
+                "text": "Both docks passed commissioning."
+              },
+              {
+                "date": "2026-03-19",
+                "from": "Support desk",
+                "text": "Each plant's network is the customer's to arrange. Raised with the customer's rollout lead. No further report."
+              }
+            ]
+          },
+          {
+            "id": "FB-10185",
+            "opened": "2026-03-26",
+            "requester": "A plant operator (plant not recorded)",
+            "subject": "How to change the patrol start time",
+            "category": "how to",
+            "status": "Closed",
+            "closed": "2026-03-27",
+            "assignee": "Support desk",
+            "first_response_hours": 21,
+            "conversation": [
+              {
+                "date": "2026-03-26",
+                "from": "A plant operator (plant not recorded)",
+                "text": "How to change the patrol start time."
+              },
+              {
+                "date": "2026-03-27",
+                "from": "Support desk",
+                "text": "Sent the guide to patrol schedules."
+              }
+            ]
+          },
+          {
+            "id": "FB-10217",
+            "opened": "2026-04-08",
+            "requester": "A plant operator (plant not recorded)",
+            "subject": "Patrol did not start: aircraft battery below the launch level",
+            "category": "how to",
+            "status": "Closed",
+            "closed": "2026-04-09",
+            "assignee": "Support desk",
+            "first_response_hours": 10,
+            "conversation": [
+              {
+                "date": "2026-04-08",
+                "from": "A plant operator (plant not recorded)",
+                "text": "Patrol did not start: aircraft battery below the launch level."
+              },
+              {
+                "date": "2026-04-09",
+                "from": "Support desk",
+                "text": "Expected behaviour. The patrol ran the next night."
+              }
+            ]
+          },
+          {
+            "id": "FB-10261",
+            "opened": "2026-04-27",
+            "requester": "Group security office",
+            "subject": "Footage export for a board presentation",
+            "category": "request",
+            "status": "Closed",
+            "closed": "2026-04-29",
+            "assignee": "Support desk",
+            "first_response_hours": 8,
+            "conversation": [
+              {
+                "date": "2026-04-27",
+                "from": "Group security office",
+                "text": "Footage export for a board presentation."
+              },
+              {
+                "date": "2026-04-29",
+                "from": "Support desk",
+                "text": "Export sent."
+              }
+            ]
+          },
+          {
+            "id": "FB-10301",
+            "opened": "2026-05-13",
+            "requester": "A plant operator (plant not recorded)",
+            "subject": "Dock lid slow to open after heavy rain",
+            "category": "hardware",
+            "status": "Closed",
+            "closed": "2026-05-18",
+            "assignee": "Support desk",
+            "first_response_hours": 6,
+            "conversation": [
+              {
+                "date": "2026-05-13",
+                "from": "A plant operator (plant not recorded)",
+                "text": "Dock lid slow to open after heavy rain."
+              },
+              {
+                "date": "2026-05-18",
+                "from": "Support desk",
+                "text": "Checked remotely. Lid cycle within limits. No visit needed."
+              }
+            ]
+          },
+          {
+            "id": "FB-10372",
+            "opened": "2026-06-12",
+            "requester": "Group security office",
+            "subject": "Clips of night patrols for the board",
+            "category": "request",
+            "status": "Closed",
+            "closed": "2026-06-15",
+            "assignee": "Customer success",
+            "first_response_hours": 20,
+            "conversation": [
+              {
+                "date": "2026-06-12",
+                "from": "Group security office",
+                "text": "Clips of night patrols for the board."
+              },
+              {
+                "date": "2026-06-15",
+                "from": "Customer success",
+                "text": "Four clips sent."
+              }
+            ]
+          },
+          {
+            "id": "FB-10903",
+            "opened": "2026-09-10",
+            "requester": "Aldermoor Plant 11",
+            "subject": "Dock goes offline for days at a time",
+            "category": "network",
+            "status": "Pending customer",
+            "closed": null,
+            "assignee": "Support desk",
+            "first_response_hours": 5,
+            "conversation": [
+              {
+                "date": "2026-09-10",
+                "from": "Aldermoor Plant 11",
+                "text": "Our dock keeps going offline."
+              },
+              {
+                "date": "2026-09-10",
+                "from": "Support desk",
+                "text": "The dock is healthy when it is connected. The network link at the plant drops. Please ask your IT team to look at the link."
+              },
+              {
+                "date": "2026-09-30",
+                "from": "Support desk",
+                "text": "Still waiting for the customer's IT team."
+              }
+            ]
+          },
+          {
+            "id": "FB-10944",
+            "opened": "2026-09-18",
+            "requester": "Beatriz Alonso, Plant 7",
+            "subject": "Who gets the alerts at night",
+            "category": "how to",
+            "status": "Closed",
+            "closed": "2026-09-20",
+            "assignee": "Support desk",
+            "first_response_hours": 44,
+            "conversation": [
+              {
+                "date": "2026-09-18",
+                "from": "Beatriz Alonso",
+                "text": "Can the night alerts from our dock go to more than one person? Please tell me how to change it."
+              },
+              {
+                "date": "2026-09-20",
+                "from": "Support desk",
+                "text": "Yes. Sent the settings guide. Closing; reply if you need anything else."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "usage_weekly.csv",
+      "kind": "usage",
+      "text": "week_start,dock_id,flights,days_online\n2026-04-27,AD-01,0,7\n2026-05-04,AD-01,1,7\n2026-05-11,AD-01,0,7\n2026-05-18,AD-01,0,7\n2026-05-25,AD-01,1,7\n2026-06-01,AD-01,1,7\n2026-06-08,AD-01,1,7\n2026-06-15,AD-01,0,7\n2026-06-22,AD-01,0,7\n2026-06-29,AD-01,1,7\n2026-07-06,AD-01,0,7\n2026-07-13,AD-01,0,7\n2026-07-20,AD-01,0,7\n2026-07-27,AD-01,0,7\n2026-08-03,AD-01,2,7\n2026-08-10,AD-01,0,7\n2026-08-17,AD-01,1,7\n2026-08-24,AD-01,0,7\n2026-08-31,AD-01,2,7\n2026-09-07,AD-01,0,3\n2026-09-14,AD-01,0,2\n2026-09-21,AD-01,0,4\n2026-09-28,AD-01,1,5\n2026-10-05,AD-01,1,5\n2026-10-12,AD-01,0,7\n2026-10-19,AD-01,0,7\n2026-10-26,AD-01,0,7\n2026-04-27,AD-02,2,7\n2026-05-04,AD-02,5,7\n2026-05-11,AD-02,5,7\n2026-05-18,AD-02,4,7\n2026-05-25,AD-02,6,7\n2026-06-01,AD-02,3,7\n2026-06-08,AD-02,5,7\n2026-06-15,AD-02,5,7\n2026-06-22,AD-02,4,7\n2026-06-29,AD-02,6,7\n2026-07-06,AD-02,6,7\n2026-07-13,AD-02,5,7\n2026-07-20,AD-02,7,7\n2026-07-27,AD-02,5,7\n2026-08-03,AD-02,4,7\n2026-08-10,AD-02,6,7\n2026-08-17,AD-02,5,7\n2026-08-24,AD-02,4,7\n2026-08-31,AD-02,4,7\n2026-09-07,AD-02,3,7\n2026-09-14,AD-02,2,7\n2026-09-21,AD-02,4,7\n2026-09-28,AD-02,2,7\n2026-10-05,AD-02,3,7\n2026-10-12,AD-02,4,7\n2026-10-19,AD-02,5,7\n2026-10-26,AD-02,4,7\n2026-04-27,AD-03,0,7\n2026-05-04,AD-03,0,7\n2026-05-11,AD-03,2,7\n2026-05-18,AD-03,0,7\n2026-05-25,AD-03,0,7\n2026-06-01,AD-03,0,7\n2026-06-08,AD-03,0,7\n2026-06-15,AD-03,2,7\n2026-06-22,AD-03,0,7\n2026-06-29,AD-03,1,7\n2026-07-06,AD-03,1,7\n2026-07-13,AD-03,0,7\n2026-07-20,AD-03,1,7\n2026-07-27,AD-03,1,7\n2026-08-03,AD-03,0,7\n2026-08-10,AD-03,0,7\n2026-08-17,AD-03,0,7\n2026-08-24,AD-03,2,7\n2026-08-31,AD-03,1,7\n2026-09-07,AD-03,0,7\n2026-09-14,AD-03,0,7\n2026-09-21,AD-03,1,7\n2026-09-28,AD-03,0,7\n2026-10-05,AD-03,0,7\n2026-10-12,AD-03,0,7\n2026-10-19,AD-03,0,7\n2026-10-26,AD-03,1,7\n2026-04-27,AD-04,0,7\n2026-05-04,AD-04,1,7\n2026-05-11,AD-04,0,7\n2026-05-18,AD-04,0,7\n2026-05-25,AD-04,0,7\n2026-06-01,AD-04,1,7\n2026-06-08,AD-04,0,7\n2026-06-15,AD-04,0,7\n2026-06-22,AD-04,0,7\n2026-06-29,AD-04,1,7\n2026-07-06,AD-04,0,7\n2026-07-13,AD-04,1,7\n2026-07-20,AD-04,0,7\n2026-07-27,AD-04,0,7\n2026-08-03,AD-04,0,7\n2026-08-10,AD-04,1,7\n2026-08-17,AD-04,0,7\n2026-08-24,AD-04,0,7\n2026-08-31,AD-04,1,7\n2026-09-07,AD-04,0,7\n2026-09-14,AD-04,0,7\n2026-09-21,AD-04,1,7\n2026-09-28,AD-04,1,7\n2026-10-05,AD-04,1,7\n2026-10-12,AD-04,0,7\n2026-10-19,AD-04,0,7\n2026-10-26,AD-04,1,7\n2026-04-27,AD-05,3,7\n2026-05-04,AD-05,2,7\n2026-05-11,AD-05,2,7\n2026-05-18,AD-05,4,7\n2026-05-25,AD-05,4,7\n2026-06-01,AD-05,2,7\n2026-06-08,AD-05,5,7\n2026-06-15,AD-05,5,7\n2026-06-22,AD-05,4,7\n2026-06-29,AD-05,7,7\n2026-07-06,AD-05,7,7\n2026-07-13,AD-05,3,7\n2026-07-20,AD-05,5,7\n2026-07-27,AD-05,6,7\n2026-08-03,AD-05,7,7\n2026-08-10,AD-05,7,7\n2026-08-17,AD-05,5,7\n2026-08-24,AD-05,7,7\n2026-08-31,AD-05,4,7\n2026-09-07,AD-05,2,7\n2026-09-14,AD-05,4,7\n2026-09-21,AD-05,3,7\n2026-09-28,AD-05,3,7\n2026-10-05,AD-05,5,7\n2026-10-12,AD-05,3,7\n2026-10-19,AD-05,4,7\n2026-10-26,AD-05,5,7\n2026-04-27,AD-06,0,7\n2026-05-04,AD-06,0,7\n2026-05-11,AD-06,1,7\n2026-05-18,AD-06,0,7\n2026-05-25,AD-06,1,7\n2026-06-01,AD-06,0,7\n2026-06-08,AD-06,0,7\n2026-06-15,AD-06,0,7\n2026-06-22,AD-06,1,7\n2026-06-29,AD-06,0,7\n2026-07-06,AD-06,1,7\n2026-07-13,AD-06,0,7\n2026-07-20,AD-06,0,7\n2026-07-27,AD-06,0,7\n2026-08-03,AD-06,2,7\n2026-08-10,AD-06,1,7\n2026-08-17,AD-06,0,7\n2026-08-24,AD-06,1,7\n2026-08-31,AD-06,1,7\n2026-09-07,AD-06,2,7\n2026-09-14,AD-06,0,7\n2026-09-21,AD-06,0,7\n2026-09-28,AD-06,0,7\n2026-10-05,AD-06,3,7\n2026-10-12,AD-06,0,7\n2026-10-19,AD-06,0,7\n2026-10-26,AD-06,0,7\n2026-04-27,AD-07,0,7\n2026-05-04,AD-07,1,7\n2026-05-11,AD-07,0,7\n2026-05-18,AD-07,2,7\n2026-05-25,AD-07,0,7\n2026-06-01,AD-07,1,7\n2026-06-08,AD-07,0,7\n2026-06-15,AD-07,0,7\n2026-06-22,AD-07,1,7\n2026-06-29,AD-07,0,7\n2026-07-06,AD-07,1,7\n2026-07-13,AD-07,1,7\n2026-07-20,AD-07,0,7\n2026-07-27,AD-07,0,7\n2026-08-03,AD-07,0,7\n2026-08-10,AD-07,0,7\n2026-08-17,AD-07,1,7\n2026-08-24,AD-07,2,7\n2026-08-31,AD-07,0,7\n2026-09-07,AD-07,0,7\n2026-09-14,AD-07,1,7\n2026-09-21,AD-07,1,7\n2026-09-28,AD-07,1,7\n2026-10-05,AD-07,0,7\n2026-10-12,AD-07,0,7\n2026-10-19,AD-07,0,7\n2026-10-26,AD-07,1,7\n2026-04-27,AD-08,2,7\n2026-05-04,AD-08,5,7\n2026-05-11,AD-08,7,7\n2026-05-18,AD-08,5,7\n2026-05-25,AD-08,7,7\n2026-06-01,AD-08,6,7\n2026-06-08,AD-08,7,7\n2026-06-15,AD-08,6,7\n2026-06-22,AD-08,6,7\n2026-06-29,AD-08,6,7\n2026-07-06,AD-08,7,7\n2026-07-13,AD-08,6,7\n2026-07-20,AD-08,6,7\n2026-07-27,AD-08,6,7\n2026-08-03,AD-08,6,7\n2026-08-10,AD-08,7,7\n2026-08-17,AD-08,7,7\n2026-08-24,AD-08,6,7\n2026-08-31,AD-08,7,7\n2026-09-07,AD-08,7,7\n2026-09-14,AD-08,7,7\n2026-09-21,AD-08,5,7\n2026-09-28,AD-08,7,7\n2026-10-05,AD-08,7,7\n2026-10-12,AD-08,7,7\n2026-10-19,AD-08,7,7\n2026-10-26,AD-08,5,7\n2026-04-27,AD-09,0,7\n2026-05-04,AD-09,1,7\n2026-05-11,AD-09,1,7\n2026-05-18,AD-09,1,7\n2026-05-25,AD-09,0,7\n2026-06-01,AD-09,0,7\n2026-06-08,AD-09,1,7\n2026-06-15,AD-09,0,7\n2026-06-22,AD-09,1,7\n2026-06-29,AD-09,0,7\n2026-07-06,AD-09,0,7\n2026-07-13,AD-09,2,7\n2026-07-20,AD-09,1,7\n2026-07-27,AD-09,1,7\n2026-08-03,AD-09,0,7\n2026-08-10,AD-09,0,7\n2026-08-17,AD-09,0,7\n2026-08-24,AD-09,0,7\n2026-08-31,AD-09,1,7\n2026-09-07,AD-09,1,7\n2026-09-14,AD-09,0,7\n2026-09-21,AD-09,1,7\n2026-09-28,AD-09,0,7\n2026-10-05,AD-09,1,7\n2026-10-12,AD-09,0,7\n2026-10-19,AD-09,0,7\n2026-10-26,AD-09,1,7\n2026-04-27,AD-10,3,7\n2026-05-04,AD-10,4,7\n2026-05-11,AD-10,2,7\n2026-05-18,AD-10,4,7\n2026-05-25,AD-10,5,7\n2026-06-01,AD-10,7,7\n2026-06-08,AD-10,6,7\n2026-06-15,AD-10,7,7\n2026-06-22,AD-10,7,7\n2026-06-29,AD-10,4,7\n2026-07-06,AD-10,4,7\n2026-07-13,AD-10,5,7\n2026-07-20,AD-10,5,7\n2026-07-27,AD-10,4,7\n2026-08-03,AD-10,6,7\n2026-08-10,AD-10,5,7\n2026-08-17,AD-10,3,7\n2026-08-24,AD-10,3,7\n2026-08-31,AD-10,5,7\n2026-09-07,AD-10,6,7\n2026-09-14,AD-10,7,7\n2026-09-21,AD-10,7,7\n2026-09-28,AD-10,6,7\n2026-10-05,AD-10,5,7\n2026-10-12,AD-10,6,7\n2026-10-19,AD-10,5,7\n2026-10-26,AD-10,4,7\n2026-04-27,AD-11,0,7\n2026-05-04,AD-11,0,7\n2026-05-11,AD-11,0,7\n2026-05-18,AD-11,0,7\n2026-05-25,AD-11,1,7\n2026-06-01,AD-11,0,7\n2026-06-08,AD-11,0,7\n2026-06-15,AD-11,0,7\n2026-06-22,AD-11,0,7\n2026-06-29,AD-11,2,7\n2026-07-06,AD-11,1,7\n2026-07-13,AD-11,0,7\n2026-07-20,AD-11,0,7\n2026-07-27,AD-11,0,7\n2026-08-03,AD-11,2,7\n2026-08-10,AD-11,0,7\n2026-08-17,AD-11,1,7\n2026-08-24,AD-11,1,7\n2026-08-31,AD-11,0,7\n2026-09-07,AD-11,0,7\n2026-09-14,AD-11,0,7\n2026-09-21,AD-11,1,7\n2026-09-28,AD-11,2,7\n2026-10-05,AD-11,0,7\n2026-10-12,AD-11,0,7\n2026-10-19,AD-11,1,7\n2026-10-26,AD-11,0,7\n2026-04-27,AD-12,0,7\n2026-05-04,AD-12,0,7\n2026-05-11,AD-12,1,7\n2026-05-18,AD-12,0,7\n2026-05-25,AD-12,2,7\n2026-06-01,AD-12,1,7\n2026-06-08,AD-12,0,7\n2026-06-15,AD-12,1,7\n2026-06-22,AD-12,0,7\n2026-06-29,AD-12,0,7\n2026-07-06,AD-12,0,7\n2026-07-13,AD-12,1,7\n2026-07-20,AD-12,0,7\n2026-07-27,AD-12,1,7\n2026-08-03,AD-12,1,7\n2026-08-10,AD-12,0,7\n2026-08-17,AD-12,0,7\n2026-08-24,AD-12,1,7\n2026-08-31,AD-12,0,7\n2026-09-07,AD-12,1,7\n2026-09-14,AD-12,0,7\n2026-09-21,AD-12,0,7\n2026-09-28,AD-12,1,7\n2026-10-05,AD-12,2,7\n2026-10-12,AD-12,0,7\n2026-10-19,AD-12,0,7\n2026-10-26,AD-12,1,7\n2026-04-27,AD-13,0,7\n2026-05-04,AD-13,0,7\n2026-05-11,AD-13,0,7\n2026-05-18,AD-13,1,7\n2026-05-25,AD-13,1,7\n2026-06-01,AD-13,1,7\n2026-06-08,AD-13,1,7\n2026-06-15,AD-13,0,7\n2026-06-22,AD-13,1,7\n2026-06-29,AD-13,0,7\n2026-07-06,AD-13,0,7\n2026-07-13,AD-13,0,7\n2026-07-20,AD-13,0,7\n2026-07-27,AD-13,1,7\n2026-08-03,AD-13,0,7\n2026-08-10,AD-13,0,7\n2026-08-17,AD-13,1,7\n2026-08-24,AD-13,2,7\n2026-08-31,AD-13,0,7\n2026-09-07,AD-13,0,7\n2026-09-14,AD-13,0,7\n2026-09-21,AD-13,1,7\n2026-09-28,AD-13,1,7\n2026-10-05,AD-13,1,7\n2026-10-12,AD-13,0,7\n2026-10-19,AD-13,0,7\n2026-10-26,AD-13,2,7\n2026-04-27,AD-14,0,7\n2026-05-04,AD-14,0,7\n2026-05-11,AD-14,0,7\n2026-05-18,AD-14,0,7\n2026-05-25,AD-14,0,7\n2026-06-01,AD-14,0,7\n2026-06-08,AD-14,0,7\n2026-06-15,AD-14,0,7\n2026-06-22,AD-14,0,7\n2026-06-29,AD-14,0,7\n2026-07-06,AD-14,0,7\n2026-07-13,AD-14,0,7\n2026-07-20,AD-14,0,7\n2026-07-27,AD-14,0,7\n2026-08-03,AD-14,0,7\n2026-08-10,AD-14,0,7\n2026-08-17,AD-14,0,7\n2026-08-24,AD-14,0,7\n2026-08-31,AD-14,0,7\n2026-09-07,AD-14,0,7\n2026-09-14,AD-14,0,7\n2026-09-21,AD-14,0,7\n2026-09-28,AD-14,0,7\n2026-10-05,AD-14,0,7\n2026-10-12,AD-14,0,7\n2026-10-19,AD-14,0,7\n2026-10-26,AD-14,0,7\n"
+    },
+    {
+      "path": "users.json",
+      "kind": "users",
+      "data": {
+        "note": "Logins on the account. Names are shown only for people on file as contacts. Which plant a login belongs to is not in this record. The order form provides for one trained operator at each plant.",
+        "users": [
+          {
+            "user_id": "U01",
+            "name": "Stefan Roy",
+            "role": "account administrator",
+            "created": "2026-01-20",
+            "last_sign_in": "2026-05-12",
+            "sign_ins_last_90_days": 0
+          },
+          {
+            "user_id": "U02",
+            "name": null,
+            "role": "account administrator (group security, deputy; name not on file)",
+            "created": "2026-01-22",
+            "last_sign_in": "2026-11-13",
+            "sign_ins_last_90_days": 38
+          },
+          {
+            "user_id": "U03",
+            "name": null,
+            "role": "alert recipient, view only (name not on file)",
+            "created": "2026-03-09",
+            "last_sign_in": "2026-11-10",
+            "sign_ins_last_90_days": 46
+          },
+          {
+            "user_id": "U04",
+            "name": null,
+            "role": "operator",
+            "created": "2026-03-17",
+            "last_sign_in": "2026-11-12",
+            "sign_ins_last_90_days": 70
+          },
+          {
+            "user_id": "U05",
+            "name": null,
+            "role": "operator",
+            "created": "2026-03-07",
+            "last_sign_in": "2026-11-13",
+            "sign_ins_last_90_days": 69
+          },
+          {
+            "user_id": "U06",
+            "name": null,
+            "role": "operator",
+            "created": "2026-03-15",
+            "last_sign_in": "2026-11-13",
+            "sign_ins_last_90_days": 46
+          },
+          {
+            "user_id": "U07",
+            "name": null,
+            "role": "operator",
+            "created": "2026-03-09",
+            "last_sign_in": "2026-11-12",
+            "sign_ins_last_90_days": 38
+          },
+          {
+            "user_id": "U08",
+            "name": null,
+            "role": "operator",
+            "created": "2026-03-26",
+            "last_sign_in": "2026-10-25",
+            "sign_ins_last_90_days": 4
+          },
+          {
+            "user_id": "U09",
+            "name": null,
+            "role": "operator",
+            "created": "2026-03-22",
+            "last_sign_in": "2026-11-04",
+            "sign_ins_last_90_days": 3
+          },
+          {
+            "user_id": "U10",
+            "name": null,
+            "role": "operator",
+            "created": "2026-03-11",
+            "last_sign_in": "2026-10-27",
+            "sign_ins_last_90_days": 2
+          },
+          {
+            "user_id": "U11",
+            "name": null,
+            "role": "operator",
+            "created": "2026-04-02",
+            "last_sign_in": "2026-10-24",
+            "sign_ins_last_90_days": 4
+          },
+          {
+            "user_id": "U12",
+            "name": null,
+            "role": "operator",
+            "created": "2026-02-27",
+            "last_sign_in": "2026-10-25",
+            "sign_ins_last_90_days": 3
+          },
+          {
+            "user_id": "U13",
+            "name": null,
+            "role": "operator",
+            "created": "2026-03-03",
+            "last_sign_in": "2026-11-03",
+            "sign_ins_last_90_days": 4
+          },
+          {
+            "user_id": "U14",
+            "name": null,
+            "role": "operator",
+            "created": "2026-03-24",
+            "last_sign_in": "2026-10-30",
+            "sign_ins_last_90_days": 8
+          },
+          {
+            "user_id": "U15",
+            "name": null,
+            "role": "operator",
+            "created": "2026-03-20",
+            "last_sign_in": "2026-10-19",
+            "sign_ins_last_90_days": 7
+          },
+          {
+            "user_id": "U16",
+            "name": null,
+            "role": "operator",
+            "created": "2026-03-15",
+            "last_sign_in": "2026-11-09",
+            "sign_ins_last_90_days": 3
+          },
+          {
+            "user_id": "U17",
+            "name": null,
+            "role": "operator",
+            "created": "2026-04-15",
+            "last_sign_in": "2026-04-17",
+            "sign_ins_last_90_days": 0
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "id": "note_1794647557011",
+    "account": "A",
+    "kind": "note",
+    "title": "Executive Framework Briefing",
+    "text": "Executive briefing note: confirmed 300-dock framework evaluation criteria and Karen Mbeki public event priority.",
+    "createdAt": "2026-11-14T09:12:37.011Z",
+    "syncedToMcp": true
+  },
+  {
+    "id": "note_1794647450830",
+    "account": "A",
+    "kind": "deal",
+    "title": "Executive Framework Briefing",
+    "text": "Executive briefing note: confirmed 300-dock framework evaluation criteria and Karen Mbeki public event priority.",
+    "createdAt": "2026-11-14T09:10:50.830Z",
+    "syncedToMcp": false
+  }
+]

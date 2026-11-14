@@ -1,0 +1,5 @@
+{
+  "id": "flight_log_force_month",
+  "name": "flight_log_force_month.csv",
+  "text": "force,month,docks_installed,docks_with_live_flights,live_missions,training_flights,notes\nWESTMERE,05/2026,18,16,128,6,\nWestmere Constabulary,06/2026,18,12,72,4,\nWESTMERE,07/2026,18,11,44,7,\nWestmere,2026-08,18,11,44,5,\nWestmere,2026-09,18,16,144,3,\nWestmere,2026-10,18,14,126,8,\nWestmere,2026-10,18,14,126,8,\nMetro Central,05/2026,9,6,30,3,\nMetro Central Police,Jun 2026,9,7,35,2,\nMetro Central Police,2026-08,9,8,56,2,\nMETRO CTRL,Sep 2026,9,7,28,2,\nMETRO CTRL,10/2026,9,3,21,4,\nTARN VALLEY POLICE,2026-05,4,0,0,0,awaiting sign-off\nTARN VALLEY POLICE,2026-06,4,0,0,0,awaiting sign-off\nTARN VALLEY POLICE,2026-07,4,0,0,0,\nTarn Valley,Aug-26,4,0,0,0,\nTARN VALLEY POLICE,Sep 2026,4,0,0,0,\nTarn Vly,10/2026,4,0,0,0,\nNorwold Police,05/2026,4,0,0,5,training only\nNORWOLD,06/2026,4,0,0,5,trg\nNorwold Police,Jul 2026,4,0,0,6,trg\nNORWOLD,08/2026,4,0,0,3,\nNORWOLD,Sep-26,4,0,0,5,trg\nNORWOLD,Oct-26,4,0,0,2,training only\nWestmere,Oct 2026,18,14,,,\"re-sent, see above\"\n"
+}

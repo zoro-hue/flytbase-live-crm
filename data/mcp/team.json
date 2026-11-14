@@ -1,0 +1,40 @@
+{
+  "note": "Fictional personas. Nothing here is a real FlytBase fact, figure or commitment.",
+  "people": [
+    {
+      "id": "sam",
+      "name": "Sam",
+      "role": "Customer Success Manager (previous CSM on accounts A and B, May to November 2026; has moved teams)"
+    },
+    {
+      "id": "neel_sharma",
+      "name": "Neel Sharma",
+      "role": "Lead Customer Success Manager"
+    },
+    {
+      "id": "achal_negi",
+      "name": "Achal Negi",
+      "role": "Director of Business Development"
+    },
+    {
+      "id": "pranjal_suyal",
+      "name": "Pranjal Suyal",
+      "role": "Lead Solutions Engineer"
+    },
+    {
+      "id": "srv",
+      "name": "SRV",
+      "role": "Director of Engineering"
+    },
+    {
+      "id": "yashash_rao",
+      "name": "Yashash Rao",
+      "role": "GTM Specialist"
+    },
+    {
+      "id": "support_desk",
+      "name": "Support desk",
+      "role": "Shared queue for tickets. Tickets with no assignee wait in the queue."
+    }
+  ]
+}

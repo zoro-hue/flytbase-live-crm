@@ -1,0 +1,5 @@
+{
+  "id": "roi_spreadsheet",
+  "name": "roi_spreadsheet.csv",
+  "text": "plant,guard_hours_replaceable_per_year,guard_rate_eur,saving_eur,contract_reduced,booked_by_finance\nPlant 1,3600,23,82800,No,\nPlant 2,2900,23,66700,,\nPlant 3,4100,23,94300,no,\nPlant 4,3300,23,75900,,\nPlant 5,2800,23,64400,no,\nPlant 6,3900,23,89700,No,\nPlant 7,4200,23,96600,,\nPlant 8,3000,23,69000,,\nPlant 9,3700,23,85100,No,\nPlant 10,2600,23,59800,,\nPlant 11,3100,23,71300,No,\nPlant 12,2700,23,62100,,\nPlant 13,2900,23,66700,,\nPlant 14,3000,23,69000,No,\nTOTAL (rounded),,,1200000,,\nnote,assumes drones replace guard patrol hours above; contracts unchanged,,,,\nsum check,,,1053400,,difference is rounding and plant 15 estimate\n"
+}
