@@ -1,141 +1,209 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import Link from "next/link";
 import {
+  Bot,
   Sparkles,
   X,
   Send,
-  Building2,
-  AlertTriangle,
-  FileText,
-  UserX,
-  HelpCircle,
+  Copy,
+  Check,
+  Maximize2,
+  Minimize2,
+  Trash2,
+  ShieldCheck,
   ExternalLink,
   ChevronRight,
-  Bot,
+  AlertTriangle,
+  CheckCircle2,
+  HelpCircle,
+  Clock,
+  Radio,
+  FileText,
 } from "lucide-react";
-import Link from "next/link";
+
+interface StructuredSource {
+  id: string;
+  label: string;
+  actionLink: string;
+}
 
 interface Message {
+  id: string;
   role: "user" | "assistant";
   content: string;
-  sourceId?: string;
-  sourceName?: string;
-  actionLink?: string;
-  actionText?: string;
+  category?: string;
+  verifiedFacts?: string[];
+  projections?: string[];
+  recommendedActions?: string[];
+  missingEvidence?: string[];
+  sourceIds?: StructuredSource[];
+  timestamp: string;
 }
+
+const INITIAL_MESSAGES: Message[] = [
+  {
+    id: "init-1",
+    role: "assistant",
+    content:
+      "Hello! I am **FlytBase AI**, your enterprise CRM intelligence copilot. I am grounded in primary MCP flight telemetry, stakeholder paperwork, and contractual records for **Eastern Counties Police Alliance (A)** and **Aldermoor Industrial Group (B)**.\n\nHow can I help you analyze the accounts today?",
+    category: "general",
+    timestamp: "Just now",
+  },
+];
+
+const SUGGESTED_QUESTIONS = [
+  "What is the confirmed book worth?",
+  "Who holds the power at Eastern Counties?",
+  "What is about to go wrong across accounts?",
+  "What are the top 3 urgent actions?",
+  "Explain Event A dock inactivity",
+  "What changed in the latest MCP sync?",
+  "What evidence is missing for Aldermoor?",
+];
 
 export const AiAssistantModal: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
   const [input, setInput] = useState("");
-  const [messages, setMessages] = useState<Message[]>([
-    {
-      role: "assistant",
-      content:
-        "Hello! I am FlytBot, your enterprise CRM intelligence assistant. I analyze real-time MCP flight records, stakeholder authority matrices, and contracts for Eastern Counties Police and Aldermoor Industrial. How can I assist you today?",
-    },
-  ]);
+  const [loading, setLoading] = useState(false);
+  const [copiedId, setCopiedId] = useState<string | null>(null);
+  const [messages, setMessages] = useState<Message[]>(INITIAL_MESSAGES);
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  // Auto-scroll to bottom of chat
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
 
   useEffect(() => {
-    const handleOpen = () => setIsOpen(true);
+    if (isOpen) {
+      scrollToBottom();
+    }
+  }, [messages, isOpen]);
+
+  // Listen for custom trigger events from the TopNavbar or BottomCommandBar
+  useEffect(() => {
+    const handleOpen = (e: any) => {
+      setIsOpen(true);
+      if (e.detail?.query) {
+        handleSendQuery(e.detail.query);
+      }
+    };
+
     window.addEventListener("open-ai-assistant", handleOpen);
     return () => window.removeEventListener("open-ai-assistant", handleOpen);
   }, []);
 
-  const handleAsk = (query: string) => {
-    const q = query.toLowerCase();
-    const newMessages: Message[] = [...messages, { role: "user", content: query }];
-
-    // Intelligent factual responses synthesized directly from the ground-truth MCP data
-    let reply: Message;
-
-    if (q.includes("book") || q.includes("worth") || q.includes("valuation") || q.includes("pipeline")) {
-      reply = {
-        role: "assistant",
-        content:
-          "Confirmed framework pipeline is £1,500,000 for Eastern Counties Police Alliance (300-dock national framework in preparation). Active qualified pipeline totals £800k + €320k. Crucially, Stefan Roy's claimed €1.2M annual savings for Aldermoor is unsupported by finance (source: roi_spreadsheet.csv confirms ZERO guard contracts reduced and ZERO savings booked).",
-        sourceId: "draft_tender_spec",
-        sourceName: "Draft Tender Spec (Eastern Counties)",
-        actionLink: "/deals",
-        actionText: "View Deals Pipeline",
-      };
-    } else if (q.includes("power") || q.includes("stakeholder") || q.includes("who")) {
-      reply = {
-        role: "assistant",
-        content:
-          "Power Map: Nadia Rahman (Police Authority Lead) is the Economic Buyer with ultimate budget control. CC Peter Chapman (Westmere) is the key Champion. Warning: Rhys Calder (Technical Specialist) can veto rollouts and is departing in January 2027. In Aldermoor, Ewan Brooks (Group CFO) controls the budget and has rejected Stefan's unverified ROI claims.",
-        sourceId: "paperwork_A",
-        sourceName: "Account A Stakeholder Matrix",
-        actionLink: "/stakeholders",
-        actionText: "Open Power & Influence Matrix",
-      };
-    } else if (q.includes("wrong") || q.includes("risk") || q.includes("blocker") || q.includes("dpia")) {
-      reply = {
-        role: "assistant",
-        content:
-          "Top Critical Risks: 1) Event A: 3 Aldermoor docks (Plants 4, 8, 12) completely stopped flying between 2–29 Nov with zero support tickets raised (silent disengagement). 2) Tarn Valley Police: 4 docks grounded for 4 months because Ticket FB-10412 (DPIA sign-off) remains unassigned. 3) Key stakeholder departure: Rhys Calder leaving in Jan.",
-        sourceId: "flight_log_by_plant",
-        sourceName: "Flight Log by Plant (Aldermoor)",
-        actionLink: "/signals",
-        actionText: "Inspect Live Signals",
-      };
-    } else if (q.includes("event a") || q.includes("aldermoor") || q.includes("inactivity")) {
-      reply = {
-        role: "assistant",
-        content:
-          "Event A Telemetry Audit: Plants 4, 8, and 12 recorded ZERO patrol flights between 2–29 November 2026 despite docks being fully powered and online. No support tickets were filed by plant managers. Immediate mitigation: CSM must conduct onsite operational diagnostic review with Stefan Roy and plant directors before the 1-year contract renewal.",
-        sourceId: "flight_log_by_plant",
-        sourceName: "flight_log_by_plant.csv",
-        actionLink: "/signals",
-        actionText: "View Event A Telemetry",
-      };
-    } else if (q.includes("first") || q.includes("action") || q.includes("next step")) {
-      reply = {
-        role: "assistant",
-        content:
-          "Top 3 Recommended Actions: 1) Immediately assign Ticket FB-10412 to Head of Compliance to unlock Tarn Valley DPIA sign-off (Owner: CSM Lead, Due: 28 Nov). 2) Submit formal written response for Ticket FB-10488 for Karen Mbeki's VIP demonstration flight on 5 Dec. 3) Conduct technical handover audit with departing specialist Rhys Calder.",
-        sourceId: "support_ticket_history",
-        sourceName: "Support Ticket History",
-        actionLink: "/actions",
-        actionText: "Open Ranked Action Plan",
-      };
-    } else {
-      reply = {
-        role: "assistant",
-        content: `Based on verified MCP account paperwork: Eastern Counties has 14/35 active docks with a £1.5M framework in play. Aldermoor has 4/14 regular flying docks and 3 docks inactive since Nov 2. Would you like to review valuation, power mapping, live telemetry signals, or the action plan?`,
-        sourceId: "paperwork_A",
-        sourceName: "Verified Account Records",
-        actionLink: "/dashboard",
-        actionText: "Explore Command Center",
-      };
+  const handleCopy = (id: string, text: string) => {
+    if (typeof navigator !== "undefined" && navigator.clipboard) {
+      navigator.clipboard.writeText(text);
+      setCopiedId(id);
+      setTimeout(() => setCopiedId(null), 2000);
     }
+  };
 
-    setMessages([...newMessages, reply]);
+  const handleClear = () => {
+    setMessages(INITIAL_MESSAGES);
+  };
+
+  const handleSendQuery = async (queryText: string) => {
+    const trimmed = queryText.trim();
+    if (!trimmed || loading) return;
+
+    const userMsg: Message = {
+      id: `user-${Date.now()}`,
+      role: "user",
+      content: trimmed,
+      timestamp: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
+    };
+
+    setMessages((prev) => [...prev, userMsg]);
     setInput("");
+    setLoading(true);
+
+    try {
+      const res = await fetch("/api/ai/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          message: trimmed,
+        }),
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        const assistantMsg: Message = {
+          id: `asst-${Date.now()}`,
+          role: "assistant",
+          content: data.reply,
+          category: data.category,
+          verifiedFacts: data.verifiedFacts,
+          projections: data.projections,
+          recommendedActions: data.recommendedActions,
+          missingEvidence: data.missingEvidence,
+          sourceIds: data.sourceIds,
+          timestamp: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
+        };
+        setMessages((prev) => [...prev, assistantMsg]);
+      } else {
+        const errorMsg: Message = {
+          id: `asst-err-${Date.now()}`,
+          role: "assistant",
+          content: `Unable to retrieve response: ${data.error || "Server connection error."}`,
+          timestamp: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
+        };
+        setMessages((prev) => [...prev, errorMsg]);
+      }
+    } catch (err: any) {
+      const errorMsg: Message = {
+        id: `asst-err-${Date.now()}`,
+        role: "assistant",
+        content: `Connection error: ${err.message || "Failed to reach CRM AI service."}`,
+        timestamp: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
+      };
+      setMessages((prev) => [...prev, errorMsg]);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
     <>
-      {/* Robot Assistant Trigger Character at Bottom-Left (Matching Reference Screenshot!) */}
+      {/* ===================================================================== */}
+      {/* 1. PERSISTENT FLOATING ROBOT ASSISTANT (BOTTOM-LEFT)                  */}
+      {/* ===================================================================== */}
       <div className="fixed bottom-4 left-4 z-40 select-none">
         <button
           onClick={() => setIsOpen(true)}
-          className="relative group p-1.5 rounded-2xl bg-[#0D0F12] border border-[#25282D] hover:border-[#FF5A00]/50 shadow-2xl transition-all cursor-pointer flex items-center justify-center active:scale-95"
-          title="FlytBot AI Assistant — Click to Ask CRM Intelligence"
+          className="group relative p-2 rounded-2xl bg-[#0D0F12] border border-[#25282D] hover:border-[#FF5A00]/50 shadow-2xl transition-all duration-350 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-105 active:scale-95 cursor-pointer flex items-center gap-2.5"
+          title="FlytBase AI Copilot — Grounded CRM Intelligence"
         >
-          {/* Robot SVG Character */}
-          <div className="w-9 h-9 rounded-xl bg-[#141619] border border-[#25282D] flex items-center justify-center relative overflow-hidden group-hover:border-[#FF5A00]/40 transition-colors">
-            {/* Robot Head & Antenna */}
-            <div className="flex flex-col items-center">
-              {/* Antenna */}
-              <div className="w-1 h-1.5 bg-[#FF5A00] rounded-full mb-0.5 animate-pulse" />
+          {/* Animated Robot Mascot */}
+          <div className="relative w-9 h-9 rounded-xl bg-[#141619] border border-[#25282D] group-hover:border-[#FF5A00]/40 flex items-center justify-center overflow-hidden transition-colors duration-350">
+            {/* Robot Float/Breathing Animation Container */}
+            <div className="flex flex-col items-center animate-[bounce_4s_infinite]">
+              {/* Antenna with Pulsing Orange Beacon */}
+              <div className="w-1.5 h-1.5 bg-[#FF5A00] rounded-full mb-0.5 shadow-[0_0_6px_rgba(255,90,0,0.8)] animate-pulse" />
+
               {/* Robot Face Screen */}
               <div className="w-6 h-4.5 rounded-md bg-[#050505] border border-[#25282D] flex items-center justify-center gap-1 px-1">
-                {/* Glowing Eyes */}
-                <div className="w-1.5 h-1.5 rounded-full bg-[#FF5A00] animate-pulse" />
-                <div className="w-1.5 h-1.5 rounded-full bg-[#FF5A00] animate-pulse" />
+                {/* Blinking Eye LEDs */}
+                <div className="w-1.5 h-1.5 rounded-full bg-[#FF5A00] animate-[ping_3.5s_cubic-bezier(0,0,0.2,1)_infinite]" />
+                <div className="w-1.5 h-1.5 rounded-full bg-[#FF5A00] animate-[ping_3.5s_cubic-bezier(0,0,0.2,1)_infinite]" />
               </div>
             </div>
+          </div>
+
+          {/* Collapsed Pill Label (Reveals on Hover) */}
+          <div className="hidden sm:flex flex-col text-left pr-1 min-w-0">
+            <div className="flex items-center gap-1.5">
+              <span className="text-xs font-bold text-white tracking-tight">FlytBase AI</span>
+              <span className="w-1.5 h-1.5 rounded-full bg-[#FF5A00] animate-pulse" />
+            </div>
+            <span className="text-[10px] font-mono text-[#9A9FA8]">CRM Copilot</span>
           </div>
 
           {/* Sparkle Badge */}
@@ -145,132 +213,235 @@ export const AiAssistantModal: React.FC = () => {
         </button>
       </div>
 
-      {/* AI Assistant Modal Panel (450–550ms smooth expansion) */}
+      {/* ===================================================================== */}
+      {/* 2. ELEGANT RIGHT-SIDE FLOATING AI COPILOT PANEL                       */}
+      {/* ===================================================================== */}
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md transition-opacity duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]">
-          <div className="relative w-full max-w-xl h-[560px] rounded-2xl bg-[#0D0F12] border border-[#25282D] shadow-2xl flex flex-col overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]">
-            {/* Panel Header */}
-            <div className="px-5 py-4 border-b border-[#25282D] bg-[#050505] flex items-center justify-between">
-              <div className="flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-xl bg-[#141619] border border-[#25282D] flex items-center justify-center text-[#FF5A00]">
-                  <Bot className="w-4 h-4 text-[#FF5A00]" />
-                </div>
-                <div>
-                  <div className="flex items-center gap-2">
-                    <h3 className="text-sm font-bold text-white">FlytBot AI Assistant</h3>
-                    <span className="px-1.5 py-0.2 rounded text-[9px] font-mono bg-[#141619] text-[#FF5A00] border border-[#FF5A00]/30 font-semibold">
-                      MCP INTELLIGENCE
-                    </span>
-                  </div>
-                  <p className="text-[11px] text-[#9A9FA8]">Real-time grounding against primary MCP records</p>
-                </div>
+        <aside
+          className={`fixed top-3 bottom-3 right-3 z-50 rounded-2xl glass-panel shadow-2xl flex flex-col overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+            isExpanded ? "w-[720px] max-w-[96vw]" : "w-[480px] max-w-[94vw]"
+          }`}
+        >
+          {/* Panel Top Header */}
+          <div className="px-4 py-3.5 border-b border-[#25282D] bg-[#050505] flex items-center justify-between gap-3">
+            <div className="flex items-center gap-2.5 min-w-0">
+              <div className="w-8 h-8 rounded-xl bg-[#141619] border border-[#25282D] flex items-center justify-center text-[#FF5A00] flex-shrink-0">
+                <Bot className="w-4 h-4 text-[#FF5A00]" />
               </div>
+              <div className="min-w-0">
+                <div className="flex items-center gap-2">
+                  <h3 className="text-xs font-bold text-white tracking-tight truncate">
+                    FlytBase AI Copilot
+                  </h3>
+                  <span className="px-1.5 py-0.2 rounded text-[9px] font-mono bg-[#141619] text-[#FF5A00] border border-[#FF5A00]/30 font-semibold flex-shrink-0">
+                    MCP GROUNDED
+                  </span>
+                </div>
+                <p className="text-[10px] text-[#9A9FA8] font-mono truncate">
+                  Authoritative multi-account intelligence
+                </p>
+              </div>
+            </div>
+
+            {/* Window Controls */}
+            <div className="flex items-center gap-1 flex-shrink-0">
+              {/* Expand / Collapse Width */}
+              <button
+                onClick={() => setIsExpanded(!isExpanded)}
+                className="p-1.5 rounded-lg text-[#9A9FA8] hover:text-white hover:bg-[#141619] transition-colors cursor-pointer"
+                title={isExpanded ? "Collapse to standard width" : "Expand side panel"}
+              >
+                {isExpanded ? <Minimize2 className="w-3.5 h-3.5" /> : <Maximize2 className="w-3.5 h-3.5" />}
+              </button>
+
+              {/* Clear Chat */}
+              <button
+                onClick={handleClear}
+                className="p-1.5 rounded-lg text-[#9A9FA8] hover:text-white hover:bg-[#141619] transition-colors cursor-pointer"
+                title="Reset conversation"
+              >
+                <Trash2 className="w-3.5 h-3.5" />
+              </button>
+
+              {/* Close Panel */}
               <button
                 onClick={() => setIsOpen(false)}
-                className="p-1.5 rounded-lg text-[#606570] hover:text-white hover:bg-[#141619] transition-colors"
+                className="p-1.5 rounded-lg text-[#9A9FA8] hover:text-white hover:bg-[#141619] transition-colors cursor-pointer"
+                title="Close Copilot"
               >
                 <X className="w-4 h-4" />
               </button>
             </div>
-
-            {/* Quick Prompt Chips */}
-            <div className="px-4 py-2 border-b border-[#25282D]/70 bg-[#08090B] flex items-center gap-1.5 overflow-x-auto no-scrollbar text-xs">
-              <button
-                onClick={() => handleAsk("What is the book worth?")}
-                className="px-2.5 py-1 rounded-lg bg-[#141619] hover:bg-[#1D2025] text-[11px] text-[#9A9FA8] hover:text-white border border-[#25282D] whitespace-nowrap transition-colors"
-              >
-                Book value?
-              </button>
-              <button
-                onClick={() => handleAsk("Who holds the power in Eastern Counties?")}
-                className="px-2.5 py-1 rounded-lg bg-[#141619] hover:bg-[#1D2025] text-[11px] text-[#9A9FA8] hover:text-white border border-[#25282D] whitespace-nowrap transition-colors"
-              >
-                Power map?
-              </button>
-              <button
-                onClick={() => handleAsk("What is about to go wrong?")}
-                className="px-2.5 py-1 rounded-lg bg-[#141619] hover:bg-[#1D2025] text-[11px] text-[#9A9FA8] hover:text-white border border-[#25282D] whitespace-nowrap transition-colors"
-              >
-                Critical risks?
-              </button>
-              <button
-                onClick={() => handleAsk("Explain Event A dock inactivity")}
-                className="px-2.5 py-1 rounded-lg bg-[#141619] hover:bg-[#1D2025] text-[11px] text-[#9A9FA8] hover:text-white border border-[#25282D] whitespace-nowrap transition-colors"
-              >
-                Event A telemetry
-              </button>
-              <button
-                onClick={() => handleAsk("What are the top 3 recommended actions?")}
-                className="px-2.5 py-1 rounded-lg bg-[#141619] hover:bg-[#1D2025] text-[11px] text-[#9A9FA8] hover:text-white border border-[#25282D] whitespace-nowrap transition-colors"
-              >
-                Top actions?
-              </button>
-            </div>
-
-            {/* Conversation Stream */}
-            <div className="flex-1 overflow-y-auto p-4 space-y-3.5">
-              {messages.map((m, i) => (
-                <div
-                  key={i}
-                  className={`flex flex-col ${m.role === "user" ? "items-end" : "items-start"}`}
-                >
-                  <div
-                    className={`max-w-[85%] p-3.5 rounded-2xl text-xs leading-relaxed ${
-                      m.role === "user"
-                        ? "bg-[#FF5A00] text-white rounded-br-sm shadow-md"
-                        : "bg-[#141619] text-[#F4F4F5] rounded-bl-sm border border-[#25282D]"
-                    }`}
-                  >
-                    {m.content}
-
-                    {/* Sourced Fact Citation & Direct Deep-link */}
-                    {m.sourceId && (
-                      <div className="mt-2.5 pt-2 border-t border-[#25282D] flex flex-wrap items-center justify-between gap-2 text-[10px] font-mono">
-                        <span className="text-[#9A9FA8]">
-                          Verified Source: <strong className="text-white">{m.sourceName || m.sourceId}</strong>
-                        </span>
-                        {m.actionLink && (
-                          <Link
-                            href={m.actionLink}
-                            onClick={() => setIsOpen(false)}
-                            className="inline-flex items-center gap-1 text-[#FF5A00] hover:underline font-semibold"
-                          >
-                            <span>{m.actionText || "Inspect"}</span>
-                            <ChevronRight className="w-3 h-3" />
-                          </Link>
-                        )}
-                      </div>
-                    )}
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Input Bar */}
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                if (input.trim()) handleAsk(input.trim());
-              }}
-              className="p-3 border-t border-[#25282D] bg-[#050505] flex items-center gap-2"
-            >
-              <input
-                type="text"
-                value={input}
-                onChange={(e) => setInput(e.target.value)}
-                placeholder="Ask about contracts, DPIA blockers, flight logs, or departures..."
-                className="flex-1 bg-[#0D0F12] border border-[#25282D] rounded-xl px-3.5 py-2 text-xs text-[#F4F4F5] placeholder-[#606570] focus:outline-none focus:border-[#FF5A00]"
-              />
-              <button
-                type="submit"
-                disabled={!input.trim()}
-                className="p-2 rounded-xl bg-[#FF5A00] hover:bg-[#E04F00] disabled:opacity-40 text-white transition-colors cursor-pointer"
-              >
-                <Send className="w-4 h-4" />
-              </button>
-            </form>
           </div>
-        </div>
+
+          {/* Quick Suggested Prompt Chips */}
+          <div className="px-3.5 py-2 border-b border-[#25282D] bg-[#0A0C0E] flex items-center gap-1.5 overflow-x-auto no-scrollbar text-xs">
+            <span className="text-[10px] font-mono text-[#606570] flex-shrink-0">Ask:</span>
+            {SUGGESTED_QUESTIONS.map((q) => (
+              <button
+                key={q}
+                onClick={() => handleSendQuery(q)}
+                className="px-2.5 py-1 rounded-full bg-[#141619] hover:bg-[#1D2024] text-[11px] text-[#9A9FA8] hover:text-[#F4F4F5] border border-[#25282D] hover:border-[#FF5A00]/40 whitespace-nowrap transition-colors flex-shrink-0 cursor-pointer"
+              >
+                {q}
+              </button>
+            ))}
+          </div>
+
+          {/* Conversation History Stream */}
+          <div className="flex-1 overflow-y-auto p-4 space-y-4">
+            {messages.map((m) => (
+              <div
+                key={m.id}
+                className={`flex flex-col ${m.role === "user" ? "items-end" : "items-start"}`}
+              >
+                <div
+                  className={`max-w-[92%] p-4 rounded-2xl text-xs leading-relaxed transition-all ${
+                    m.role === "user"
+                      ? "bg-[#FF5A00] text-white rounded-br-sm shadow-md"
+                      : "bg-[#141619] text-[#F4F4F5] rounded-bl-sm border border-[#25282D] shadow-sm space-y-3"
+                  }`}
+                >
+                  {/* Message Body */}
+                  <div className="whitespace-pre-wrap">{m.content}</div>
+
+                  {/* Assistant Structured Data Breakdown */}
+                  {m.role === "assistant" && (
+                    <>
+                      {/* Verified Facts Breakdown */}
+                      {m.verifiedFacts && m.verifiedFacts.length > 0 && (
+                        <div className="p-2.5 rounded-xl bg-[#0D0F12] border border-emerald-900/40 text-[11px] space-y-1">
+                          <div className="flex items-center gap-1.5 text-emerald-400 font-semibold font-mono text-[10px]">
+                            <CheckCircle2 className="w-3 h-3 text-emerald-400" />
+                            <span>VERIFIED PRIMARY FACTS</span>
+                          </div>
+                          <ul className="list-disc list-inside space-y-0.5 text-[#D4D4D8]">
+                            {m.verifiedFacts.map((f, i) => (
+                              <li key={i}>{f}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+
+                      {/* Missing Evidence / Unknowns Warning */}
+                      {m.missingEvidence && m.missingEvidence.length > 0 && (
+                        <div className="p-2.5 rounded-xl bg-[#0D0F12] border border-red-900/40 text-[11px] space-y-1">
+                          <div className="flex items-center gap-1.5 text-red-400 font-semibold font-mono text-[10px]">
+                            <AlertTriangle className="w-3 h-3 text-red-400" />
+                            <span>MISSING EVIDENCE & UNKNOWNS</span>
+                          </div>
+                          <ul className="list-disc list-inside space-y-0.5 text-[#D4D4D8]">
+                            {m.missingEvidence.map((e, i) => (
+                              <li key={i}>{e}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+
+                      {/* Projections / Unverified Claims */}
+                      {m.projections && m.projections.length > 0 && (
+                        <div className="p-2.5 rounded-xl bg-[#0D0F12] border border-amber-900/40 text-[11px] space-y-1">
+                          <div className="flex items-center gap-1.5 text-amber-400 font-semibold font-mono text-[10px]">
+                            <HelpCircle className="w-3 h-3 text-amber-400" />
+                            <span>PROJECTIONS & CONTINGENCIES</span>
+                          </div>
+                          <ul className="list-disc list-inside space-y-0.5 text-[#D4D4D8]">
+                            {m.projections.map((p, i) => (
+                              <li key={i}>{p}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+
+                      {/* Sourced Provenance Citations */}
+                      {m.sourceIds && m.sourceIds.length > 0 && (
+                        <div className="pt-2 border-t border-[#25282D] flex flex-wrap items-center justify-between gap-2 text-[10px] font-mono">
+                          <div className="flex items-center gap-1.5 flex-wrap">
+                            <span className="text-[#606570]">Sources:</span>
+                            {m.sourceIds.map((s) => (
+                              <button
+                                key={s.id}
+                                onClick={() => {
+                                  window.dispatchEvent(
+                                    new CustomEvent("open-evidence-drawer", {
+                                      detail: { sourceId: s.id },
+                                    })
+                                  );
+                                }}
+                                className="px-2 py-0.5 rounded bg-[#0D0F12] border border-[#25282D] hover:border-[#FF5A00] text-[#FF5A00] transition-colors flex items-center gap-1 cursor-pointer"
+                                title="Inspect primary record in Evidence Vault"
+                              >
+                                <ExternalLink className="w-2.5 h-2.5" />
+                                <span>{s.label}</span>
+                              </button>
+                            ))}
+                          </div>
+
+                          {/* Copy Response Button */}
+                          <button
+                            onClick={() => handleCopy(m.id, m.content)}
+                            className="flex items-center gap-1 text-[#9A9FA8] hover:text-white transition-colors cursor-pointer"
+                            title="Copy response to clipboard"
+                          >
+                            {copiedId === m.id ? (
+                              <>
+                                <Check className="w-3 h-3 text-emerald-400" />
+                                <span className="text-emerald-400">Copied</span>
+                              </>
+                            ) : (
+                              <>
+                                <Copy className="w-3 h-3" />
+                                <span>Copy</span>
+                              </>
+                            )}
+                          </button>
+                        </div>
+                      )}
+                    </>
+                  )}
+                </div>
+
+                <span className="text-[10px] font-mono text-[#606570] mt-1 px-1">
+                  {m.timestamp}
+                </span>
+              </div>
+            ))}
+
+            {/* Loading Indicator */}
+            {loading && (
+              <div className="flex items-center gap-2 p-3.5 rounded-2xl bg-[#141619] border border-[#25282D] text-xs text-[#9A9FA8] max-w-[280px]">
+                <Sparkles className="w-4 h-4 text-[#FF5A00] animate-spin" />
+                <span>Synthesizing MCP evidence...</span>
+              </div>
+            )}
+
+            <div ref={messagesEndRef} />
+          </div>
+
+          {/* Panel Bottom Input Bar */}
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              handleSendQuery(input);
+            }}
+            className="p-3 border-t border-[#25282D] bg-[#050505] flex items-center gap-2"
+          >
+            <input
+              type="text"
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              placeholder="Ask anything about deals, DPIA, flights, or risks..."
+              className="flex-1 bg-[#0D0F12] border border-[#25282D] rounded-xl px-3.5 py-2.5 text-xs text-[#F4F4F5] placeholder-[#606570] focus:outline-none focus:border-[#FF5A00] transition-colors"
+            />
+            <button
+              type="submit"
+              disabled={!input.trim() || loading}
+              className="p-2.5 rounded-xl bg-[#FF5A00] hover:bg-[#E04F00] disabled:opacity-40 text-white transition-all duration-200 cursor-pointer active:scale-95 flex-shrink-0"
+            >
+              <Send className="w-3.5 h-3.5" />
+            </button>
+          </form>
+        </aside>
       )}
     </>
   );
