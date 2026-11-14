@@ -12,10 +12,7 @@ import {
   Radio,
   FileSearch,
   Settings,
-  PlusCircle,
   Sparkles,
-  Bot,
-  Layers,
 } from "lucide-react";
 import { FlytBaseLogo } from "@/components/brand/FlytBaseLogo";
 
@@ -80,35 +77,43 @@ export const Sidebar: React.FC = () => {
   return (
     <>
       {/* Floating Expandable Sidebar for Desktop (Warm Translucent Light Glass) */}
+      {/* Pinned vertically with transition-[width] only so it never shifts up or down on hover */}
       <aside
         onMouseEnter={() => setIsExpanded(true)}
         onMouseLeave={() => setIsExpanded(false)}
-        className={`hidden lg:flex fixed left-3 top-3 bottom-3 z-50 select-none flex-col justify-between p-2.5 rounded-2xl bg-[#ECEFE5]/90 backdrop-blur-md border border-[#E2E5DE] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] shadow-[0_4px_24px_rgba(0,0,0,0.04)] ${
+        className={`hidden lg:flex fixed left-3 top-3 bottom-3 z-50 select-none flex-col justify-between p-2.5 rounded-2xl bg-[#ECEFE5]/90 backdrop-blur-md border border-[#E2E5DE] transition-[width] duration-250 ease-out shadow-[0_4px_24px_rgba(0,0,0,0.04)] ${
           isExpanded ? "w-60" : "w-16"
         }`}
       >
-        {/* Top: Brand Header (FlytBase Brand Asset) */}
-        <div className="space-y-2 pb-2.5 border-b border-[#E2E5DE]">
+        {/* Top: Brand Header (Fixed height h-10 to prevent vertical layout bounce) */}
+        <div className="h-10 flex items-center px-1 pb-2 border-b border-[#E2E5DE] flex-shrink-0">
           <Link
             href="/dashboard"
-            className="flex items-center gap-2.5 px-1 py-1 rounded-xl hover:bg-black/5 transition-colors overflow-hidden group cursor-pointer"
+            className="flex items-center gap-2.5 rounded-xl hover:bg-black/5 transition-colors overflow-hidden group cursor-pointer h-full"
             title="FlytBase CRM"
           >
             {isExpanded ? (
-              <FlytBaseLogo variant="horizontal" size={28} priority />
+              <FlytBaseLogo variant="horizontal" size={26} priority />
             ) : (
-              <FlytBaseLogo variant="icon" size={32} priority />
+              <FlytBaseLogo variant="icon" size={26} priority />
             )}
           </Link>
         </div>
 
         {/* Center: Navigation Items Grouped by Domain */}
-        <nav className="flex-1 py-2 space-y-3 overflow-y-auto no-scrollbar">
+        <nav className="flex-1 py-2 space-y-2 overflow-y-auto no-scrollbar">
           {NAVIGATION_GROUPS.map((grp, gIdx) => (
             <div key={gIdx} className="space-y-1">
-              {grp.group && isExpanded && (
-                <div className="px-3 pt-1 pb-0.5 text-[10px] font-mono uppercase tracking-wider text-[#969BA1] font-semibold">
-                  {grp.group}
+              {/* Stable group header: constant h-5 in both states to eliminate any vertical jump */}
+              {grp.group && (
+                <div className="h-5 flex items-center px-2">
+                  {isExpanded ? (
+                    <span className="text-[10px] font-mono uppercase tracking-wider text-[#969BA1] font-semibold truncate">
+                      {grp.group}
+                    </span>
+                  ) : (
+                    <div className="w-full border-t border-[#E2E5DE]/80" />
+                  )}
                 </div>
               )}
 
@@ -121,7 +126,7 @@ export const Sidebar: React.FC = () => {
                     key={item.href}
                     href={item.href}
                     aria-current={isActive ? "page" : undefined}
-                    className={`group relative flex items-center justify-between px-2.5 py-2 rounded-xl text-[14px] font-medium cursor-pointer select-none transition-all duration-150 ${
+                    className={`group relative flex items-center justify-between px-2.5 py-2 rounded-xl text-[14px] font-medium cursor-pointer select-none transition-colors duration-150 ${
                       isActive
                         ? "bg-white text-[#151515] font-semibold shadow-sm border border-[#E2E5DE]"
                         : "text-[#747A80] hover:text-[#151515] hover:bg-black/5 border border-transparent"
@@ -138,7 +143,7 @@ export const Sidebar: React.FC = () => {
 
                       {/* Label (Visible when expanded) */}
                       {isExpanded && (
-                        <span className="truncate whitespace-nowrap transition-opacity duration-300">
+                        <span className="truncate whitespace-nowrap transition-opacity duration-200">
                           {item.name}
                         </span>
                       )}
@@ -184,14 +189,12 @@ export const Sidebar: React.FC = () => {
           ))}
         </nav>
 
-        {/* Bottom: Ask FlytBase Quick Trigger Button (Matching Screenshot) */}
-        <div className="pt-2 border-t border-[#E2E5DE] space-y-1">
+        {/* Bottom: Ask FlytBase Quick Trigger Button (Constant h-9 to prevent vertical movement) */}
+        <div className="pt-2 border-t border-[#E2E5DE] flex-shrink-0">
           <button
             type="button"
             onClick={() => window.dispatchEvent(new CustomEvent("open-ai-assistant"))}
-            className={`w-full flex items-center justify-center gap-2 rounded-xl bg-[#171717] hover:bg-[#2A2A2A] text-white text-xs font-semibold shadow-sm transition-all duration-200 cursor-pointer active:scale-95 ${
-              isExpanded ? "px-3 py-2" : "p-2"
-            }`}
+            className="h-9 w-full flex items-center justify-center gap-2 rounded-xl bg-[#171717] hover:bg-[#2A2A2A] text-white text-xs font-semibold shadow-sm transition-colors duration-150 cursor-pointer active:scale-95 px-2"
             title="Ask FlytBase AI Copilot"
           >
             <Sparkles className="w-4 h-4 text-[#789600] flex-shrink-0 pointer-events-none" />

@@ -181,38 +181,17 @@ export const AiAssistantModal: React.FC = () => {
     <>
       {/* ===================================================================== */}
       {/* 1. PERSISTENT FLOATING ROBOT ASSISTANT (BOTTOM-LEFT)                  */}
-      {/* Matches reference screenshot media_1794653411551_05f890dc.png        */}
+      {/* Standalone 3D Mascot with Floor Shadow & Reactive Eye States          */}
+      {/* Zero name pill, zero card border, placed without sidebar collision   */}
       {/* ===================================================================== */}
-      <div className="fixed bottom-4 left-4 z-40 select-none">
-        <button
-          type="button"
+      <div className="fixed bottom-3 left-4 lg:left-[88px] z-40 select-none">
+        <FlytBaseMascot
+          state={mascotState}
+          size={50}
+          interactive={true}
           onClick={() => setIsOpen(!isOpen)}
-          className="group relative flex items-center gap-2 p-1.5 rounded-2xl bg-white/90 hover:bg-white backdrop-blur-md border border-[#E2E5DE] hover:border-[#536F00]/50 shadow-[0_8px_24px_rgba(0,0,0,0.08)] hover:shadow-[0_12px_28px_rgba(0,0,0,0.12)] transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer"
-          title={isOpen ? "Minimize FlytBase AI Copilot" : "Open FlytBase AI Copilot"}
-          aria-expanded={isOpen}
-        >
-          {/* Reusable Brand Mascot with Reactive Idle / Thinking / Speaking States */}
-          <FlytBaseMascot state={mascotState} size={46} interactive={false} />
-
-          {/* Pill Label */}
-          <div className="flex flex-col text-left pr-2">
-            <div className="flex items-center gap-1.5">
-              <span className="text-xs font-bold text-[#151515] tracking-tight">
-                {mascotState === "thinking" ? "Thinking..." : mascotState === "speaking" ? "Speaking" : "Ask FlytBase"}
-              </span>
-              <span
-                className={`w-1.5 h-1.5 rounded-full ${
-                  mascotState === "thinking"
-                    ? "bg-[#38BDF8] animate-ping"
-                    : mascotState === "speaking"
-                    ? "bg-[#84CC16] animate-pulse"
-                    : "bg-[#536F00] animate-pulse"
-                }`}
-              />
-            </div>
-            <span className="text-[10px] font-mono text-[#747A80]">CRM Copilot</span>
-          </div>
-        </button>
+          className="transition-transform duration-300 hover:scale-110 active:scale-95 drop-shadow-[0_8px_16px_rgba(0,0,0,0.18)]"
+        />
       </div>
 
       {/* ===================================================================== */}

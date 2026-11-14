@@ -166,9 +166,9 @@ export const DealMomentumScatter: React.FC = () => {
   ];
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-12 gap-5">
+    <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
       {/* Main Scatter Chart (8 cols) */}
-      <div className="lg:col-span-8 bg-white p-5 rounded-2xl border border-[#E2E5DE] shadow-sm relative overflow-hidden flex flex-col justify-between">
+      <div className="lg:col-span-8 bg-white p-5 rounded-2xl border border-[#E2E5DE] shadow-sm relative overflow-hidden flex flex-col space-y-4">
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-[#E2E5DE]">
           <div>
@@ -190,7 +190,7 @@ export const DealMomentumScatter: React.FC = () => {
         </div>
 
         {/* Scatter Canvas */}
-        <div className="pt-4 relative min-h-[300px] flex flex-col justify-between">
+        <div className="pt-2 relative flex flex-col space-y-3">
           {/* Hatched Going Quiet Background on the right (days 5 to 10+) */}
           <div
             className="absolute top-4 bottom-8 right-0 w-[45%] border-l border-dashed border-[#E2E5DE] bg-[repeating-linear-gradient(45deg,#FAFBF8,#FAFBF8_10px,#F4F5F0_10px,#F4F5F0_20px)] rounded-r-xl pointer-events-none"

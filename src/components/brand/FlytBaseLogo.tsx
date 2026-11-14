@@ -17,74 +17,81 @@ export const FlytBaseLogo: React.FC<FlytBaseLogoProps> = ({
   priority = false,
 }) => {
   // Determine pixel dimensions based on size prop
-  let height = 36;
-  let width = 160;
+  let iconSize = 32;
 
   if (typeof size === "number") {
-    height = size;
-    width = variant === "icon" || variant === "squircle" || variant === "squircle-olive" ? size : size * 4.4;
+    iconSize = size;
   } else {
     switch (size) {
       case "sm":
-        height = 24;
-        width = variant === "icon" || variant === "squircle" || variant === "squircle-olive" ? 24 : 110;
+        iconSize = 22;
         break;
       case "md":
-        height = 32;
-        width = variant === "icon" || variant === "squircle" || variant === "squircle-olive" ? 32 : 145;
+        iconSize = 28;
         break;
       case "lg":
-        height = 42;
-        width = variant === "icon" || variant === "squircle" || variant === "squircle-olive" ? 42 : 190;
+        iconSize = 38;
         break;
       case "xl":
-        height = 56;
-        width = variant === "icon" || variant === "squircle" || variant === "squircle-olive" ? 56 : 250;
+        iconSize = 50;
         break;
     }
   }
 
-  // SVGs mapped to variant
-  let src = "/brand/flytbase-logo.svg";
-  let alt = "FlytBase Logo";
+  // Standalone icons
+  if (variant === "icon" || variant === "squircle" || variant === "squircle-olive") {
+    let iconSrc = "/brand/flytbase-icon.svg";
+    if (variant === "squircle") iconSrc = "/brand/flytbase-icon-squircle.svg";
+    if (variant === "squircle-olive") iconSrc = "/brand/flytbase-icon-olive.svg";
 
-  switch (variant) {
-    case "icon":
-      src = "/brand/flytbase-icon.svg";
-      alt = "FlytBase Icon";
-      width = height;
-      break;
-    case "wordmark":
-      src = "/brand/flytbase-wordmark.svg";
-      alt = "FlytBase Wordmark";
-      break;
-    case "squircle":
-      src = "/brand/flytbase-icon-squircle.svg";
-      alt = "FlytBase Icon (Card)";
-      width = height;
-      break;
-    case "squircle-olive":
-      src = "/brand/flytbase-icon-olive.svg";
-      alt = "FlytBase Icon (Olive)";
-      width = height;
-      break;
-    case "horizontal":
-    default:
-      src = "/brand/flytbase-logo.svg";
-      alt = "FlytBase Logo";
-      break;
+    return (
+      <div className={`inline-flex items-center select-none flex-shrink-0 ${className}`}>
+        <Image
+          src={iconSrc}
+          alt="FlytBase Icon"
+          width={iconSize}
+          height={iconSize}
+          priority={priority}
+          className="h-auto object-contain flex-shrink-0"
+        />
+      </div>
+    );
   }
 
+  // Wordmark only
+  if (variant === "wordmark") {
+    const fontSize = Math.round(iconSize * 0.76);
+    return (
+      <div className={`inline-flex items-center select-none flex-shrink-0 ${className}`}>
+        <span
+          style={{ fontSize: `${fontSize}px` }}
+          className="font-bold tracking-tight text-[#151515] leading-none whitespace-nowrap font-sans"
+        >
+          FlytBase<span className="text-[#536F00]">.</span>
+        </span>
+      </div>
+    );
+  }
+
+  // Horizontal variant: Crisp icon + perfectly spaced typography
+  const textFontSize = Math.round(iconSize * 0.72);
+
   return (
-    <div className={`inline-flex items-center select-none flex-shrink-0 ${className}`}>
+    <div className={`inline-flex items-center gap-2 select-none flex-shrink-0 ${className}`}>
       <Image
-        src={src}
-        alt={alt}
-        width={width}
-        height={height}
+        src="/brand/flytbase-icon.svg"
+        alt="FlytBase"
+        width={iconSize}
+        height={iconSize}
         priority={priority}
-        className="h-auto object-contain max-h-full"
+        className="h-auto object-contain flex-shrink-0"
       />
+      <span
+        style={{ fontSize: `${textFontSize}px` }}
+        className="font-bold tracking-tight text-[#151515] leading-none whitespace-nowrap font-sans"
+      >
+        FlytBase<span className="text-[#536F00]">.</span>
+      </span>
     </div>
   );
 };

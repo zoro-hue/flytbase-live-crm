@@ -114,8 +114,8 @@ export const QuestionTabs: React.FC<QuestionTabsProps> = ({
             />
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            <div className="lg:col-span-1 p-5 rounded-2xl bg-white border border-[#E2E5DE] shadow-sm space-y-4">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
+            <div className="lg:col-span-1 p-5 rounded-2xl bg-white border border-[#E2E5DE] shadow-sm space-y-4 h-fit">
               <div>
                 <h3 className="text-sm font-semibold text-[#151515]">Pipeline Distribution</h3>
                 <p className="text-xs text-[#747A80]">Contractual reality vs unverified claims</p>
@@ -128,6 +128,61 @@ export const QuestionTabs: React.FC<QuestionTabsProps> = ({
                 unsupported={valuation.unsupportedProjectionsValue}
                 currency={valuation.currency}
               />
+
+              {/* Categorical Breakdown Strip */}
+              <div className="pt-3 border-t border-[#E2E5DE] space-y-2 text-xs">
+                <div className="flex items-center justify-between text-[#151515]">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#398B46]" />
+                    <span className="font-medium">Confirmed Contractual</span>
+                  </div>
+                  <span className="font-mono font-semibold text-[#398B46]">
+                    {valuation.currency}{valuation.confirmedValue.toLocaleString()}
+                  </span>
+                </div>
+
+                <div className="flex items-center justify-between text-[#151515]">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#536F00]" />
+                    <span className="font-medium">Active Pipeline</span>
+                  </div>
+                  <span className="font-mono font-semibold text-[#536F00]">
+                    {valuation.currency}{valuation.potentialValue.toLocaleString()}
+                  </span>
+                </div>
+
+                <div className="flex items-center justify-between text-[#151515]">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#E34B3D]" />
+                    <span className="font-medium">At-Risk Value</span>
+                  </div>
+                  <span className="font-mono font-semibold text-[#E34B3D]">
+                    {valuation.currency}{valuation.atRiskValue.toLocaleString()}
+                  </span>
+                </div>
+
+                {valuation.closedValue > 0 && (
+                  <div className="flex items-center justify-between text-[#151515]">
+                    <div className="flex items-center gap-2">
+                      <span className="w-2.5 h-2.5 rounded-full bg-[#171717]" />
+                      <span className="font-medium">Closed Won</span>
+                    </div>
+                    <span className="font-mono font-semibold text-[#171717]">
+                      {valuation.currency}{valuation.closedValue.toLocaleString()}
+                    </span>
+                  </div>
+                )}
+
+                <div className="flex items-center justify-between text-[#747A80] pt-1 border-t border-[#F4F5F0]">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#D5DAD0]" />
+                    <span>Unverified (Excluded)</span>
+                  </div>
+                  <span className="font-mono text-[#747A80]">
+                    {valuation.currency}{valuation.unsupportedProjectionsValue.toLocaleString()}
+                  </span>
+                </div>
+              </div>
             </div>
 
             <div className="lg:col-span-2 space-y-4">
