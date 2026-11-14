@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
@@ -14,83 +14,15 @@ import {
   Settings,
   PlusCircle,
   RefreshCw,
-  Clock,
+  ChevronLeft,
+  ChevronRight,
   Sparkles,
 } from "lucide-react";
 
-interface SyncStatus {
-  canCallNow: boolean;
-  timeUntilNextMs: number;
-  lastSync: string | null;
-  status: string;
-}
-
 export const Sidebar: React.FC = () => {
   const pathname = usePathname();
-  const [syncStatus, setSyncStatus] = useState<SyncStatus>({
-    canCallNow: true,
-    timeUntilNextMs: 0,
-    lastSync: null,
-    status: "connected",
-  });
-  const [syncing, setSyncing] = useState(false);
-  const [countdown, setCountdown] = useState(0);
-
-  const fetchStatus = () => {
-    fetch("/api/sync")
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.success && data.connection) {
-          const rate = data.connection.rateLimit;
-          setSyncStatus({
-            canCallNow: rate.canCallNow,
-            timeUntilNextMs: rate.timeUntilNextMs,
-            lastSync: data.connection.lastSync,
-            status: data.connection.status,
-          });
-          setCountdown(Math.ceil(rate.timeUntilNextMs / 1000));
-        }
-      })
-      .catch(() => {});
-  };
-
-  useEffect(() => {
-    fetchStatus();
-    const interval = setInterval(fetchStatus, 15000);
-    return () => clearInterval(interval);
-  }, []);
-
-  useEffect(() => {
-    if (countdown <= 0) return;
-    const timer = setInterval(() => {
-      setCountdown((prev) => {
-        if (prev <= 1) {
-          fetchStatus();
-          return 0;
-        }
-        return prev - 1;
-      });
-    }, 1000);
-    return () => clearInterval(timer);
-  }, [countdown]);
-
-  const handleManualSync = async () => {
-    if (!syncStatus.canCallNow || syncing) return;
-    setSyncing(true);
-    try {
-      const res = await fetch("/api/sync", { method: "POST" });
-      const data = await res.json();
-      if (!res.ok) {
-        alert(data.error || "Rate limit active (1 req/60s)");
-      } else {
-        fetchStatus();
-      }
-    } catch (err: any) {
-      alert(err.message);
-    } finally {
-      setSyncing(false);
-    }
-  };
+  const [isExpanded, setIsExpanded] = useState<boolean>(false);
+  const [hoveredItem, setHoveredItem] = useState<string | null>(null);
 
   const navigation = [
     { name: "Overview", href: "/dashboard", icon: LayoutDashboard },
@@ -98,11 +30,13 @@ export const Sidebar: React.FC = () => {
       name: "Counties (A)",
       href: "/accounts/eastern-counties",
       icon: Building2,
+      badge: "Police",
     },
     {
       name: "Aldermoor (B)",
       href: "/accounts/aldermoor",
       icon: Building2,
+      badge: "Industrial",
     },
     { name: "Deals Pipeline", href: "/deals", icon: Briefcase },
     { name: "Stakeholders", href: "/stakeholders", icon: Users2 },
@@ -114,150 +48,140 @@ export const Sidebar: React.FC = () => {
 
   return (
     <>
-      {/* Floating Slim Capsule Sidebar for Desktop */}
-      <aside className="hidden lg:flex fixed left-3 top-3 bottom-3 w-52 z-40 select-none flex-col justify-between p-3 rounded-2xl bg-[#08080A]/95 backdrop-blur-xl border border-[#1C1F26] shadow-2xl shadow-black/90 transition-all duration-300">
-        {/* Brand & Connection Capsule Header */}
-        <div className="space-y-2.5 pb-2.5 border-b border-[#1C1F26]">
-          <Link href="/dashboard" className="flex items-center justify-between px-1.5 py-0.5 hover:opacity-90 transition-opacity">
-            <div className="flex items-center gap-2">
-              <div className="w-7 h-7 rounded-lg bg-[#FF5500] flex items-center justify-center font-bold text-white text-[11px] shadow-lg shadow-[#FF5500]/20">
-                FB
-              </div>
-              <div className="flex flex-col">
-                <span className="text-xs font-bold tracking-tight text-[#F4F4F5]">
-                  FlytBase <span className="text-[#FF5500]">CRM</span>
+      {/* Floating Expandable Sidebar for Desktop (Icon-First + Expandable Mode) */}
+      <aside
+        onMouseEnter={() => setIsExpanded(true)}
+        onMouseLeave={() => setIsExpanded(false)}
+        className={`hidden lg:flex fixed left-3 top-3 bottom-3 z-40 select-none flex-col justify-between p-2.5 rounded-2xl glass-panel transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+          isExpanded ? "w-56" : "w-16"
+        }`}
+      >
+        {/* Top: Brand Header */}
+        <div className="space-y-2 pb-2.5 border-b border-[#25282D]">
+          <Link
+            href="/dashboard"
+            className="flex items-center gap-2.5 px-1 py-1 rounded-xl hover:bg-[#141619] transition-colors overflow-hidden"
+          >
+            <div className="w-8 h-8 rounded-xl bg-[#FF5A00] flex items-center justify-center font-bold text-white text-xs shadow-md shadow-[#FF5A00]/25 flex-shrink-0">
+              FB
+            </div>
+            {isExpanded && (
+              <div className="flex flex-col min-w-0 transition-opacity duration-200">
+                <span className="text-xs font-bold tracking-tight text-[#F4F4F5] truncate">
+                  FlytBase <span className="text-[#FF5A00]">CRM</span>
                 </span>
-                <span className="text-[9px] text-[#71717A] tracking-wider uppercase font-mono">
+                <span className="text-[9px] text-[#606570] font-mono tracking-wider uppercase">
                   Live Engine
                 </span>
               </div>
-            </div>
-
-            {/* Sync Refresh Trigger */}
-            <button
-              onClick={handleManualSync}
-              disabled={!syncStatus.canCallNow || syncing}
-              title={syncStatus.canCallNow ? "Sync live MCP signals now" : `Rate limit active: ${countdown}s remaining`}
-              className={`p-1 rounded-md text-[#71717A] hover:text-[#F4F4F5] transition-colors ${
-                !syncStatus.canCallNow || syncing ? "opacity-30 cursor-not-allowed" : "hover:bg-[#121419]"
-              }`}
-            >
-              <RefreshCw className={`w-3.5 h-3.5 ${syncing ? "animate-spin text-[#FF5500]" : ""}`} />
-            </button>
+            )}
           </Link>
-
-          {/* Rate-Limit & Connection Capsule */}
-          <div className="px-2 py-1.5 rounded-lg bg-[#000000] border border-[#1C1F26] flex items-center justify-between">
-            <div className="flex items-center gap-1.5">
-              <span
-                className={`w-1.5 h-1.5 rounded-full ${
-                  syncStatus.canCallNow ? "bg-[#FF5500] animate-pulse" : "bg-neutral-600"
-                }`}
-              />
-              <span className="font-mono text-[9px] text-[#D4D4D8]">
-                {syncStatus.canCallNow ? "MCP READY" : `WAIT ${countdown}s`}
-              </span>
-            </div>
-            <span className="text-[9px] font-mono text-[#71717A]">60s quota</span>
-          </div>
-
-          {/* Quick Target Accounts Pills */}
-          <div className="grid grid-cols-2 gap-1 pt-0.5">
-            <Link
-              href="/accounts/eastern-counties"
-              className={`px-1.5 py-1 rounded-lg text-[10px] font-medium text-center truncate transition-all duration-200 ${
-                pathname === "/accounts/eastern-counties"
-                  ? "bg-[#121419] text-[#FF5500] border border-[#FF5500]/30 shadow-sm"
-                  : "text-[#71717A] hover:text-[#F4F4F5] bg-[#000000] hover:bg-[#121419]"
-              }`}
-            >
-              Police (A)
-            </Link>
-            <Link
-              href="/accounts/aldermoor"
-              className={`px-1.5 py-1 rounded-lg text-[10px] font-medium text-center truncate transition-all duration-200 ${
-                pathname === "/accounts/aldermoor"
-                  ? "bg-[#121419] text-[#FF5500] border border-[#FF5500]/30 shadow-sm"
-                  : "text-[#71717A] hover:text-[#F4F4F5] bg-[#000000] hover:bg-[#121419]"
-              }`}
-            >
-              Aldermoor (B)
-            </Link>
-          </div>
         </div>
 
-        {/* Scrollable Nav Items */}
-        <nav className="flex-1 py-2 space-y-0.5 overflow-y-auto no-scrollbar">
+        {/* Center: Navigation Items */}
+        <nav className="flex-1 py-2 space-y-1 overflow-y-auto no-scrollbar">
           {navigation.map((item) => {
             const Icon = item.icon;
             const isActive = pathname === item.href;
+            const isHovered = hoveredItem === item.href;
+
             return (
-              <Link
+              <div
                 key={item.href}
-                href={item.href}
-                className={`relative flex items-center justify-between px-2.5 py-1.5 rounded-lg text-[11px] font-medium transition-all duration-200 ${
-                  isActive
-                    ? "bg-[#121419] text-[#F4F4F5] border border-[#FF5500]/35 shadow-sm"
-                    : "text-[#8E929E] hover:text-[#F4F4F5] hover:bg-[#0E1014]"
-                }`}
+                className="relative"
+                onMouseEnter={() => setHoveredItem(item.href)}
+                onMouseLeave={() => setHoveredItem(null)}
               >
-                <div className="flex items-center gap-2 min-w-0">
-                  <Icon
-                    className={`w-3.5 h-3.5 flex-shrink-0 transition-colors ${
-                      isActive ? "text-[#FF5500]" : "text-[#585E6A]"
-                    }`}
-                  />
-                  <span className="truncate">{item.name}</span>
-                </div>
-                {item.highlight && (
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#FF5500] animate-pulse" title="Live signals active" />
+                <Link
+                  href={item.href}
+                  className={`relative flex items-center gap-3 px-2.5 py-2 rounded-xl text-xs font-medium transition-all duration-150 ${
+                    isActive
+                      ? "bg-[#141619] text-[#F4F4F5] border border-[#25282D] shadow-sm"
+                      : "text-[#9A9FA8] hover:text-[#F4F4F5] hover:bg-[#141619]/60"
+                  }`}
+                >
+                  {/* Restrained active indicator */}
+                  {isActive && (
+                    <span className="w-1 h-3.5 rounded-full bg-[#FF5A00] absolute left-1" />
+                  )}
+
+                  <div className="relative flex-shrink-0">
+                    <Icon
+                      className={`w-4 h-4 transition-colors ${
+                        isActive ? "text-[#FF5A00]" : "text-[#71717A]"
+                      }`}
+                    />
+                    {item.highlight && (
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#FF5A00] absolute -top-0.5 -right-0.5 animate-pulse" />
+                    )}
+                  </div>
+
+                  {/* Label (Visible when expanded) */}
+                  {isExpanded && (
+                    <span className="truncate whitespace-nowrap transition-opacity duration-200">
+                      {item.name}
+                    </span>
+                  )}
+                </Link>
+
+                {/* Elegant Tooltip when collapsed */}
+                {!isExpanded && isHovered && (
+                  <div className="absolute left-full ml-3 top-1/2 -translate-y-1/2 px-2.5 py-1 rounded-lg bg-[#0D0F12] border border-[#25282D] shadow-2xl text-[11px] font-medium text-white whitespace-nowrap z-50 animate-in fade-in slide-in-from-left-1 duration-150 pointer-events-none">
+                    {item.name}
+                    {item.badge && (
+                      <span className="ml-1.5 text-[9px] font-mono text-[#FF5A00]">
+                        ({item.badge})
+                      </span>
+                    )}
+                  </div>
                 )}
-                {isActive && (
-                  <span className="w-1 h-3 rounded-full bg-[#FF5500] absolute left-0.5" />
-                )}
-              </Link>
+              </div>
             );
           })}
         </nav>
 
-        {/* Bottom Capsule Actions */}
-        <div className="pt-2.5 border-t border-[#1C1F26] space-y-1.5">
+        {/* Bottom: Note Action Button */}
+        <div className="pt-2 border-t border-[#25282D] space-y-1">
           <button
             onClick={() => window.dispatchEvent(new CustomEvent("open-note-modal"))}
-            className="w-full flex items-center justify-center gap-1.5 px-2.5 py-2 rounded-xl bg-[#FF5500] hover:bg-[#E04B00] text-white text-[11px] font-semibold shadow-md shadow-[#FF5500]/15 transition-all duration-200 cursor-pointer active:scale-[0.98]"
+            className={`w-full flex items-center justify-center gap-2 rounded-xl bg-[#FF5A00] hover:bg-[#E04F00] text-white text-xs font-semibold shadow-md shadow-[#FF5A00]/20 transition-all cursor-pointer active:scale-95 ${
+              isExpanded ? "px-3 py-2" : "p-2"
+            }`}
+            title="Write Note to MCP Server"
           >
-            <PlusCircle className="w-3.5 h-3.5" />
-            <span>Write MCP Note</span>
+            <PlusCircle className="w-4 h-4 flex-shrink-0" />
+            {isExpanded && <span className="truncate">Write Note</span>}
           </button>
-
-          <div className="text-center">
-            <span className="text-[9px] font-mono text-[#585E6A]">
-              MCP Token: Authenticated
-            </span>
-          </div>
         </div>
       </aside>
 
-      {/* Mobile Top Capsule Header */}
-      <header className="lg:hidden fixed top-2.5 left-2.5 right-2.5 z-40">
-        <div className="h-11 px-3.5 rounded-full bg-[#08080A]/95 backdrop-blur-xl border border-[#1C1F26] shadow-xl flex items-center justify-between">
+      {/* Mobile Sticky Top Header */}
+      <header className="lg:hidden sticky top-2 left-2 right-2 z-40 px-2 mb-3">
+        <div className="h-11 px-3.5 rounded-2xl glass-panel flex items-center justify-between shadow-lg">
           <Link href="/dashboard" className="flex items-center gap-2">
-            <div className="w-5 h-5 rounded-md bg-[#FF5500] flex items-center justify-center font-bold text-white text-[9px]">
+            <div className="w-5 h-5 rounded-md bg-[#FF5A00] flex items-center justify-center font-bold text-white text-[9px]">
               FB
             </div>
-            <span className="text-xs font-bold text-[#F4F4F5]">FlytBase Live CRM</span>
+            <span className="text-xs font-bold text-[#F4F4F5]">FlytBase CRM</span>
           </Link>
 
-          <div className="flex items-center gap-1.5">
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => window.dispatchEvent(new CustomEvent("open-ai-assistant"))}
+              className="px-2 py-0.5 rounded-full bg-[#141619] border border-[#25282D] text-[10px] text-[#FF5A00] font-semibold flex items-center gap-1"
+            >
+              <Sparkles className="w-2.5 h-2.5" />
+              <span>AI</span>
+            </button>
             <button
               onClick={() => window.dispatchEvent(new CustomEvent("open-note-modal"))}
-              className="px-2 py-0.5 rounded-full bg-[#FF5500] text-white text-[10px] font-medium"
+              className="px-2.5 py-0.5 rounded-full bg-[#FF5A00] text-white text-[10px] font-medium"
             >
               + Note
             </button>
             <Link
               href="/signals"
-              className="px-2 py-0.5 rounded-full bg-[#0E1014] border border-[#1C1F26] text-[10px] text-[#F4F4F5]"
+              className="px-2 py-0.5 rounded-full bg-[#141619] border border-[#25282D] text-[10px] text-[#F4F4F5]"
             >
               Signals
             </Link>

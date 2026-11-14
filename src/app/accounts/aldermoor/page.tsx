@@ -29,7 +29,7 @@ export default function AldermoorPage() {
       {/* Top Header & Breadcrumb */}
       <div>
         <div className="flex items-center gap-2 text-xs text-[#8E929E] mb-2">
-          <Link href="/" className="hover:text-[#F4F4F5] flex items-center gap-1 transition-colors">
+          <Link href="/dashboard" className="hover:text-[#F4F4F5] flex items-center gap-1 transition-colors">
             <ArrowLeft className="w-3.5 h-3.5" />
             <span>Overview</span>
           </Link>

@@ -8,6 +8,9 @@ import { getSyncMetadata } from "@/lib/data/cache";
 import { KpiCard } from "@/components/dashboard/KpiCard";
 import { ActionList } from "@/components/actions/ActionList";
 import { SignalFeed } from "@/components/signals/SignalFeed";
+import { RadarHealthMap } from "@/components/visualizations/RadarHealthMap";
+import { SankeyDealFlow } from "@/components/visualizations/SankeyDealFlow";
+import { DeliveryRunway } from "@/components/visualizations/DeliveryRunway";
 import {
   DollarSign,
   AlertTriangle,
@@ -31,35 +34,35 @@ export default function DashboardOverviewPage() {
   return (
     <div className="space-y-7">
       {/* Top Welcome & Sync Freshness Banner */}
-      <div className="flex flex-wrap items-center justify-between gap-4 p-5 rounded-xl matte-card">
+      <div className="flex flex-wrap items-center justify-between gap-4 p-5 rounded-2xl matte-card">
         <div>
           <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-[#FF5500] animate-pulse" />
-            <span className="text-xs font-mono uppercase tracking-wider text-[#FF5500] font-semibold">
+            <span className="w-2 h-2 rounded-full bg-[#FF5A00] animate-pulse" />
+            <span className="text-xs font-mono uppercase tracking-wider text-[#FF5A00] font-semibold">
               Live CRM Intelligence • Questathon Engine
             </span>
           </div>
           <h1 className="text-2xl font-bold tracking-tight text-[#F4F4F5] mt-1">
             Executive Account Command Center
           </h1>
-          <p className="text-xs text-[#8E929E] mt-0.5">
+          <p className="text-xs text-[#9A9FA8] mt-0.5">
             Real-time synchronization with the official Questathon MCP server.
           </p>
         </div>
 
         <div className="flex items-center gap-3">
           <div className="text-right">
-            <span className="text-[10px] text-[#585E6A] uppercase font-mono block">Last Synchronized</span>
+            <span className="text-[10px] text-[#606570] uppercase font-mono block">Last Synchronized</span>
             <span className="text-xs font-mono text-[#F4F4F5]">
               {syncMeta.lastSync ? new Date(syncMeta.lastSync).toLocaleTimeString() : "Live Active"}
             </span>
           </div>
           <Link
             href="/settings"
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#14161C] hover:bg-[#1C1F26] text-xs font-medium text-[#F4F4F5] border border-[#1C1F26] transition-colors"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#141619] hover:bg-[#1D2024] text-xs font-medium text-[#F4F4F5] border border-[#25282D] transition-colors"
           >
             <span>MCP Health</span>
-            <ArrowRight className="w-3.5 h-3.5 text-[#FF5500]" />
+            <ArrowRight className="w-3.5 h-3.5 text-[#FF5A00]" />
           </Link>
         </div>
       </div>
@@ -100,35 +103,48 @@ export default function DashboardOverviewPage() {
         />
       </div>
 
+      {/* Interactive Visualizations: Radar Health Map & Sankey Deal Flow */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-5">
+        <div className="lg:col-span-6">
+          <RadarHealthMap />
+        </div>
+        <div className="lg:col-span-6">
+          <SankeyDealFlow />
+        </div>
+      </div>
+
+      {/* Multi-Track Delivery Runway Timeline */}
+      <DeliveryRunway />
+
       {/* Account Comparison Cards */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
         {/* Account A Card */}
-        <div className="p-5 rounded-xl matte-card flex flex-col justify-between space-y-5">
+        <div className="p-5 rounded-2xl matte-card flex flex-col justify-between space-y-5">
           <div>
             <div className="flex items-center justify-between mb-2">
-              <span className="text-xs font-mono text-[#FF5500] font-semibold uppercase tracking-wider">
+              <span className="text-xs font-mono text-[#FF5A00] font-semibold uppercase tracking-wider">
                 Account A • Public Safety
               </span>
-              <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-[#14161C] text-[#E4E4E7] border border-[#252830]">
+              <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono bg-[#141619] text-[#E4E4E7] border border-[#25282D]">
                 14 / 35 Docks Flying
               </span>
             </div>
             <h2 className="text-lg font-bold text-[#F4F4F5]">Eastern Counties Police Alliance</h2>
-            <p className="text-xs text-[#8E929E] mt-1 leading-relaxed">
+            <p className="text-xs text-[#9A9FA8] mt-1 leading-relaxed">
               Consortium of four county police forces: <strong className="text-[#F4F4F5]">Westmere Constabulary</strong> (18 docks, daily live patrol flights), <strong className="text-[#F4F4F5]">Metro Central Police</strong> (9 docks, operational), <strong className="text-[#F4F4F5]">Tarn Valley Police</strong> (4 docks, zero live flights — blocked on DPIA sign-off), and <strong className="text-[#F4F4F5]">Norwold Police</strong> (4 docks, training only). 300-dock national framework tender currently in preparation.
             </p>
 
-            <div className="grid grid-cols-3 gap-2 mt-4 p-3 rounded-lg bg-[#000000] border border-[#1C1F26] text-xs">
+            <div className="grid grid-cols-3 gap-2 mt-4 p-3 rounded-xl bg-[#050505] border border-[#25282D] text-xs">
               <div>
-                <span className="text-[#585E6A] text-[10px] uppercase font-mono block">Confirmed</span>
+                <span className="text-[#606570] text-[10px] uppercase font-mono block">Confirmed</span>
                 <span className="font-mono font-semibold text-[#F4F4F5]">£1.5M</span>
               </div>
               <div>
-                <span className="text-[#585E6A] text-[10px] uppercase font-mono block">At Risk</span>
-                <span className="font-mono font-semibold text-[#FF5500]">£800k</span>
+                <span className="text-[#606570] text-[10px] uppercase font-mono block">At Risk</span>
+                <span className="font-mono font-semibold text-[#FF5A00]">£800k</span>
               </div>
               <div>
-                <span className="text-[#585E6A] text-[10px] uppercase font-mono block">Top Blocker</span>
+                <span className="text-[#606570] text-[10px] uppercase font-mono block">Top Blocker</span>
                 <span className="text-[#FFA066] truncate block text-[11px]" title="Ticket FB-10412 DPIA unassigned 4 mos">
                   DPIA unassigned
                 </span>
@@ -136,11 +152,11 @@ export default function DashboardOverviewPage() {
             </div>
           </div>
 
-          <div className="flex items-center justify-between pt-3 border-t border-[#1C1F26]">
-            <span className="text-xs text-[#71717A]">5 Critical Questions Answered</span>
+          <div className="flex items-center justify-between pt-3 border-t border-[#25282D]">
+            <span className="text-xs text-[#9A9FA8]">5 Critical Questions Answered</span>
             <Link
               href="/accounts/eastern-counties"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#FF5500] hover:bg-[#E04B00] text-white text-xs font-semibold shadow-md shadow-[#FF5500]/20 transition-all duration-200"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#FF5A00] hover:bg-[#E04B00] text-white text-xs font-semibold shadow-md shadow-[#FF5A00]/20 transition-all duration-200"
             >
               <span>Explore Account Intelligence</span>
               <ArrowRight className="w-3.5 h-3.5" />
@@ -149,32 +165,32 @@ export default function DashboardOverviewPage() {
         </div>
 
         {/* Account B Card */}
-        <div className="p-5 rounded-xl matte-card flex flex-col justify-between space-y-5">
+        <div className="p-5 rounded-2xl matte-card flex flex-col justify-between space-y-5">
           <div>
             <div className="flex items-center justify-between mb-2">
-              <span className="text-xs font-mono text-[#FF5500] font-semibold uppercase tracking-wider">
+              <span className="text-xs font-mono text-[#FF5A00] font-semibold uppercase tracking-wider">
                 Account B • Industrial Security
               </span>
-              <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-[#1A1009] text-[#FFA066] border border-[#5E2B0C]">
+              <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono bg-[#141619] text-[#FFA066] border border-[#25282D]">
                 4 / 14 Docks Flying Regularly
               </span>
             </div>
             <h2 className="text-lg font-bold text-[#F4F4F5]">Aldermoor Industrial Group</h2>
-            <p className="text-xs text-[#8E929E] mt-1 leading-relaxed">
+            <p className="text-xs text-[#9A9FA8] mt-1 leading-relaxed">
               15 manufacturing plants across Europe. 14 docks installed, 4 plants fly regularly, 9 plants idle. Claimed €1.2M savings unverified by finance.
             </p>
 
-            <div className="grid grid-cols-3 gap-2 mt-4 p-3 rounded-lg bg-[#000000] border border-[#1C1F26] text-xs">
+            <div className="grid grid-cols-3 gap-2 mt-4 p-3 rounded-xl bg-[#050505] border border-[#25282D] text-xs">
               <div>
-                <span className="text-[#585E6A] text-[10px] uppercase font-mono block">Closed Won</span>
+                <span className="text-[#606570] text-[10px] uppercase font-mono block">Closed Won</span>
                 <span className="font-mono font-semibold text-[#F4F4F5]">€160k</span>
               </div>
               <div>
-                <span className="text-[#585E6A] text-[10px] uppercase font-mono block">At Risk</span>
-                <span className="font-mono font-semibold text-[#FF5500]">€320k</span>
+                <span className="text-[#606570] text-[10px] uppercase font-mono block">At Risk</span>
+                <span className="font-mono font-semibold text-[#FF5A00]">€320k</span>
               </div>
               <div>
-                <span className="text-[#585E6A] text-[10px] uppercase font-mono block">Top Blocker</span>
+                <span className="text-[#606570] text-[10px] uppercase font-mono block">Top Blocker</span>
                 <span className="text-[#FFA066] truncate block text-[11px]" title="Finance cannot verify €1.2M spreadsheet savings claim">
                   ROI unverified
                 </span>
@@ -182,11 +198,11 @@ export default function DashboardOverviewPage() {
             </div>
           </div>
 
-          <div className="flex items-center justify-between pt-3 border-t border-[#1C1F26]">
-            <span className="text-xs text-[#71717A]">5 Critical Questions Answered</span>
+          <div className="flex items-center justify-between pt-3 border-t border-[#25282D]">
+            <span className="text-xs text-[#9A9FA8]">5 Critical Questions Answered</span>
             <Link
               href="/accounts/aldermoor"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#FF5500] hover:bg-[#E04B00] text-white text-xs font-semibold shadow-md shadow-[#FF5500]/20 transition-all duration-200"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#FF5A00] hover:bg-[#E04B00] text-white text-xs font-semibold shadow-md shadow-[#FF5A00]/20 transition-all duration-200"
             >
               <span>Explore Account Intelligence</span>
               <ArrowRight className="w-3.5 h-3.5" />
@@ -199,12 +215,12 @@ export default function DashboardOverviewPage() {
       <div className="space-y-3.5">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <Radio className="w-4 h-4 text-[#FF5500] animate-pulse" />
-            <h2 className="text-xs font-bold text-[#F4F4F5] uppercase tracking-wider">
+            <Radio className="w-4 h-4 text-[#FF5A00] animate-pulse" />
+            <h2 className="text-xs font-bold text-[#F4F4F5] uppercase tracking-wider font-mono">
               Urgent Live Signals & Questathon Events (Confirmed by MCP Data)
             </h2>
           </div>
-          <Link href="/signals" className="text-xs text-[#FF5500] hover:underline flex items-center gap-1 font-medium">
+          <Link href="/signals" className="text-xs text-[#FF5A00] hover:underline flex items-center gap-1 font-medium">
             <span>View All Signals</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </Link>
@@ -216,12 +232,12 @@ export default function DashboardOverviewPage() {
       <div className="space-y-3.5">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <CheckSquare className="w-4 h-4 text-[#FF5500]" />
-            <h2 className="text-xs font-bold text-[#F4F4F5] uppercase tracking-wider">
+            <CheckSquare className="w-4 h-4 text-[#FF5A00]" />
+            <h2 className="text-xs font-bold text-[#F4F4F5] uppercase tracking-wider font-mono">
               Top Ranked Recommended Next Actions
             </h2>
           </div>
-          <Link href="/actions" className="text-xs text-[#FF5500] hover:underline flex items-center gap-1 font-medium">
+          <Link href="/actions" className="text-xs text-[#FF5A00] hover:underline flex items-center gap-1 font-medium">
             <span>Open Full Action Plan</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </Link>

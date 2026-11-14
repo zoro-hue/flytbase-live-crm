@@ -1,6 +1,7 @@
 import React from "react";
 import { getAllStakeholders } from "@/lib/analysis/stakeholders";
 import { StakeholderGrid } from "@/components/stakeholders/StakeholderGrid";
+import { StakeholderNetwork } from "@/components/visualizations/StakeholderNetwork";
 import { Users2, UserCheck, UserX, AlertTriangle } from "lucide-react";
 import { KpiCard } from "@/components/dashboard/KpiCard";
 
@@ -14,19 +15,19 @@ export default function StakeholdersPage() {
   return (
     <div className="space-y-6">
       {/* Header */}
-      <div className="flex flex-wrap items-center justify-between gap-4 p-5 rounded-xl matte-card">
+      <div className="flex flex-wrap items-center justify-between gap-4 p-5 rounded-2xl matte-card">
         <div>
           <div className="flex items-center gap-2">
-            <Users2 className="w-4 h-4 text-[#FF5500]" />
-            <span className="text-xs font-mono uppercase tracking-wider text-[#FF5500] font-semibold">
+            <Users2 className="w-4 h-4 text-[#FF5A00]" />
+            <span className="text-xs font-mono uppercase tracking-wider text-[#FF5A00] font-semibold">
               Stakeholder Relationship Intelligence
             </span>
           </div>
           <h1 className="text-2xl font-bold tracking-tight text-[#F4F4F5] mt-1">
             Stakeholder Power Matrix & Key Person Risks
           </h1>
-          <p className="text-xs text-[#8E929E] mt-0.5">
-            Who holds the decision-making authority, who controls the budget, and which relationships are at risk.
+          <p className="text-xs text-[#9A9FA8] mt-0.5">
+            Who holds the decision-making authority, who controls the budget, and which relationships are vulnerable to departure or blockers.
           </p>
         </div>
       </div>
@@ -60,17 +61,20 @@ export default function StakeholdersPage() {
         <KpiCard
           title="Departing Stakeholders"
           value={departing.length}
-          subtitle="Rhys Calder & Stefan's Deputy"
+          subtitle="Rhys Calder leaving Jan 2027"
           badge="Imminent Risk"
           badgeColor="red"
           icon={UserX}
         />
       </div>
 
+      {/* Radial Hub-and-Spoke Stakeholder Network (As seen in Reference Screenshots 3 & 6) */}
+      <StakeholderNetwork />
+
       {/* Main Stakeholder Grid */}
       <div className="space-y-4">
         <div className="flex items-center justify-between">
-          <h2 className="text-xs font-bold text-[#F4F4F5] uppercase tracking-wider">
+          <h2 className="text-xs font-bold text-[#F4F4F5] uppercase tracking-wider font-mono">
             Enterprise Stakeholder Directory & Authority Mapping
           </h2>
         </div>
