@@ -11,6 +11,7 @@ import { SignalFeed } from "@/components/signals/SignalFeed";
 import { RadarHealthMap } from "@/components/visualizations/RadarHealthMap";
 import { SankeyDealFlow } from "@/components/visualizations/SankeyDealFlow";
 import { DeliveryRunway } from "@/components/visualizations/DeliveryRunway";
+import { AccountOrbitalNetwork } from "@/components/visualizations/AccountOrbitalNetwork";
 import {
   DollarSign,
   AlertTriangle,
@@ -102,6 +103,9 @@ export default function DashboardOverviewPage() {
           icon={Radio}
         />
       </div>
+
+      {/* Flagship AI Operations Radial Network & Live Activity Stack */}
+      <AccountOrbitalNetwork />
 
       {/* Interactive Visualizations: Radar Health Map & Sankey Deal Flow */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-5">

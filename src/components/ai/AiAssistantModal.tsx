@@ -174,41 +174,125 @@ export const AiAssistantModal: React.FC = () => {
     <>
       {/* ===================================================================== */}
       {/* 1. PERSISTENT FLOATING ROBOT ASSISTANT (BOTTOM-LEFT)                  */}
+      {/* Matches reference screenshot media_1794653411551_05f890dc.png        */}
       {/* ===================================================================== */}
       <div className="fixed bottom-4 left-4 z-40 select-none">
         <button
+          type="button"
           onClick={() => setIsOpen(true)}
-          className="group relative p-2 rounded-2xl bg-[#171717] hover:bg-[#252525] border border-[#303030] hover:border-[#536F00]/50 shadow-xl transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer flex items-center gap-2.5 text-white"
+          className="group relative flex items-center gap-2 p-1.5 rounded-2xl bg-white/90 hover:bg-white backdrop-blur-md border border-[#E2E5DE] hover:border-[#536F00]/50 shadow-[0_8px_24px_rgba(0,0,0,0.08)] hover:shadow-[0_12px_28px_rgba(0,0,0,0.12)] transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer"
           title="FlytBase AI Copilot — Grounded CRM Intelligence"
         >
-          {/* Animated Robot Mascot */}
-          <div className="relative w-9 h-9 rounded-xl bg-[#22252A] border border-[#303030] group-hover:border-[#536F00]/60 flex items-center justify-center overflow-hidden transition-colors duration-300">
-            {/* Robot Float/Breathing Animation Container */}
-            <div className="flex flex-col items-center animate-[bounce_4s_infinite]">
-              {/* Antenna with Pulsing Olive Beacon */}
-              <div className="w-1.5 h-1.5 bg-[#789600] rounded-full mb-0.5 shadow-[0_0_6px_rgba(120,150,0,0.8)] animate-pulse" />
+          {/* Exact Speech-Bubble Head Robot Mascot SVG */}
+          <div className="relative w-11 h-11 flex items-center justify-center">
+            <svg
+              width="44"
+              height="44"
+              viewBox="0 0 44 44"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-full h-full"
+            >
+              <defs>
+                {/* Body Metallic Gradient */}
+                <linearGradient id="mascot-body-grad" x1="8" y1="8" x2="36" y2="38" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stopColor="#2E333A" />
+                  <stop offset="50%" stopColor="#202328" />
+                  <stop offset="100%" stopColor="#131518" />
+                </linearGradient>
 
-              {/* Robot Face Screen */}
-              <div className="w-6 h-4.5 rounded-md bg-[#0D0F12] border border-[#303030] flex items-center justify-center gap-1 px-1">
-                {/* Blinking Eye LEDs */}
-                <div className="w-1.5 h-1.5 rounded-full bg-[#10B981] animate-[ping_3.5s_cubic-bezier(0,0,0.2,1)_infinite]" />
-                <div className="w-1.5 h-1.5 rounded-full bg-[#10B981] animate-[ping_3.5s_cubic-bezier(0,0,0.2,1)_infinite]" />
-              </div>
-            </div>
+                {/* Antenna Star Glow */}
+                <filter id="star-glow" x="-20%" y="-20%" width="140%" height="140%">
+                  <feGaussianBlur stdDeviation="1" result="blur" />
+                  <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                </filter>
+
+                {/* Cyan LED Glow */}
+                <filter id="cyan-glow" x="-30%" y="-30%" width="160%" height="160%">
+                  <feGaussianBlur stdDeviation="1" result="glow" />
+                  <feComposite in="SourceGraphic" in2="glow" operator="over" />
+                </filter>
+              </defs>
+
+              {/* Floor Shadow */}
+              <ellipse
+                cx="22"
+                cy="42"
+                rx="12"
+                ry="1.8"
+                fill="rgba(0,0,0,0.14)"
+                className="group-hover:scale-110 transition-transform duration-300"
+              />
+
+              {/* Floating Head Group with Subtle Breathing Animation */}
+              <g className="animate-[bounce_3.5s_ease-in-out_infinite]">
+                {/* Antenna Stalk */}
+                <rect x="21" y="2" width="2" height="6" rx="1" fill="#2B2F36" stroke="#1B1E22" strokeWidth="0.5" />
+
+                {/* Antenna Lime-Green 4-point Star Beacon */}
+                <g filter="url(#star-glow)">
+                  <path
+                    d="M22 0.5L23.5 3L26 3.5L23.5 4L22 6.5L20.5 4L18 3.5L20.5 3Z"
+                    fill="#A3E635"
+                  />
+                  <circle cx="22" cy="3.5" r="1" fill="#FFFFFF" />
+                </g>
+
+                {/* Left Ear Nub */}
+                <rect x="3.5" y="16" width="3.5" height="11" rx="1.75" fill="#15171A" stroke="#2D3138" strokeWidth="0.75" />
+
+                {/* Right Ear Nub */}
+                <rect x="37" y="16" width="3.5" height="11" rx="1.75" fill="#15171A" stroke="#2D3138" strokeWidth="0.75" />
+
+                {/* Main Speech-Bubble Head (Rounded Rectangle + Bottom-Left Tail) */}
+                <path
+                  d="M13 8C8.58 8 5 11.58 5 16V26C5 30.42 8.58 34 13 34H14.5L12 39.5L19 34H31C35.42 34 39 30.42 39 26V16C39 11.58 35.42 8 31 8H13Z"
+                  fill="url(#mascot-body-grad)"
+                  stroke="#383D47"
+                  strokeWidth="1.2"
+                />
+
+                {/* Inner Screen Bezel */}
+                <rect
+                  x="9.5"
+                  y="12.5"
+                  width="25"
+                  height="17"
+                  rx="5.5"
+                  fill="#0B0D10"
+                  stroke="#1E2229"
+                  strokeWidth="0.9"
+                />
+
+                {/* Glowing Cyan-Blue Eyes */}
+                <g filter="url(#cyan-glow)">
+                  <ellipse cx="16.5" cy="19.5" rx="2.5" ry="3" fill="#67E8F9" />
+                  <ellipse cx="27.5" cy="19.5" rx="2.5" ry="3" fill="#67E8F9" />
+                  {/* Eye Pupils / Highlights */}
+                  <circle cx="17.5" cy="18.5" r="0.8" fill="#FFFFFF" />
+                  <circle cx="28.5" cy="18.5" r="0.8" fill="#FFFFFF" />
+                </g>
+
+                {/* Smiling Mouth Line */}
+                <path
+                  d="M19.5 24.5C20.5 26 23.5 26 24.5 24.5"
+                  stroke="#67E8F9"
+                  strokeWidth="1.4"
+                  strokeLinecap="round"
+                  fill="none"
+                  filter="url(#cyan-glow)"
+                />
+              </g>
+            </svg>
           </div>
 
-          {/* Collapsed Pill Label (Reveals on Hover) */}
-          <div className="hidden sm:flex flex-col text-left pr-1 min-w-0">
+          {/* Pill Label */}
+          <div className="flex flex-col text-left pr-2">
             <div className="flex items-center gap-1.5">
-              <span className="text-xs font-bold text-white tracking-tight">FlytBase AI</span>
-              <span className="w-1.5 h-1.5 rounded-full bg-[#789600] animate-pulse" />
+              <span className="text-xs font-bold text-[#151515] tracking-tight">Ask FlytBase</span>
+              <span className="w-1.5 h-1.5 rounded-full bg-[#536F00] animate-pulse" />
             </div>
-            <span className="text-[10px] font-mono text-[#A0A0A0]">CRM Copilot</span>
-          </div>
-
-          {/* Sparkle Badge */}
-          <div className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-[#536F00] flex items-center justify-center text-white shadow-sm">
-            <Sparkles className="w-2.5 h-2.5 text-white" />
+            <span className="text-[10px] font-mono text-[#747A80]">CRM Copilot</span>
           </div>
         </button>
       </div>

@@ -9,19 +9,19 @@ interface SectionTransitionProps {
 }
 
 /**
- * EXACT SEQUENCE SPECIFICATION (Total: 1650ms):
- * Phase 1 — Preparation (0–200ms): Content visible, depth begins, center orange hinge appears.
- * Phase 2 — Folding (200–650ms, 450ms): Visibly folds toward center, rotateY: -14deg, scaleX: 0.74, blur(16px), cubic-bezier(0.76, 0, 0.24, 1).
- * Phase 3 — Hinge Transition (650–800ms, 150ms): Outgoing hidden behind hinge, content swaps to new route, incoming positioned at central axis.
- * Phase 4 — Unfolding (800–1450ms, 650ms): Expands outward from center, blur dissolves (16px -> 0px), rotateY (14deg -> 0deg), cubic-bezier(0.22, 1, 0.36, 1).
- * Phase 5 — Completion (1450–1650ms, 200ms): Orange hinge fades out smoothly, section settles into final stationary position.
+ * REFINED GLASS OPTICAL SECTION DISSOLVE (Total: 950ms):
+ * Phase 1 — Preparation (0–100ms): Center olive-green refraction line appears.
+ * Phase 2 — Folding (100–450ms, 350ms): Visibly folds toward center, rotateY: -10deg, scaleX: 0.82, blur(10px), cubic-bezier(0.76, 0, 0.24, 1).
+ * Phase 3 — Hinge Transition (450–550ms, 100ms): Outgoing hidden behind hinge, content swaps to new route.
+ * Phase 4 — Unfolding (550–850ms, 300ms): Expands outward from center, blur dissolves (10px -> 0px), rotateY (10deg -> 0deg), cubic-bezier(0.22, 1, 0.36, 1).
+ * Phase 5 — Settling (850–950ms, 100ms): Olive refraction line fades out smoothly, section settles into final position.
  */
 
-const PREP_MS = 200;
-const FOLD_END_MS = 650;
-const SWAP_END_MS = 800;
-const UNFOLD_END_MS = 1450;
-const TOTAL_DURATION_MS = 1650;
+const PREP_MS = 100;
+const FOLD_END_MS = 450;
+const SWAP_END_MS = 550;
+const UNFOLD_END_MS = 850;
+const TOTAL_DURATION_MS = 950;
 
 type TransitionPhase = "idle" | "prep" | "folding" | "hingeSwap" | "unfolding" | "settling";
 
@@ -37,7 +37,7 @@ const variants: Variants = {
   prep: {
     scaleX: 0.995,
     scaleY: 0.998,
-    rotateY: -1,
+    rotateY: -0.5,
     filter: "blur(0.5px)",
     opacity: 0.98,
     transition: {
@@ -46,24 +46,24 @@ const variants: Variants = {
     },
   },
   folding: {
-    scaleX: 0.74, // Noticeable horizontal compression toward the center
-    scaleY: 0.97,
-    rotateY: -14, // Clearly visible 3D perspective fold
-    filter: "blur(16px)", // Directional heavy blur (12-18px specified)
-    opacity: 0.12, // Content dissolves as it reaches the center hinge
+    scaleX: 0.82, // Smooth horizontal fold toward the center axis
+    scaleY: 0.98,
+    rotateY: -10, // Controlled 3D perspective fold
+    filter: "blur(10px)", // Clean optical glass blur
+    opacity: 0.2, // Content dissolves smoothly as it reaches the center line
     transition: {
-      duration: (FOLD_END_MS - PREP_MS) / 1000, // 450ms
-      ease: [0.76, 0, 0.24, 1], // Exact user requested folding curve
+      duration: (FOLD_END_MS - PREP_MS) / 1000, // 350ms
+      ease: [0.76, 0, 0.24, 1],
     },
   },
   hingeSwap: {
-    scaleX: 0.74,
-    scaleY: 0.97,
-    rotateY: 14, // Symmetrical counter-angle for incoming unfold
-    filter: "blur(16px)",
-    opacity: 0.12,
+    scaleX: 0.82,
+    scaleY: 0.98,
+    rotateY: 10, // Symmetrical counter-angle for incoming unfold
+    filter: "blur(10px)",
+    opacity: 0.2,
     transition: {
-      duration: (SWAP_END_MS - FOLD_END_MS) / 1000, // 150ms
+      duration: (SWAP_END_MS - FOLD_END_MS) / 1000, // 100ms
       ease: "linear",
     },
   },
@@ -71,11 +71,11 @@ const variants: Variants = {
     scaleX: 1,
     scaleY: 1,
     rotateY: 0,
-    filter: "blur(0px)", // Blur dissolves progressively from 16px to 0px
+    filter: "blur(0px)", // Progressive optical restoration
     opacity: 1,
     transition: {
-      duration: (UNFOLD_END_MS - SWAP_END_MS) / 1000, // 650ms
-      ease: [0.22, 1, 0.36, 1], // Exact user requested unfolding curve
+      duration: (UNFOLD_END_MS - SWAP_END_MS) / 1000, // 300ms
+      ease: [0.22, 1, 0.36, 1],
     },
   },
   settling: {
@@ -85,7 +85,7 @@ const variants: Variants = {
     filter: "blur(0px)",
     opacity: 1,
     transition: {
-      duration: (TOTAL_DURATION_MS - UNFOLD_END_MS) / 1000, // 200ms
+      duration: (TOTAL_DURATION_MS - UNFOLD_END_MS) / 1000, // 100ms
       ease: "easeOut",
     },
   },
@@ -207,19 +207,19 @@ export const SectionTransition: React.FC<SectionTransitionProps> = ({ children }
         )}
       </AnimatePresence>
 
-      {/* Exact Center Vertical Hinge Line — 1.5px, #FF5A00, prominent during fold and unfold */}
+      {/* Exact Center Vertical Hinge / Refraction Line — 1.5px, #536F00, prominent during fold and unfold */}
       <AnimatePresence>
         {showHinge && !shouldReduceMotion && (
           <motion.div
             key="center-vertical-hinge-line"
             initial={{ opacity: 0, scaleY: 0.95 }}
-            animate={{ opacity: 0.95, scaleY: 1 }}
+            animate={{ opacity: 0.9, scaleY: 1 }}
             exit={{ opacity: 0, scaleY: 0.98 }}
-            transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
             aria-hidden="true"
-            className="pointer-events-none absolute inset-y-0 left-1/2 -translate-x-1/2 w-[1.5px] z-30 shadow-[0_0_8px_rgba(255,90,0,0.35)]"
+            className="pointer-events-none absolute inset-y-0 left-1/2 -translate-x-1/2 w-[1.5px] z-30 shadow-[0_0_8px_rgba(83,111,0,0.35)]"
             style={{
-              backgroundColor: "#FF5A00",
+              backgroundColor: "#536F00",
             }}
           />
         )}
