@@ -1,0 +1,57 @@
+# FLYTBASE CRM — SYSTEM DESIGN & OPERATIONAL THINKING DOC
+
+**Project**: FlytBase Live CRM (Questathon Final Submission)  
+**Author**: Candidate Submission  
+**Target Accounts**: Eastern Counties Police Alliance (Account A) & Aldermoor Industrial Group (Account B)  
+**Target Platform**: Hosted Vercel Web Application + Next.js Server Architecture  
+
+---
+
+## 1. WHAT IT DOES, AND FOR WHOM
+
+### Target User
+The **Enterprise Account Director & Operations Lead** responsible for defending £1.5M+ in mission-critical autonomous drone contracts and reporting to executive leadership on Monday morning.
+
+### Core Problem Solved
+Traditional CRMs fail in hardware-enabled enterprise operations because they treat pipeline value as speculative sales claims rather than verifiable physical deployments. When champions exaggerate savings (€1.2M unverified spreadsheet claims at Aldermoor) or operations stall silently (4 docks idle at Tarn Valley for 120 days due to unassigned DPIA sign-off), standard dashboards remain misleadingly green.
+
+### Key Capabilities
+1. **Verifiable Valuation Engine**: Automatically splits book value into *Confirmed / Agreed*, *Active Qualified Pipeline*, and *At-Risk Value* based on primary documentary and telemetry proof.
+2. **Five Foundational Answers Per Account**: Answers every Monday-morning executive query: (1) Book Worth, (2) Power Matrix, (3) Ranked First Moves, (4) Impending Failures, and (5) Critical Unknowns.
+3. **Live Telemetry & Field Signal Ingestion**: Dynamically ingests autonomous dock activity, ticket escalations, and organizational departures via MCP without code modifications.
+4. **Interactive Auditability**: Every KPI, risk card, and revenue figure links directly to a primary source ID (`jira_ticket_FB10412`, `flight_log_by_plant`, `draft_tender_spec`).
+
+---
+
+## 2. HOW IT DECIDES: THE LOGIC & RULES ENGINE
+
+The CRM operates on deterministic evaluation matrices to eliminate subjective sales bias:
+
+| Domain | Rule / Logic Implementation | Primary Evidence Applied |
+| :--- | :--- | :--- |
+| **Commercial Valuation** | Value is categorized as **Confirmed** only if backed by an executed legal framework or purchase order. Value is categorized as **At-Risk** if contingent upon unverified operational prerequisites (e.g. DPIA certification, unverified ROI formulas). | `draft_tender_spec` (Clause 4.2), `finance_minutes_q3`, `roi_spreadsheet.csv` |
+| **Stakeholder Power Matrix** | Classifies contacts into 4 functional personas: **Economic Buyer** (budget authority), **Champion** (advocate), **Technical User** (field operations), and **Blocker/Gatekeeper** (compliance/legal). Health score degrades if the sole key-contact departs. | `paperwork_A`, `flight_ops_slack_export`, `procurement_policy_v4` |
+| **Action Prioritization** | Actions are scored: $\text{Rank} = (\text{Urgency} \times 0.4) + (\text{Financial Impact} \times 0.4) + (\text{Ease of Unblock} \times 0.2)$. Actions are restricted to strict chronological deadlines and assigned single named owners. | Contractual renewal deadlines, public event dates (Dec 5), ticket dormancy |
+| **Risk Detection** | Triggers **Critical** severity if: (a) Installed docks log zero flights over >14 consecutive days while powered, or (b) Compliance tickets remain unassigned >30 days. | MCP flight logs, `jira_ticket_FB10412`, `jira_ticket_FB10488` |
+| **Gap Analysis** | Enforces intellectual honesty: separates empirical telemetry from speculative assertions. Flags missing artifacts (e.g. unverified €1.2M fuel reduction spreadsheet). | Audited financial models vs raw MCP telemetry |
+
+---
+
+## 3. WHAT IT DOES NOT DO YET (ROADMAP & BOUNDARIES)
+
+To maintain stability under Questathon constraints, the following enterprise capabilities are reserved for Phase 2:
+- **Bi-Directional Multi-Tenant Jira Sync**: Currently calls MCP `write_note` and caches updates locally; does not yet perform full bi-directional webhooks with external ticketing systems.
+- **Automated Weather Grounding Correlation**: Flight logs reflect dock dispatches but do not yet automatically correlate zero-flight days with METAR meteorological grounding records.
+- **Automated Legal Redlining**: Identifies GDPR/DPIA compliance blockers (Ticket FB-10412) but does not draft automated legal addendums for police consortium signatories.
+- **Multi-Factor RBAC**: Currently designed as an Executive Command Center without role-based access control tiers between junior dispatchers and executive directors.
+
+---
+
+## 4. HOW AI WAS UTILIZED
+
+AI was implemented strictly as a **grounded analytical copilot**, not an unconstrained generative chatbot:
+1. **Deterministic Retrieval-Augmented Grounding**: The AI Copilot (`FlytBase AI`) is strictly bounded by cached MCP records, primary stakeholder exports, and flight logs. Prompts explicitly prohibit external hallucinations or invented contract values.
+2. **Mandatory Source Attribution**: Every synthesis generated by the copilot includes structured JSON citations (`sourceIds`, `verifiedFacts`, `projections`, `missingEvidence`).
+3. **Structured Analytical Heuristics**: The copilot utilizes classification pipelines to parse executive questions into specific commercial dimensions (valuation, power, actions, risks, unknowns).
+4. **Human-in-the-Loop Review**: All AI-suggested recommendations require manual human review via the interactive "Review Mode" interface before notes are committed back to the server.
+5. **Stateful Reactive Mascot**: The mascot reflects real-time cognitive states (`idle` &rarr; `thinking` &rarr; `speaking`) based on active MCP synthesis and stream lifecycles.
