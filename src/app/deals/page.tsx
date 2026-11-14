@@ -13,20 +13,35 @@ export default function DealsPage() {
   return (
     <div className="space-y-6">
       {/* Header */}
-      <div className="flex flex-wrap items-center justify-between gap-4 p-5 rounded-2xl matte-card">
+      <div className="flex flex-wrap items-center justify-between gap-4 p-6 rounded-2xl bg-white border border-[#E2E5DE] shadow-sm">
         <div>
           <div className="flex items-center gap-2">
-            <Briefcase className="w-4 h-4 text-[#FF5A00]" />
-            <span className="text-xs font-mono uppercase tracking-wider text-[#FF5A00] font-semibold">
-              Deal Pipeline Management
+            <span className="w-2 h-2 rounded-full bg-[#536F00]" />
+            <span className="text-xs font-mono uppercase tracking-wider text-[#536F00] font-semibold">
+              Sales Pipeline Intelligence
             </span>
           </div>
-          <h1 className="text-2xl font-bold tracking-tight text-[#F4F4F5] mt-1">
-            Pipeline, in Motion
+          <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#151515] mt-1 font-sans">
+            Pipeline, in motion.
           </h1>
-          <p className="text-xs text-[#9A9FA8] mt-0.5">
-            Verified deal breakdown across confirmed contracts, active pipeline, at-risk opportunities, and probability-weighted forecasts.
+          <p className="text-sm text-[#747A80] mt-0.5">
+            12 open deals worth $413,500. 1 are going quiet — Nova has drafts ready.
           </p>
+        </div>
+
+        <div className="flex items-center gap-2">
+          <button
+            type="button"
+            className="px-3.5 py-1.5 rounded-xl bg-[#F4F5F0] hover:bg-[#ECEFE5] border border-[#E2E5DE] text-xs font-medium text-[#151515] transition-colors"
+          >
+            Deals board →
+          </button>
+          <button
+            type="button"
+            className="px-3.5 py-1.5 rounded-xl bg-white hover:bg-[#F4F5F0] border border-[#E2E5DE] text-xs font-medium text-[#747A80] transition-colors"
+          >
+            Classic overview
+          </button>
         </div>
       </div>
 
@@ -88,10 +103,10 @@ export default function DealsPage() {
       {/* Deals Table */}
       <div className="space-y-4">
         <div className="flex items-center justify-between">
-          <h2 className="text-xs font-bold text-[#F4F4F5] uppercase tracking-wider font-mono">
+          <h2 className="text-xs font-bold text-[#151515] uppercase tracking-wider font-mono">
             All Account Deals & Contractual Opportunities
           </h2>
-          <span className="text-xs text-[#606570]">
+          <span className="text-xs text-[#747A80]">
             Click any source badge to inspect supporting contractual evidence
           </span>
         </div>

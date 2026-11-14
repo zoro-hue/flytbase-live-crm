@@ -123,25 +123,22 @@ export const RadarHealthMap: React.FC = () => {
   ];
 
   return (
-    <div className="p-5 rounded-2xl matte-card space-y-4">
+    <div className="p-5 rounded-2xl bg-white border border-[#E2E5DE] shadow-sm space-y-4">
       {/* Header */}
-      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[#25282D] pb-3">
+      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[#E2E5DE] pb-3">
         <div>
-          <span className="text-[10px] font-mono uppercase tracking-wider text-[#FF5A00] font-semibold block">
-            RADIAL HEALTH RADAR
-          </span>
-          <h3 className="text-sm font-bold text-white">Account Operational Health Map</h3>
-          <p className="text-xs text-[#9A9FA8]">Closer to the center represents higher automated flight engagement</p>
+          <h3 className="text-base font-semibold text-[#151515]">Client health map</h3>
+          <p className="text-xs text-[#747A80]">Closer to the centre is healthier. Bubble size is operational value.</p>
         </div>
         <div className="flex items-center gap-3 text-[10px] font-mono">
-          <span className="flex items-center gap-1 text-[#F4F4F5]">
-            <span className="w-2 h-2 rounded-full bg-white" /> Good (3)
+          <span className="flex items-center gap-1 text-[#536F00]">
+            <span className="w-2 h-2 rounded-full bg-[#536F00]" /> Good 3
           </span>
-          <span className="flex items-center gap-1 text-[#FFA066]">
-            <span className="w-2 h-2 rounded-full bg-[#FFA066]" /> Watch (2)
+          <span className="flex items-center gap-1 text-[#C78620]">
+            <span className="w-2 h-2 rounded-full bg-[#C78620]" /> Watch 2
           </span>
-          <span className="flex items-center gap-1 text-[#FF5A00]">
-            <span className="w-2 h-2 rounded-full bg-[#FF5A00]" /> Risk (3)
+          <span className="flex items-center gap-1 text-[#E34B3D]">
+            <span className="w-2 h-2 rounded-full bg-[#E34B3D]" /> Risk 3
           </span>
         </div>
       </div>
@@ -151,35 +148,35 @@ export const RadarHealthMap: React.FC = () => {
         <svg viewBox="0 0 400 400" className="w-full h-full max-h-80">
           {/* Concentric Radar Circles */}
           {/* Outer Risk Ring */}
-          <circle cx="200" cy="200" r="150" fill="none" stroke="#25282D" strokeWidth="1" strokeDasharray="3 3" />
-          <circle cx="200" cy="200" r="148" fill="rgba(255, 90, 0, 0.02)" />
+          <circle cx="200" cy="200" r="150" fill="rgba(227, 75, 61, 0.04)" stroke="#E2E5DE" strokeWidth="1" strokeDasharray="3 3" />
           {/* Middle Watch Ring */}
-          <circle cx="200" cy="200" r="105" fill="none" stroke="#25282D" strokeWidth="1" />
-          <circle cx="200" cy="200" r="103" fill="rgba(20, 22, 25, 0.4)" />
+          <circle cx="200" cy="200" r="105" fill="rgba(199, 134, 32, 0.05)" stroke="#E2E5DE" strokeWidth="1" />
           {/* Inner Good Ring */}
-          <circle cx="200" cy="200" r="60" fill="none" stroke="#363A42" strokeWidth="1.2" />
-          <circle cx="200" cy="200" r="58" fill="rgba(20, 22, 25, 0.7)" />
+          <circle cx="200" cy="200" r="60" fill="rgba(83, 111, 0, 0.07)" stroke="#D5DAD0" strokeWidth="1.2" />
 
           {/* Crosshair Lines */}
-          <line x1="200" y1="35" x2="200" y2="365" stroke="#25282D" strokeWidth="0.75" />
-          <line x1="35" y1="200" x2="365" y2="200" stroke="#25282D" strokeWidth="0.75" />
+          <line x1="200" y1="35" x2="200" y2="365" stroke="#E2E5DE" strokeWidth="0.75" />
+          <line x1="35" y1="200" x2="365" y2="200" stroke="#E2E5DE" strokeWidth="0.75" />
 
           {/* Ring Labels */}
-          <text x="204" y="185" fill="#606570" fontSize="8" fontFamily="monospace">GOOD</text>
-          <text x="204" y="115" fill="#606570" fontSize="8" fontFamily="monospace">WATCH</text>
-          <text x="204" y="48" fill="#FF5A00" fontSize="8" fontFamily="monospace">RISK ZONE</text>
+          <text x="204" y="185" fill="#536F00" fontSize="8" fontFamily="monospace" fontWeight="600">GOOD</text>
+          <text x="204" y="115" fill="#C78620" fontSize="8" fontFamily="monospace" fontWeight="600">WATCH</text>
+          <text x="204" y="48" fill="#E34B3D" fontSize="8" fontFamily="monospace" fontWeight="600">RISK</text>
 
           {/* Center Hub Indicator */}
-          <circle cx="200" cy="200" r="8" fill="#141619" stroke="#FF5A00" strokeWidth="1.5" />
-          <circle cx="200" cy="200" r="3" fill="#FF5A00" />
+          <circle cx="200" cy="200" r="24" fill="#FFFFFF" stroke="#E2E5DE" strokeWidth="1.5" />
+          <text x="200" y="198" textAnchor="middle" fill="#747A80" fontSize="7" fontFamily="monospace">VALUE</text>
+          <text x="200" y="209" textAnchor="middle" fill="#151515" fontSize="9" fontWeight="bold">£1.5M</text>
 
           {/* Interactive Floating Entity Bubbles */}
           {nodes.map((node) => {
             const isHovered = hovered?.id === node.id;
+            const strokeColor = node.ring === "GOOD" ? "#536F00" : node.ring === "WATCH" ? "#C78620" : "#E34B3D";
+            const fillColor = node.ring === "GOOD" ? "#ECEFE5" : node.ring === "WATCH" ? "#FEF3C7" : "#FDE8E8";
             return (
               <g
                 key={node.id}
-                className="cursor-pointer transition-all duration-350 ease-[cubic-bezier(0.22,1,0.36,1)]"
+                className="cursor-pointer transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]"
                 onMouseEnter={() => setHovered(node)}
                 onMouseLeave={() => setHovered(null)}
               >
@@ -190,7 +187,7 @@ export const RadarHealthMap: React.FC = () => {
                     cy={node.y}
                     r={node.size + 4}
                     fill="none"
-                    stroke={node.color}
+                    stroke={strokeColor}
                     strokeWidth="1.5"
                     opacity="0.6"
                     className="animate-ping"
@@ -200,22 +197,15 @@ export const RadarHealthMap: React.FC = () => {
                   cx={node.x}
                   cy={node.y}
                   r={node.size}
-                  fill="#0D0F12"
-                  stroke={node.color}
+                  fill={fillColor}
+                  stroke={strokeColor}
                   strokeWidth={isHovered ? 2 : 1}
-                />
-                <circle
-                  cx={node.x}
-                  cy={node.y}
-                  r={node.size - 4}
-                  fill={node.color}
-                  opacity={node.ring === "RISK" ? 0.9 : 0.75}
                 />
                 <text
                   x={node.x}
                   y={node.y + 3}
                   textAnchor="middle"
-                  fill="#050505"
+                  fill="#151515"
                   fontSize="8"
                   fontWeight="bold"
                   fontFamily="monospace"
@@ -229,12 +219,12 @@ export const RadarHealthMap: React.FC = () => {
 
         {/* Hover Tooltip Details */}
         {hovered && (
-          <div className="absolute bottom-1 left-1/2 -translate-x-1/2 p-3 rounded-xl bg-[#0D0F12] border border-[#25282D] shadow-2xl z-30 max-w-sm pointer-events-none animate-in fade-in zoom-in-95 duration-150">
-            <div className="flex items-center justify-between gap-2 border-b border-[#25282D] pb-1.5">
-              <span className="text-xs font-bold text-white">{hovered.name}</span>
-              <span className="text-[10px] font-mono text-[#FF5A00] font-semibold">{hovered.metric}</span>
+          <div className="absolute bottom-1 left-1/2 -translate-x-1/2 p-3 rounded-xl bg-white border border-[#E2E5DE] shadow-xl z-30 max-w-sm pointer-events-none animate-in fade-in zoom-in-95 duration-150">
+            <div className="flex items-center justify-between gap-2 border-b border-[#E2E5DE] pb-1.5">
+              <span className="text-xs font-bold text-[#151515]">{hovered.name}</span>
+              <span className="text-[10px] font-mono text-[#536F00] font-semibold">{hovered.metric}</span>
             </div>
-            <p className="text-[11px] text-[#9A9FA8] mt-1.5 leading-snug">{hovered.detail}</p>
+            <p className="text-[11px] text-[#747A80] mt-1.5 leading-snug">{hovered.detail}</p>
           </div>
         )}
       </div>

@@ -15,18 +15,18 @@ export default function EvidencePage() {
   return (
     <div className="space-y-6">
       {/* Header */}
-      <div className="flex flex-wrap items-center justify-between gap-4 p-5 rounded-xl matte-card">
+      <div className="flex flex-wrap items-center justify-between gap-4 p-6 rounded-2xl bg-white border border-[#E2E5DE] shadow-sm">
         <div>
           <div className="flex items-center gap-2">
-            <FileSearch className="w-4 h-4 text-[#FF5500]" />
-            <span className="text-xs font-mono uppercase tracking-wider text-[#FF5500] font-semibold">
+            <FileSearch className="w-4 h-4 text-[#536F00]" />
+            <span className="text-xs font-mono uppercase tracking-wider text-[#536F00] font-semibold">
               Evidence & Source Traceability System
             </span>
           </div>
-          <h1 className="text-2xl font-bold tracking-tight text-[#F4F4F5] mt-1">
+          <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#151515] mt-1 font-sans">
             Primary Source Records Repository
           </h1>
-          <p className="text-xs text-[#8E929E] mt-0.5">
+          <p className="text-sm text-[#747A80] mt-0.5">
             Every displayed claim, financial calculation, and stakeholder note in FlytBase CRM links directly to a verifiable MCP source ID.
           </p>
         </div>

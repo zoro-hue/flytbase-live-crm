@@ -190,46 +190,46 @@ export const CommandPalette: React.FC = () => {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-start justify-center pt-20 px-4 bg-black/80 backdrop-blur-md transition-opacity duration-400 ease-[cubic-bezier(0.22,1,0.36,1)]">
+    <div className="fixed inset-0 z-50 flex items-start justify-center pt-20 px-4 bg-black/25 backdrop-blur-sm transition-opacity duration-300">
       <div
-        className="w-full max-w-xl rounded-2xl bg-[#0D0F12] border border-[#25282D] shadow-2xl overflow-hidden flex flex-col max-h-[75vh] transition-all duration-400 ease-[cubic-bezier(0.22,1,0.36,1)]"
+        className="w-full max-w-xl rounded-2xl bg-white border border-[#E2E5DE] shadow-[0_20px_50px_rgba(0,0,0,0.12)] overflow-hidden flex flex-col max-h-[75vh] transition-all duration-300"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Search Input Bar */}
-        <div className="p-3.5 border-b border-[#25282D] flex items-center gap-3 bg-[#141619]">
-          <Search className="w-4 h-4 text-[#FF5A00] flex-shrink-0" />
+        <div className="p-3.5 border-b border-[#E2E5DE] flex items-center gap-3 bg-[#F4F5F0]">
+          <Search className="w-4 h-4 text-[#536F00] flex-shrink-0" />
           <input
             type="text"
             autoFocus
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search accounts, deals, signals, actions, evidence..."
-            className="flex-1 bg-transparent border-none text-sm text-[#F4F4F5] placeholder-[#606570] focus:outline-none"
+            className="flex-1 bg-transparent border-none text-sm text-[#151515] placeholder-[#747A80] focus:outline-none"
           />
           {query && (
             <button
               onClick={() => setQuery("")}
-              className="text-xs text-[#9A9FA8] hover:text-white"
+              className="text-xs text-[#747A80] hover:text-[#151515]"
             >
               Clear
             </button>
           )}
           <button
             onClick={() => setIsOpen(false)}
-            className="p-1 rounded-lg hover:bg-[#25282D] text-[#9A9FA8] hover:text-white transition-colors"
+            className="p-1 rounded-lg hover:bg-[#E2E5DE] text-[#747A80] hover:text-[#151515] transition-colors"
           >
             <X className="w-4 h-4" />
           </button>
         </div>
 
         {/* Quick Suggestion Chips */}
-        <div className="px-3.5 py-2 border-b border-[#1C1F26] bg-[#0A0C0E] flex items-center gap-2 overflow-x-auto text-[11px] font-mono">
-          <span className="text-[#606570]">Filter:</span>
+        <div className="px-3.5 py-2 border-b border-[#E2E5DE] bg-white flex items-center gap-2 overflow-x-auto text-[11px] font-mono">
+          <span className="text-[#747A80]">Filter:</span>
           {["Accounts", "Deals", "Signals", "Actions"].map((cat) => (
             <button
               key={cat}
               onClick={() => setQuery(cat)}
-              className="px-2 py-0.5 rounded-full bg-[#141619] hover:bg-[#1D2024] border border-[#25282D] text-[#9A9FA8] hover:text-[#FF5A00] transition-colors"
+              className="px-2 py-0.5 rounded-full bg-[#F4F5F0] hover:bg-[#ECEFE5] border border-[#E2E5DE] text-[#747A80] hover:text-[#151515] transition-colors"
             >
               {cat}
             </button>
@@ -237,9 +237,9 @@ export const CommandPalette: React.FC = () => {
         </div>
 
         {/* Results List */}
-        <div className="flex-1 overflow-y-auto p-2 space-y-1">
+        <div className="flex-1 overflow-y-auto p-2 space-y-1 bg-white">
           {filteredItems.length === 0 ? (
-            <div className="py-8 text-center text-xs text-[#9A9FA8]">
+            <div className="py-8 text-center text-xs text-[#747A80]">
               No results found for &ldquo;{query}&rdquo;
             </div>
           ) : (
@@ -249,30 +249,30 @@ export const CommandPalette: React.FC = () => {
                 <div
                   key={item.id}
                   onClick={() => handleSelect(item.href)}
-                  className="p-2.5 rounded-xl hover:bg-[#141619] border border-transparent hover:border-[#25282D] flex items-center justify-between gap-3 cursor-pointer group transition-all"
+                  className="p-2.5 rounded-xl hover:bg-[#F4F5F0] border border-transparent hover:border-[#E2E5DE] flex items-center justify-between gap-3 cursor-pointer group transition-all"
                 >
                   <div className="flex items-center gap-3 min-w-0">
-                    <div className="w-7 h-7 rounded-lg bg-[#050505] border border-[#25282D] flex items-center justify-center flex-shrink-0 group-hover:border-[#FF5A00]/50 transition-colors">
-                      <Icon className="w-3.5 h-3.5 text-[#9A9FA8] group-hover:text-[#FF5A00] transition-colors" />
+                    <div className="w-7 h-7 rounded-lg bg-[#F4F5F0] border border-[#E2E5DE] flex items-center justify-center flex-shrink-0 group-hover:border-[#536F00]/50 transition-colors">
+                      <Icon className="w-3.5 h-3.5 text-[#747A80] group-hover:text-[#536F00] transition-colors" />
                     </div>
                     <div className="min-w-0">
                       <div className="flex items-center gap-2">
-                        <span className="text-xs font-semibold text-[#F4F4F5] truncate group-hover:text-white">
+                        <span className="text-xs font-semibold text-[#151515] truncate">
                           {item.title}
                         </span>
                         {item.badge && (
-                          <span className="px-1.5 py-0.2 rounded text-[9px] font-mono bg-[#1D2024] text-[#FF5A00] border border-[#25282D]">
+                          <span className="px-1.5 py-0.2 rounded text-[9px] font-mono bg-[#ECEFE5] text-[#536F00] border border-[#D5DAD0]">
                             {item.badge}
                           </span>
                         )}
                       </div>
-                      <div className="text-[11px] text-[#9A9FA8] truncate mt-0.5">
+                      <div className="text-[11px] text-[#747A80] truncate mt-0.5">
                         {item.subtitle}
                       </div>
                     </div>
                   </div>
 
-                  <ArrowRight className="w-3.5 h-3.5 text-[#606570] group-hover:text-[#FF5A00] -translate-x-1 group-hover:translate-x-0 transition-all flex-shrink-0" />
+                  <ArrowRight className="w-3.5 h-3.5 text-[#969BA1] group-hover:text-[#536F00] -translate-x-1 group-hover:translate-x-0 transition-all flex-shrink-0" />
                 </div>
               );
             })
@@ -280,16 +280,16 @@ export const CommandPalette: React.FC = () => {
         </div>
 
         {/* Footer */}
-        <div className="p-2.5 border-t border-[#25282D] bg-[#0A0C0E] text-[10px] font-mono text-[#606570] flex items-center justify-between px-4">
+        <div className="p-2.5 border-t border-[#E2E5DE] bg-[#F4F5F0] text-[10px] font-mono text-[#747A80] flex items-center justify-between px-4">
           <div className="flex items-center gap-3">
             <span>
-              <kbd className="px-1 py-0.5 rounded bg-[#141619] border border-[#25282D] text-[#9A9FA8]">↑↓</kbd> navigate
+              <kbd className="px-1 py-0.5 rounded bg-white border border-[#E2E5DE] text-[#151515]">↑↓</kbd> navigate
             </span>
             <span>
-              <kbd className="px-1 py-0.5 rounded bg-[#141619] border border-[#25282D] text-[#9A9FA8]">esc</kbd> close
+              <kbd className="px-1 py-0.5 rounded bg-white border border-[#E2E5DE] text-[#151515]">esc</kbd> close
             </span>
           </div>
-          <div className="flex items-center gap-1 text-[#FF5A00]">
+          <div className="flex items-center gap-1 text-[#536F00]">
             <Sparkles className="w-3 h-3" />
             <span>FlytBase Instant Jump</span>
           </div>

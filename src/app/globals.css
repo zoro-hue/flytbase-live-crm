@@ -3,107 +3,110 @@
 @tailwind utilities;
 
 :root {
-  --background: #050505;
-  --foreground: #F4F4F5;
-  --card-bg: #0D0F12;
-  --panel-bg: #141619;
-  --border-color: #25282D;
+  --background: #F4F5F0;
+  --foreground: #151515;
+  --card-bg: #FFFFFF;
+  --panel-bg: #ECEFE5;
+  --border-color: #E2E5DE;
+  --border-hover: #D0D5CC;
+  --primary-accent: #536F00;
+  --secondary-accent: #789600;
+  --dark-btn: #171717;
+  --muted-text: #747A80;
+  --subtle-text: #969BA1;
+  --success: #398B46;
+  --warning: #C78620;
+  --danger: #E34B3D;
   --primary-orange: #FF5A00;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: var(--font-inter), Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Custom scrollbar for dark enterprise feel */
+/* Custom scrollbar for warm light theme */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #050505;
+  background: #F4F5F0;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #25282D;
+  background: #D5DAD0;
   border-radius: 9999px;
   transition: background 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #3A3F48;
+  background: #B5BBB0;
 }
 
-/* Glassmorphism panels for modern floating feel */
+/* Translucent panels for modern floating feel */
 .glass-panel {
-  background: rgba(13, 15, 18, 0.88);
+  background: rgba(236, 239, 229, 0.88);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid #25282D;
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.65);
+  border: 1px solid #E2E5DE;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
 }
 
 .glass-pill {
-  background: rgba(20, 22, 25, 0.9);
+  background: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid #25282D;
-  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.85);
+  border: 1px solid #E2E5DE;
+  box-shadow: 0 8px 30px -4px rgba(0, 0, 0, 0.07);
 }
 
 /* ========================================================================= */
-/* HOVER ANIMATIONS — SMOOTH, DELIBERATE, HIGH MOTION QUALITY (350–450ms)    */
+/* CARDS & PANELS — CLEAN WHITE SURFACES WITH SOFT GRAY BORDERS (#E2E5DE)    */
 /* ========================================================================= */
 
-/* Card hover lift & subtle border illumination (350–450ms) */
 .matte-card {
-  background: #0D0F12;
-  border: 1px solid #25282D;
-  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.7);
-  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
-              border-color 0.35s ease,
-              background-color 0.35s ease,
-              box-shadow 0.4s ease;
-}
-
-.matte-card:hover {
-  transform: translateY(-2.5px);
-  border-color: #383D45;
-  box-shadow: 0 12px 32px -4px rgba(0, 0, 0, 0.88);
-}
-
-/* Button & interactive controls feedback (180–250ms press, 300–400ms hover) */
-.interactive-btn {
-  transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1),
-              background-color 0.35s ease,
-              border-color 0.35s ease,
-              color 0.35s ease,
+  background: #FFFFFF;
+  border: 1px solid #E2E5DE;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.03);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 0.3s ease,
+              background-color 0.3s ease,
               box-shadow 0.35s ease;
 }
 
+.matte-card:hover {
+  transform: translateY(-2px);
+  border-color: #D0D5CC;
+  box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.06);
+}
+
+/* Buttons and interactive controls */
+.interactive-btn {
+  transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1),
+              background-color 0.25s ease,
+              border-color 0.25s ease,
+              color 0.25s ease,
+              box-shadow 0.25s ease;
+}
+
 .interactive-btn:active {
-  transform: scale(0.96);
+  transform: scale(0.97);
 }
 
-/* Tooltip appearance (250–350ms) */
-.smooth-tooltip {
-  transition: opacity 0.3s cubic-bezier(0.22, 1, 0.36, 1),
-              transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-/* Dropdown entrance animation (350–450ms) */
+/* Dropdown entrance animation */
 .dropdown-enter {
-  animation: dropdownFadeIn 0.38s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: dropdownFadeIn 0.32s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 @keyframes dropdownFadeIn {
   from {
     opacity: 0;
-    transform: translateY(6px) scale(0.98);
+    transform: translateY(5px) scale(0.98);
   }
   to {
     opacity: 1;
@@ -111,15 +114,15 @@ body {
   }
 }
 
-/* Internal question tabs transition */
+/* Internal tabs transition */
 .section-matte-enter {
-  animation: sectionFade 0.38s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: sectionFade 0.35s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 @keyframes sectionFade {
   from {
     opacity: 0;
-    transform: translateY(6px);
+    transform: translateY(4px);
   }
   to {
     opacity: 1;
@@ -128,11 +131,11 @@ body {
 }
 
 /* ========================================================================= */
-/* CENTER-VERTICAL HINGE TRANSITION — 1400–1700ms CINEMATIC SEQUENCE        */
+/* CENTER-VERTICAL HINGE TRANSITION                                          */
 /* ========================================================================= */
 
 .optic-perspective-container {
-  perspective: 1200px; /* Pronounced 3D depth */
+  perspective: 1200px;
   perspective-origin: 50% 35%;
   transform-style: preserve-3d;
   width: 100%;
@@ -150,8 +153,8 @@ body {
 
 /* Layered Optical Center-Hinge Directional Motion Blur Corridor */
 .optic-hinge-blur-gradient {
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   mask-image: radial-gradient(
     ellipse 65% 100% at 50% 50%,
     rgba(0, 0, 0, 1) 0%,
@@ -168,7 +171,6 @@ body {
   );
 }
 
-/* Progressive Horizontal Mask approaching the vertical center line */
 .optic-mask-active {
   mask-image: linear-gradient(
     90deg,

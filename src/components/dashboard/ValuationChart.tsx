@@ -28,13 +28,13 @@ export const ValuationChart: React.FC<ValuationChartProps> = ({
   unsupported,
   currency,
 }) => {
-  // Cohesive pitch-black and deep orange palette
+  // Light theme semantic palette
   const data = [
-    { name: "Confirmed", value: confirmed, fill: "#E5E7EB", description: "Agreed / Contractual Specification" },
-    { name: "Active", value: active, fill: "#FF5500", description: "Qualified Fleet Expansion & Offers" },
-    { name: "At-Risk", value: atRisk, fill: "#C84610", description: "Blocked on DPIA / Flight Grounding" },
-    { name: "Closed Won", value: closed, fill: "#8A909C", description: "Won Expansion Units" },
-    { name: "Unverified", value: unsupported, fill: "#272A32", description: "Unsupported Projections (Excluded)" },
+    { name: "Confirmed", value: confirmed, fill: "#398B46", description: "Agreed / Contractual Specification" },
+    { name: "Active", value: active, fill: "#536F00", description: "Qualified Fleet Expansion & Offers" },
+    { name: "At-Risk", value: atRisk, fill: "#E34B3D", description: "Blocked on DPIA / Flight Grounding" },
+    { name: "Closed Won", value: closed, fill: "#171717", description: "Won Expansion Units" },
+    { name: "Unverified", value: unsupported, fill: "#D5DAD0", description: "Unsupported Projections (Excluded)" },
   ];
 
   const formatCurrency = (val: number) => {
@@ -47,14 +47,14 @@ export const ValuationChart: React.FC<ValuationChartProps> = ({
     if (isTooltipActive && payload && payload.length) {
       const item = payload[0].payload;
       return (
-        <div className="bg-[#08080A] border border-[#1C1F26] p-3 rounded-lg shadow-2xl text-xs space-y-1">
-          <p className="font-semibold text-[#F4F4F5]">{item.name}</p>
-          <p className="font-mono text-sm text-[#FF5500]">
+        <div className="bg-white border border-[#E2E5DE] p-3 rounded-lg shadow-xl text-xs space-y-1">
+          <p className="font-semibold text-[#151515]">{item.name}</p>
+          <p className="font-mono text-sm text-[#536F00] font-bold">
             {formatCurrency(item.value)} ({currency}{item.value.toLocaleString()})
           </p>
-          <p className="text-[11px] text-[#8E929E]">{item.description}</p>
+          <p className="text-[11px] text-[#747A80]">{item.description}</p>
           {item.name === "Unverified" && (
-            <p className="text-[10px] text-[#FF5500] font-mono pt-1 border-t border-[#1C1F26]">
+            <p className="text-[10px] text-[#C78620] font-mono pt-1 border-t border-[#E2E5DE]">
               * Excluded from confirmed pipeline totals
             </p>
           )}
@@ -70,19 +70,19 @@ export const ValuationChart: React.FC<ValuationChartProps> = ({
         <BarChart data={data} margin={{ top: 10, right: 10, left: -15, bottom: 20 }}>
           <XAxis
             dataKey="name"
-            stroke="#606570"
+            stroke="#747A80"
             fontSize={11}
             tickLine={false}
-            axisLine={{ stroke: "#1C1F26" }}
+            axisLine={{ stroke: "#E2E5DE" }}
           />
           <YAxis
-            stroke="#606570"
+            stroke="#747A80"
             fontSize={11}
             tickLine={false}
-            axisLine={{ stroke: "#1C1F26" }}
+            axisLine={{ stroke: "#E2E5DE" }}
             tickFormatter={formatCurrency}
           />
-          <Tooltip content={<CustomTooltip />} cursor={{ fill: "rgba(255, 85, 0, 0.04)" }} />
+          <Tooltip content={<CustomTooltip />} cursor={{ fill: "rgba(83, 111, 0, 0.05)" }} />
           <Bar dataKey="value" radius={[4, 4, 0, 0]}>
             {data.map((entry, index) => (
               <Cell key={`cell-${index}`} fill={entry.fill} />

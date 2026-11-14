@@ -13,18 +13,18 @@ export default function SignalsPage() {
   return (
     <div className="space-y-6">
       {/* Header */}
-      <div className="flex flex-wrap items-center justify-between gap-4 p-5 rounded-xl matte-card">
+      <div className="flex flex-wrap items-center justify-between gap-4 p-6 rounded-2xl bg-white border border-[#E2E5DE] shadow-sm">
         <div>
           <div className="flex items-center gap-2">
-            <Radio className="w-4 h-4 text-[#FF5500] animate-pulse" />
-            <span className="text-xs font-mono uppercase tracking-wider text-[#FF5500] font-semibold">
+            <Radio className="w-4 h-4 text-[#FF5A00]" />
+            <span className="text-xs font-mono uppercase tracking-wider text-[#FF5A00] font-semibold">
               Live Signals & Field Event Intelligence
             </span>
           </div>
-          <h1 className="text-2xl font-bold tracking-tight text-[#F4F4F5] mt-1">
+          <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#151515] mt-1 font-sans">
             Real-Time Field Telemetry & Critical Events
           </h1>
-          <p className="text-xs text-[#8E929E] mt-0.5">
+          <p className="text-sm text-[#747A80] mt-0.5">
             Confirmed against actual MCP flight records, support tickets, and stakeholder logs without synthetic data.
           </p>
         </div>
@@ -69,10 +69,10 @@ export default function SignalsPage() {
       {/* Signal Feed */}
       <div className="space-y-4">
         <div className="flex items-center justify-between">
-          <h2 className="text-xs font-bold text-[#F4F4F5] uppercase tracking-wider">
+          <h2 className="text-xs font-bold text-[#151515] uppercase tracking-wider">
             Verified Signal Stream & Mandated Responses
           </h2>
-          <span className="text-xs text-[#585E6A]">
+          <span className="text-xs text-[#747A80]">
             Expand any signal to view affected equipment, baseline comparisons, and evidence
           </span>
         </div>

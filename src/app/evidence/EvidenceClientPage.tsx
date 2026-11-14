@@ -31,12 +31,12 @@ export default function EvidenceClientPage({ initialEvidence }: EvidenceClientPa
   return (
     <div className="space-y-4">
       {/* Search and Filters Bar */}
-      <div className="flex flex-wrap items-center justify-between gap-3 p-3 rounded-xl bg-[#08080A] border border-[#1C1F26]">
+      <div className="flex flex-wrap items-center justify-between gap-3 p-3 rounded-xl bg-white border border-[#E2E5DE] shadow-sm">
         <div className="flex flex-wrap items-center gap-2">
           <select
             value={accountFilter}
             onChange={(e) => setAccountFilter(e.target.value)}
-            className="bg-[#000000] border border-[#1C1F26] rounded-lg px-3 py-1.5 text-xs text-[#F4F4F5] focus:outline-none focus:border-[#FF5500]"
+            className="bg-[#F4F5F0] border border-[#E2E5DE] rounded-lg px-3 py-1.5 text-xs text-[#151515] focus:outline-none focus:border-[#536F00]"
           >
             <option value="All">All Accounts</option>
             <option value="A">Eastern Counties (A)</option>
@@ -46,7 +46,7 @@ export default function EvidenceClientPage({ initialEvidence }: EvidenceClientPa
           <select
             value={typeFilter}
             onChange={(e) => setTypeFilter(e.target.value)}
-            className="bg-[#000000] border border-[#1C1F26] rounded-lg px-3 py-1.5 text-xs text-[#F4F4F5] focus:outline-none focus:border-[#FF5500]"
+            className="bg-[#F4F5F0] border border-[#E2E5DE] rounded-lg px-3 py-1.5 text-xs text-[#151515] focus:outline-none focus:border-[#536F00]"
           >
             <option value="All">All Source Types</option>
             <option value="file">Files & Spreadsheets</option>
@@ -58,22 +58,22 @@ export default function EvidenceClientPage({ initialEvidence }: EvidenceClientPa
         </div>
 
         <div className="relative w-72">
-          <Search className="w-3.5 h-3.5 absolute left-3 top-2.5 text-[#585E6A]" />
+          <Search className="w-3.5 h-3.5 absolute left-3 top-2.5 text-[#747A80]" />
           <input
             type="text"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search source IDs, keywords, quotes..."
-            className="w-full bg-[#000000] border border-[#1C1F26] rounded-lg pl-8 pr-3 py-1.5 text-xs text-[#F4F4F5] placeholder-[#585E6A] focus:outline-none focus:border-[#FF5500]"
+            className="w-full bg-[#F4F5F0] border border-[#E2E5DE] rounded-lg pl-8 pr-3 py-1.5 text-xs text-[#151515] placeholder-[#747A80] focus:outline-none focus:border-[#536F00]"
           />
         </div>
       </div>
 
       {/* Evidence Table */}
-      <div className="overflow-x-auto rounded-xl border border-[#1C1F26] bg-[#0D0E12] shadow-2xl">
+      <div className="overflow-x-auto rounded-xl border border-[#E2E5DE] bg-white shadow-sm">
         <table className="w-full text-left border-collapse text-xs">
           <thead>
-            <tr className="border-b border-[#1C1F26] bg-[#08080A] text-[#8E929E] font-medium">
+            <tr className="border-b border-[#E2E5DE] bg-[#F4F5F0] text-[#747A80] font-medium">
               <th className="py-3 px-4">Source ID & Title</th>
               <th className="py-3 px-4">Type</th>
               <th className="py-3 px-4">Account</th>
@@ -82,10 +82,10 @@ export default function EvidenceClientPage({ initialEvidence }: EvidenceClientPa
               <th className="py-3 px-4 text-right">Action</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-[#1C1F26]/60">
+          <tbody className="divide-y divide-[#E2E5DE]">
             {filtered.length === 0 ? (
               <tr>
-                <td colSpan={6} className="py-8 text-center text-[#585E6A]">
+                <td colSpan={6} className="py-8 text-center text-[#747A80]">
                   No evidence records match the search query.
                 </td>
               </tr>
@@ -98,49 +98,49 @@ export default function EvidenceClientPage({ initialEvidence }: EvidenceClientPa
                       new CustomEvent("open-evidence-drawer", { detail: { sourceId: item.sourceId } })
                     )
                   }
-                  className="hover:bg-[#14161C] transition-colors duration-150 cursor-pointer group"
+                  className="hover:bg-[#F4F5F0] transition-colors duration-150 cursor-pointer group"
                 >
                   <td className="py-3 px-4">
-                    <div className="font-mono font-medium text-[#FF5500] flex items-center gap-1.5">
-                      <FileText className="w-3.5 h-3.5 text-[#FF5500]" />
+                    <div className="font-mono font-medium text-[#536F00] flex items-center gap-1.5">
+                      <FileText className="w-3.5 h-3.5 text-[#536F00]" />
                       <span>{item.sourceId}</span>
                     </div>
-                    <div className="text-[11px] text-[#F4F4F5] font-medium mt-0.5 truncate max-w-xs">
+                    <div className="text-[11px] text-[#151515] font-medium mt-0.5 truncate max-w-xs">
                       {item.title}
                     </div>
                   </td>
                   <td className="py-3 px-4">
-                    <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-[#14161C] text-[#8E929E] border border-[#1C1F26] capitalize">
+                    <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-[#F4F5F0] text-[#747A80] border border-[#E2E5DE] capitalize">
                       {item.sourceType.replace(/_/g, " ")}
                     </span>
                   </td>
-                  <td className="py-3 px-4 text-[#8E929E]">
+                  <td className="py-3 px-4 text-[#747A80]">
                     {item.accountName}
                   </td>
                   <td className="py-3 px-4 max-w-md">
-                    <p className="text-xs text-[#F4F4F5] line-clamp-2 leading-relaxed">
+                    <p className="text-xs text-[#151515] line-clamp-2 leading-relaxed">
                       &ldquo;{item.relevantQuote}&rdquo;
                     </p>
                     {item.limitations && (
-                      <p className="text-[10px] text-[#FFA066] mt-1 flex items-center gap-1 font-mono">
-                        <AlertTriangle className="w-2.5 h-2.5 text-[#FF5500]" />
+                      <p className="text-[10px] text-[#C78620] mt-1 flex items-center gap-1 font-mono">
+                        <AlertTriangle className="w-2.5 h-2.5 text-[#C78620]" />
                         <span>{item.limitations}</span>
                       </p>
                     )}
                   </td>
                   <td className="py-3 px-4">
                     {item.verifiedBy ? (
-                      <span className="text-[#E4E4E7] font-mono text-[11px] flex items-center gap-1">
-                        <CheckCircle2 className="w-3 h-3 text-[#FF5500]" /> Verified ({item.verifiedBy})
+                      <span className="text-[#398B46] font-mono text-[11px] flex items-center gap-1">
+                        <CheckCircle2 className="w-3 h-3 text-[#398B46]" /> Verified ({item.verifiedBy})
                       </span>
                     ) : item.limitations ? (
-                      <span className="text-[#FFA066] font-mono text-[11px]">Unverified Claim</span>
+                      <span className="text-[#C78620] font-mono text-[11px]">Unverified Claim</span>
                     ) : (
-                      <span className="text-[#8E929E] font-mono text-[11px]">Recorded Fact</span>
+                      <span className="text-[#747A80] font-mono text-[11px]">Recorded Fact</span>
                     )}
                   </td>
                   <td className="py-3 px-4 text-right">
-                    <span className="inline-flex items-center gap-1 text-[11px] font-medium text-[#FF5500] group-hover:underline">
+                    <span className="inline-flex items-center gap-1 text-[11px] font-medium text-[#536F00] group-hover:underline">
                       <span>Inspect</span>
                       <ExternalLink className="w-3 h-3" />
                     </span>

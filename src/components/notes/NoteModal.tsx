@@ -88,36 +88,36 @@ export const NoteModal: React.FC<NoteModalProps> = ({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
-      <div className="relative w-full max-w-lg bg-[#08080A] border border-[#1C1F26] rounded-2xl shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/25 backdrop-blur-sm">
+      <div className="relative w-full max-w-lg bg-white border border-[#E2E5DE] rounded-2xl shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200">
         {/* Modal Header */}
-        <div className="flex items-center justify-between px-6 py-4 border-b border-[#1C1F26] bg-[#000000]">
+        <div className="flex items-center justify-between px-6 py-4 border-b border-[#E2E5DE] bg-[#F4F5F0]">
           <div className="flex items-center gap-2.5">
-            <div className="w-7 h-7 rounded-lg bg-[#FF5500] flex items-center justify-center text-white text-xs font-bold shadow-md shadow-[#FF5500]/25">
+            <div className="w-7 h-7 rounded-lg bg-[#ECEFE5] border border-[#D5DAD0] flex items-center justify-center text-[#536F00] text-xs font-bold shadow-xs">
               ✎
             </div>
             <div>
-              <h3 className="text-sm font-semibold text-[#F4F4F5]">Write Note to MCP Server</h3>
-              <p className="text-[10px] text-[#71717A]">Official MCP write_note JSON-RPC method</p>
+              <h3 className="text-sm font-semibold text-[#151515]">Write Note to MCP Server</h3>
+              <p className="text-[10px] text-[#747A80]">Official MCP write_note JSON-RPC method</p>
             </div>
           </div>
           <button
             onClick={() => setIsOpen(false)}
-            className="p-1 rounded-lg text-[#585E6A] hover:text-[#F4F4F5] hover:bg-[#14161C] transition-colors"
+            className="p-1 rounded-lg text-[#747A80] hover:text-[#151515] hover:bg-[#E2E5DE] transition-colors"
           >
             <X className="w-4 h-4" />
           </button>
         </div>
 
         {/* Form Body */}
-        <form onSubmit={handleSubmit} className="p-6 space-y-4">
+        <form onSubmit={handleSubmit} className="p-6 space-y-4 bg-white">
           <div className="grid grid-cols-2 gap-3">
             <div>
-              <label className="block text-xs font-medium text-[#8E929E] mb-1">Target Account</label>
+              <label className="block text-xs font-medium text-[#747A80] mb-1">Target Account</label>
               <select
                 value={account}
                 onChange={(e) => setAccount(e.target.value)}
-                className="w-full bg-[#000000] border border-[#1C1F26] rounded-lg px-3 py-1.5 text-xs text-[#F4F4F5] focus:outline-none focus:border-[#FF5500]"
+                className="w-full bg-[#F4F5F0] border border-[#E2E5DE] rounded-lg px-3 py-1.5 text-xs text-[#151515] focus:outline-none focus:border-[#536F00]"
               >
                 <option value="A">Eastern Counties (Account A)</option>
                 <option value="B">Aldermoor Industrial (Account B)</option>
@@ -125,11 +125,11 @@ export const NoteModal: React.FC<NoteModalProps> = ({
               </select>
             </div>
             <div>
-              <label className="block text-xs font-medium text-[#8E929E] mb-1">Note Category / Kind</label>
+              <label className="block text-xs font-medium text-[#747A80] mb-1">Note Category / Kind</label>
               <select
                 value={kind}
                 onChange={(e) => setKind(e.target.value)}
-                className="w-full bg-[#000000] border border-[#1C1F26] rounded-lg px-3 py-1.5 text-xs text-[#F4F4F5] focus:outline-none focus:border-[#FF5500]"
+                className="w-full bg-[#F4F5F0] border border-[#E2E5DE] rounded-lg px-3 py-1.5 text-xs text-[#151515] focus:outline-none focus:border-[#536F00]"
               >
                 <option value="note">General Note (note)</option>
                 <option value="task">Operational Task (task)</option>
@@ -140,26 +140,26 @@ export const NoteModal: React.FC<NoteModalProps> = ({
           </div>
 
           <div>
-            <label className="block text-xs font-medium text-[#8E929E] mb-1">Note Title (Optional)</label>
+            <label className="block text-xs font-medium text-[#747A80] mb-1">Note Title (Optional)</label>
             <input
               type="text"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               placeholder="e.g., Progress on Westmere Docks Inspection"
-              className="w-full bg-[#000000] border border-[#1C1F26] rounded-lg px-3 py-1.5 text-xs text-[#F4F4F5] placeholder-[#585E6A] focus:outline-none focus:border-[#FF5500]"
+              className="w-full bg-[#F4F5F0] border border-[#E2E5DE] rounded-lg px-3 py-1.5 text-xs text-[#151515] placeholder-[#747A80] focus:outline-none focus:border-[#536F00]"
             />
           </div>
 
           <div>
-            <label className="block text-xs font-medium text-[#8E929E] mb-1">
-              Note Content <span className="text-[#FF5500]">*</span>
+            <label className="block text-xs font-medium text-[#747A80] mb-1">
+              Note Content <span className="text-[#E34B3D]">*</span>
             </label>
             <textarea
               rows={4}
               value={text}
               onChange={(e) => setText(e.target.value)}
               placeholder="Enter details to write directly to the Questathon MCP server repository..."
-              className="w-full bg-[#000000] border border-[#1C1F26] rounded-lg p-3 text-xs text-[#F4F4F5] placeholder-[#585E6A] focus:outline-none focus:border-[#FF5500]"
+              className="w-full bg-[#F4F5F0] border border-[#E2E5DE] rounded-lg p-3 text-xs text-[#151515] placeholder-[#747A80] focus:outline-none focus:border-[#536F00]"
               required
             />
           </div>
@@ -169,37 +169,37 @@ export const NoteModal: React.FC<NoteModalProps> = ({
             <div
               className={`p-3 rounded-lg text-xs flex items-center gap-2 ${
                 status === "success"
-                  ? "bg-[#14161C] border border-[#252832] text-[#E4E4E7]"
+                  ? "bg-[#ECEFE5] border border-[#D5DAD0] text-[#536F00]"
                   : status === "queued"
-                  ? "bg-[#1C1208] border border-[#59260E] text-[#FFA066]"
+                  ? "bg-[#FEF3C7] border border-[#FDE68A] text-[#C78620]"
                   : status === "error"
-                  ? "bg-[#240C04] border border-[#8C2A00] text-[#FF5500]"
-                  : "bg-[#000000] border border-[#1C1F26] text-[#8E929E]"
+                  ? "bg-[#FDE8E8] border border-[#F8B4B4] text-[#E34B3D]"
+                  : "bg-[#F4F5F0] border border-[#E2E5DE] text-[#747A80]"
               }`}
             >
-              {status === "success" && <CheckCircle2 className="w-4 h-4 text-[#FF5500] flex-shrink-0" />}
-              {status === "queued" && <Clock className="w-4 h-4 text-[#FF8540] flex-shrink-0" />}
-              {status === "error" && <AlertCircle className="w-4 h-4 text-[#FF5500] flex-shrink-0" />}
+              {status === "success" && <CheckCircle2 className="w-4 h-4 text-[#536F00] flex-shrink-0" />}
+              {status === "queued" && <Clock className="w-4 h-4 text-[#C78620] flex-shrink-0" />}
+              {status === "error" && <AlertCircle className="w-4 h-4 text-[#E34B3D] flex-shrink-0" />}
               <span>{message}</span>
             </div>
           )}
 
           {/* Modal Actions */}
           <div className="flex items-center justify-between pt-2">
-            <span className="text-[10px] text-[#585E6A] font-mono">1 call/60s rate limit applies</span>
+            <span className="text-[10px] text-[#747A80] font-mono">1 call/60s rate limit applies</span>
 
             <div className="flex items-center gap-2">
               <button
                 type="button"
                 onClick={() => setIsOpen(false)}
-                className="px-3.5 py-1.5 rounded-lg border border-[#1C1F26] text-xs text-[#8E929E] hover:text-[#F4F4F5] hover:bg-[#14161C] transition-colors"
+                className="px-3.5 py-1.5 rounded-lg border border-[#E2E5DE] text-xs text-[#747A80] hover:text-[#151515] hover:bg-[#F4F5F0] transition-colors"
               >
                 Cancel
               </button>
               <button
                 type="submit"
                 disabled={status === "submitting" || !text.trim()}
-                className="flex items-center gap-1.5 px-4 py-1.5 rounded-xl bg-[#FF5500] hover:bg-[#E04B00] disabled:opacity-40 text-white text-xs font-semibold shadow-md shadow-[#FF5500]/20 transition-all cursor-pointer"
+                className="flex items-center gap-1.5 px-4 py-1.5 rounded-xl bg-[#171717] hover:bg-[#252525] disabled:opacity-40 text-white text-xs font-semibold shadow-xs transition-all cursor-pointer"
               >
                 <Send className="w-3.5 h-3.5" />
                 <span>{status === "submitting" ? "Writing..." : "Write via MCP"}</span>

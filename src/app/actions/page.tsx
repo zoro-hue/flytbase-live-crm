@@ -15,19 +15,19 @@ export default function ActionsPage() {
   return (
     <div className="space-y-6">
       {/* Header */}
-      <div className="flex flex-wrap items-center justify-between gap-4 p-5 rounded-2xl matte-card">
+      <div className="flex flex-wrap items-center justify-between gap-4 p-6 rounded-2xl bg-white border border-[#E2E5DE] shadow-sm">
         <div>
           <div className="flex items-center gap-2">
-            <CheckSquare className="w-4 h-4 text-[#FF5A00]" />
-            <span className="text-xs font-mono uppercase tracking-wider text-[#FF5A00] font-semibold">
+            <CheckSquare className="w-4 h-4 text-[#536F00]" />
+            <span className="text-xs font-mono uppercase tracking-wider text-[#536F00] font-semibold">
               Account Execution Strategy
             </span>
           </div>
-          <h1 className="text-2xl font-bold tracking-tight text-[#F4F4F5] mt-1">
-            Delivery, on Track.
+          <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#151515] mt-1 font-sans">
+            Delivery, on track.
           </h1>
-          <p className="text-xs text-[#9A9FA8] mt-0.5">
-            Ranked by business impact, urgency, verified owners, and contractual delivery runways.
+          <p className="text-sm text-[#747A80] mt-0.5">
+            5 clients, 2 client meetings today, and 1 at risk — Sage has a recovery plan ready.
           </p>
         </div>
       </div>
@@ -55,7 +55,7 @@ export default function ActionsPage() {
           value={inProgressCount}
           subtitle="Actively underway by CSM team"
           badge="Active"
-          badgeColor="orange"
+          badgeColor="amber"
           icon={AlertCircle}
         />
         <KpiCard
@@ -68,16 +68,16 @@ export default function ActionsPage() {
         />
       </div>
 
-      {/* Multi-Track Delivery Runway Milestone Timeline (As seen in Reference Screenshot 2 & 4) */}
+      {/* Multi-Track Delivery Runway Milestone Timeline */}
       <DeliveryRunway />
 
       {/* Action List Component */}
       <div className="space-y-4">
         <div className="flex items-center justify-between">
-          <h2 className="text-xs font-bold text-[#F4F4F5] uppercase tracking-wider font-mono">
+          <h2 className="text-xs font-bold text-[#151515] uppercase tracking-wider font-mono">
             All Account Action Items & Progress Tracker
           </h2>
-          <span className="text-xs text-[#606570]">
+          <span className="text-xs text-[#747A80]">
             Update status or click the note icon to log progress via MCP write_note
           </span>
         </div>

@@ -41,7 +41,7 @@ export const BottomCommandBar: React.FC<BottomCommandBarProps> = ({
         isFocused ? "max-w-3xl" : "max-w-2xl"
       }`}
     >
-      <div className="h-12 px-3 sm:px-4 rounded-full glass-pill flex items-center justify-between gap-2.5 shadow-2xl border border-[#25282D] hover:border-[#383D45] transition-colors duration-350">
+      <div className="h-12 px-3 sm:px-4 rounded-full bg-white/95 backdrop-blur-md flex items-center justify-between gap-2.5 shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-[#E2E5DE] hover:border-[#D5DAD0] transition-colors duration-300">
         {/* Global Search Shortcut Icon Button (Ctrl + K) */}
         <button
           type="button"
@@ -49,13 +49,13 @@ export const BottomCommandBar: React.FC<BottomCommandBarProps> = ({
             onOpenSearch ||
             (() => window.dispatchEvent(new CustomEvent("open-global-search")))
           }
-          className="p-1.5 rounded-full hover:bg-[#141619] text-[#9A9FA8] hover:text-[#FF5A00] transition-colors cursor-pointer flex-shrink-0"
+          className="p-1.5 rounded-full hover:bg-[#F4F5F0] text-[#747A80] hover:text-[#151515] transition-colors cursor-pointer flex-shrink-0"
           title="Open Global Search (Ctrl + K)"
         >
-          <Search className="w-3.5 h-3.5" />
+          <Search className="w-4 h-4" />
         </button>
 
-        {/* Inline AI Quick Query Form ("Ask anything about your accounts...") */}
+        {/* Inline AI Quick Query Form ("Jump to a contact, deal, page...") */}
         <form onSubmit={handleSubmit} className="flex-1 flex items-center gap-2 min-w-0">
           <input
             type="text"
@@ -63,14 +63,14 @@ export const BottomCommandBar: React.FC<BottomCommandBarProps> = ({
             onChange={(e) => setQuery(e.target.value)}
             onFocus={() => setIsFocused(true)}
             onBlur={() => setIsFocused(false)}
-            placeholder="Ask anything about your accounts, deals, signals, or risks..."
-            className="flex-1 bg-transparent border-none text-xs text-[#F4F4F5] placeholder-[#606570] focus:outline-none min-w-0"
+            placeholder="Jump to a contact, deal, page..."
+            className="flex-1 bg-transparent border-none text-xs text-[#151515] placeholder-[#747A80] focus:outline-none min-w-0"
           />
 
           {query.trim() && (
             <button
               type="submit"
-              className="p-1 rounded-full bg-[#FF5A00] text-white hover:bg-[#E04F00] transition-colors flex-shrink-0 cursor-pointer"
+              className="p-1 rounded-full bg-[#536F00] text-white hover:bg-[#435900] transition-colors flex-shrink-0 cursor-pointer shadow-sm"
             >
               <Send className="w-3 h-3" />
             </button>
@@ -82,7 +82,7 @@ export const BottomCommandBar: React.FC<BottomCommandBarProps> = ({
                 onOpenSearch ||
                 (() => window.dispatchEvent(new CustomEvent("open-global-search")))
               }
-              className="hidden sm:inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded text-[10px] font-mono bg-[#0D0F12] border border-[#25282D] text-[#606570] cursor-pointer hover:border-[#606570] hover:text-[#9A9FA8] transition-colors"
+              className="hidden sm:inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded text-[10px] font-mono bg-[#F4F5F0] border border-[#E2E5DE] text-[#747A80] cursor-pointer hover:border-[#D5DAD0] hover:text-[#151515] transition-colors"
             >
               <Command className="w-2.5 h-2.5" /> K
             </kbd>
@@ -98,24 +98,23 @@ export const BottomCommandBar: React.FC<BottomCommandBarProps> = ({
               onOpenAi ||
               (() => window.dispatchEvent(new CustomEvent("open-ai-assistant")))
             }
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#141619] hover:bg-[#1D2024] border border-[#25282D] hover:border-[#FF5A00]/50 text-xs font-semibold text-[#F4F4F5] transition-all duration-380 ease-[cubic-bezier(0.22,1,0.36,1)] cursor-pointer active:scale-95 shadow-sm"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full hover:bg-[#F4F5F0] text-xs font-medium text-[#151515] transition-all duration-200 cursor-pointer active:scale-95"
           >
-            <Sparkles className="w-3.5 h-3.5 text-[#FF5A00]" />
+            <Sparkles className="w-3.5 h-3.5 text-[#536F00]" />
             <span className="hidden sm:inline">Ask AI</span>
           </button>
 
-          {/* Review Pending Actions Pill (As seen in Reference Screenshot: Review 6 ->) */}
+          {/* Review Pending Actions Pill (Reference: Review 6 ->) */}
           <Link
             href="/actions"
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#050505] hover:bg-[#141619] border border-[#25282D] hover:border-[#FF5A00]/50 text-xs font-semibold text-white transition-all duration-380 ease-[cubic-bezier(0.22,1,0.36,1)] shadow-sm active:scale-95"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#171717] hover:bg-[#252525] text-xs font-medium text-white transition-all duration-200 shadow-sm active:scale-95"
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-[#FF5A00] animate-pulse" />
-            <span className="hidden sm:inline">Review</span>
-            <span>Actions</span>
-            <span className="px-1.5 py-0.2 rounded-full bg-[#141619] text-[10px] font-mono text-[#FF5A00] border border-[#25282D]">
-              3
+            <span className="w-1.5 h-1.5 rounded-full bg-[#789600]" />
+            <span>Review</span>
+            <span className="w-4 h-4 rounded-full bg-[#303030] flex items-center justify-center text-[10px] font-semibold text-white">
+              6
             </span>
-            <ArrowRight className="w-3 h-3 text-[#9A9FA8]" />
+            <ArrowRight className="w-3 h-3 text-[#A0A0A0]" />
           </Link>
         </div>
       </div>

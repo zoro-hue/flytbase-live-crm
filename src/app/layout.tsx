@@ -21,8 +21,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark scroll-smooth">
-      <body className={`${inter.variable} font-sans bg-[#000000] text-[#F4F4F5] min-h-screen antialiased selection:bg-[#FF5A00]/30 selection:text-white`}>
+    <html lang="en" className="scroll-smooth">
+      <body className={`${inter.variable} font-sans bg-[#F4F5F0] text-[#151515] min-h-screen antialiased selection:bg-[#536F00]/25 selection:text-[#151515]`}>
         <AppShell>{children}</AppShell>
       </body>
     </html>

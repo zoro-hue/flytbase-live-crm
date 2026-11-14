@@ -48,8 +48,8 @@ export const QuestionTabs: React.FC<QuestionTabsProps> = ({
 
   return (
     <div className="space-y-6">
-      {/* Five Questions Matte Navigation Bar */}
-      <div className="flex items-center gap-1.5 p-1.5 rounded-xl bg-[#08080A] border border-[#1C1F26] overflow-x-auto no-scrollbar shadow-inner">
+      {/* Five Questions Light Navigation Bar */}
+      <div className="flex items-center gap-1.5 p-1.5 rounded-xl bg-[#F4F5F0] border border-[#E2E5DE] overflow-x-auto no-scrollbar shadow-xs">
         {tabs.map((tab) => {
           const Icon = tab.icon;
           const isActive = activeTab === tab.id;
@@ -59,13 +59,13 @@ export const QuestionTabs: React.FC<QuestionTabsProps> = ({
               onClick={() => setActiveTab(tab.id)}
               className={`flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-semibold whitespace-nowrap transition-all duration-200 cursor-pointer ${
                 isActive
-                  ? "bg-[#14161C] text-[#FF5500] shadow-sm border border-[#FF5500]/30"
-                  : "text-[#8E929E] hover:text-[#F4F4F5] hover:bg-[#0E1014]"
+                  ? "bg-white text-[#151515] shadow-xs border border-[#E2E5DE]"
+                  : "text-[#747A80] hover:text-[#151515] hover:bg-white/50"
               }`}
             >
-              <Icon className={`w-3.5 h-3.5 transition-colors ${isActive ? "text-[#FF5500]" : "text-[#585E6A]"}`} />
+              <Icon className={`w-3.5 h-3.5 transition-colors ${isActive ? "text-[#536F00]" : "text-[#747A80]"}`} />
               <span>{tab.name}</span>
-              <span className={`text-[10px] font-mono px-1.5 py-0.2 rounded transition-colors ${isActive ? "bg-[#FF5500]/15 text-[#FF5500]" : "bg-[#000000] text-[#71717A]"}`}>
+              <span className={`text-[10px] font-mono px-1.5 py-0.2 rounded transition-colors ${isActive ? "bg-[#ECEFE5] text-[#536F00] font-bold" : "bg-[#E2E5DE] text-[#747A80]"}`}>
                 {tab.count}
               </span>
             </button>
@@ -115,10 +115,10 @@ export const QuestionTabs: React.FC<QuestionTabsProps> = ({
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            <div className="lg:col-span-1 p-5 rounded-xl matte-card space-y-4">
+            <div className="lg:col-span-1 p-5 rounded-2xl bg-white border border-[#E2E5DE] shadow-sm space-y-4">
               <div>
-                <h3 className="text-sm font-semibold text-[#F4F4F5]">Pipeline Distribution</h3>
-                <p className="text-xs text-[#8E929E]">Contractual reality vs unverified claims</p>
+                <h3 className="text-sm font-semibold text-[#151515]">Pipeline Distribution</h3>
+                <p className="text-xs text-[#747A80]">Contractual reality vs unverified claims</p>
               </div>
               <ValuationChart
                 confirmed={valuation.confirmedValue}
@@ -133,8 +133,8 @@ export const QuestionTabs: React.FC<QuestionTabsProps> = ({
             <div className="lg:col-span-2 space-y-4">
               <div className="flex items-center justify-between">
                 <div>
-                  <h3 className="text-sm font-semibold text-[#F4F4F5]">Deal-by-Deal Evidence Breakdown</h3>
-                  <p className="text-xs text-[#8E929E]">Every financial figure is traceable to its source record</p>
+                  <h3 className="text-sm font-semibold text-[#151515]">Deal-by-Deal Evidence Breakdown</h3>
+                  <p className="text-xs text-[#747A80]">Every financial figure is traceable to its source record</p>
                 </div>
               </div>
               <DealsTable deals={valuation.deals} showAccountFilter={false} />
@@ -145,11 +145,11 @@ export const QuestionTabs: React.FC<QuestionTabsProps> = ({
 
       {/* Tab 2: Stakeholders */}
       {activeTab === 2 && (
-        <div className="space-y-4 section-matte-enter">
+        <div className="space-y-4">
           <div className="flex items-center justify-between">
             <div>
-              <h3 className="text-sm font-semibold text-[#F4F4F5]">Power & Influence Matrix</h3>
-              <p className="text-xs text-[#8E929E]">
+              <h3 className="text-sm font-semibold text-[#151515]">Power & Influence Matrix</h3>
+              <p className="text-xs text-[#747A80]">
                 Decision authority, budget control, and departure warnings
               </p>
             </div>
@@ -160,11 +160,11 @@ export const QuestionTabs: React.FC<QuestionTabsProps> = ({
 
       {/* Tab 3: Actions */}
       {activeTab === 3 && (
-        <div className="space-y-4 section-matte-enter">
+        <div className="space-y-4">
           <div className="flex items-center justify-between">
             <div>
-              <h3 className="text-sm font-semibold text-[#F4F4F5]">Ranked Action Plan</h3>
-              <p className="text-xs text-[#8E929E]">Top actions prioritized by business impact and urgency</p>
+              <h3 className="text-sm font-semibold text-[#151515]">Ranked Action Plan</h3>
+              <p className="text-xs text-[#747A80]">Top actions prioritized by business impact and urgency</p>
             </div>
           </div>
           <ActionList actions={actions} showAccountFilter={false} />
@@ -173,11 +173,11 @@ export const QuestionTabs: React.FC<QuestionTabsProps> = ({
 
       {/* Tab 4: Risks */}
       {activeTab === 4 && (
-        <div className="space-y-4 section-matte-enter">
+        <div className="space-y-4">
           <div className="flex items-center justify-between">
             <div>
-              <h3 className="text-sm font-semibold text-[#F4F4F5]">Risk Intelligence Matrix</h3>
-              <p className="text-xs text-[#8E929E]">Approaching deadlines, unanswered tickets, and adoption hazards</p>
+              <h3 className="text-sm font-semibold text-[#151515]">Risk Intelligence Matrix</h3>
+              <p className="text-xs text-[#747A80]">Approaching deadlines, unanswered tickets, and adoption hazards</p>
             </div>
           </div>
           <RiskGrid risks={risks} showAccountFilter={false} />
@@ -186,11 +186,11 @@ export const QuestionTabs: React.FC<QuestionTabsProps> = ({
 
       {/* Tab 5: Unknowns */}
       {activeTab === 5 && (
-        <div className="space-y-4 section-matte-enter">
+        <div className="space-y-4">
           <div className="flex items-center justify-between">
             <div>
-              <h3 className="text-sm font-semibold text-[#F4F4F5]">Critical Knowledge Gaps</h3>
-              <p className="text-xs text-[#8E929E]">Unconfirmed authorities, missing files, and prescribed discovery questions</p>
+              <h3 className="text-sm font-semibold text-[#151515]">Critical Knowledge Gaps</h3>
+              <p className="text-xs text-[#747A80]">Unconfirmed authorities, missing files, and prescribed discovery questions</p>
             </div>
           </div>
           <UnknownList unknowns={unknowns} showAccountFilter={false} />

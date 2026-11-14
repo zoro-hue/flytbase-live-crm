@@ -215,31 +215,28 @@ export const DeliveryRunway: React.FC = () => {
   );
 
   return (
-    <div className="matte-card p-5 rounded-2xl relative overflow-hidden">
+    <div className="bg-white p-5 rounded-2xl border border-[#E2E5DE] shadow-sm relative overflow-hidden">
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-[#25282D]">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-[#E2E5DE]">
         <div>
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-[#FF5A00]" />
-            <h3 className="text-sm font-semibold text-[#F4F4F5] uppercase tracking-wider font-mono">
-              Delivery Runway
-            </h3>
-          </div>
-          <p className="text-xs text-[#9A9FA8] mt-0.5">
-            Cross-account operational milestones — 2 weeks back, 6 weeks ahead. Click milestone for telemetry.
+          <h3 className="text-base font-semibold text-[#151515]">
+            Delivery runway
+          </h3>
+          <p className="text-xs text-[#747A80] mt-0.5">
+            Every client on one timeline — two weeks back, six weeks ahead. Hover a milestone for details.
           </p>
         </div>
 
-        {/* Status badges from reference (e.g. Otto is watching, Sage is watching) */}
+        {/* Status badges from reference (Otto is watching, Sage is watching) */}
         <div className="flex items-center gap-2 flex-wrap">
-          <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-950/60 border border-emerald-800/60 text-emerald-400 text-xs font-medium">
-            <Radio className="w-3 h-3 text-emerald-400 animate-pulse" />
-            <span>MCP Live Sentinel</span>
+          <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#ECEFE5] border border-[#D5DAD0] text-[#536F00] text-xs font-medium">
+            <Radio className="w-3 h-3 text-[#536F00]" />
+            <span>Otto is watching</span>
           </div>
 
-          <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-950/60 border border-amber-800/60 text-amber-400 text-xs font-medium">
-            <Eye className="w-3 h-3 text-amber-400" />
-            <span>FB-10488 Tracked</span>
+          <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#FDE8E8] border border-[#F8B4B4] text-[#E34B3D] text-xs font-medium">
+            <Eye className="w-3 h-3 text-[#E34B3D]" />
+            <span>Sage is watching</span>
           </div>
         </div>
       </div>
@@ -248,13 +245,13 @@ export const DeliveryRunway: React.FC = () => {
       <div className="pt-5 overflow-x-auto">
         <div className="min-w-[700px] relative">
           {/* Date Headers */}
-          <div className="relative h-6 border-b border-[#25282D] text-[11px] font-mono text-[#606570]">
+          <div className="relative h-6 border-b border-[#E2E5DE] text-[11px] font-mono text-[#747A80]">
             {COLUMNS.map((col) => (
               <div
                 key={col.label}
                 style={{ left: `${col.pct}%` }}
                 className={`absolute -translate-x-1/2 select-none whitespace-nowrap ${
-                  col.isToday ? "text-[#FF5A00] font-bold" : ""
+                  col.isToday ? "text-[#536F00] font-bold" : ""
                 }`}
               >
                 {col.label}
@@ -265,31 +262,31 @@ export const DeliveryRunway: React.FC = () => {
           {/* Today Vertical Line */}
           <div
             style={{ left: "41%" }}
-            className="absolute top-6 bottom-0 w-[1.5px] bg-[#FF5A00] z-10 pointer-events-none opacity-80"
+            className="absolute top-6 bottom-0 w-[1.5px] bg-[#536F00] z-10 pointer-events-none opacity-80"
           >
-            <div className="absolute -top-1.5 -left-1 w-2.5 h-2.5 rounded-full bg-[#FF5A00]" />
+            <div className="absolute -top-1.5 -left-1 w-2.5 h-2.5 rounded-full bg-[#536F00]" />
           </div>
 
           {/* Tracks */}
-          <div className="space-y-4 pt-4 pb-2">
+          <div className="space-y-3 pt-4 pb-2">
             {TRACKS.map((track) => (
               <div
                 key={track.id}
-                className="relative flex items-center h-16 rounded-xl bg-[#0D0F12]/60 border border-[#25282D] hover:border-[#606570] transition-colors duration-350 ease-[cubic-bezier(0.22,1,0.36,1)] px-3 group"
+                className="relative flex items-center h-16 rounded-xl bg-[#F4F5F0]/60 border border-[#E2E5DE] hover:border-[#D5DAD0] transition-colors duration-200 px-3 group"
               >
                 {/* Account / Track badge (left column) */}
                 <div className="w-48 flex-shrink-0 pr-3 z-20">
                   <div className="flex items-center gap-2">
                     <span
-                      className={`w-6 h-6 rounded flex items-center justify-center font-bold text-[10px] font-mono ${track.codeBg}`}
+                      className="w-6 h-6 rounded flex items-center justify-center font-bold text-[10px] font-mono bg-white text-[#151515] border border-[#E2E5DE] shadow-xs"
                     >
                       {track.code}
                     </span>
                     <div className="min-w-0">
-                      <div className="text-xs font-semibold text-[#F4F4F5] truncate">
+                      <div className="text-xs font-semibold text-[#151515] truncate">
                         {track.title}
                       </div>
-                      <div className="text-[10px] text-[#9A9FA8] font-mono">
+                      <div className="text-[10px] text-[#747A80] font-mono">
                         {track.progress} done
                       </div>
                     </div>
@@ -297,13 +294,13 @@ export const DeliveryRunway: React.FC = () => {
                 </div>
 
                 {/* Milestone Horizontal Track Line */}
-                <div className="relative flex-1 h-0.5 bg-[#1C1F26]">
+                <div className="relative flex-1 h-0.5 bg-[#E2E5DE]">
                   {/* Subtle date grid tick marks */}
                   {COLUMNS.map((col) => (
                     <div
                       key={col.label}
                       style={{ left: `${col.pct}%` }}
-                      className="absolute -top-1 w-[1px] h-2.5 bg-[#25282D]"
+                      className="absolute -top-1 w-[1px] h-2.5 bg-[#D5DAD0]"
                     />
                   ))}
 
@@ -311,18 +308,23 @@ export const DeliveryRunway: React.FC = () => {
                   {track.milestones.map((m) => {
                     const isSelected = selectedMilestone?.id === m.id;
 
-                    // Diamond marker color styles
-                    let diamondBg = "bg-[#25282D] border-[#606570]";
+                    // Diamond marker color styles matching reference:
+                    // Done: solid green (#398B46)
+                    // In progress: solid black (#171717)
+                    // In review: hollow green
+                    // Overdue: solid red (#E34B3D)
+                    // Not started: hollow gray
+                    let diamondBg = "bg-white border-[#969BA1]";
                     if (m.status === "done") {
-                      diamondBg = "bg-emerald-500 border-emerald-400";
+                      diamondBg = "bg-[#398B46] border-[#398B46]";
                     } else if (m.status === "in_review") {
-                      diamondBg = "bg-amber-500 border-amber-300";
+                      diamondBg = "bg-[#ECEFE5] border-[#536F00]";
                     } else if (m.status === "in_progress") {
-                      diamondBg = "bg-[#FF5A00] border-[#FFA066]";
+                      diamondBg = "bg-[#171717] border-[#171717]";
                     } else if (m.status === "overdue") {
-                      diamondBg = "bg-red-500 border-red-300 ring-2 ring-red-950";
+                      diamondBg = "bg-[#E34B3D] border-[#E34B3D]";
                     } else if (m.status === "not_started") {
-                      diamondBg = "bg-[#0D0F12] border-[#606570]";
+                      diamondBg = "bg-white border-[#D5DAD0]";
                     }
 
                     return (
@@ -330,15 +332,15 @@ export const DeliveryRunway: React.FC = () => {
                         key={m.id}
                         style={{ left: `${m.columnPercent}%` }}
                         onClick={() => setSelectedMilestone(m)}
-                        className={`absolute -top-2.5 -translate-x-1/2 z-20 cursor-pointer transition-transform duration-350 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-125 ${
+                        className={`absolute -top-2.5 -translate-x-1/2 z-20 cursor-pointer transition-transform duration-200 hover:scale-125 ${
                           isSelected ? "scale-125" : ""
                         }`}
                         title={`${m.name} (${m.dateStr})`}
                       >
                         {/* 45 degree rotated square = diamond */}
                         <div
-                          className={`w-4 h-4 rotate-45 border transition-all duration-350 ease-[cubic-bezier(0.22,1,0.36,1)] ${diamondBg} ${
-                            isSelected ? "ring-2 ring-white shadow-lg" : ""
+                          className={`w-4 h-4 rotate-45 border transition-all duration-200 ${diamondBg} ${
+                            isSelected ? "ring-2 ring-[#536F00] shadow-sm" : ""
                           }`}
                         />
                       </div>
@@ -350,32 +352,32 @@ export const DeliveryRunway: React.FC = () => {
           </div>
 
           {/* Legend */}
-          <div className="flex items-center justify-between flex-wrap gap-3 pt-3 border-t border-[#25282D] text-[11px] font-mono text-[#9A9FA8]">
+          <div className="flex items-center justify-between flex-wrap gap-3 pt-3 border-t border-[#E2E5DE] text-[11px] font-mono text-[#747A80]">
             <div className="flex items-center gap-4 flex-wrap">
               <span className="flex items-center gap-1.5">
-                <span className="w-2.5 h-2.5 rotate-45 bg-[#0D0F12] border border-[#606570]" />
+                <span className="w-2.5 h-2.5 rotate-45 bg-white border border-[#D5DAD0]" />
                 <span>Not started</span>
               </span>
               <span className="flex items-center gap-1.5">
-                <span className="w-2.5 h-2.5 rotate-45 bg-[#FF5A00] border border-[#FFA066]" />
+                <span className="w-2.5 h-2.5 rotate-45 bg-[#171717] border border-[#171717]" />
                 <span>In progress</span>
               </span>
               <span className="flex items-center gap-1.5">
-                <span className="w-2.5 h-2.5 rotate-45 bg-amber-500 border border-amber-300" />
+                <span className="w-2.5 h-2.5 rotate-45 bg-[#ECEFE5] border border-[#536F00]" />
                 <span>In review</span>
               </span>
               <span className="flex items-center gap-1.5">
-                <span className="w-2.5 h-2.5 rotate-45 bg-emerald-500 border border-emerald-400" />
+                <span className="w-2.5 h-2.5 rotate-45 bg-[#398B46] border border-[#398B46]" />
                 <span>Done</span>
               </span>
               <span className="flex items-center gap-1.5">
-                <span className="w-2.5 h-2.5 rotate-45 bg-red-500 border border-red-300" />
-                <span>Overdue / Risk</span>
+                <span className="w-2.5 h-2.5 rotate-45 bg-[#E34B3D] border border-[#E34B3D]" />
+                <span>Overdue</span>
               </span>
             </div>
 
-            <div className="text-[10px] text-[#606570]">
-              Click any diamond marker to inspect source telemetry
+            <div className="text-[10px] text-[#969BA1]">
+              Hover a milestone for details
             </div>
           </div>
         </div>
@@ -383,20 +385,20 @@ export const DeliveryRunway: React.FC = () => {
 
       {/* Selected Milestone Detail Drawer / Banner */}
       {selectedMilestone && (
-        <div className="mt-4 p-3.5 rounded-xl bg-[#0D0F12] border border-[#25282D] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div className="mt-4 p-3.5 rounded-xl bg-[#F4F5F0] border border-[#E2E5DE] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div className="space-y-1">
             <div className="flex items-center gap-2">
-              <span className="text-xs font-bold text-white">
+              <span className="text-xs font-bold text-[#151515]">
                 {selectedMilestone.name}
               </span>
-              <span className="px-2 py-0.2 rounded-full text-[10px] font-mono bg-[#141619] border border-[#25282D] text-[#FF5A00]">
+              <span className="px-2 py-0.2 rounded-full text-[10px] font-mono bg-white border border-[#E2E5DE] text-[#536F00] font-semibold">
                 {selectedMilestone.dateStr}
               </span>
-              <span className="text-xs text-[#9A9FA8]">
+              <span className="text-xs text-[#747A80]">
                 • {selectedMilestone.account} ({selectedMilestone.owner})
               </span>
             </div>
-            <p className="text-xs text-[#E4E4E7]">{selectedMilestone.summary}</p>
+            <p className="text-xs text-[#151515]">{selectedMilestone.summary}</p>
           </div>
 
           <div className="flex items-center gap-3 flex-shrink-0">
@@ -408,9 +410,9 @@ export const DeliveryRunway: React.FC = () => {
                   })
                 );
               }}
-              className="px-3 py-1.5 rounded-lg bg-[#141619] hover:bg-[#1D2024] border border-[#25282D] text-xs font-medium text-[#F4F4F5] hover:text-[#FF5A00] transition-colors flex items-center gap-1.5 cursor-pointer"
+              className="px-3 py-1.5 rounded-lg bg-white hover:bg-[#ECEFE5] border border-[#E2E5DE] text-xs font-medium text-[#151515] hover:text-[#536F00] transition-colors flex items-center gap-1.5 cursor-pointer shadow-xs"
             >
-              <ExternalLink className="w-3.5 h-3.5 text-[#FF5A00]" />
+              <ExternalLink className="w-3.5 h-3.5 text-[#536F00]" />
               <span>Evidence: {selectedMilestone.evidenceRef}</span>
             </button>
           </div>

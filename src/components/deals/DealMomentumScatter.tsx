@@ -168,38 +168,35 @@ export const DealMomentumScatter: React.FC = () => {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-12 gap-5">
       {/* Main Scatter Chart (8 cols) */}
-      <div className="lg:col-span-8 matte-card p-5 rounded-2xl relative overflow-hidden flex flex-col justify-between">
+      <div className="lg:col-span-8 bg-white p-5 rounded-2xl border border-[#E2E5DE] shadow-sm relative overflow-hidden flex flex-col justify-between">
         {/* Header */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-[#25282D]">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-[#E2E5DE]">
           <div>
-            <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-[#FF5A00]" />
-              <h3 className="text-sm font-semibold text-[#F4F4F5] uppercase tracking-wider font-mono">
-                Deal Momentum
-              </h3>
-            </div>
-            <p className="text-xs text-[#9A9FA8] mt-0.5">
-              Each bubble is a live deal, placed by days since last touch. Orange bubbles indicate high urgency.
+            <h3 className="text-base font-semibold text-[#151515]">
+              Deal momentum
+            </h3>
+            <p className="text-xs text-[#747A80] mt-0.5">
+              Each bubble is a deal, sized by value and placed by days since the last touch.
             </p>
           </div>
 
           <Link
             href="/deals"
-            className="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-[#141619] hover:bg-[#1D2024] border border-[#25282D] text-xs font-medium text-[#F4F4F5] transition-colors self-start sm:self-auto"
+            className="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-[#F4F5F0] hover:bg-[#ECEFE5] border border-[#E2E5DE] text-xs font-medium text-[#151515] transition-colors self-start sm:self-auto"
           >
-            <span>Open Pipeline Board</span>
-            <ArrowRight className="w-3.5 h-3.5 text-[#FF5A00]" />
+            <span>Open board</span>
+            <ArrowRight className="w-3.5 h-3.5 text-[#536F00]" />
           </Link>
         </div>
 
         {/* Scatter Canvas */}
         <div className="pt-4 relative min-h-[300px] flex flex-col justify-between">
-          {/* Hatched Going Quiet Background on the right (days 6 to 12) */}
+          {/* Hatched Going Quiet Background on the right (days 5 to 10+) */}
           <div
-            className="absolute top-4 bottom-8 right-0 w-[45%] border-l border-dashed border-[#25282D] bg-[repeating-linear-gradient(45deg,#0D0F12,#0D0F12_10px,#141619_10px,#141619_20px)] rounded-r-xl pointer-events-none opacity-60"
+            className="absolute top-4 bottom-8 right-0 w-[45%] border-l border-dashed border-[#E2E5DE] bg-[repeating-linear-gradient(45deg,#FAFBF8,#FAFBF8_10px,#F4F5F0_10px,#F4F5F0_20px)] rounded-r-xl pointer-events-none"
           >
-            <div className="absolute top-2 right-3 text-[10px] font-mono text-[#FF5A00]/90 bg-[#0D0F12]/80 px-2 py-0.5 rounded border border-[#FF5A00]/20">
-              Going quiet • FlytBot nudges these
+            <div className="absolute top-2 right-3 text-[10px] font-mono text-[#C78620] bg-white/90 px-2 py-0.5 rounded-full border border-[#E2E5DE] shadow-xs">
+              Going quiet · Nova nudges these
             </div>
           </div>
 
@@ -207,29 +204,28 @@ export const DealMomentumScatter: React.FC = () => {
           <div className="space-y-6 relative z-10">
             {stages.map((stage) => {
               const stageDeals = DEALS.filter((d) => d.stage === stage);
-              const totalVal = stageDeals.reduce((sum, d) => sum, "");
 
               return (
                 <div
                   key={stage}
-                  className="relative flex items-center h-12 border-b border-[#1C1F26]/70 group"
+                  className="relative flex items-center h-12 border-b border-[#F4F5F0] group"
                 >
                   {/* Y-axis Label */}
-                  <div className="w-32 flex-shrink-0 pr-2">
+                  <div className="w-36 flex-shrink-0 pr-2">
                     <div className="flex items-center gap-1.5">
                       <span
                         className={`w-1.5 h-1.5 rounded-full ${
                           stage === "Negotiation"
                             ? "bg-[#FF5A00]"
-                            : "bg-[#606570]"
+                            : "bg-[#747A80]"
                         }`}
                       />
-                      <span className="text-xs font-bold text-[#F4F4F5]">
+                      <span className="text-xs font-semibold text-[#151515]">
                         {stage}
                       </span>
                     </div>
-                    <div className="text-[10px] font-mono text-[#9A9FA8]">
-                      {stageDeals.length} deals
+                    <div className="text-[10px] font-mono text-[#747A80]">
+                      {stageDeals.length} • {stage === "Negotiation" ? "£1.8M" : "£340k"}
                     </div>
                   </div>
 
@@ -241,13 +237,13 @@ export const DealMomentumScatter: React.FC = () => {
                       const isSelected = selectedDeal.id === deal.id;
 
                       let bubbleColor =
-                        "bg-[#141619] border-[#25282D] text-[#9A9FA8] hover:border-[#606570]";
+                        "bg-[#2A2D34] border-[#151515] text-white";
                       if (deal.isUrgent) {
                         bubbleColor =
-                          "bg-[#FF5A00] border-[#FFA066] text-black font-extrabold shadow-lg";
+                          "bg-[#FF5A00] border-[#E04F00] text-white font-extrabold shadow-sm";
                       } else if (deal.status === "going_quiet") {
                         bubbleColor =
-                          "bg-[#1D2024] border-red-800/60 text-red-400";
+                          "bg-[#171717] border-[#171717] text-white";
                       }
 
                       return (
@@ -255,9 +251,9 @@ export const DealMomentumScatter: React.FC = () => {
                           key={deal.id}
                           style={{ left: `${xPercent}%` }}
                           onClick={() => setSelectedDeal(deal)}
-                          className={`absolute -translate-x-1/2 w-8 h-8 rounded-full border flex items-center justify-center font-bold text-xs transition-all duration-350 ease-[cubic-bezier(0.22,1,0.36,1)] cursor-pointer ${bubbleColor} ${
+                          className={`absolute -translate-x-1/2 w-8 h-8 rounded-full border flex items-center justify-center font-bold text-xs transition-all duration-200 cursor-pointer ${bubbleColor} ${
                             isSelected
-                              ? "ring-2 ring-white scale-125 z-30"
+                              ? "ring-2 ring-[#536F00] scale-125 z-30 shadow-md"
                               : "hover:scale-110 z-20"
                           }`}
                           title={`${deal.name} (${deal.valueStr})`}
@@ -273,7 +269,7 @@ export const DealMomentumScatter: React.FC = () => {
           </div>
 
           {/* X Axis Time Labels */}
-          <div className="relative pt-3 border-t border-[#25282D] flex justify-between text-[11px] font-mono text-[#606570] px-32">
+          <div className="relative pt-3 border-t border-[#E2E5DE] flex justify-between text-[11px] font-mono text-[#747A80] px-36">
             <span>Touched today</span>
             <span>5 days</span>
             <span>10 days+</span>
@@ -282,30 +278,30 @@ export const DealMomentumScatter: React.FC = () => {
 
         {/* Selected Deal Micro-drawer */}
         {selectedDeal && (
-          <div className="mt-4 p-3.5 rounded-xl bg-[#0D0F12] border border-[#25282D] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div className="mt-4 p-3.5 rounded-xl bg-[#F4F5F0] border border-[#E2E5DE] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div className="space-y-1">
               <div className="flex items-center gap-2">
-                <span className="w-5 h-5 rounded bg-[#FF5A00] text-black font-bold text-[11px] flex items-center justify-center">
+                <span className="w-5 h-5 rounded bg-[#171717] text-white font-bold text-[11px] flex items-center justify-center">
                   {selectedDeal.letter}
                 </span>
-                <span className="text-xs font-bold text-white">
+                <span className="text-xs font-bold text-[#151515]">
                   {selectedDeal.name}
                 </span>
-                <span className="px-2 py-0.2 rounded-full text-[10px] font-mono bg-[#141619] border border-[#25282D] text-[#FF5A00]">
+                <span className="px-2 py-0.2 rounded-full text-[10px] font-mono bg-white border border-[#E2E5DE] text-[#536F00] font-semibold">
                   {selectedDeal.valueStr}
                 </span>
-                <span className="text-xs text-[#9A9FA8]">
+                <span className="text-xs text-[#747A80]">
                   • {selectedDeal.account}
                 </span>
               </div>
-              <p className="text-xs text-[#E4E4E7]">
-                <span className="text-[#FF5A00] font-semibold">Recommendation: </span>
+              <p className="text-xs text-[#151515]">
+                <span className="text-[#536F00] font-semibold">Recommendation: </span>
                 {selectedDeal.recommendation}
               </p>
             </div>
 
             <div className="flex items-center gap-2 flex-shrink-0">
-              <span className="text-[11px] font-mono text-[#9A9FA8]">
+              <span className="text-[11px] font-mono text-[#747A80]">
                 Last touch: {selectedDeal.daysSinceTouch}d ago
               </span>
             </div>
@@ -316,32 +312,34 @@ export const DealMomentumScatter: React.FC = () => {
       {/* Right Column: Closing in 30 Days & Suggestions (4 cols) */}
       <div className="lg:col-span-4 space-y-4">
         {/* Closing in 30 days card */}
-        <div className="matte-card p-4 rounded-2xl">
-          <div className="flex items-center justify-between pb-3 border-b border-[#25282D]">
-            <h4 className="text-xs font-bold text-white uppercase tracking-wider font-mono">
-              Closing in 30 Days
+        <div className="bg-white p-4 rounded-2xl border border-[#E2E5DE] shadow-sm">
+          <div className="flex items-center justify-between pb-3 border-b border-[#E2E5DE]">
+            <h4 className="text-xs font-bold text-[#151515] uppercase tracking-wider font-mono">
+              Closing in 30 days
             </h4>
-            <span className="text-[10px] font-mono text-[#606570]">4 Deals</span>
+            <span className="text-[10px] font-mono text-[#747A80]">4 Deals</span>
           </div>
 
           <div className="space-y-2.5 pt-3">
             {CLOSING_DEALS.map((deal) => (
               <div
                 key={deal.name}
-                className="p-2.5 rounded-xl bg-[#0D0F12] border border-[#25282D] flex items-center justify-between gap-3"
+                className="p-2.5 rounded-xl bg-[#F4F5F0] border border-[#E2E5DE] flex items-center justify-between gap-3"
               >
                 <div className="min-w-0">
-                  <div className="text-xs font-semibold text-white truncate">
+                  <div className="text-xs font-semibold text-[#151515] truncate">
                     {deal.name}
                   </div>
-                  <div className="text-[11px] font-mono text-[#9A9FA8]">
+                  <div className="text-[11px] font-mono text-[#747A80]">
                     {deal.value} • in {deal.days}
                   </div>
                 </div>
 
                 {/* Circular Score Badge */}
-                <div className="w-8 h-8 rounded-full border border-[#25282D] bg-[#141619] flex items-center justify-center font-mono text-[11px] font-bold">
-                  <span className={deal.color}>{deal.score}</span>
+                <div className="w-8 h-8 rounded-full border border-[#D5DAD0] bg-white flex items-center justify-center font-mono text-[11px] font-bold shadow-xs">
+                  <span className={deal.score >= 70 ? "text-[#398B46]" : "text-[#C78620]"}>
+                    {deal.score}
+                  </span>
                 </div>
               </div>
             ))}
@@ -349,33 +347,35 @@ export const DealMomentumScatter: React.FC = () => {
         </div>
 
         {/* Nova / FlytBot Suggests Card */}
-        <div className="matte-card p-4 rounded-2xl bg-gradient-to-br from-[#0D0F12] to-[#141619]">
+        <div className="bg-white p-4 rounded-2xl border border-[#E2E5DE] shadow-sm">
           <div className="flex items-center gap-2 pb-2">
-            <div className="w-6 h-6 rounded-lg bg-[#FF5A00]/20 border border-[#FF5A00]/40 flex items-center justify-center">
-              <Sparkles className="w-3.5 h-3.5 text-[#FF5A00]" />
+            <div className="w-6 h-6 rounded-lg bg-[#ECEFE5] border border-[#D5DAD0] flex items-center justify-center">
+              <Sparkles className="w-3.5 h-3.5 text-[#536F00]" />
             </div>
             <div>
-              <div className="text-xs font-bold text-white">FlytBot Suggests</div>
-              <div className="text-[10px] text-[#9A9FA8]">Account Intelligence Agent</div>
+              <div className="text-xs font-bold text-[#151515]">Nova suggests</div>
+              <div className="text-[10px] text-[#747A80]">Sales follow-up agent</div>
             </div>
           </div>
 
-          <div className="space-y-2 pt-2 text-xs text-[#E4E4E7]">
-            <div className="p-2.5 rounded-lg bg-[#050505] border border-[#25282D]">
-              <div className="text-[#F4F4F5] font-medium">
-                Dispatch field technician for Plants 4, 8, 12
+          <div className="space-y-2 pt-2 text-xs text-[#151515]">
+            <div className="p-2.5 rounded-lg bg-[#F4F5F0] border border-[#E2E5DE]">
+              <div className="text-[#151515] font-medium">
+                Follow up with Kenji on the Tessellate proposal
               </div>
-              <div className="text-[11px] text-[#9A9FA8] mt-1">
-                Zero flights recorded since 2 Nov. Ticket FB-10488 VIP flyover is in 21 days.
+              <div className="text-[11px] text-[#747A80] mt-1 flex items-center gap-1.5">
+                <span>8h ago</span>
+                <span>•</span>
+                <span className="text-[#536F00] font-medium">waiting for you</span>
               </div>
             </div>
 
-            <div className="p-2.5 rounded-lg bg-[#050505] border border-[#25282D]">
-              <div className="text-[#F4F4F5] font-medium">
-                Deliver thermal hashing spec to Ewan Brooks
+            <div className="p-2.5 rounded-lg bg-[#F4F5F0] border border-[#E2E5DE]">
+              <div className="text-[#151515] font-medium">
+                Suggested next step for Harbor & Vine: send the phased proposal before 11:00
               </div>
-              <div className="text-[11px] text-[#9A9FA8] mt-1">
-                Unblocks 4 Tarn Valley docks and unlocks £285k expansion deal.
+              <div className="text-[11px] text-[#747A80] mt-1 text-[#747A80]">
+                8h ago
               </div>
             </div>
           </div>

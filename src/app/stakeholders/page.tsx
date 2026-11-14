@@ -15,18 +15,18 @@ export default function StakeholdersPage() {
   return (
     <div className="space-y-6">
       {/* Header */}
-      <div className="flex flex-wrap items-center justify-between gap-4 p-5 rounded-2xl matte-card">
+      <div className="flex flex-wrap items-center justify-between gap-4 p-6 rounded-2xl bg-white border border-[#E2E5DE] shadow-sm">
         <div>
           <div className="flex items-center gap-2">
-            <Users2 className="w-4 h-4 text-[#FF5A00]" />
-            <span className="text-xs font-mono uppercase tracking-wider text-[#FF5A00] font-semibold">
+            <Users2 className="w-4 h-4 text-[#536F00]" />
+            <span className="text-xs font-mono uppercase tracking-wider text-[#536F00] font-semibold">
               Stakeholder Relationship Intelligence
             </span>
           </div>
-          <h1 className="text-2xl font-bold tracking-tight text-[#F4F4F5] mt-1">
+          <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#151515] mt-1 font-sans">
             Stakeholder Power Matrix & Key Person Risks
           </h1>
-          <p className="text-xs text-[#9A9FA8] mt-0.5">
+          <p className="text-sm text-[#747A80] mt-0.5">
             Who holds the decision-making authority, who controls the budget, and which relationships are vulnerable to departure or blockers.
           </p>
         </div>
@@ -47,7 +47,7 @@ export default function StakeholdersPage() {
           value={buyers.length}
           subtitle="Nadia Rahman, Ewan Brooks"
           badge="Budget Authority"
-          badgeColor="orange"
+          badgeColor="amber"
           icon={UserCheck}
         />
         <KpiCard
@@ -68,13 +68,13 @@ export default function StakeholdersPage() {
         />
       </div>
 
-      {/* Radial Hub-and-Spoke Stakeholder Network (As seen in Reference Screenshots 3 & 6) */}
+      {/* Radial Hub-and-Spoke Stakeholder Network */}
       <StakeholderNetwork />
 
       {/* Main Stakeholder Grid */}
       <div className="space-y-4">
         <div className="flex items-center justify-between">
-          <h2 className="text-xs font-bold text-[#F4F4F5] uppercase tracking-wider font-mono">
+          <h2 className="text-xs font-bold text-[#151515] uppercase tracking-wider font-mono">
             Enterprise Stakeholder Directory & Authority Mapping
           </h2>
         </div>

@@ -36,22 +36,19 @@ export const ForecastGauge: React.FC<ForecastGaugeProps> = ({
   const strokeDashoffset = circumference - (currentPct / 100) * circumference;
 
   return (
-    <div className="matte-card p-5 rounded-2xl relative overflow-hidden flex flex-col justify-between">
+    <div className="bg-white p-5 rounded-2xl border border-[#E2E5DE] shadow-sm relative overflow-hidden flex flex-col justify-between">
       {/* Header */}
-      <div className="flex items-start justify-between pb-2 border-b border-[#25282D]">
+      <div className="flex items-start justify-between pb-3 border-b border-[#E2E5DE]">
         <div>
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-[#FF5A00]" />
-            <h3 className="text-sm font-semibold text-[#F4F4F5] uppercase tracking-wider font-mono">
-              Quarter Forecast
-            </h3>
-          </div>
-          <p className="text-xs text-[#9A9FA8] mt-0.5">
-            Confirmed framework plus probability-weighted pipeline
+          <h3 className="text-base font-semibold text-[#151515] tracking-tight">
+            Quarter forecast
+          </h3>
+          <p className="text-xs text-[#747A80] mt-0.5">
+            Won so far plus open deals weighted by probability.
           </p>
         </div>
 
-        <div className="flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-[#141619] border border-[#25282D] text-xs font-mono text-[#FF5A00]">
+        <div className="flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-[#ECEFE5] border border-[#D5DAD0] text-xs font-mono text-[#536F00]">
           <TrendingUp className="w-3 h-3" />
           <span>+18% MoM</span>
         </div>
@@ -75,8 +72,8 @@ export const ForecastGauge: React.FC<ForecastGaugeProps> = ({
                   y1="0"
                   x2="0"
                   y2="8"
-                  stroke="#FF5A00"
-                  strokeWidth="3"
+                  stroke="#171717"
+                  strokeWidth="3.5"
                 />
               </pattern>
             </defs>
@@ -85,7 +82,7 @@ export const ForecastGauge: React.FC<ForecastGaugeProps> = ({
             <path
               d="M 30 110 A 80 80 0 0 1 190 110"
               fill="none"
-              stroke="#1C1F26"
+              stroke="#ECEFE5"
               strokeWidth={strokeWidth}
               strokeLinecap="round"
             />
@@ -106,7 +103,7 @@ export const ForecastGauge: React.FC<ForecastGaugeProps> = ({
             <path
               d="M 45 110 A 65 65 0 0 1 175 110"
               fill="none"
-              stroke="#25282D"
+              stroke="#E2E5DE"
               strokeWidth="1"
               strokeDasharray="2 3"
             />
@@ -114,10 +111,10 @@ export const ForecastGauge: React.FC<ForecastGaugeProps> = ({
 
           {/* Center Metric Text */}
           <div className="absolute bottom-2 left-1/2 -translate-x-1/2 text-center">
-            <div className="text-3xl font-extrabold text-white tracking-tight">
+            <div className="text-3xl font-extrabold text-[#151515] tracking-tight">
               {percentage}%
             </div>
-            <div className="text-[11px] font-mono text-[#9A9FA8] mt-0.5">
+            <div className="text-[11px] font-mono text-[#747A80] mt-0.5">
               of {targetAmount} target
             </div>
           </div>
@@ -125,29 +122,29 @@ export const ForecastGauge: React.FC<ForecastGaugeProps> = ({
       </div>
 
       {/* Subtotals breakdown bar */}
-      <div className="pt-4 border-t border-[#25282D] grid grid-cols-3 gap-2 text-center">
-        <div className="p-2 rounded-xl bg-[#0D0F12] border border-[#25282D]">
-          <div className="flex items-center justify-center gap-1.5 text-[11px] font-mono text-[#9A9FA8]">
-            <span className="w-2 h-2 rounded-full bg-emerald-500" />
+      <div className="pt-4 border-t border-[#E2E5DE] grid grid-cols-3 gap-2 text-center">
+        <div className="p-2 rounded-xl bg-[#F4F5F0] border border-[#E2E5DE]">
+          <div className="flex items-center justify-center gap-1.5 text-[11px] font-mono text-[#747A80]">
+            <span className="w-2 h-2 rounded-full bg-[#171717]" />
             <span>Won</span>
           </div>
-          <div className="text-sm font-bold text-white mt-1">{wonAmount}</div>
+          <div className="text-sm font-bold text-[#151515] mt-1">{wonAmount}</div>
         </div>
 
-        <div className="p-2 rounded-xl bg-[#0D0F12] border border-[#25282D]">
-          <div className="flex items-center justify-center gap-1.5 text-[11px] font-mono text-[#9A9FA8]">
-            <span className="w-2 h-2 rounded-full bg-[#FF5A00]" />
+        <div className="p-2 rounded-xl bg-[#F4F5F0] border border-[#E2E5DE]">
+          <div className="flex items-center justify-center gap-1.5 text-[11px] font-mono text-[#747A80]">
+            <span className="w-2 h-2 rounded-full bg-[#536F00]" />
             <span>Weighted</span>
           </div>
-          <div className="text-sm font-bold text-white mt-1">{weightedAmount}</div>
+          <div className="text-sm font-bold text-[#151515] mt-1">{weightedAmount}</div>
         </div>
 
-        <div className="p-2 rounded-xl bg-[#0D0F12] border border-[#25282D]">
-          <div className="flex items-center justify-center gap-1.5 text-[11px] font-mono text-[#9A9FA8]">
-            <span className="w-2 h-2 rounded-full bg-red-400" />
+        <div className="p-2 rounded-xl bg-[#F4F5F0] border border-[#E2E5DE]">
+          <div className="flex items-center justify-center gap-1.5 text-[11px] font-mono text-[#747A80]">
+            <span className="w-2 h-2 rounded-full border border-[#747A80]" />
             <span>Gap</span>
           </div>
-          <div className="text-sm font-bold text-white mt-1">{gapAmount}</div>
+          <div className="text-sm font-bold text-[#151515] mt-1">{gapAmount}</div>
         </div>
       </div>
     </div>

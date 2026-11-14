@@ -89,42 +89,59 @@ export const SankeyDealFlow: React.FC = () => {
   ];
 
   return (
-    <div className="p-5 rounded-2xl matte-card space-y-4">
+    <div className="p-5 rounded-2xl bg-white border border-[#E2E5DE] shadow-sm space-y-4">
       {/* Header */}
-      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[#25282D] pb-3">
+      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[#E2E5DE] pb-3">
         <div>
-          <span className="text-[10px] font-mono uppercase tracking-wider text-[#FF5A00] font-semibold block">
-            SANKEY FLOW DYNAMICS
-          </span>
-          <h3 className="text-sm font-bold text-white">Deal Flow & Pipeline Trajectory</h3>
-          <p className="text-xs text-[#9A9FA8]">Where contractual opportunities originate, stall, and convert</p>
+          <h3 className="text-base font-semibold text-[#151515]">Lead flow</h3>
+          <p className="text-xs text-[#747A80]">Where leads come from, how far they get, and how they end.</p>
         </div>
-        <div className="flex items-center gap-2 font-mono text-[10px]">
-          <span className="flex items-center gap-1 text-[#FF5A00]">
-            <span className="w-2 h-2 rounded-full bg-[#FF5A00]" /> Confirmed: £1.5M
-          </span>
-          <span className="flex items-center gap-1 text-[#E04F00]">
-            <span className="w-2 h-2 rounded-full bg-[#E04F00]" /> At Risk: £800k+€320k
-          </span>
+
+        {/* Quick metrics & Value/Count toggle */}
+        <div className="flex items-center gap-4">
+          <div className="hidden sm:flex items-center gap-4 text-xs">
+            <div>
+              <span className="text-[10px] text-[#747A80] block font-mono">Win rate</span>
+              <span className="font-bold text-[#151515]">83%</span>
+              <span className="text-[10px] text-[#747A80] ml-1">5 of 6 closed</span>
+            </div>
+            <div>
+              <span className="text-[10px] text-[#747A80] block font-mono">Best source</span>
+              <span className="font-bold text-[#151515] flex items-center gap-1">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#E34B3D]" /> Event
+              </span>
+              <span className="text-[10px] text-[#747A80]">100% win rate · 2 won</span>
+            </div>
+            <div>
+              <span className="text-[10px] text-[#747A80] block font-mono">Still open</span>
+              <span className="font-bold text-[#151515]">£1.08M</span>
+              <span className="text-[10px] text-[#747A80] ml-1">12 deals in play</span>
+            </div>
+          </div>
+
+          <div className="flex items-center rounded-lg border border-[#E2E5DE] bg-[#F4F5F0] p-0.5 text-[11px] font-medium text-[#747A80]">
+            <span className="px-2 py-0.5 rounded-md bg-white text-[#151515] shadow-xs">Value</span>
+            <span className="px-2 py-0.5 cursor-pointer hover:text-[#151515]">Count</span>
+          </div>
         </div>
       </div>
 
       {/* SVG Diagram Canvas */}
       <div className="relative w-full h-72">
         {/* Column Labels */}
-        <div className="absolute top-0 left-0 right-0 flex justify-between px-2 text-[10px] font-mono text-[#606570] uppercase">
-          <span>Source & Account</span>
-          <span className="pl-12">Stage Reached</span>
-          <span>Commercial Outcome</span>
+        <div className="absolute top-0 left-0 right-0 flex justify-between px-2 text-[10px] font-mono text-[#747A80] uppercase tracking-wider">
+          <span>SOURCE</span>
+          <span className="pl-12">STAGE REACHED</span>
+          <span>OUTCOME</span>
         </div>
 
         <svg className="w-full h-full pt-6" viewBox="0 0 680 270" preserveAspectRatio="none">
           <defs>
             {flows.map((flow) => (
               <linearGradient key={flow.id} id={`grad-${flow.id}`} x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor={flow.color} stopOpacity="0.45" />
-                <stop offset="50%" stopColor={flow.color} stopOpacity="0.65" />
-                <stop offset="100%" stopColor={flow.color} stopOpacity="0.5" />
+                <stop offset="0%" stopColor={flow.color} stopOpacity="0.35" />
+                <stop offset="50%" stopColor={flow.color} stopOpacity="0.5" />
+                <stop offset="100%" stopColor={flow.color} stopOpacity="0.4" />
               </linearGradient>
             ))}
           </defs>
@@ -153,9 +170,9 @@ export const SankeyDealFlow: React.FC = () => {
                 key={flow.id}
                 d={d}
                 fill={`url(#grad-${flow.id})`}
-                stroke={isHovered ? "#FFFFFF" : flow.color}
+                stroke={isHovered ? "#151515" : flow.color}
                 strokeWidth={isHovered ? 1.5 : 0.5}
-                className="transition-all duration-380 ease-[cubic-bezier(0.22,1,0.36,1)] cursor-pointer"
+                className="transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] cursor-pointer"
                 onMouseEnter={() => setHoveredFlow(flow)}
                 onMouseLeave={() => setHoveredFlow(null)}
               />
@@ -165,51 +182,51 @@ export const SankeyDealFlow: React.FC = () => {
           {/* Left Source Nodes */}
           {flows.map((flow) => (
             <g key={`src-${flow.id}`}>
-              <rect x="10" y={flow.sy} width="160" height={flow.height} rx="4" fill="#141619" stroke="#25282D" strokeWidth="1" />
-              <text x="18" y={flow.sy + flow.height / 2 + 3.5} fill="#F4F4F5" fontSize="9.5" fontWeight="500">
+              <rect x="10" y={flow.sy} width="160" height={flow.height} rx="4" fill="#F4F5F0" stroke="#E2E5DE" strokeWidth="1" />
+              <text x="18" y={flow.sy + flow.height / 2 + 3.5} fill="#151515" fontSize="9.5" fontWeight="500">
                 {flow.source.slice(0, 22)}
               </text>
             </g>
           ))}
 
           {/* Middle Stage Node Bars */}
-          <rect x="330" y="45" width="10" height="210" rx="3" fill="#25282D" />
+          <rect x="330" y="45" width="10" height="210" rx="3" fill="#171717" />
           <g>
-            <text x="345" y="70" fill="#F4F4F5" fontSize="10" fontWeight="600">Draft Spec</text>
-            <text x="345" y="82" fill="#9A9FA8" fontSize="8.5">£1.5M agreed</text>
-            <text x="345" y="130" fill="#F4F4F5" fontSize="10" fontWeight="600">Qualified Offers</text>
-            <text x="345" y="142" fill="#9A9FA8" fontSize="8.5">£285k in play</text>
-            <text x="345" y="195" fill="#E04F00" fontSize="10" fontWeight="600">Blocked / Audit</text>
-            <text x="345" y="207" fill="#9A9FA8" fontSize="8.5">£800k+€320k stalled</text>
+            <text x="345" y="70" fill="#151515" fontSize="10" fontWeight="600">Draft Spec</text>
+            <text x="345" y="82" fill="#747A80" fontSize="8.5">£1.5M agreed</text>
+            <text x="345" y="130" fill="#151515" fontSize="10" fontWeight="600">Qualified Offers</text>
+            <text x="345" y="142" fill="#747A80" fontSize="8.5">£285k in play</text>
+            <text x="345" y="195" fill="#E34B3D" fontSize="10" fontWeight="600">Blocked / Audit</text>
+            <text x="345" y="207" fill="#747A80" fontSize="8.5">£800k+€320k stalled</text>
           </g>
 
           {/* Right Outcome Node Bars */}
-          <rect x="500" y="50" width="170" height="40" rx="4" fill="#141619" stroke="#FF5A00" strokeWidth="1" />
-          <text x="512" y="68" fill="#F4F4F5" fontSize="10" fontWeight="600">Confirmed Framework</text>
-          <text x="512" y="82" fill="#FF5A00" fontSize="11" fontWeight="700" fontFamily="monospace">£1,500,000</text>
+          <rect x="500" y="50" width="170" height="40" rx="4" fill="#F4F5F0" stroke="#398B46" strokeWidth="1" />
+          <text x="512" y="68" fill="#151515" fontSize="10" fontWeight="600">Won</text>
+          <text x="512" y="82" fill="#398B46" fontSize="11" fontWeight="700" fontFamily="monospace">£1,500,000</text>
 
-          <rect x="500" y="105" width="170" height="34" rx="4" fill="#141619" stroke="#25282D" strokeWidth="1" />
-          <text x="512" y="120" fill="#F4F4F5" fontSize="9.5" fontWeight="500">In-Play Active Offers</text>
-          <text x="512" y="132" fill="#D4D4D8" fontSize="10" fontWeight="600" fontFamily="monospace">£285k + €50k</text>
+          <rect x="500" y="105" width="170" height="34" rx="4" fill="#F4F5F0" stroke="#E2E5DE" strokeWidth="1" />
+          <text x="512" y="120" fill="#151515" fontSize="9.5" fontWeight="500">In-Play Active Offers</text>
+          <text x="512" y="132" fill="#747A80" fontSize="10" fontWeight="600" fontFamily="monospace">£285k + €50k</text>
 
-          <rect x="500" y="155" width="170" height="55" rx="4" fill="#141619" stroke="#E04F00" strokeWidth="1" />
-          <text x="512" y="173" fill="#E04F00" fontSize="10" fontWeight="600">At-Risk Value (Blocked)</text>
-          <text x="512" y="188" fill="#FF5A00" fontSize="11" fontWeight="700" fontFamily="monospace">£800k + €320k</text>
-          <text x="512" y="202" fill="#9A9FA8" fontSize="8.5">DPIA ticket & Inactivity</text>
+          <rect x="500" y="155" width="170" height="55" rx="4" fill="#F4F5F0" stroke="#E34B3D" strokeWidth="1" />
+          <text x="512" y="173" fill="#E34B3D" fontSize="10" fontWeight="600">Lost / At-Risk</text>
+          <text x="512" y="188" fill="#E34B3D" fontSize="11" fontWeight="700" fontFamily="monospace">£800k + €320k</text>
+          <text x="512" y="202" fill="#747A80" fontSize="8.5">DPIA ticket & Inactivity</text>
 
-          <rect x="500" y="225" width="170" height="34" rx="4" fill="#141619" stroke="#25282D" strokeWidth="1" />
-          <text x="512" y="240" fill="#F4F4F5" fontSize="9.5" fontWeight="500">Closed Won Contracts</text>
-          <text x="512" y="252" fill="#9A9FA8" fontSize="10" fontWeight="600" fontFamily="monospace">€160,000</text>
+          <rect x="500" y="225" width="170" height="34" rx="4" fill="#F4F5F0" stroke="#171717" strokeWidth="1" />
+          <text x="512" y="240" fill="#151515" fontSize="9.5" fontWeight="500">Still open</text>
+          <text x="512" y="252" fill="#171717" fontSize="10" fontWeight="600" fontFamily="monospace">€160,000</text>
         </svg>
 
         {/* Hover Tooltip Card */}
         {hoveredFlow && (
-          <div className="absolute bottom-2 left-1/2 -translate-x-1/2 px-3.5 py-1.5 rounded-xl bg-[#0D0F12] border border-[#FF5A00]/50 shadow-2xl text-xs flex items-center gap-3 z-30 pointer-events-none animate-in fade-in zoom-in-95">
-            <span className="font-bold text-white">{hoveredFlow.source}</span>
-            <span className="text-[#9A9FA8]">→</span>
-            <span className="text-[#D4D4D8]">{hoveredFlow.stage}</span>
-            <span className="text-[#9A9FA8]">→</span>
-            <span className="font-mono font-bold text-[#FF5A00]">{hoveredFlow.value}</span>
+          <div className="absolute bottom-2 left-1/2 -translate-x-1/2 px-3.5 py-1.5 rounded-xl bg-white border border-[#E2E5DE] shadow-xl text-xs flex items-center gap-3 z-30 pointer-events-none animate-in fade-in zoom-in-95">
+            <span className="font-bold text-[#151515]">{hoveredFlow.source}</span>
+            <span className="text-[#747A80]">→</span>
+            <span className="text-[#151515]">{hoveredFlow.stage}</span>
+            <span className="text-[#747A80]">→</span>
+            <span className="font-mono font-bold text-[#536F00]">{hoveredFlow.value}</span>
           </div>
         )}
       </div>
